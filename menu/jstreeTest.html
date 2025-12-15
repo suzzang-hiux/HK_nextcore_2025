@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jsTree 폴더 + 노드 샘플</title>
+    <!-- jsTree CSS -->
+    <link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+    <link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/css/style.css?v=20211227_v1" rel="stylesheet" type="text/css" />
+
+    
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=51697.13478146136"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 30px;
+      }
+      #jstree {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📁 jsTree 폴더 + 노드 샘플</h2>
+
+    <button onclick="createFolder()">새 폴더 만들기</button>
+    <button onclick="addNewFolderAndNode()">새 폴더 & 노드 추가</button>
+
+    <!-- 트리가 표시될 요소 -->
+    <div id="jstree"></div>
+
+    <script>
+      const MAX_TOP_LEVEL_NODES = 10;
+      const MAX_CHILD_NODES = 5;
+      // 트리 초기화
+      var jstreeObj = $("#jstree").jstree({
+        core: {
+          // 노드 생성/이동을 허용
+          check_callback: function (op, node, parent, position, more) {
+            console.log("parent : ", node, parent);
+
+            if (op == "create_node") {
+              if (parent.id === "#") {
+                if (parent.children.length >= MAX_TOP_LEVEL_NODES) {
+                  PubEPUI.toast.view({text:`최상위 노드는 최대 ${MAX_TOP_LEVEL_NODES}개까지만 생성할 수 있습니다!`})
+                  
+                  return false;
+                } else {
+                  return true; // 최상위 노드는 제한 없음
+                }
+              }
+
+              if (parent.children.length >= MAX_CHILD_NODES) {
+                PubEPUI.toast.view({text:`하위 노드는 최대 ${MAX_CHILD_NODES}개까지만 생성할 수 있습니다!`})
+                
+                return false;
+              }
+              return true;
+            }
+
+            if (op == "move_node") {
+              if (node.parent === parent.id) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          },
+          data: [
+            {
+              id: "folder_1",
+              text: "폴더 1",
+              type: "default",
+              children: [
+                { id: "node_1", text: "노드 1", type: "file" },
+                { id: "node_2", text: "노드 2", type: "file" },
+              ],
+            },
+            {
+              id: "folder_2",
+              text: "폴더 2",
+              type: "default",
+              children: [{ id: "node_3", text: "노드 3", type: "file" }],
+            },
+          ],
+        },
+        plugins: ["types", "dnd", "contextmenu"],
+        types: {
+          "#": {
+            max_depth: 2, // 최대 깊이 설정
+          }
+        },
+      });
+
+      var treeObj = jstreeObj.jstree();
+
+      function addNewFolderAndNode() {
+        // 이미 "새 폴더"가 존재하는지 확인
+        if (treeObj.get_node("new_folder")) {
+          
+          PubEPUI.toast.view({text:"새 폴더가 이미 존재합니다!"})
+          return;
+        }
+
+        // 새 폴더 추가
+        var folderNode = treeObj.create_node(
+          null,
+          {
+            id: "new_folder",
+            text: "새 폴더",
+            type: "default",
+          },
+          "last"
+        );
+
+        // 폴더가 제대로 만들어졌다면 자식 노드 추가
+        if (folderNode) {
+          for (var i = 0; i < 6; i++) {
+            // 10번 시도해도 최대 5개까지만 생성됨
+            treeObj.create_node(folderNode, {
+              id: "child_" + (i + 1),
+              text: "자식 노드 " + (i + 1),
+            });
+          }
+
+          // 폴더 펼치기
+          treeObj.open_node(folderNode);
+        }
+      }
+      var idx = 0;
+      function createFolder() {
+        idx++;
+        // 새 폴더 추가
+        var folderNode = treeObj.create_node(
+          null,
+          {
+            id: "new_folder" + idx,
+            text: "새 폴더" + idx,
+            type: "default",
+          },
+          "last"
+        );
+      }
+    </script>
+  </body>
+</html>

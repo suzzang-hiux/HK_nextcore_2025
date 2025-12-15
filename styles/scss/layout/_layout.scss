@@ -1,0 +1,1513 @@
+//  ============= ▼ LNB ▼ =============
+.ep-lnb {
+    width: 60px;
+    height: 100%;
+    position: relative;
+    &-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-block: 16px;
+        @include flex(column, center, space-between, 100px);
+        @include font($fs-11, 400, 1.1);
+        color: $cl-white;
+        max-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        will-change: background-color;
+        transition: background-color 0.2s ease;
+    }
+    .logo {
+        width: 36px;
+        height: 52px;
+        margin-bottom: 12px;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            @include bg-set;
+            background-image: url("/wsrv/app/img/new/heungkuk_logo.svg");
+            will-change: background-image;
+            transition: background-image 0.2s;
+        }
+    }
+    .home-menu, .all-menu {
+        width: 100%;
+        position: relative;
+        padding: 8px 4px;
+        @include flex(column, center, center, 0);
+        a {
+            width: 100%;
+            position: relative;
+            padding-top: 24px;
+            text-align: center;
+            &::before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    .home-menu {
+        a {
+            &::before {
+                background: url('/wsrv/app/img/new/common/ico_lnb_home.png') 50% 50% / contain no-repeat;
+            }
+        }
+    }
+    .all-menu {
+        a {
+            &::before {
+                background: url('/wsrv/app/img/new/common/ico_lnb_menu.png') 50% 50% / contain no-repeat;
+            }
+        }
+    }
+    .menu-left-area {
+        width: 100%;
+        position: relative;
+        li {
+            width: 100%;
+            position: relative;
+            padding: 8px 4px;
+            @include flex(column, center, center, 0);
+            a {
+                width: 100%;
+                position: relative;
+                padding-top: 24px;
+                text-align: center;
+                &::before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                &.type-1 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_groupware.png");
+                    }
+                }
+                &.type-2 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_human_info.png");
+                    }
+                }
+                &.type-3 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_itsm.png");
+                    }
+                }
+                &.type-4 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_data.png");
+                    }
+                }
+                &.type-5 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_picture.png");
+                    }
+                }
+                &.type-6 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_ai.png");
+                    }
+                }
+                &.type-7 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_password.png");
+                    }
+                }
+                &.type-8 {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_lnb_network.png");
+                    }
+                }
+            }
+        }
+    }
+    &-top, &-bottom {
+        width: 100%;
+        position: relative;
+        @include flex(column, center, flex-start, 0);
+    }
+    &-switch {
+        width: 100%;
+        position: relative;
+        padding: 12px 4px;
+        label {
+            padding-top: 16px;
+            position: relative;
+            cursor: pointer;
+            .txt {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            &::before {
+                content: "";
+                width: 28px;
+                height: 6px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.60);
+                border-radius: 3px;
+                will-change: background-color;
+                transition: background-color 0.7s ease;
+            }
+            &::after {
+                content: "";
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: $cl-white;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+                position: absolute;
+                top: -3px;
+                left: 8px;
+                will-change: left;
+                transition: left 0.3s ease-in;
+            }
+        }
+        input:checked + label {
+            &::before {
+                background-color: $cl-yellow;
+            }
+            &::after {
+                left: 30px;
+            }
+        }
+    }
+    .resize-tip {
+        width: 275px;
+        padding: 8px;
+        @include border-box;
+        position: absolute;
+        bottom: 62px;
+        left: 12px;
+        @include font(13px, 400, 1.23);
+        color: $cl-black;
+        border-radius: 4px;
+        word-break: keep-all;
+        opacity: 0;
+        pointer-events: none;
+        will-change: opacity;
+        transition: opacity 0.2s;
+        @include z(modal);
+        &.on {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    &-arrow {
+        width: 16px;
+        height: 40px;
+        border-radius: 0 8px 8px 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -6px;
+        @include z(header);
+        will-change: background-color;
+        transition: background-color 0.2s ease;
+        a {
+            font-size: 0;
+            color: transparent;
+            width: 100%;
+            height: 100%;
+            @include flex(column, center, center, 0);
+            transition: transform 0.3s ease;
+            &::after {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background: url("/wsrv/app/img/new/common/ico_arrows_chevron_right.png") 50% 50% / contain no-repeat !important;
+            }
+            &.rotation {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+/*** 메뉴 영역 ***/
+.overlay_iframe {
+    height: 100%;
+    width: 100%;
+    z-index: 0 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0);";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+.menu-content {
+    width: 304px;
+    max-width: 304px;
+    height: fit-content;
+    position: absolute;
+    top: 40px;
+    left: 72px;
+    @include z(header);
+    // display: none;
+    &.result-on {
+        width: 592px;
+        max-width: 592px;
+    }
+    .menu-content-box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 4px;
+        border: 1px solid $cl-black;
+        background-color: $cl-white;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+        @include flex(column, flex-start, flex-start, 0);
+        padding: 0;
+        overflow: hidden;
+        .menu-content-top {
+            width: 100%;
+            height: 40px;
+            position: relative;
+            padding-right: 16px;
+            @include flex(row, center, space-between, 4px);
+            border-bottom: 1px solid $cl-gr-40;
+            .menu-tab {
+                width: fit-content;
+                height: 100%;
+                position: relative;
+                @include flex(row, center, flex-start, 0);
+                border-bottom: none;
+                flex-shrink: 0;
+                > li {
+                    width: fit-content;
+                    height: 100%;
+                    position: relative;
+                    float: none;
+                    margin-right: 0;
+                    border: none;
+                    border-radius: 0;
+                    background-color: transparent !important;
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        padding-inline: 12px;
+                        @include flex(row, center, center, 0);
+                        @include font(13px, 500, 1.2);
+                        color: $cl-gr-80;
+                    }
+                    &.on {
+                        a {
+                            font-weight: 700;
+                            color: $cl-black;
+                        }
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 2px;
+                            position: absolute;
+                            bottom: -1px;
+                            left: 0;
+                            background-color: $cl-black;
+                        }
+                    }
+                }
+            }
+            .book_mark_setting {
+                width: 16px;
+                height: 16px;
+                @include bg-set;
+                background-image: url("/wsrv/app/img/new/common/ico_setting.png");
+            }
+        }
+        .menu-content-bottom {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            @include flex(column, flex-start, flex-start, 12px);
+            padding: 12px 16px;
+            .search-area {
+                width: 100%;
+                position: relative;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                .warning-txt {
+                    margin-top: 4px;
+                }
+            }
+            .menu-area {
+                width: 100%;
+                height: 600px;
+                @include flex(row, flex-start, flex-start, 16px);
+                > div {
+                    flex: 1;
+                    height: 100%;
+                    max-width: 270px;
+                }
+                .menu-tree {
+                    width: 100%;
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    padding: 12px 16px;
+                    border: none;
+                    .jstree-default {
+                        .jstree-node {
+                            margin-left: 0;
+                            padding-left: 20px;
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 20px;
+                                height: 20px;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/tree_in.png");
+                            }
+                            &.jstree-open {
+                                &::before {
+                                    background-image: url("/wsrv/app/img/new/common/tree_in_close.png");
+                                }
+                            }
+                        }
+                        .jstree-container-ul > .jstree-node {
+                            margin-left: 0;
+                            padding-left: 0;
+                            &::before {
+                                display: none;
+                            }
+                        }
+                        .jstree-anchor {
+                            height: 20px;
+                            @include font(13px, 400, 20px);
+                            transition: color 0.3s;
+                            &.jstree-hovered {
+                                background-color: none !important;
+                                box-shadow: none !important;
+                                color: $cl-p-magenta !important;
+                            }
+                            // &.jstree-clicked {
+                            //     color: $cl-p-magenta !important;
+                            //     font-weight: 700;
+                            // }
+                        }
+                        .jstree-children {
+                            margin-left: 0 !important;
+                        }
+                        .jstree-icon {
+                            width: 20px !important;
+                            height: 20px !important;
+                            line-height: 20px;
+                            @include bg-set;
+                            &.jstree-ocl {
+                                display: none;
+                            }
+                            &.jstree-themeicon {
+                                background-image: url("/wsrv/app/img/new/common/tree_atomic.png");
+                            }
+                            &.menu-icon {
+                                background-image: url("/wsrv/app/img/new/common/tree_page.png") !important;
+                            }
+                        }
+                        .jstree-clicked {
+                            color: inherit !important;
+                            background: transparent !important;
+                            box-shadow: none !important;
+                            border-radius: 0;
+                        }
+                    }
+                    .menu-box-item {
+                        width: 100%;
+                        position: relative;
+                        .tit-flex {
+                            width: 100%;
+                            position: relative;
+                            @include flex(row, center, space-between, 8px);
+                            margin-bottom: 8px;
+                            h3 {
+                                margin-bottom: 0;
+                            }
+                            .book_mark_setting {
+                                width: 16px;
+                                height: 16px;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_setting.png");
+                            }
+                        }
+                        h3 {
+                            @include font(14px, 700, 1.2);
+                            color: $cl-black;
+                            margin-bottom: 8px;
+                        }
+                        .btn-wrap {
+                            width: 100%;
+                        }
+                        .fav-empty {
+                            width: 100%;
+                            p {
+                                @include font(13px, 400, 16px);
+                                color: $cl-gr-60;
+                                text-align: center;
+                                padding-top: 68px;
+                                position: relative;
+                                .setting {
+                                    display: inline-block;
+                                    width: 16px;
+                                    height: 16px;
+                                    line-height: 16px;
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/ico_setting.png");
+                                    transform: translateY(3px);
+                                    opacity: 0.6;
+                                }
+                                &::before {
+                                    content: "";
+                                    width: 60px;
+                                    height: 60px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/img_bookmark_empty_lulu.png");
+                                }
+                            }
+                        }
+                        & + .menu-box-item {
+                            margin-top: 12px;
+                        }
+                        &.border-top {
+                            padding-top: 12px;
+                            border-top: 1px solid $cl-gr-30;
+                        }
+                    }
+                }
+                .menu-search-result {
+                    position: relative;
+                    border-radius: 8px;
+                    border: 1px solid $cl-gr-30;
+                    margin: 0;
+                    overflow: hidden;
+                    .result-txt {
+                        width: 100%;
+                        position: relative;
+                        @include flex(row, center, space-between, 4px);
+                        height: 40px;
+                        padding-inline: 16px;
+                        border-bottom: 1px solid $cl-gr-30;
+                        h2 {
+                            @include font(13px, 700, 1);
+                            color: $cl-black;
+                            em {
+                                &::before, &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .scrollable-container {
+                        width: 100%;
+                        height: calc(100% - 40px);
+                    }
+                    .result_list {
+                        width: 100%;
+                        position: relative;
+                        padding-inline: 16px;
+                        li {
+                            width: 100%;
+                            position: relative;
+                            padding: 8px 0 8px 20px;
+                            > i {
+                                display: block;
+                                width: 16px;
+                                height: 16px;
+                                position: absolute;
+                                top: 7px;
+                                left: 0;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_star_inactive.png");
+                                &.on {
+                                    background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                                }
+                            }
+                            > a {
+                                width: fit-content;
+                                @include font(13px, 500, 16px);
+                                color: $cl-black;
+                                margin: 0;
+                                .highlight {
+                                    color: $cl-p-magenta;
+                                }
+                            }
+                            .location {
+                                width: 100%;
+                                margin: 4px 0 0 0;
+                                word-break: keep-all;
+                                @include font(12px, 400, 1.16);
+                                color: $cl-gr-80;
+                            }
+                            & + li {
+                                border-top: 1px solid $cl-gr-30;
+                            }
+                            &.empty {
+                                padding: 17px 0;
+                                @include flex(row, center, center, 0);
+                                span {
+                                    @include font(13px, 400, 1.2);
+                                    color: $cl-gr-60;
+                                    padding-left: 28px;
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        width: 24px;
+                                        height: 24px;
+                                        @include ps-icon;
+                                        @include bg-set;
+                                        background-image: url("/wsrv/app/img/new/common/ico_search_empty.png");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .menu-favorite {
+                    width: 100%;
+                    position: relative;
+                    ul {
+                        @include flex(column, flex-start, flex-start, 4px);
+                        li {
+                            a {
+                                width: 100%;
+                                height: 20px;
+                                position: relative;
+                                @include flex(row, center, flex-start, 0);
+                                @include font(13px, 400, 1.2);
+                                padding-left: 24px;
+                                color: $cl-black;
+                                will-change: color;
+                                transition: color 0.2s ease;
+                                &::before {
+                                    content: "";
+                                    width: 20px;
+                                    height: 20px;
+                                    @include ps-icon;
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/tree_page.png");
+                                }
+                                &:hover {
+                                    color: $cl-p-magenta;
+                                }
+                            }
+                        }
+                        .favorite-item {
+                            width: 100%;
+                            position: relative;
+                            @include flex(row, center, space-between, 8px);
+                            a {
+                                width: 100%;
+                                position: relative;
+                                @include font(13px, 500, 1.2);
+                            }
+                            .remove-btn {
+                                width: 16px;
+                                height: 16px;
+                                padding: 0;
+                                font-size: 0;
+                                color: transparent;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                                border: none;
+                            }
+                            & + .favorite-item {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-wrap {
+                width: fit-content;
+            }
+        }
+    }
+}
+// 메뉴관리
+body.popup {
+    .main {
+        .setting-menu-wrap {
+            width: 100%;
+            position: relative;
+            @include flex(row, flex-start, flex-start, 16px);
+            > section {
+                flex: 1;
+                position: relative;
+                max-width: 376px;
+            }
+            .search {
+                .search-area {
+                    border: none;
+                    border-radius: 0;
+                }
+                .search-box {
+                    width: 100%;
+                    height: 380px;
+                    position: relative;
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    border: none;
+                    padding: 0;
+                    margin-top: 8px;
+                    ul {
+                        height: 100%;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        padding: 4px 16px;
+                        li {
+                            width: 100%;
+                            position: relative;
+                            @include flex(row, center, space-between, 8px);
+                            border-bottom: none;
+                            padding: 8px 0;
+                            .info-txt {
+                                flex: 1;
+                                position: relative;
+                                @include flex(column, flex-start, flex-start, 4px);
+                                .title {
+                                    @include font(13px, 500, 1);
+                                    color: $cl-black;
+                                    width: 100%;
+                                    max-width: 100%;
+                                    white-space: wrap;
+                                    text-overflow: inherit;
+                                }
+                                .location {
+                                    width: 100%;
+                                    max-width: 100%;
+                                    @include font(12px, 400, 1.2);
+                                    color: $cl-gr-80;
+                                    margin-left: 0;
+                                }
+                            }
+                            .btn {
+                                padding: 2px 6px;
+                            }
+                            .fav-add-btn {
+                                width: 16px;
+                                height: 16px;
+                                padding: 0;
+                                font-size: 0;
+                                color: transparent;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_star_inactive.png");
+                                position: absolute;
+                                top: 7px;
+                                left: 0;
+                                &.active {
+                                    background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                                }
+                            }
+                            &::before {
+                                display: none;
+                            }
+                            &.empty {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                @include flex(row, center, center, 0);
+                                span {
+                                    @include font(13px, 400, 1.2);
+                                    color: $cl-gr-60;
+                                    padding-top: 32px;
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        width: 24px;
+                                        height: 24px;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        @include bg-set;
+                                        background-image: url("/wsrv/app/img/new/common/ico_search_empty.png");
+                                    }
+                                }
+                            }
+                            & + li {
+                                border-top: 1px solid $cl-gr-30;
+                            }
+                        }
+                    }
+                }
+            }
+            .tree {
+                float: inherit;
+                width: fit-content;
+                border: none;
+                padding: 0;
+                border-radius: 0;
+                .btn-wrap {
+                    width: fit-content;
+                    margin: 0 0 8px auto;
+                }
+                .tree-area {
+                    width: 100%;
+                    height: 380px;
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    padding: 12px 16px;
+                    &.jstree-default {
+                        .jstree-node {
+                            margin-left: 0;
+                            padding-left: 20px;
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 20px;
+                                height: 20px;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/tree_in.png");
+                            }
+                            &.jstree-open {
+                                &::before {
+                                    background-image: url("/wsrv/app/img/new/common/tree_in_close.png");
+                                }
+                            }
+                        }
+                        .jstree-container-ul > .jstree-node {
+                            margin-left: 0;
+                            padding-left: 0;
+                            &::before {
+                                display: none;
+                            }
+                        }
+                        .jstree-anchor {
+                            height: 20px;
+                            @include font(13px, 400, 20px);
+                            transition: color 0.3s;
+                            &.jstree-hovered {
+                                background-color: none !important;
+                                box-shadow: none !important;
+                                color: $cl-p-magenta !important;
+                            }
+                            // &.jstree-clicked {
+                            //     color: $cl-p-magenta !important;
+                            //     font-weight: 700;
+                            // }
+                        }
+                        .jstree-children {
+                            margin-left: 0 !important;
+                        }
+                        .jstree-icon {
+                            width: 20px !important;
+                            height: 20px !important;
+                            line-height: 20px;
+                            @include bg-set;
+                            &.jstree-ocl {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: transparent;
+                            }
+                            &.jstree-themeicon {
+                                background-image: url("/wsrv/app/img/new/common/tree_atomic.png");
+                            }
+                            &.menu-icon {
+                                background-image: url("/wsrv/app/img/new/common/tree_page.png") !important;
+                            }
+                        }
+                        .jstree-clicked {
+                            color: inherit !important;
+                            background: transparent !important;
+                            box-shadow: none !important;
+                            border-radius: 0;
+                        }
+                    }
+                    &.tree-empty {
+                        @include flex(row, center, center, 0);
+                        span {
+                            @include font(13px, 400, 1.2);
+                            color: $cl-gr-60;
+                            text-align: center;
+                        }
+                    }
+                    .favorite-area {
+                        .favorite-item {
+                            width: 100%;
+                            position: relative;
+                            @include flex(row, center, space-between, 8px);
+                            a {
+                                width: 100%;
+                                position: relative;
+                                @include font(13px, 500, 1.2);
+                            }
+                            .remove-btn {
+                                width: 16px;
+                                height: 16px;
+                                padding: 0;
+                                font-size: 0;
+                                color: transparent;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                                border: none;
+                            }
+                            & + .favorite-item {
+                                margin-top: 8px;
+                            }
+                        }
+                        .fav-empty {
+                            width: 100%;
+                            height: 356px;
+                            position: relative;
+                            @include flex(row, center, center, 0);
+                            span {
+                                @include font(13px, 400, 1.2);
+                                color: $cl-gr-60;
+                                text-align: center;
+                                padding-top: 32px;
+                                position: relative;
+                                &::before {
+                                    content: "";
+                                    width: 24px;
+                                    height: 24px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                                }
+                            }
+                        }
+                    }
+                }
+                .right-box {
+                    width: 100%;
+                    height: 24px;
+                    @include flex(row, center, flex-end, 0);
+                    margin-bottom: 8px;
+                    span {
+                        @include font(13px, 400, 1.2);
+                    }
+                }
+            }
+            .noti-box {
+                width: 100%;
+                position: relative;
+                margin-top: 12px;
+            }
+            &.fav {
+                > section {
+                    max-width: 275px;
+                }
+                .search {
+                    .search-box {
+                        ul {
+                            li {
+                                .info-txt {
+                                    width: 100%;
+                                    max-width: 100%;
+                                    margin-left: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .vakata-context {
+        padding: 8px 0;
+        @include border-box;
+        border-radius: 4px;
+        li {
+            a {
+                width: 100%;
+                min-width: 100px;
+                height: 24px;
+                position: relative;
+                @include flex(row, center, flex-start, 0);
+                padding: 0 8px;
+                text-shadow: none;
+                border-radius: 0;
+                border: none;
+                @include font(13px, 500, 1.2);
+                background-color: $cl-white;
+                will-change: background-color;
+                transition: background-color 0.2s;
+                box-shadow: none !important;
+                i, span {
+                    display: none;
+                }
+                &:hover {
+                    background-color: $cl-sg-10 !important;
+                }
+            }
+        }
+    }
+}
+
+/*** LNB 색상변경 ***/
+body[data-theme="type0"] {
+    .ep-lnb {
+        &-inner {
+            background-color: $cl-p-magenta;
+        }
+        &-arrow {
+            background-color: $cl-p-magenta;
+        }
+    }
+}
+body[data-theme="type1"] {
+    .ep-lnb {
+        &-inner {
+            background-color: $cl-p-purple;
+        }
+        &-arrow {
+            background-color: $cl-p-purple;
+        }
+        .logo {
+            a {
+                background-image: url("/wsrv/app/img/new/heungkuk_logo_point.svg");
+            }
+        }
+    }
+}
+body[data-theme="type2"] {
+    .ep-lnb {
+        &-inner {
+            background-color: $cl-blue;
+        }
+        &-arrow {
+            background-color: $cl-blue;
+        }
+    }
+}
+body[data-theme="type3"] {
+    .ep-lnb {
+        &-inner {
+            background-color: $cl-sg-70;
+        }
+        &-arrow {
+            background-color: $cl-sg-70;
+        }
+    }
+}
+// ============= ▲ LNB ▲ =============
+
+
+//  ============= ▼ GNB ▼ =============
+.ep-gnb {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    padding-inline: 16px;
+    background-color: $cl-sg-5;
+    border-bottom: 1px solid $cl-sg-20;
+    @include flex(row, center, space-between, 0);
+    color: $cl-gr-90;
+    @include z(header);
+    .gnb-left-area {
+        height: 100%;
+        .gnb-menu {
+            width: fit-content;
+            height: 100%;
+            @include flex(row, center, flex-start, 33px);
+            li {
+                width: fit-content;
+                height: 100%;
+                position: relative;
+                > a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Heungkukseed';
+                    @include font(12px, 500, 1);
+                    letter-spacing: -0.24px;
+                }
+                & + li {
+                    &::before {
+                        content: "";
+                        width: 1px;
+                        height: 10px;
+                        background-color: $cl-sg-30;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -16px;
+                    }
+                }
+                .gnb-submenu {
+                    display: none;
+                    width: fit-content;
+                    height: fit-content;
+                    position: absolute;
+                    top: 40px;
+                    left: -14px;
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: 1px solid $cl-black;
+                    background: $cl-white;
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+                    white-space: nowrap;
+                    @include z(modal);
+                    .sub-menu-wrapper {
+                        ul {
+                            width: calc(100% + 16px);
+                            margin-left: -8px;
+                            @include flex(column, stretch, flex-start, 0);
+                            max-height: 400px;
+                            overflow-y: auto;
+                            li {
+                                width: 100%;
+                                position: relative;
+                                a {
+                                    width: 100%;
+                                    position: relative;
+                                    padding: 4px 8px;
+                                    @include flex(row, center, flex-start, 0);
+                                    @include font(13px, 500, 1.25);
+                                    color: $cl-black;
+                                    text-align: left;
+                                    background-color: $cl-white;
+                                    will-change: background-color;
+                                    transition: background-color 0.3s ease;
+                                    &:hover {
+                                        background-color: $cl-sg-10;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btn {
+                        width: 100%;
+                        min-width: 90px;
+                        padding: 4px 6px;
+                        margin: 8px auto 0;
+                        @include font(13px, 500, 1);
+                    }
+                }
+                &.active {
+                    > a {
+                        color: $cl-p-magenta;
+                    }
+                    .gnb-submenu {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .gnb-right-area {
+        .menu-right-area {
+            width: fit-content;
+            position: relative;
+            @include flex(row, center, flex-end, 12px);
+            > li {
+                margin: 0 !important;
+                &:first-child {
+                    height: fit-content;
+                    line-height: 1.2;
+                    color: inherit;
+                }
+                div.dropdown-box {
+                    top: 29px;
+                    left: auto;
+                    right: 0;
+                    width: 200px;
+                    .radio-group {
+                        width: 100%;
+                        position: relative;
+                        border-radius: 4px;
+                        background-color: $cl-gr-5;
+                        padding: 12px;
+                        @include flex(row, center, center, 8px);
+                        margin-bottom: 8px;
+                        li {
+                            input:checked + label {
+                                &::after {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    border-radius: 50%;
+                                    border: 2px solid $cl-black;
+                                }
+                            }
+                            label {
+                                position: relative;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                border: 1px solid $cl-gr-40;
+                                background-color: $cl-white;
+                                @include flex(row, center, center, 0);
+                                cursor: pointer;
+                                span {
+                                    display: block;
+                                    width: 16px;
+                                    height: 16px;
+                                    border-radius: 50%;
+                                    &.type0 {
+                                        background-color: $cl-p-magenta;
+                                    }
+                                    &.type1 {
+                                        background-color: $cl-p-purple;
+                                    }
+                                    &.type2 {
+                                        background-color: $cl-blue;
+                                    }
+                                    &.type3 {
+                                        background-color: $cl-gr-70;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .gnb-search-box {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            .ep-gnb-search {
+                width: 200px;
+                height: 24px;
+                border-radius: 99px;
+                background-color: #DDE4EE;
+                border: 1px solid transparent;
+                padding-inline: 12px 32px;
+                @include font(12px, 500, 1);
+                color: $cl-black;
+                outline: none;
+                transition: border-color 0.2s;
+                &::placeholder {
+                    color: $cl-sg-60;
+                }
+                &:hover, &:focus, &:active {
+                    border-color: $cl-black;
+                }
+            }
+            &::after {
+                content: "";
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 12px;
+                background: url("/wsrv/app/img/new/common/ico_gnb_search.png") 50% 50% / contain no-repeat !important;
+            }
+        }
+        .menu-search-result {
+            width: 272px;
+            position: absolute;
+            top: 28px;
+            right: 0;
+            @include border-box;
+            border-radius: 4px;
+            .result-txt {
+                width: 100%;
+                position: relative;
+                @include flex(row, center, space-between, 4px);
+                height: 40px;
+                padding-inline: 16px;
+                border-bottom: 1px solid $cl-gr-30;
+                h2 {
+                    @include font(13px, 700, 1);
+                    color: $cl-black;
+                    em {
+                        &::before, &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .scrollable-container {
+                width: 100%;
+                height: calc(100% - 40px);
+            }
+            .result_list {
+                width: 100%;
+                position: relative;
+                padding-inline: 16px;
+                max-height: 620px;
+                overflow-y: auto;
+                li {
+                    width: 100%;
+                    position: relative;
+                    padding: 8px 0 8px 20px;
+                    > button {
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        @include bg-set;
+                        background-image: url("/wsrv/app/img/new/common/ico_star_inactive.png");
+                        background-color: transparent;
+                        &.on {
+                            background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                        }
+                    }
+                    > a {
+                        width: fit-content;
+                        @include font(13px, 500, 16px);
+                        color: $cl-black;
+                        margin: 0;
+                        .highlight {
+                            color: $cl-p-magenta;
+                        }
+                    }
+                    .location {
+                        width: 100%;
+                        margin: 4px 0 0 0;
+                        word-break: keep-all;
+                        @include font(12px, 400, 1.16);
+                        color: $cl-gr-80;
+                    }
+                    .hover-item {
+                        width: fit-content;
+                        padding: 8px;
+                        @include border-box;
+                        border-radius: 4px;
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        white-space: nowrap;
+                        z-index: 60;
+                    }
+                    & + li {
+                        border-top: 1px solid $cl-gr-30;
+                    }
+                    &.empty {
+                        padding: 17px 0;
+                        @include flex(row, center, center, 0);
+                        span {
+                            @include font(13px, 400, 1.2);
+                            color: $cl-gr-60;
+                            padding-left: 28px;
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 24px;
+                                height: 24px;
+                                @include ps-icon;
+                                @include bg-set;
+                                background-image: url("/wsrv/app/img/new/common/ico_search_empty.png");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .dropdown {
+            .user-img {
+                display: block;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                @include bg-set;
+                background-image: url("/wsrv/app/img/new/common/ico_profile.png");
+                transition: background-image 0.2s;
+                &:hover {
+                    background-image: url("/wsrv/app/img/new/common/ico_profile_hover.png");
+                    .user-info {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+                .user-info {
+                    display: block;
+                    width: fit-content;
+                    position: absolute;
+                    top: 29px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 4px;
+                    background-color: $cl-white;
+                    border: 1px solid $cl-black;
+                    white-space: nowrap;
+                    @include flex(row, center, center, 8px);
+                    padding: 8px;
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+                    @include font(13px, 700, 1.2);
+                    color: $cl-black;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.2s;
+                    @include z(modal);
+                    span {
+                        font-weight: 400;
+                        color: $cl-p-magenta;
+                    }
+                }
+            }
+        }
+        .hint--info {
+            a {
+                width: fit-content;
+                @include flex(row, center, flex-start, 4px);
+                @include font(11px, 500, 1);
+                color: $cl-sg-60;
+                position: relative;
+                padding-right: 24px;
+                transition: color 0.2s;
+                will-change: color;
+                &::after {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    @include bg-set;
+                    background-image: url("/wsrv/app/img/new/common/ico_logout.png");
+                    transition: background-image 0.2s;
+                    will-change: background-image;
+                }
+                &:hover {
+                    color: $cl-sg-80;
+                    &::after {
+                        background-image: url("/wsrv/app/img/new/common/ico_logout_hover.png");
+                    }
+                }
+            }
+        }
+    }
+}
+// ============= ▲ GNB ▲ =============
+
+
+//  ============= ▼ CONTENT ▼ =============
+.ep-content {
+    width: 100%;
+    position: relative;
+    background-color: $cl-white;
+}
+// ============= ▲ CONTENT ▲ =============
+
+
+
+
+// ============================= PORTAL =============================
+.wrapper.portal {
+    .ep-lnb {
+        .logo {
+            a {
+                background-image: url("/wsrv/app/img/new/heungkuk_portal_logo.svg");
+            }
+        }
+        .menu-left-area {
+            li {
+                a {
+                    &.type-1 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_human_plus.png");
+                        }
+                    }
+                    &.type-2 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_human.png");
+                        }
+                    }
+                    &.type-3 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_paper_check.png");
+                        }
+                    }
+                    &.type-4 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_diagram.png");
+                        }
+                    }
+                    &.type-5 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_print.png");
+                        }
+                    }
+                    &.type-6 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_book.png");
+                        }
+                    }
+                    &.type-7 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_picture.png");
+                        }
+                    }
+                    &.type-8 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_password.png");
+                        }
+                    }
+                    &.type-9 {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_lnb_security.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &[data-theme="type1"] {
+        .ep-lnb {
+            .logo {
+                a {
+                    background-image: url("/wsrv/app/img/new/heungkuk_portal_logo_point.svg");
+                }
+            }
+        }
+    }
+    .ep-gnb {
+        .gnb-right-area {
+            .menu-right-area {
+                > li {
+                    div.dropdown-box {
+                        .radio-group {
+                            li {
+                                &:first-child {
+                                    order: 2;
+                                }
+                                &:nth-child(2) {
+                                    order: 1;
+                                }
+                                &:nth-child(3) {
+                                    order: 3;
+                                }
+                                &:nth-child(4) {
+                                    order: 4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

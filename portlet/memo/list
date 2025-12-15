@@ -1,0 +1,43 @@
+{
+    "status": 200,
+    "resultCode": 0,
+    "messageCode": null,
+    "message": null,
+    "list": [
+        {
+            "RNUM": 1,
+            "ACTIVE_YN": "N",
+            "ID": 11411,
+            "REG_ID": "Administrator",
+            "CONTENTS": "est111"
+        },
+        {
+            "RNUM": 2,
+            "ACTIVE_YN": "Y",
+            "ID": 11412,
+            "REG_ID": "Administrator",
+            "CONTENTS": "wefwefwefwe\n"
+        }
+    ],
+    "items": null,
+    "item": null,
+    "meta": null,
+    "page": {
+        "currPage": 1,
+        "startRow": 1,
+        "offset": -1,
+        "prePage": 0,
+        "nextPage": 0,
+        "totalPage": 1,
+        "nextPage_is": false,
+        "endRow": 10,
+        "totalCount": 2,
+        "prePage_is": false,
+        "currStartPage": 1,
+        "currEndPage": 1,
+        "limit": -1,
+        "unitPage": 10
+    },
+    "customs": null,
+    "customList": null
+}

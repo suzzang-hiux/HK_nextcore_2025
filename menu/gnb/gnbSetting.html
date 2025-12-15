@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>메뉴 관리</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta env="null">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+	<script>
+		//document.domain='heungkukfire.co.kr';
+	</script>
+
+	<script>
+		var global_page_context_path = "";
+		var ePortalConfig = {
+			"runtime": "local"
+			, "license": false
+			, "mainPageId": ""
+			, "page_id": ''
+			, "userInfo": {}
+			, "attachRootUrl": '/staticimg'
+			, "link": {
+				"portalMain": ""
+			}
+			, "domain": {
+			}
+			, "context": {
+				"epplt": ("" || global_page_context_path)
+				, "board": ("" || '')
+			}
+			, "fileupload": {
+				"useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+				, "useMigFileExt": 'xls|xlsx'
+				, "maxUploadSize": 104857600
+				, "maxUploadSizePerFile": 20971520
+			}
+		};
+	</script>
+
+	<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+	<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+	<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+	<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+	<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+	<script type="text/javascript"
+		src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<link rel="stylesheet" href="/wsrv/app/css/plugin/jstree/default/style.min.css">
+	<script src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+
+
+	<script type="text/javascript" src="/wsrv/app/js/pub.ep.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+	<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+	<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207"
+		charset="utf-8"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+	<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=49688.966737317474"></script>
+	<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=35162.04441335014"></script>
+</head>
+
+<body class="popup">
+	<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+			<div class="setting-menu-wrap">
+				<!-- 검색 & 검색 결과 -->
+				<section class="search">
+					<div class="search-area">
+						<div class="input-box search">
+							<input type="hidden">
+							<input type="type" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
+								placeholder="화면명, 화면 ID로 검색" autocomplete="false" style="ime-mode:active;" />
+							<button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
+						</div>
+					</div>
+					<div class="search-box">
+						<ul id="searchMenuArea">
+							<li v-for="(item , idx) in searchData">
+								<div class="info-txt">
+									<a href="javascript:;" class="title" :title="item.MENU_NAME">{{item.MENU_KNM}}</a>
+									<div class="location" :title="item.namePath">{{item.namePath}}</div>
+								</div>
+								<button type="button" class="btn purple" @click="addItem(item)" data-btn-size="s">추가</button>
+							</li>
+							<li v-if="searchData.length < 1" class="empty">
+								<span>{{$portalApp.message.empty}}</span>
+							</li>
+						</ul>
+					</div>
+					<div class="noti-box">
+						<span class="dot-noti">좌측 검색에서 검색어를 입력 후 추가해 주세요.</span>
+						<span class="dot-noti">추가된 화면은 선택한 폴더 바로 아래에 순차 배치되며, 저장 시 GNB 메뉴에 반영됩니다.</span>
+					</div>
+				</section>
+				<!-- // 검색 & 검색 결과 -->
+				<!-- 메뉴 트리 -->
+				<section class="tree">
+					<div class="btn-wrap">
+						<button type="button" @click="userGnbData('default')" class="btn wg-line retry" data-btn-size="m" title="초기화" aria-label="초기화"></button>
+						<button type="button" @click="allToggle('open')" class="btn wg-line" data-btn-size="m">전체열기</button>
+						<button type="button" @click="allToggle('close')" class="btn wg-line" data-btn-size="m">전체닫기</button>
+						<button type="button" @click="createFolder('#')" class="btn blue-line" data-btn-size="m">폴더추가</button>
+					</div>
+					<!-- tree -->
+					<div id="gnbTree" class="tree-area"></div>
+					<!-- 메뉴 없을 시 위 tree-area hidden / 아래 tree-area block -->
+					<div class="tree-area tree-empty" style="display: none;">
+						<span>메뉴를 추가하시려면 <br />왼쪽에서 메뉴 검색 후 추가해주세요.</span>
+					</div>
+					<!-- // tree -->
+					<div class="noti-box">
+						<span class="dot-noti">화면을 드래그해서 이동 설정해주세요.</span>
+						<span class="dot-noti">폴더명 변경, 삭제는 마우스 오른쪽을 클릭하여 설정해주세요.</span>
+					</div>
+				</section>
+				<!-- // 메뉴 트리 -->
+			</div>
+		</div>
+
+		<div class="popup-bottom">
+			<div class="btn-wrap">
+				<button type="button" class="btn wg-line" data-btn-size="m">취소</button>
+				<button type="button" @click="gnbSave()" class="btn btn-save" data-btn-size="m"> 저장</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
+
+
+
+<script>
+	$portalApp.vueServiceBean({
+		el: '#epAppViewArea',
+		data: {
+			fuse: false
+			, fileIcon: "fa fa-file icon_file menu-icon"
+			, jstreeObj: false
+			, newFolderName: '새폴더'
+			, treeMaxLevel: 2
+			, searchVal: ''
+			, searchData: []
+			, allMenuItem: {}
+		},
+		methods: {
+			search: function () {
+				this.userGnbData();
+			}
+			// 폴더 생성.
+			, createFolder: function (pid, nodeName) {
+
+				var addNode = this.jstreeObj.jstree().create_node(pid, {
+					id: 'n_' + new Date().getTime(), text: (nodeName || this.newFolderName)
+				}, 'last');
+				this.jstreeObj.jstree().deselect_all();
+				this.jstreeObj.jstree().select_node(addNode);
+
+			}
+			, allToggle: function (mode) {
+				if (mode == 'open') {
+					this.jstreeObj.jstree('open_all');
+				} else {
+					this.jstreeObj.jstree('close_all');
+				}
+			}
+			// 닫기
+			, closeWin: function () {
+				window.close();
+			}
+			// 저장.
+			, gnbSave: function () {
+				var jstree = this.jstreeObj.jstree(true);
+				var treeMenuData = jstree.get_json('#', { no_state: true, flat: true });
+
+				var isMenuLoad = Object.keys(this.allMenuItem).length > 0;
+
+				var menuData = [];
+				for (var i = 0; i < treeMenuData.length; i++) {
+					var treeItem = treeMenuData[i];
+
+					var originItem = this.allMenuItem[treeItem.id];
+					if (!isMenuLoad || PENCAKE_OBJ.isUndefined(originItem)) {
+						originItem = jstree.get_node(treeItem.id);
+						originItem = originItem ? originItem.original : {};
+					}
+
+					menuData.push({
+						id: treeItem.id
+						, parent: treeItem.parent
+						, text: treeItem.text
+						, etc1: originItem.ETC1 || null
+					});
+				}
+
+				this.$ajax({
+					url: ePortalConfig.context.epplt + '/menu/gnb/allSave'
+					, data: {
+						gnbInfo: JSON.stringify(menuData)
+					}
+					, loadSelector: 'body.popup'
+					, success: function (resData) {
+						if (resData.status == 500) {
+							alert(resData.message)
+						} else {
+							PubEPUI.toast.view({ text: '저장되었습니다' });
+
+							if (opener) {
+								try {
+									opener.epMainCtrl.reloadBookmark();
+								} catch (e) {
+									console.log(e);
+									;
+								}
+							}
+						}
+					}
+				});
+			}
+			// 사용자 gnb 보기.
+			, userGnbData: function (mode) {
+				var _this = this;
+				let _url = ePortalConfig.context.epplt + '/menu/gnb/settingList';
+				if (mode === 'default') {
+					_url = ePortalConfig.context.epplt + '/menu/gnb/defaultList';
+				}
+
+				this.$ajax({
+					url: _url,
+					method: "get",
+					success: function (resData) {
+						var itemList = resData.list;
+
+						var allItems = {
+							"rootNode": {
+								id: 'rootNode'
+								, text: 'rootNode'
+								, children: []
+								, state: {
+									opened: true
+								}
+							}
+						};
+
+						// 메뉴가 하나도 셋팅 되지 않았을 경우 default 폴더 추가
+						if (itemList.length < 1) {
+							itemList.push({
+								"USR_ID": ePortalConfig.userId,
+								"PARENT_MENU_ID": "root",
+								"SORT_ORDER": 1,
+								"SCREEN_CD": null,
+								"MENU_ID": "n_1761618734004",
+								"GNB_SCREEN_CD": null,
+								"ETC1": null,
+								"MENU_NM": "메뉴",
+								"ETC2": null,
+								"ETC3": null
+							});
+						}
+
+						for (var i = 0; i < itemList.length; i++) {
+							var item = itemList[i];
+							var menuId = item.MENU_ID
+								, parentMenuId = item.PARENT_MENU_ID;
+
+							item.id = menuId;
+							item.pid = parentMenuId;
+							item.text = item.MENU_NM;
+							item.children = [];
+
+							allItems[menuId] = item;
+
+							if (PencakeCustomCTRL.menu.isBookmarkFile(menuId)) {
+								item.icon = _this.fileIcon;
+							}
+
+							if (item.pid == 'root' || PencakeCustomCTRL.isBlank(item.PARENT_MENU_ID)) {
+								allItems['rootNode'].children.push(item);
+							} else {
+								var pItem = allItems[parentMenuId];
+								if (!PENCAKE_OBJ.isUndefined(pItem)) {
+									pItem.children.push(item);
+								}
+							}
+						}
+
+						$('#gnbTree').jstree("destroy")
+						_this.jstreeObj = $('#gnbTree').jstree({
+							"plugins": ["contextmenu", "dnd", "types"]
+							, "core": {
+								data: allItems.rootNode.children
+								, dblclick_toggle: false
+								, themes: { dots: false }
+								, check_callback: function (op, node, node_parent, pos, more) {
+									if (op == 'move_node') {
+										if (PencakeCustomCTRL.menu.isBookmarkFile(node_parent.id)) {
+											return false;
+										} else if (node_parent.parents.length + 1 >= _this.treeMaxLevel && !PencakeCustomCTRL.menu.isBookmarkFile(node.id)) {
+											return false;
+										}
+									}
+								}
+							}
+							, "types": {
+								"#": {
+									"max_depth": _this.treeMaxLevel
+								}
+							}
+
+							, "dnd": {
+								inside: 'last'
+							}
+							, "contextmenu": {
+								items: function (node) {
+									var dflt = $.jstree.defaults.contextmenu.items();
+
+									delete dflt['ccp'];
+									delete dflt['create'];
+
+									dflt.rename.label = '폴더명 변경';
+									dflt.remove.label = '삭제';
+									//dflt.create.label = '폴더추가';
+
+									if (PencakeCustomCTRL.menu.isBookmarkFile(node.id)) {
+										dflt.rename.label = '메뉴명 변경';
+										return {
+											//'rename' : dflt.rename,
+											'remove': dflt.remove
+										};
+									}
+
+
+									return dflt;
+								}
+							}
+						}).on("dblclick.jstree", function (evt, data) {
+							var ref = _this.jstreeObj.jstree(true);
+							var sel = ref.get_selected();
+
+							if (sel.length < 1) return false;
+
+							if ($(evt.target).closest('.jstree-anchor').length < 1) return false;
+
+							ref.edit(sel[0]);
+
+							return false;
+
+						});
+
+						if (_this.treeInitSelectPosition != 'unused') {
+							$('#gnbTree').on("ready.jstree", () => {
+								const rootChildren = allItems.rootNode.children;
+								_this.jstreeObj.jstree('select_node', _this.treeInitSelectPosition == 'first' ? rootChildren[0].id : rootChildren[rootChildren.length - 1].id);
+							})
+						}
+
+						_this.jstreeObj.jstree('open_node', 'rootNode');
+					}
+				});
+			}
+			// 검색 메뉴 
+			, searchMenu: function () {
+				var _this = this;
+
+				var searchVal = document.getElementById('searchVal').value;
+
+				if (_this.loading === false) {
+					return;
+				}
+
+				if (_this.fuse !== false) {
+					_this.searchView(_this.fuse.search(searchVal));
+					return;
+				}
+
+				_this.loading = false;
+
+				PencakeCustomCTRL.menu.menuData({ loadSelector: 'section.search' }, function (resData) {
+					_this.loading = true;
+
+					var screenMenuArr = [];
+
+					_this.allMenuItem = PencakeCustomCTRL.menu.allTreeMenu(resData, function (item) {
+						if (item.isMenu && item.isEmptyParent !== true) {
+							item.ETC1 = item.MENU_URL;
+							screenMenuArr.push(item);
+						}
+						return item;
+					}, true);
+
+					_this.fuse = new Fuse(screenMenuArr, {
+						shouldSort: true,
+						threshold: 0.3, // 정확도.
+						location: 0,
+						distance: 100,
+						maxPatternLength: 32,
+						minMatchCharLength: 2,
+						keys: [
+							{ name: "MENU_KNM", weight: 0.7 },
+							{ name: "SCREEN_CD", weight: 0.7 },
+						],
+					});
+
+					_this.searchMenu();
+				})
+			}
+			// 검색 보기.
+			, searchView: function (searchData) {
+				var _this = this;
+
+				this.searchData = searchData;
+			}
+			, addItem: function (sItem) {
+
+				var addId = PencakeCustomCTRL.menu.getMenuId(sItem);
+
+				if (this.jstreeObj.jstree().get_node(addId) !== false) {
+					PubEPUI.toast.view({ 
+						text: '이미 추가된 항목 입니다.',
+						icon: 'warning',
+					});
+					return;
+				}
+
+				var selNode = this.jstreeObj.jstree().get_selected();
+
+				if (selNode.length < 1) {
+					PubEPUI.toast.view({ 
+						text: '추가할 폴더를 선택해주세요.',
+						icon: 'info',
+					});
+					return;
+				}
+
+				var pid = '#';
+
+				var selNodeId = selNode[0];
+				var selParentNode = this.allMenuItem[selNodeId];
+
+				if (!selParentNode) {
+					pid = selNodeId;
+				} else if (PencakeCustomCTRL.menu.isMenu(selParentNode)) {
+					pid = this.jstreeObj.jstree().get_node(selNodeId).parent;
+				}
+
+
+				if (pid.indexOf(':') > -1) {
+					pid = '#';
+				}
+
+				this.jstreeObj.jstree().create_node(pid, {
+					id: addId
+					, text: sItem.MENU_KNM
+					, ETC1: sItem.MENU_URL
+					, icon: this.fileIcon
+				}, 'last');
+
+				if (pid == '#') {
+					$('#gnbTree').scrollTop(10000);
+				} else {
+					this.jstreeObj.jstree().open_node(pid)
+				}
+			}
+		}
+	})
+
+
+</script>

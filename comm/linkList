@@ -1,0 +1,40 @@
+{
+    "status": 200,
+    "resultCode": 0,
+    "messageCode": null,
+    "message": null,
+    "list": [
+        {
+            "CODE_ID": "b62ddb506e4047b7a51e6c6d37c017eb",
+            "LINK_ROLE": null,
+            "LINK_DESC": "회사 메일함 접속",
+            "LINK_NAME": "메일함",
+            "SORT_ORDER": 0,
+            "LINK_STYLE": null,
+            "OPEN_TYPE": "1",
+            "IMG_SRC": null,
+            "LINK_ID": "link_00001",
+            "OPEN_OPTION": "width=1000, height=600",
+            "LINK_URL": "https://outlook.office.com/mail/"
+        },
+        {
+            "CODE_ID": "b62ddb506e4047b7a51e6c6d37c017eb",
+            "LINK_ROLE": null,
+            "LINK_DESC": "회사 그룹웨어 접속 주소",
+            "LINK_NAME": "그룹웨어",
+            "SORT_ORDER": 1,
+            "LINK_STYLE": null,
+            "OPEN_TYPE": "1",
+            "IMG_SRC": null,
+            "LINK_ID": "link_00002",
+            "OPEN_OPTION": null,
+            "LINK_URL": "https://gw.penta.co.kr/"
+        }
+    ],
+    "items": null,
+    "item": null,
+    "meta": null,
+    "page": null,
+    "customs": null,
+    "customList": null
+}

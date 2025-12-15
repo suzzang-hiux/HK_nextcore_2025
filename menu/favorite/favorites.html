@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>즐겨찾기 관리</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+
+</head>
+<body class="popup ">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+			<div class="setting-menu-wrap fav">
+				<!-- 검색 & 검색 결과 -->
+				<section class="search">
+					<div class="search-area">
+						<div class="input-box search">
+							<input type="hidden">
+							<input type="type" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
+								placeholder="화면명, 화면 ID로 검색" autocomplete="false" style="ime-mode:active;" />
+							<button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
+						</div>
+					</div>
+					<div class="search-box">
+						<ul id="searchMenuArea">
+							<li v-for="(item , idx) in searchData">
+								<button type="button" class="fav-add-btn" @click="addItem(item)">추가</button> <!-- 즐겨찾기 추가했을 시 버튼에 'on' 클래스 추가 / 삭제 시 클래스도 삭제 -->
+								<div class="info-txt">
+									<a href="javascript:;" class="title" :title="item.MENU_NAME">{{item.MENU_KNM}}</a>
+									<div class="location" :title="item.namePath">{{item.namePath}}</div>
+								</div>
+							</li>
+							<li v-if="searchData.length < 1" class="empty">
+								<span>{{$portalApp.message.empty}}</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- // 검색 & 검색 결과 -->
+				<!-- 메뉴 트리 -->
+				<section class="tree">
+					<div class="right-box">
+						<span class="text_blue">부여된 권한에 대한 메뉴 검색만 가능합니다.</span>
+					</div>
+					<!-- list -->
+					<div class="tree-area">
+						<ul id="favoriteList" class="favorite-area">
+							<li v-for="(item , idx) in favoriteList" :data-key="item.MENU_CD" class="favorite-item">
+								<a href="javascript:;" :title="item.MENU_KNM">{{item.MENU_KNM}}</a>
+								<button type="button" class="remove-btn">삭제</button>
+							</li>
+							<li v-if="favoriteList.length < 1" class="empty fav-empty">
+								<span>
+									즐겨찾기를 하시려면 <br />왼쪽에서 메뉴 검색 후 추가해주세요.
+								</span>
+							</li>
+						</ul>
+					</div>
+					<!-- // list -->
+				</section>
+				<!-- // 메뉴 트리 -->
+			</div>
+			<div class="noti-box mt-12">
+				<span class="dot-noti">즐겨찾기 순서는 드래그해서 이동 설정해주세요.</span>
+				<span class="dot-noti">순서 변경 후 저장하면 동일한 순서로 홈화면 즐겨찾기에 반영됩니다.</span>
+				<span class="dot-noti">즐겨찾기는 최대 20개까지 등록 가능합니다.</span>
+			</div>
+		</div>
+
+		<div class="popup-bottom">
+			<div class="btn-wrap">
+				<button type="button" class="btn cg-line" data-btn-size="m">취소</button>
+				<button type="button" @click="favoriteSave()" class="btn btn-save" data-btn-size="m">저장</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+<script>
+$portalApp.vueServiceBean({
+	el : '#epAppViewArea',
+	data : {
+		fuse : false
+		,searchVal : ''
+		,searchData : []
+		,allMenuItem : {}
+		,favoriteList:[]
+		,limit:20
+	},
+	methods : {
+		search :function (){
+			this.userFavoriteData();
+			this.initEvt();
+		}
+		,initEvt:function(){
+			$('#favoriteList').on('click','.remove-btn',function (e){
+				const favoriteElement = $(this).closest('.favorite-item')
+				favoriteElement.remove();
+				PubEPUI.toast.view({
+					text:'삭제 되었습니다.',
+					icon: 'success',
+				});
+			})
+		}
+		// 저장.
+		,favoriteSave :function (){
+			const favoriteElements = document.querySelectorAll("#favoriteList >[data-key]");
+			
+			var isMenuLoad = Object.keys(this.allMenuItem).length > 0;
+			
+			var menuData = [];
+			for(let i=0; i<favoriteElements.length;i++){
+				const favoriteElement = favoriteElements[i];
+
+				const favorId = favoriteElement.getAttribute('data-key');
+				
+				let originItem = this.allMenuItem[favorId];
+				if(!isMenuLoad || PENCAKE_OBJ.isUndefined(originItem)){
+					originItem = {
+						id: favorId,
+						text : favoriteElement.querySelector('a').getAttribute("title")
+					};
+				}
+								
+				menuData.push({
+					id : originItem.id
+					,text : originItem.text
+				});
+			}
+
+			if(menuData.length > this.limit){
+				PubEPUI.toast.view({
+					text:`${this.limit} 이상 추가 할 수 없습니다.`,
+					icon: 'warning'
+				});
+				return ; 
+			}
+
+			
+			this.$ajax({
+				url: ePortalConfig.context.epplt+'/menu/favorite/allSave'
+				,data : {
+					favoriteInfo : JSON.stringify(menuData)
+				}
+				,loadSelector : 'body.popup'
+				,success: function(resData) {
+					if(resData.status==500){
+						alert(resData.message)
+					}else{
+						PubEPUI.toast.view({
+							text: '저장되었습니다.',
+							icon: 'success'
+						});
+						
+						const openObj = opener||parent;
+						
+						if(openObj){
+							try{
+								openObj.epMainCtrl.reloadFavorite();
+							}catch(e){
+								console.log(e);
+							}
+						}
+					}
+				}
+			});
+		}
+		// 사용자 favorite 보기.
+		,userFavoriteData : function (){
+			var _this = this; 
+			
+			let _url = '/menu/favorite/favoritesList';
+
+			this.$ajax({
+				url: _url,
+				method:'get',
+				success: function(resData) {
+					var itemList =resData.list; 
+					
+					_this.favoriteList = itemList;
+
+					new Sortable(document.getElementById("favoriteList"),{
+						animation:150,
+						ghostClass:"blue-background-class",
+						//direction:"vertical",
+						//draggable : ".favorite-item"
+					})
+				}
+			});
+		}
+		// 검색 메뉴 
+		,searchMenu :function (){
+			var _this = this; 
+			
+			var searchVal = document.getElementById('searchVal').value;
+			
+			if(_this.loading ===false){
+				return ; 
+			}
+			
+			if(_this.fuse !==false ){
+				_this.searchView(_this.fuse.search(searchVal));
+				return ; 
+			}
+			
+			_this.loading = false; 
+			
+			PencakeCustomCTRL.menu.menuData({loadSelector : 'section.search'} ,function (resData){
+				_this.loading =true; 
+				
+				var screenMenuArr = [];
+
+				_this.allMenuItem =  PencakeCustomCTRL.menu.allTreeMenu(resData, function (item){
+					if(item.isMenu && item.isEmptyParent !== true){
+						item.ETC1 = item.MENU_URL;
+						screenMenuArr.push(item);
+					}
+					return item; 
+				}, true);
+				
+				_this.fuse = new Fuse(screenMenuArr, {
+                    shouldSort: true,
+                    threshold: 0.3, // 정확도.
+                    location: 0,
+                    distance: 100,
+                    maxPatternLength: 32,
+                    minMatchCharLength: 2,
+                    keys: [
+                        { name: "MENU_KNM", weight: 0.7 },
+                        { name: "SCREEN_CD", weight: 0.7 },
+                    ],
+                });
+				
+				_this.searchMenu();
+			})
+		}
+		// 검색 보기.
+		,searchView :function (searchData){
+			var _this = this; 
+			
+			this.searchData = searchData; 
+		}
+		,addItem : function (sItem){
+			
+			var addId = PencakeCustomCTRL.menu.getMenuId(sItem);
+			
+			var addItem = document.querySelector(`#favoriteList [data-key="${addId}"]`)
+			
+			if(addItem != null){
+				PubEPUI.toast.view({
+					text:'이미 추가된 항목 입니다.',
+					icon: 'warning'
+				});
+				return ; 
+			}
+
+			const favoriteElements = document.querySelectorAll("#favoriteList >[data-key]");
+			
+			if(favoriteElements.length >= this.limit){
+				PubEPUI.toast.view({
+					text:`${this.limit} 이상 추가 할 수 없습니다.`,
+					icon: 'warning'
+				});
+				return ; 
+			}
+
+			
+			this.favoriteList.push(sItem);
+		}
+	}
+})
+
+
+</script>

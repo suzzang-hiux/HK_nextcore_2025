@@ -1,0 +1,31 @@
+.common-table {
+    width: 100%;
+    position: relative;
+    border-top: 1px solid $cl-black;
+    &[data-table-layout="fixed"] {
+        table-layout: fixed;
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid $cl-gr-40;
+        }
+    }
+    th, td {
+        height: 24px;
+        padding-inline: 4px;
+        vertical-align: middle;
+    }
+    th {
+        background-color: $cl-sg-20;
+        @include font(13px, 500, 1);
+        color: $cl-black;
+        text-align: left;
+        border-right: 1px solid $cl-gr-40;
+    }
+    td {
+        background-color: $cl-white;
+        @include font(13px, 400, 1);
+        color: $cl-black;
+        text-align: left;
+    }
+}

@@ -1,0 +1,173 @@
+.ui-dialog {
+    @include border-box;
+    border: 1px solid $cl-black !important;
+    padding: 0;
+    position: fixed;
+    .ui-dialog-titlebar {
+        width: 100%;
+        position: relative;
+        padding: 12px 16px;
+        background-color: $cl-purple-80;
+        .ui-dialog-title {
+            margin: 0;
+            .tit {
+                @include font(16px, 700, 1.25);
+                color: $cl-white;
+            }
+        }
+        .ui-dialog-titlebar-close {
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 16px;
+            margin: 0;
+            padding: 0;
+            @include bg-set;
+            background-image: url("/wsrv/app/img/new/common/ico_close_white.png");
+            span {
+                display: none;
+            }
+            &:hover {
+                border: none;
+                background-color: transparent;
+
+            }
+        }
+    }
+    .ui-dialog-content {
+        padding: 0;
+        overflow: hidden;
+        background-color: $cl-white;
+    }
+    // WHITE LAYER
+    &.type-white {
+        border: none !important;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.30);
+        .ui-dialog-titlebar {
+            background-color: $cl-white;
+            padding: 16px;
+            .ui-dialog-title {
+                .tit {
+                    color: $cl-black;
+                }
+            }
+            .ui-dialog-titlebar-close {
+                filter: invert(1);
+            }
+        }
+        .ui-dialog-content {
+            position: relative;
+            padding: 0 16px;
+            @include font(13px, 400, 1.2);
+            color: $cl-black;
+            width: 100% !important;
+            min-height: fit-content !important;
+        }
+        .ui-dialog-buttonpane {
+            width: 100%;
+            position: relative;
+            background-color: $cl-white;
+            border: none;
+            padding: 16px 16px;
+            margin-top: 0;
+            .ui-dialog-buttonset {
+                width: fit-content;
+                position: relative;
+                @include flex(row, center, flex-end, 4px);
+            }
+            button {
+                width: fit-content;
+                height: 24px;
+                position: relative;
+                padding: 4px 6px;
+                margin: 0;
+                border-radius: 3px;
+                @include flex(row, center, center, 0);
+                @include font(13px, 500, 1);
+                border: 1px solid $cl-p-magenta;
+                background-color: $cl-p-magenta;
+                color: $cl-white;
+                white-space: nowrap;
+                will-change: background-color, border-color, color;
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+                &:hover {
+                    border-color: $cl-magenta-70;
+                    background-color: $cl-magenta-70;
+                }
+                &:active {
+                    border-color: $cl-magenta-90;
+                    background-color: $cl-magenta-90;
+                }
+                &:disabled, &.disabled {
+                    border-color: $cl-magenta-30;
+                    background-color: $cl-magenta-30;
+                    pointer-events: none;
+                }
+                &.black {
+                    border-color: $cl-black;
+                    background-color: $cl-black;
+                    &:hover {
+                        border-color: $cl-gr-60;
+                        background-color: $cl-gr-60;
+                    }
+                    &:active {
+                        border-color: $cl-gr-80;
+                        background-color: $cl-gr-80;
+                    }
+                    &:disabled, &.disabled {
+                        border-color: $cl-gr-30;
+                        background-color: $cl-gr-30;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ui-widget-overlay {
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+body.popup {
+    padding: 0;
+    font-family: "Pretendard";
+    .wrap-popup {
+        width: 100%;
+        position: relative;
+        @include flex(column, flex-start, flex-start, 0);
+        .popup-bottom {
+            width: 100%;
+            height: 44px;
+            background-color: $cl-sg-5;
+            @include flex(row, center, flex-start, 40px);
+            padding-inline: 16px;
+            .btn-wrap {
+                width: fit-content;
+                margin-left: auto;
+            }
+        }
+    }
+    .main {
+        flex: 1;
+        width: 100%;
+        display: block;
+        margin-top: 0;
+        overflow-y: auto;
+        padding: 16px;
+    }
+    button {
+        display: flex;
+        font-weight: 500;
+        min-width: fit-content;
+        line-height: 1;
+        margin: 0;
+        border: 1px solid transparent;
+    }
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    background: transparent;
+    border: none;
+}

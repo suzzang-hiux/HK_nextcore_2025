@@ -1,0 +1,50 @@
+.jq-toast-wrap {
+    width: fit-content;
+    .jq-toast-single {
+        margin: 0;
+        font-family: 'Pretendard';
+        @include font(14px, 500, 1.2);
+        color: $cl-white;
+        border-radius: 26px;
+        padding: 16px;
+        background-color: $cl-sg-80 !important;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+        background-image: none;
+        .close-jq-toast-single {
+            display: none;
+        }
+        &.jq-has-icon {
+            padding: 16px 16px 16px 52px;
+            &::before {
+                content: "";
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 16px;
+                @include bg-set;
+            }
+            &.jq-icon-info {
+                &::before {
+                    background-image: url("/wsrv/app/img/new/common/ico_information_circle_contained.png");
+                }
+            }
+            &.jq-icon-success {
+                &::before {
+                    background-image: url("/wsrv/app/img/new/common/ico_check_circle_contained.png");
+                }
+            }
+            &.jq-icon-error {
+                &::before {
+                    background-image: url("/wsrv/app/img/new/common/ico_fail_circle_contained.png");
+                }
+            }
+            &.jq-icon-warning {
+                &::before {
+                    background-image: url("/wsrv/app/img/new/common/ico_triangle_contained.png");
+                }
+            }
+        }
+    }
+}

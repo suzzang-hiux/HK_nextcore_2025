@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta charset="UTF-8">
+    <meta env="SOP-YTKIM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        var global_page_context_path = "";
+        var ePortalConfig = {
+            "runtime": "local"
+            , "license": false
+            , "websocket": ""
+            , "mainPageId": "hkmain"
+            , "page_id": 'hkmain'
+            , "userInfo": {}
+            , "link": {
+                "portalMain": ""
+            }
+            , "domain": {
+                "webmail": ""
+                , "nas": ""
+                , "hompage": ""
+            }
+            , "context": {
+                "epplt": ("" || global_page_context_path)
+                , "noti": ("" || '/alarm')
+                , "board": ("" || '')
+            }
+            , "fileupload": {
+                "useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+                , "useMigFileExt": 'xls|xlsx'
+                , "pencakeAttach": '/staticimg'
+            }
+        };
+        ePortalConfig.userInfo['_ep_USR_PWD'] = '$2a$10$PnV738Vcdc5X9zBzbViWbOprzvNetMcbP4IuIth/0HKAviqtOAWPu';
+        ePortalConfig.userInfo['_ep_ORG_SP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTN_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_DTYCD'] = '';
+        ePortalConfig.userInfo['_ep_ORNNM'] = '포탈관리그룹';
+        ePortalConfig.userInfo['_ep_AMG_ORNCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_NM'] = '포탈관리자';
+        ePortalConfig.userInfo['_ep_STF_FLG_CDNM'] = '정상';
+        ePortalConfig.userInfo['_ep_ORG_FLGCD'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATRCD'] = '';
+        ePortalConfig.userInfo['_ep_id'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORG_FLG_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_STF_FLGCD'] = '1';
+        ePortalConfig.userInfo['_ep_CLPCD'] = '';
+        ePortalConfig.userInfo['_ep_BDT_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTNCD'] = '';
+        ePortalConfig.userInfo['_ep_ORG_SPCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_ID'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORNCD'] = 'admin';
+        ePortalConfig.userInfo['_ep_DTY_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATR_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BDTCD'] = '';
+        ePortalConfig.userInfo['_ep_EMPNO'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_EMP_PART'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TPCD'] = '';
+        ePortalConfig.userInfo['_ep_CLP_CDNM'] = '';
+
+        ePortalConfig.groupInfo = ['AUTHENTICATED_USERS', 'PORTAL_ADMINISTRATORS', 'PUBLIC', 'admin', 'default_page']
+        ePortalConfig.userId = ePortalConfig.userInfo[("" || '_ep_USR_ID')];
+        ePortalConfig.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.nm = ePortalConfig.userInfo[("" || '_ep_USR_NM')];
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="/wsrv/app/img/favicon.ico">
+    <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+    <link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
+    <link href="/wsrv/app/js/plugins/owl/assets/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/css/style.css?v=20211227_v1" rel="stylesheet" type="text/css" />
+
+    
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=51697.13478146136"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+    <script src="/wsrv/app/js/plugins/vue/vue.min.js"></script>
+    <script src="/wsrv/app/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/wsrv/app/js/pencake.js?version=8762.284402003228"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=12865.763376661955"></script>
+    <script>
+        $(document).ready(function() {
+            // 예를 들어, 라디오 버튼 선택 시 이벤트 처리
+            $('input[type="radio"]').on('change', function() {
+                alert('Selected value: ' + $(this).val());
+            });
+        });
+        new Vue({
+            el: 'body',
+            data: {
+                showUserInfo: false
+            }
+        });
+
+    // 화면 줌 기능 
+    let minZoom = 0.5
+    let maxZoom = 1.5
+    let zoomScale = 1.0; 
+    function applyZomm(mode){
+        if(mode == -1){
+            zoomScale = Math.max(minZoom, zoomScale-0.1);
+        }else{
+            zoomScale = Math.min(zoomScale+0.1,maxZoom);
+        }
+
+        let docBodyStyle = ((parent && parent.document)? parent.document : document).body.style;
+        
+        const zoomMode = 2;
+        if(zoomMode ==1){
+            docBodyStyle.zoom = zoomScale;
+        }else{
+            docBodyStyle.transformOrigin = `0 0`;
+            docBodyStyle.transform = `scale(${zoomScale})`;            
+        }
+    }
+
+    let autoScreenSize = false; 
+    let windowResizeTimer;
+
+    window.addEventListener("resize", ()=>{
+        if(windowResizeTimer !== undefined){
+            clearTimeout(windowResizeTimer);
+        }
+
+        if(!autoScreenSize) return ; 
+
+        windowResizeTimer = window.setTimeout(()=>{
+            const scaleX = window.innerWidth/1280;
+            const scaleY = window.innerHeight/1000;
+
+            const scale = Math.min(scaleX, scaleY);
+            let docBodyStyle = ((parent && parent.document)? parent.document : document).body.style;
+      
+            docBodyStyle.transformOrigin = `0 0`;
+            docBodyStyle.transform = `scale(${scale})`;            
+      
+        })
+    },100)
+    
+
+    </script>
+</head>
+
+<body data-ep-view-mode="default" data-theme="type0" class="wrapper">
+    <div class="top-wrapper">
+        <div id="mainMenuContainer" class="menu-container">
+            <div class="menu-bar">
+                <ul class="menu-left-area">
+                    <li>
+                        <a href="javascript:;" @click="openMenu(true)"><img src="/wsrv/app/img/hamburger.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="location.href=location.href">
+                            <img src="/wsrv/app/img/ci.png" alt="" width="89px" class="mt-7">
+                            <span class="text-logo hide"  data-shadow='로고를 대체'>로고를 대체</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="gnb">
+                    <ul>
+                        <li class="mouseover-dropmenu" v-if="bizChannel.length > 0">
+                            <a href="javascript:;" @click="viewChannel('biz',bizChannel[0])">
+                                <span>업무</span>
+                                <img src="/wsrv/app/img/icon_rightarrow.png" alt="">
+                                <small>영업</small>
+                            </a>
+                            <div class="wrap-dropmenu">
+                                <template v-if="bizChannel.length > 1">
+                                    <ul>
+                                        <li v-for="(item , idx) in bizChannel" id="sub_list">
+                                            <a href="javascript:;" @click="viewChannel('biz',item)">{{item.pageName}}</a>
+                                        </li>
+                                    </ul>
+                                    <iframe class="overlay_iframe" src="about:blank"></iframe>
+                                </template>
+                            </div>
+                        </li>
+                        <li class="mouseover-dropmenu" v-if="deptChannel.length > 0">
+                            <a href="javascript:;" @click="viewChannel('dept',deptChannel[0])">부서</a>
+                            <div class="wrap-dropmenu">
+                                <template v-if="deptChannel.length > 1">
+                                    <ul>
+                                        <li v-for="(item , idx) in deptChannel">
+                                            <a href="javascript:;" @click="viewChannel('dept',item)">{{item.pageName}}</a>
+                                        </li>
+                                    </ul>
+                                    <iframe class="overlay_iframe" src="about:blank"></iframe>
+                                </template>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" @click="showContentFrame('legacy')">기간계</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="topContainer" class="top-right-area">
+                    <ul class="menu-right-area">
+                        <li class="dropdown" :class="showUserInfo?'open':''">
+                            <img src="/wsrv/app/img/icon_login.png" alt="" class="mr-3">
+                            <a href="javascript:;" @click="showUserInfo=!showUserInfo" class=""
+                                title="정보변경"><strong>포탈관리자님</strong> [7700912]
+                            </a>
+                            <div class="dropdown-menu change" :class="showUserInfo?'open':''">
+                                <ul>
+                                    <li class="changeColor">
+                                        상단바 색상 변경 선택
+                                    </li>
+                                    <li>
+                                        <div class="radio-group">
+                                            <input type="radio" id="type0" name="option" value="1">
+                                            <label for="type0"><span class="nemo type0"></span></label>
+                                            
+                                            <input type="radio" id="type1" name="option" value="1">
+                                            <label for="type1"><span class="nemo type1"></span></label>
+
+                                            <input type="radio" id="type2" name="option" value="1">
+                                            <label for="type2"><span class="nemo type2"></span></label>
+
+                                            <input type="radio" id="type3" name="option" value="1">
+                                            <label for="type3"><span class="nemo type3"></span></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <iframe class="overlay_iframe" src="about:blank"></iframe>
+                            </div>
+                            <div class="dropdown-menu hide">
+                                <ul>
+                                    <li>
+                                        <a href="/admin/mgmtMain" target="_blank">pencake 관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="/appMgmt/page" target="_blank">
+                                            관리자 페이지
+                                        </a>
+                                    </li>
+                                </ul>
+                                <iframe class="overlay_iframe" src="about:blank"></iframe>
+                            </div>
+                        </li>
+                        <li class="circle">
+                            <div class="hint--info hint--bottom" aria-label="작게">
+                                <a href="javascript:;" onclick="applyZomm(-1)">
+                                    -
+                                </a>
+                            </div>
+                            
+                        </li>
+                        <li class="circle">
+                            <div class="hint--info hint--bottom" aria-label="크게">
+                                <a href="javascript:;" onclick="applyZomm(1)">
+                                    +
+                                </a>
+                            </div>
+                        </li>
+                        <!-- 재호출추가 -->
+                        <li class="circle hide">
+                            <div class="hint--info hint--bottom" aria-label="화면재호출">
+                                <a href="javascript:;" @click="">
+                                    <img src="/wsrv/app/img/icon_call.png" height="12px">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="circle">
+                            <div class="hint--info hint--bottom" aria-label="화면재호출">
+                                <a href="javascript:;" @click="">
+                                    <img src="/wsrv/app/img/icon_monitor.png" height="12px">
+                                </a>
+                            </div>
+                        </li>
+                        <!-- //재호출추가 -->
+                        <li class="circle mr-10">
+                            <div class="hint--info hint--bottom" aria-label="로그아웃">
+                                <a href="javascript:;" @click="logout()">
+                                    <img src="/wsrv/app/img/icon_logout.png" width="12px">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="registerror">
+                            <div class="hint--info hint--left" aria-label="장애등록처리">
+                                <a href="javascript:;">
+                                    <img src="/wsrv/app/img/icon_register.png" width="12px">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="logoff">
+                            <div class="hint--warning hint--left" aria-label="로그오프">
+                                <!-- 로그오프일때는 클래스가 'off' -->
+                                <a href="javascript:;" class="on">
+                                    <i>로그온/로그오프</i>
+                                </a>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    $(function () {
+                        /*main gnb */
+                        $portalApp.vueServiceBean({
+                            el: "#topContainer",
+                            data: {
+                                showUserInfo: false,
+                            },
+                            methods: {
+                                init: function () {
+                                    var _this = this;
+                                },
+                                logout: function () {
+                                    if (confirm('로그아웃 하시겠습니까?')) {
+                                        location.href = PENCAKE_OBJ.getUrl('/logout');
+                                    }
+                                }
+                                // 현재 메뉴 보기
+                                , viewCurrentMenu: function (no) { }
+                            },
+                        });
+        
+                    })
+        
+                </script>
+            </div>
+            <!-- 업무메뉴 전체보기 iframe -->
+            <div class="menu-content" :class="enableMenu?'open':''">
+                <div class="menu-content-box">
+                    <ul class="menu-tab">
+                        <li :class="menuViewType=='biz'?'on':''" ><a href="javascript:;" @click="viewTabMenu('biz')" class="" >업무메뉴</a></li>
+                        <li :class="menuViewType=='my'?'on':''"><a href="javascript:;" @click="viewTabMenu('my')" class="" >My 메뉴</a></li>
+                    </ul>
+                    <div>
+                        <div class="search-area">
+                            <div class="hint--bottom w100per" aria-label="메뉴명 or Screen Cd">
+                                <input type="hidden">
+                            <input type="type" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="search-form-tran" placeholder="메뉴명 or Screen Cd" title="메뉴명 or Screen Cd" autocomplete="false" />
+                            </div>
+                            
+                            <div class="inner_search">
+                                <button class="btn_mag"><em class="sr-only">검색</em></button>
+                            </div>
+                        </div>
+                        <small>※ 부여된 권한에 대한 메뉴 검색만 가능합니다. </small>
+                        <div class="menu-area">
+                            <h4 data-right-menu-tab="bookmark" v-show="menuViewType=='my'">내가 즐겨찾는 메뉴 
+                                <div>
+                                    <a href="javascript:;" class="book_mark_setting" @click="bookmarkSetting()">설정</a>
+                                </div>
+                            </h4>
+                            <div id="menuWrapper1" class="menu-tree" v-show="menuViewType=='biz'">
+                                <div id="mainMenuTree" class="biz-menu" ></div>
+                                
+                            </div>
+                            <div id="menuWrapper2" class="menu-tree" v-show="menuViewType=='my'">
+                                <!-- 최종단계class="jstree-icon jstree-themeicon fa fa-file menu-icon jstree-themeicon-custom"대신에 class="jstree-icon icon_file"사용 -->
+
+                                <div class="menu-bookmark" v-show="menuViewType=='my'">
+                                    <!-- tree -->
+                                    <ul id="bookmarkArea">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu-search-result" :class="searchView?'on':''">
+                                <div class="result-txt">
+                                    <h2>검색결과 <strong><em class="text_blue">{{searchData.length}}</em></strong> 건입니다.</h2>
+                                    <a href="javascript:;" @click="closeSearchResult()" class="btn btn_close">닫기</a>
+                                </div>
+                                
+                                <div id="mainMenuSearchResult" class="scrollable-container">
+                                    <ul id="searchMenuArea" class="scrollable result_list">
+                                        <li v-for="(item , idx) in searchData">
+                                            <i href="javascript:;" @click="addBookmarkItem(item,$event)" class="fa"
+                                                :class="getBookmarkStyle(item)"></i>
+                                                <!-- class=fa삭제하고 클릭하면 on class추가 -->
+                                            <a href="javascript:;" @click="viewMenu(item)"
+                                                :title="item.MENU_KNM">{{item.MENU_KNM}}</a>
+                                            <div class="location" :title="item.namePath">{{item.namePath.substring(0,
+                                                item.namePath.lastIndexOf('>'))}}</div>
+                                        </li>
+                                        <li v-if="searchData.length < 1" class="empty">{{$portalApp.message.empty}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+                <iframe src="about:blank" class="overlay_iframe"></iframe>
+            </div>
+            <!-- //업무메뉴 전체보기 iframe -->
+        </div>
+
+    </div>
+    <main>
+        <div class="wrap-back ep_main_background">
+            <div class="wrap-back-in"></div>
+            <iframe src="about:blank" frameborder="0" class="slideRight-small"></iframe>
+        </div>
+
+        <div class="wh100per">
+            <div class="main-content-wrapper" data-cont-type="legacy">
+                <!-- 상단 좌측 업무메뉴 클릭하면 기간계화면 우측으로 밀림 클래스 ( slideRight-small / slideRight-big )추가 -->
+                <iframe src="/menu/view.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
+                    class="main-content-area"></iframe>
+                <!-- <iframe src="/html/legacyMain.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
+                class="main-content-area slideRight-small"></iframe> -->
+            </div>
+            <div class="main-content-wrapper on" data-cont-type="main">
+                <iframe src="/html/bizMain.html" frameborder="0" name="epMainFrame" id="epMainFrame"
+                    class="main-content-area"></iframe>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<script type="text/javascript" src="/js/main-gnb.js"></script>
+<script type="text/javascript" src="/js/main-menu.js"></script>
+
+
+<script>
+
+/**
+ * 페이지 post message 수신 로직 
+ */
+(function () {
+    var mainMessage = {
+        init: function () {
+            window.addEventListener("message",(evt)=>{
+                console.log('top recv message ', evt.data)
+                const evtData = event.data;
+                let evtDataObj = evtData;
+                try{
+                    evtDataObj = JSON.parse(evtData);
+                }catch(e){
+                    console.log('menu data json parse error: ',e);
+                }
+                const viewType = evtDataObj.viewType;
+                const viewId = evtDataObj.viewId;
+                const viewTypeAction = evtDataObj.viewTypeAction;
+                if(viewType == 'dialog'){
+                    
+                    if(viewTypeAction == 'close' && viewId){
+                        PencakeCustomCTRL.closeModal(viewId);
+                        return ;
+                    }
+
+                    const openUrl = evtDataObj.openUrl;
+                    const viewOption = evtDataObj.viewOption;
+
+                    PencakeCustomCTRL.showModal(openUrl, {
+                        targetId :viewId,  
+                        width : viewOption.width||500,         // 넓이
+                        height: viewOption.height||300,         // 높이
+                        showTitle : viewOption.showTitle,         // 제목 숨김여부
+                        title: viewOption.title || '레이어',
+                    });
+
+                }else if(viewType == 'toast'){
+
+                }else{
+                    if(viewTypeAction =='close' && viewId){
+                        PencakeCustomCTRL.closeModal(viewId);
+                    }
+                    const menuInfo = evtDataObj.menuInfo;
+                    PencakeCustomCTRL.open({
+                        MENU_KNM : menuInfo.menuNm
+                        ,MENU_CD : menuInfo.menuCd
+                    })
+                }
+            })
+        }
+    }
+    mainMessage.init();
+
+})();
+
+</script>

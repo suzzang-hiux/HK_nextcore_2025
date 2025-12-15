@@ -1,0 +1,56 @@
+// WRANING TEXT
+.warning-txt {
+    display: block;
+    position: relative;
+    padding-left: 12px;
+    @include font(12px, 400, 1.16);
+    color: $cl-orange;
+    &::before {
+        content: "※";
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include font(12px, 400, 1.16);
+        color: inherit;
+    }
+}
+
+// NOTI TEXT
+.dot-noti {
+    display: block;
+    position: relative;
+    padding-left: 8px;
+    @include font(12px, 400, 1.2);
+    color: $cl-gr-80;
+    &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $cl-gr-80;
+        position: absolute;
+        top: 5px;
+        left: 0;
+    }
+    & + .dot-noti {
+        margin-top: 4px;
+    }
+}
+
+// ALIGN
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+// COLOR
+.text_blue {
+    color: $cl-blue;
+}

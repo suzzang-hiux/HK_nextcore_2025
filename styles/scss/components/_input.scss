@@ -1,0 +1,54 @@
+// TEXT INPUT
+.input-box {
+    width: 100%;
+    position: relative;
+    @include flex(row, center, flex-start, 0);
+    &.search {
+        .search-btn {
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.83333 1.5C9.77885 1.5 12.1667 3.88781 12.1667 6.83333C12.1667 8.06573 11.7469 9.19912 11.0449 10.1022L14.3047 13.362C14.565 13.6223 14.565 14.0444 14.3047 14.3047C14.0444 14.565 13.6223 14.565 13.362 14.3047L10.1022 11.0449C9.19912 11.7469 8.06573 12.1667 6.83333 12.1667C3.88781 12.1667 1.5 9.77885 1.5 6.83333C1.5 3.88781 3.88781 1.5 6.83333 1.5ZM6.83333 2.83333C4.62419 2.83333 2.83333 4.62419 2.83333 6.83333C2.83333 9.04247 4.62419 10.8333 6.83333 10.8333C9.04247 10.8333 10.8333 9.04247 10.8333 6.83333C10.8333 4.62419 9.04247 2.83333 6.83333 2.83333Z' fill='%23616161'/%3E%3C/svg%3E");
+            @include bg-set;
+            @include ps-icon;
+            left: auto;
+            right: 4px;
+        }
+        input:disabled + .search-btn {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.83333 1.5C9.77885 1.5 12.1667 3.88781 12.1667 6.83333C12.1667 8.06573 11.7469 9.19912 11.0449 10.1022L14.3047 13.362C14.565 13.6223 14.565 14.0444 14.3047 14.3047C14.0444 14.565 13.6223 14.565 13.362 14.3047L10.1022 11.0449C9.19912 11.7469 8.06573 12.1667 6.83333 12.1667C3.88781 12.1667 1.5 9.77885 1.5 6.83333C1.5 3.88781 3.88781 1.5 6.83333 1.5ZM6.83333 2.83333C4.62419 2.83333 2.83333 4.62419 2.83333 6.83333C2.83333 9.04247 4.62419 10.8333 6.83333 10.8333C9.04247 10.8333 10.8333 9.04247 10.8333 6.83333C10.8333 4.62419 9.04247 2.83333 6.83333 2.83333Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+        }
+    }
+}
+
+.common-input {
+    width: 100%;
+    height: 24px;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid $cl-gr-50;
+    background-color: $cl-white;
+    padding-inline: 4px;
+    font-family: "Pretendard";
+    @include font(13px, 400, 1);
+    color: $cl-black;
+    &::placeholder {
+        color: $cl-gr-60;
+    }
+    &:active, &:focus {
+        outline: none;
+        border-color: $cl-purple-80;
+    }
+    &:disabled, .disabled {
+        background-color: $cl-gr-5;
+        border-color: $cl-gr-30;
+        color: $cl-gr-50;
+    }
+    &:read-only {
+        background-color: $cl-gr-5;
+        border-color: $cl-gr-50;
+    }
+    &:required, .required {
+        background-color: $cl-purple-5;
+        border-color: $cl-purple-30;
+    }
+}

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta charset="UTF-8">
+	<meta env="SOP-YTKIM">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script>
+		var global_page_context_path = "";
+		var ePortalConfig = {
+			"runtime": "local"
+			, "license": false
+			, "websocket": ""
+			, "mainPageId": "hkmain"
+			, "page_id": 'hkmain'
+			, "userInfo": {}
+			, "link": {
+				"portalMain": ""
+			}
+			, "domain": {
+				"webmail": ""
+				, "nas": ""
+				, "hompage": ""
+			}
+			, "context": {
+				"epplt": ("" || global_page_context_path)
+				, "noti": ("" || '/alarm')
+				, "board": ("" || '')
+			}
+			, "fileupload": {
+				"useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+				, "useMigFileExt": 'xls|xlsx'
+				, "pencakeAttach": '/staticimg'
+			}
+		};
+		ePortalConfig.userInfo['_ep_USR_PWD'] = '$2a$10$PnV738Vcdc5X9zBzbViWbOprzvNetMcbP4IuIth/0HKAviqtOAWPu';
+		ePortalConfig.userInfo['_ep_ORG_SP_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_PTN_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_DTYCD'] = '';
+		ePortalConfig.userInfo['_ep_ORNNM'] = '포탈관리그룹';
+		ePortalConfig.userInfo['_ep_AMG_ORNCD'] = '';
+		ePortalConfig.userInfo['_ep_USR_NM'] = '포탈관리자';
+		ePortalConfig.userInfo['_ep_STF_FLG_CDNM'] = '정상';
+		ePortalConfig.userInfo['_ep_ORG_FLGCD'] = '';
+		ePortalConfig.userInfo['_ep_BZ_ATRCD'] = '';
+		ePortalConfig.userInfo['_ep_id'] = 'Administrator';
+		ePortalConfig.userInfo['_ep_ORG_FLG_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_STF_FLGCD'] = '1';
+		ePortalConfig.userInfo['_ep_CLPCD'] = '';
+		ePortalConfig.userInfo['_ep_BDT_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_PTNCD'] = '';
+		ePortalConfig.userInfo['_ep_ORG_SPCD'] = '';
+		ePortalConfig.userInfo['_ep_USR_ID'] = 'Administrator';
+		ePortalConfig.userInfo['_ep_ORNCD'] = 'admin';
+		ePortalConfig.userInfo['_ep_DTY_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_ORG_TP_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_BZ_ATR_CDNM'] = '';
+		ePortalConfig.userInfo['_ep_BDTCD'] = '';
+		ePortalConfig.userInfo['_ep_EMPNO'] = 'Administrator';
+		ePortalConfig.userInfo['_ep_EMP_PART'] = '';
+		ePortalConfig.userInfo['_ep_ORG_TPCD'] = '';
+		ePortalConfig.userInfo['_ep_CLP_CDNM'] = '';
+
+		ePortalConfig.groupInfo = ['AUTHENTICATED_USERS', 'PORTAL_ADMINISTRATORS', 'PUBLIC', 'admin', 'default_page']
+		ePortalConfig.userId = ePortalConfig.userInfo[("" || '_ep_USR_ID')];
+		ePortalConfig.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+		ePortalConfig.userInfo.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+		ePortalConfig.userInfo.nm = ePortalConfig.userInfo[("" || '_ep_USR_NM')];
+	</script>
+
+	<link rel="icon" type="image/x-icon" href="/wsrv/app/img/favicon.ico">
+	<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+	<link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
+	<link href="/wsrv/app/js/plugins/owl/assets/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+	<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+	<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+
+	<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+	<script type="text/javascript"
+		src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+	<script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=51697.13478146136"></script>
+	<script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+	<script src="/wsrv/app/js/plugins/vue/vue.min.js"></script>
+	<script src="/wsrv/app/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+
+	<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=8762.284402003228"></script>
+	<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=12865.763376661955"></script>
+	<script>
+		$(document).ready(function () {
+			// 예를 들어, 라디오 버튼 선택 시 이벤트 처리
+			$('input[type="radio"]').on('change', function () {
+				alert('Selected value: ' + $(this).val());
+			});
+		});
+		new Vue({
+			el: 'body',
+			data: {
+				showUserInfo: false
+			}
+		});
+	</script>
+</head>
+
+<body data-ep-view-mode="default" data-theme="type0" class="wrapper">
+	<div class="ep-wrapper">
+		<!-- ============= ▼ LNB START ▼ ============= -->
+		<div id="lnbMenuContainer" class="ep-lnb vue_selector">
+			<div class="ep-lnb-inner">
+				<div class="ep-lnb-top">
+					<div class="logo">
+						<a href="javascript:;"></a>
+					</div>
+					<div class="home-menu">
+						<a href="javascript:;" @click="toggleContentFrame('biz')">
+							홈
+						</a>
+					</div>
+					<div class="all-menu">
+						<a href="javascript:;" @click.stop="openMenu()">
+							전체메뉴
+						</a>
+					</div>
+					<nav class="menu-left-area">
+						<ul>
+							<li>
+								<a href="javascript:;" class="type-1">그룹웨어</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="type-2">인사정보</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="type-3">ITSM</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="type-4">흥미뷰</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="type-5">이미지<br>시스템</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="type-6">AI<br>Assistant</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="ep-lnb-bottom">
+					<ul class="menu-left-area">
+						<li>
+							<a href="javascript:;" class="type-7" @click="changePassword();">비밀번호<br>변경</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="type-8">IP변경</a>
+						</li>
+					</ul>
+					<div class="ep-lnb-switch" @mouseover="showResizeToolTip = true" @mouseleave="showResizeToolTip = false">
+						<input type="checkbox" class="hidden" id="lnbAutoResize" />
+						<label for="lnbAutoResize">
+							<span class="txt">자동<br>화면축소</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="resize-tip" :class="{ on: showResizeToolTip }">
+				자동축소 기능을 켜면 현재 브라우저 가로폭에 맞춰 화면 전체가 비율로 축소/확대됩니다. <br />
+				텍스트가 작게 보이면 브라우저 확대 또는 축소 기능을 꺼서 기본 보기로 전환하세요.
+			</div>
+			<div class="ep-lnb-arrow">
+				<a href="javascript:;" @click.stop="openMenu()" :class="{ rotation: enableMenu }">전체메뉴</a>
+			</div>
+
+			<!-- 업무메뉴 전체보기 iframe -->
+			<div id="menuContentContainer" class="menu-content" :class="{ open: enableMenu, 'result-on' : searchView }" tabindex="0">
+				<iframe class="overlay_iframe" src="about:blank"></iframe>
+				<div class="menu-content-box">
+					<div class="menu-content-top">
+						<ul class="menu-tab">
+							<li :class="menuViewType=='biz'?'on':''">
+								<a href="javascript:;" @click="viewTabMenu('biz')">전체메뉴</a>
+							</li>
+							<li :class="menuViewType=='my'?'on':''">
+								<a href="javascript:;" @click="viewTabMenu('my')">즐겨찾기</a>
+							</li>
+						</ul>
+						<a href="javascript:;" class="book_mark_setting" @click="favoriteSetting()" aria-label="설정"></a>
+					</div>
+					<div class="menu-content-bottom">
+						<div class="search-area">
+							<div class="input-box search">
+								<input type="hidden">
+								<input type="text" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
+									placeholder="메뉴명/화면명 검색" autocomplete="false" style="ime-mode:active;" />
+								<button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
+							</div>
+							<span class="warning-txt orange">부여된 권한에 대한 메뉴 검색만 가능합니다.</span>
+						</div>
+						<div class="menu-area">
+							<div class="menu-area-inner">
+								<div id="menuWrapper" class="menu-tree" v-show="menuViewType=='biz'">
+									<div id="mainMenuTree" class="biz-menu" v-show="menuViewType=='biz'"></div>
+								</div>
+								<div id="favMenuWrapper" class="menu-tree" v-show="menuViewType=='my'">
+									<div class="menu-favorite">
+										<!-- tree -->
+										<ul id="favoriteArea">
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-search-result" :class="searchView?'on':''">
+								<div class="result-txt">
+									<h2>검색결과 <em class="text_blue">{{searchData.length}}건</em></h2>
+									<a href="javascript:;" @click="closeSearchResult()" class="btn close">닫기</a>
+								</div>
+								<div id="mainMenuSearchResult" class="scrollable-container">
+									<ul id="searchMenuArea" class="scrollable result_list">
+										<li v-for="(item , idx) in searchData" :key="item.MENU_CD" :title="item.MENU_KNM+'('+item.SCREEN_CD+')'">
+											<i href="javascript:;" @click="addFavoriteItem(item,$event)" :class="getFavoriteStyle(item)"></i>
+											<a href="javascript:;" @click="viewMenu(item)" v-html="item.highlightName"></a>
+											<div class="location">{{item.namePath.substring(0, item.namePath.lastIndexOf('>'))}}</div>
+										</li>
+										<li v-if="searchData.length < 1" class="empty">
+											<span>{{$portalApp.message.empty}}</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrap">
+							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('open')">메뉴 전체열기</button>
+							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('close')">메뉴 전체닫기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //업무메뉴 전체보기 iframe -->
+		</div>
+		<!-- ============= ▲ LNB END ▲ ============= -->
+		<!-- ============= ▼ MAIN CONTENT START ▼ ============= -->
+		<div class="ep-main">
+			<!-- ▼ GNB START ▼ -->
+			<div id="gnbContainer" class="ep-gnb vue_selector">
+				<div class="gnb-left-area">
+					<ul class="gnb-menu" ref="gnbMenu">
+						<li v-for="(item , idx) in gnbMenuList" :class="activeGnbItem.MENU_ID == item.MENU_ID?'active':''">
+							<a href="javascript:;" @click.stop="openSubMenu(item)" :title="item.MENU_NM">{{item.MENU_NM}}</a>
+							<div class="gnb-submenu">
+								<div class="sub-menu-wrapper" v-if="item.children.length > 0">
+									<ul>
+										<li v-for="(childItem , idx) in item.children">
+											<a href="javascript:;" @click="openMenu(childItem.MENU_ID)" :title="childItem.MENU_NM">{{childItem.MENU_NM}}</a>
+										</li>
+									</ul>
+								</div>
+								<button type="button" class="btn purple-line add" @click="addGnbMenu(item)"><span>메뉴 추가</span></button>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="gnb-right-area">
+					<ul class="menu-right-area">
+						<!-- 검색 -->
+						<li>
+							<div class="gnb-search-box">
+								<input type="text" id="searchText" @keyup="searchMenu()" class="ep-gnb-search" placeholder="메뉴명/화면명 검색" autocomplete="false" style="ime-mode:active;">
+							</div>
+							<div class="menu-search-result" v-if="searchView">
+								<div class="result-txt">
+									<h2>검색결과 <em class="text_blue">{{searchData.length}}건</em></h2>
+									<a href="javascript:;" @click="closeSearchResult()" class="btn close">닫기</a>
+								</div>
+								<div id="gnbMenuSearchResult" class="scrollable-container">
+									<ul id="searchMenuArea" class="scrollable result_list">
+										<li v-for="(item , idx) in searchData" :key="item.MENU_CD" :title="item.MENU_KNM+'('+item.SCREEN_CD+')'">
+											<button type="button" @click="epMainCtrl.addFavoriteItem(item,$event)" class="add-btn" :class="epMainCtrl.getFavoriteStyle(item)"></button>
+											<a href="javascript:;" @click="openMenu(item.MENU_CD)">{{item.MENU_KNM}}</a>
+											<div class="location">{{item.namePath.substring(0, item.namePath.lastIndexOf('>'))}}</div>
+										</li>
+										<li v-if="searchData.length < 1" class="empty">
+											<span>{{$portalApp.message.empty}}</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<!-- // 검색 -->
+						<!-- 프로필 -->
+						<li class="dropdown">
+							<a href="javascript:;" class="user-img" @click="showUserDropdown = !showUserDropdown">
+								<strong class="user-info">
+									&#44608;&#50689;&#53468; <span>77001964</span>
+								</strong>
+							</a>
+							<div class="dropdown-box" :class="{ active: showUserDropdown }">
+								<div class="dropdown-header">
+									<h3 class="dropdown-title">사이드바 색상변경</h3>
+									<button type="button" class="btn close" aria-label="닫기" @click="showUserDropdown = false"></button>
+								</div>
+								<div class="dropdown-content">
+									<ul class="radio-group">
+										<li>
+											<input @click="changeTheme('type0')" type="radio" class="hidden" v-model="theme" value="type0" id="themeType0" checked>
+											<label for="themeType0">
+												<span class="nemo type0"></span>
+											</label>
+										</li>
+										<li>
+											<input @click="changeTheme('type1')" type="radio" class="hidden" v-model="theme" value="type1" id="themeType1">
+											<label for="themeType1">
+												<span class="nemo type1"></span>
+											</label>
+										</li>
+										<li>
+											<input @click="changeTheme('type2')" type="radio" class="hidden" v-model="theme" value="type2" id="themeType2">
+											<label for="themeType2">
+												<span class="nemo type2"></span>
+											</label>
+										</li>
+										<li>
+											<input @click="changeTheme('type3')" type="radio" class="hidden" v-model="theme" value="type3" id="themeType3">
+											<label class="last" for="themeType3">
+												<span class="nemo type3"></span>
+											</label>
+										</li>
+									</ul>
+									<div class="btn-wrap col">
+										<a href="javascript:;" class="btn purple-line" data-btn-size="m" @click="myMenuSetting(); showUserDropdown = false">MENU 관리</a>
+										<!-- <a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/appMgmt/page'});">APP 관리</a>
+										<a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/admin/mgmtMain'});">pencake 관리</a> -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- // 프로필 -->
+						<!-- 로그아웃 -->
+						<li>
+							<div class="hint--info hint--bottom">
+								<a href="javascript:;" @click="logout()">
+									로그아웃
+								</a>
+							</div>
+						</li>
+						<!-- // 로그아웃 -->
+					</ul>
+				</div>
+			</div>
+			<!-- ▲ GNB END ▲ -->
+
+			<!-- ▼ CONTENT START ▼ -->
+			<div class="ep-content">
+				<main>
+					<div class="wrap-back ep_main_background">
+						<div class="wrap-back-in"></div>
+						<iframe src="about:blank" frameborder="0" class="slideRight-small"></iframe>
+					</div>
+
+					<div class="wh100per">
+						<div class="main-content-wrapper" data-cont-type="legacy">
+							<!-- 상단 좌측 업무메뉴 클릭하면 기간계화면 우측으로 밀림 클래스 ( slideRight-small / slideRight-big )추가 -->
+							<iframe src="/menu/view.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
+								class="main-content-area"></iframe>
+							<!-- <iframe src="/html/legacyMain.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
+                            class="main-content-area slideRight-small"></iframe> -->
+						</div>
+						<div class="main-content-wrapper on" data-cont-type="main">
+							<iframe src="/html/bizMain.html" frameborder="0" name="epMainFrame" id="epMainFrame"
+								class="main-content-area"></iframe>
+						</div>
+					</div>
+				</main>
+			</div>
+			<!-- ▲ CONTENT END ▲ -->
+		</div>
+		<!-- ============= ▲ MAIN CONTENT END ▲ ============= -->
+	</div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/main-gnb.js"></script>
+<script type="text/javascript" src="/js/main-lnb.js"></script>
+<script type="text/javascript" src="/js/mainUserMenu.js"></script>
+
+<script>
+
+		/**
+		 * 페이지 post message 수신 로직 
+		 */
+		(function () {
+			var mainMessage = {
+				init() {
+					window.addEventListener("message", (evt) => {
+						console.log('top recv message ', evt.data)
+						const evtData = event.data;
+						let evtDataObj = evtData;
+						if(!$.isPlainObject(evtData)){
+							try {
+								evtDataObj = JSON.parse(evtData);
+							} catch (e) {
+								console.log('menu data json parse error: ', e);
+							}
+						}
+						
+						const viewType = evtDataObj.viewType;
+						const viewId = evtDataObj.viewId;
+						const openLayerAction = evtDataObj.openLayerAction;
+
+						if (openLayerAction == 'close' && viewId) {
+							PencakeCustomCTRL.closeModal(viewId);
+						}
+						
+						if (viewType == 'menu') {
+							this.menu(evtDataObj)
+							return; 
+						}
+
+						if (viewType == 'dialog') {
+							this.dialog(evtDataObj);
+							return ;
+						} 
+
+						if (viewType == 'fn') {
+							this.fn(evtDataObj);
+							return ;
+						} 
+						
+						if (viewType == 'toast') {
+							this.toast(evtDataObj);
+							return ; 
+						} 
+					})
+				}
+				// menu 호출
+				,menu(evtDataObj){
+					console.log('menu : ', evtDataObj);
+					const menuInfo = evtDataObj.menuInfo;
+					PencakeCustomCTRL.open({
+						MENU_KNM: menuInfo.menuNm
+						, MENU_CD: menuInfo.menuCd
+					})
+				}
+				// dialog 호출
+				,dialog(evtDataObj){
+					console.log('dialog : ', evtDataObj);
+					const openUrl = evtDataObj.openUrl;
+					const viewOption = evtDataObj.viewOption;
+
+					PencakeCustomCTRL.showModal(openUrl, {
+						targetId: viewId,
+						width: viewOption.width || 500,         // 넓이
+						height: viewOption.height || 300,         // 높이
+						showTitle: viewOption.showTitle,         // 제목 숨김여부
+						title: viewOption.title || '레이어',
+					});
+
+
+				}
+				// toast 호출
+				,toast(evtDataObj){
+					PubEPUI.toast.view({
+						text:evtDataObj.view,
+						
+					});
+					return ; 
+				}
+				// function 호출
+				,fn(evtDataObj){
+					const view = evtDataObj.view;
+					const fnObj = allMessageFn[view]; 
+					if(!$.isFunction(fnObj)){
+						return ; 
+					}
+
+					fnObj(evtDataObj);
+				}
+			}
+			mainMessage.init();
+
+
+			function openModal(evtDataObj, openUrl, targetId){
+				PencakeCustomCTRL.openBizDialog(evtDataObj, openUrl, targetId);
+			}
+
+			var allMessageFn = {
+				// 오류 접수
+				addErrorMsg(evtDataObj){
+					const url = `${location.protocol}//upridelc.heungkukfire.co.kr:${location.port}/wsrv/dialog.html`;
+					openModal(evtDataObj, url, 'addErrorMsg');					
+				}
+				// 직원 조회 정보 셋팅
+				,setJobInfo(evtDataObj){
+					PubEPUI.toast.view({text: JSON.stringify(evtDataObj)});
+					return ; 
+				}
+			}
+
+		})();
+
+</script>

@@ -1,0 +1,290 @@
+
+$bgColor:     #f0f0f3;
+$gnbColor:    #48317D;
+$tabColor:    #674f9e ;
+$boxLineColor:#dfdaeb;
+$primary:     #1d1d1d;
+$pointColor1: #ec008c;
+$pointColor2: #219be0;
+$orange:      #fd9f34;
+$warning:     #FF4D47;
+$bluegreen:   #4F839E;
+  
+$commonBtn:       #48317D;
+$commonBtn_hover: #5D3FA2;
+$commonBtn_on:    #332358;
+$searchBtn:       #494963;
+$searchBtn_hover: #57596B;
+$searchBtn_on:    #27293A;
+$inquiryBtn:      #6153B6;
+$inquiryBtn_hover:#8277C5;
+$inquiryBtn_on:   #4C4096;
+$todayBtn:        #ec008c;
+$todayBtn_hover:  #FF20A4;
+$todayBtn_on:     #B9006E;
+
+$grayscale90:#1d1d1d;
+$grayscale80:#2d2d2d;
+$grayscale70:#555555;
+$grayscale60:#767676;
+$grayscale50:#bebebe;
+$grayscale40:#c6c6c6;
+$grayscale20:#e4e4e4;
+$grayscale10:#f0f0f0;
+$grayscale05:#f8f8f8;
+
+$basicBorder:6px;
+$btn-border:3px;
+$boxShadow:0 3px 10px rgba(72, 49, 125, 0.4);
+$boxShadow_gray:0 3px 10px rgba(72, 49, 125, 0.2);
+
+
+
+// Modal Popup
+$modalPopupSizeDefault: 25rem;
+$modalPopupSizeS: 31.25rem;
+$modalPopupSizeM: 37.5rem;
+$modalPopupSizeL: 59.375rem;
+$modalPopupSizeXL: 81.25rem;
+
+$modalPopupSizeFull: 100%;
+
+// =============================================================================
+// font-size
+// =============================================================================
+$fs-xl: 1.8rem;
+$fs-l: 1.5rem;
+$fs-default: 1.4rem;
+$fs-m: 1.3rem;
+$fs-s: 1.2rem;
+$fs-xs: .875rem;
+
+// =============================================================================
+// font-weight
+// =============================================================================
+$fontweight: (300, 400, 500, 600, 700);
+
+@each $weight in $fontweight {
+  //All around Margin
+  .fontWeight-#{$weight} {
+    font-weight: #{$weight};
+  }
+}
+
+// =============================================================================
+// Margin & Padding
+// =============================================================================
+
+$spaceamounts: (-20, 0, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 28, 30, 40, 50);
+
+@each $space in $spaceamounts {
+  //All around Margin
+  .m-#{$space} {
+    margin: #{$space}px!important;
+  }
+  //Margin
+  .mv-#{$space} {
+    margin: #{$space}px 0!important;
+  }
+  .mw-#{$space} {
+    margin: 0 #{$space}px!important;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px!important;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px!important;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}px!important;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px!important;
+  }
+
+  //All around Padding
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+  //Vertical Padding
+  .pv-#{$space} {
+    padding: #{$space}px 0;
+  }
+    //Padding
+    .pl-#{$space} {
+      padding-left: #{$space}px!important;
+    }
+    .pr-#{$space} {
+      padding-right: #{$space}px!important;
+    }
+    .pt-#{$space} {
+      padding-top: #{$space}px!important;
+    }
+}
+
+// 분기 포인트 선언
+$breakpoints: (
+  desktop_old: 960px,
+  desktop: 1281px,
+  legacy:1600,
+  desktop_wide: 1921px,
+);
+
+// 믹스인 작성
+@mixin mediaquery($breakpoint: desktop_old, $map: $breakpoints) {
+  @if type-of($map) == map {
+    @if map-has-key($map, $breakpoint) {
+      @media (min-width: #{map-get($map, $breakpoint)}) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin ellipsis($w) {
+    width: $w;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// =============================================================================
+// width값 height값
+// =============================================================================
+$widthamounts: (4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 35, 40, 43, 46, 50, 60, 70, 120);
+
+@each $width in $widthamounts {
+  //All around Margin
+  .w-#{$width} {
+    width: #{$width}rem !important;
+  }
+}
+@each $height in $widthamounts {
+  //All around Margin
+  .h-#{$height} {
+    height: #{$height}px !important;
+  }
+}
+
+// position
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
+
+// ============================== COLOR ==============================
+// PRIMARY COLOR
+$cl-p-magenta: #EC008C;
+$cl-p-purple: #351B6F;
+$cl-blue: #2481E0;
+$cl-green: #0E9C0E;
+$cl-red: #EF2111;
+$cl-orange: #EA580C;
+$cl-yellow: #F1C100;
+$cl-black: #000;
+$cl-white: #fff;
+
+// GRAY COLOR
+$cl-gr-5: #F5F5F5;
+$cl-gr-20: #E8E8E8;
+$cl-gr-30: #E0E0E0;
+$cl-gr-40: #CECECE;
+$cl-gr-50: #BDBDBD;
+$cl-gr-60: #9E9E9E;
+$cl-gr-70: #757575;
+$cl-gr-80: #616161;
+$cl-gr-90: #424242;
+$cl-gr-100: #212121;
+
+// SLATE GRAY COLOR
+$cl-sg-5: #EFF2F7;
+$cl-sg-10: #EAF0F5;
+$cl-sg-20: #E2E8F0;
+$cl-sg-30: #D0D7E1;
+$cl-sg-40: #AEB9C8;
+$cl-sg-50: #8996A7;
+$cl-sg-60: #707F91;
+$cl-sg-70: #596474;
+$cl-sg-80: #3E4854;
+
+// MAGENTA COLOR
+$cl-magenta-5: #FDF2FA;
+$cl-magenta-20: #FDD7F2;
+$cl-magenta-30: #F4B5D7;
+$cl-magenta-50: #EC008C;
+$cl-magenta-70: #C50075;
+$cl-magenta-90: #910A5A;
+
+// PURPLE COLOR
+$cl-purple-5: #F9F5FF;
+$cl-purple-10: #F8E9FC;
+$cl-purple-20: #E2CCE9;
+$cl-purple-30: #CBA7D8;
+$cl-purple-50: #914AA9;
+$cl-purple-60: #7F319A;
+$cl-purple-70: #732D94;
+$cl-purple-80: #62288B;
+$cl-purple-90: #522381;
+
+// BLUE COLOR
+$cl-blue-5: #F0F7FF;
+$cl-blue-10: #EAF4FF;
+$cl-blue-20: #D7EBFF;
+$cl-blue-30: #AFD6F8;
+$cl-blue-40: #8BC6F8;
+$cl-blue-70: #2481E0;
+$cl-blue-80: #085FB8;
+
+// ============================== FONT ==============================
+// FONT-SIZE
+$fs-22: 22px;
+$fs-20: 20px;
+$fs-18: 18px;
+$fs-17: 17px;
+$fs-16: 16px;
+$fs-14: 14px;
+$fs-13: 13px;
+$fs-12: 12px;
+$fs-11: 11px;
+
+
+// ============================== MARGIN & PADDING ==============================
+$spaceMounts: (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60);
+@each $space in $spaceMounts {
+    // MARGIN
+    .mt-#{$space} {
+        margin-top: #{$space}px !important;
+    }
+    .ml-#{$space} {
+        margin-left: #{$space}px !important;
+    }
+    .mr-#{$space} {
+        margin-right: #{$space}px !important;
+    }
+    .mb-#{$space} {
+        margin-bottom: #{$space}px !important;
+    }
+    .mg-#{$space} {
+        margin: #{$space}px !important;
+    }
+    // PADDING
+    .pt-#{$space} {
+        padding-top: #{$space}px !important;
+    }
+    .pl-#{$space} {
+        padding-left: #{$space}px !important;
+    }
+    .pr-#{$space} {
+        padding-right: #{$space}px !important;
+    }
+    .pb-#{$space} {
+        padding-bottom: #{$space}px !important;
+    }
+    .pd-#{$space} {
+        padding: #{$space}px !important;
+    }
+}

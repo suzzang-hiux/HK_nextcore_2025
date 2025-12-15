@@ -1,0 +1,32 @@
+{
+    "status": 200,
+    "resultCode": 0,
+    "messageCode": null,
+    "message": null,
+    "list": [
+        {
+            "DIARY_DT": "2024-03-10",
+            "ID": 40006,
+            "REG_ID": "Administrator",
+            "CONTENTS": "awawefawef"
+        },
+        {
+            "DIARY_DT": "2024-03-19",
+            "ID": 70006,
+            "REG_ID": "Administrator",
+            "CONTENTS": "2024-03-19 일정 임. \nㅁㅈㄷㄹ\nㅁㅈㄹㄷ"
+        },
+        {
+            "DIARY_DT": "2024-03-20",
+            "ID": 3,
+            "REG_ID": "Administrator",
+            "CONTENTS": "2024-03-20\n\n자장힘"
+        }
+    ],
+    "items": null,
+    "item": null,
+    "meta": null,
+    "page": null,
+    "customs": null,
+    "customList": null
+}

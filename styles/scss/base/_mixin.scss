@@ -1,0 +1,102 @@
+@mixin clear {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin ellipsis2($line, $w, $h) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  width: $w;
+  height: $h;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+@mixin br($radius) {
+  border-radius: ($radius);
+}
+
+@mixin contents_width {
+  width: $min-width;
+  margin: 0 auto;
+}
+
+@mixin absolute-center() {
+	position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex($direct:row, $align: center, $justify: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: $direct;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin ellipsis($w) {
+    width: $w;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin multi-ellipsis($line: 2) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+@mixin ps-center($position: absolute) {
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin font($size, $weight: 400, $line: 1.2) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
+@mixin ps-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+@mixin bg-set {
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+@mixin border-box {
+    border-radius: 8px;
+    border: 1px solid $cl-black;
+    background-color: $cl-white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+
+$z-layers: (
+    base: 1,
+    header: 20,
+    modal: 30
+);
+
+@mixin z($layer) {
+    z-index: map-get($z-layers, $layer);
+}

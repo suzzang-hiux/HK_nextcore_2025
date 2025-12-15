@@ -1,0 +1,247 @@
+.btn-wrap {
+    width: 100%;
+    position: relative;
+    @include flex(row, center, center, 4px);
+    > button, > a {
+        flex: 1;
+        width: 100%;
+        position: relative;
+    }
+    &.col {
+        flex-direction: column;
+    }
+}
+
+.btn {
+    width: fit-content;
+    position: relative;
+    padding: 2px 6px;
+    border-radius: 2px;
+    @include flex(row, center, center, 0);
+    @include font(12px, 500, 1);
+    border: 1px solid $cl-p-magenta;
+    background-color: $cl-p-magenta;
+    color: $cl-white;
+    white-space: nowrap;
+    will-change: background-color, border-color, color;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    span {
+        position: relative;
+        pointer-events: none;
+    }
+    &:hover {
+        border-color: $cl-magenta-70;
+        background-color: $cl-magenta-70;  
+    }
+    &:active {
+        border-color: $cl-magenta-90;
+        background-color: $cl-magenta-90;
+    }
+    &:disabled, &.disabled {
+        border-color: $cl-magenta-30;
+        background-color: $cl-magenta-30;
+        pointer-events: none;
+    }
+    &[data-btn-size="s"] {
+        height: 20px;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+    &[data-btn-size="m"] {
+        height: 24px;
+        border-radius: 3px;
+        padding: 4px 6px;
+        font-size: 13px;
+    }
+    &[data-btn-size="l"] {
+        height: 32px;
+        border-radius: 4px;
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+    &[data-btn-size="xl"] {
+        height: 40px;
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+    &.add {
+        span {
+            padding-left: 18px;
+            &::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='white'/%3E%3C/svg%3E");
+                @include bg-set;
+                @include ps-icon;
+            }
+        }
+    }
+    &.retry {
+        padding: 4px 3px;
+        &::after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: block;
+            @include bg-set;
+            background-image: url("/wsrv/app/img/new/common/ico_arrow-rotate_right.png");
+        }
+    }
+    // CLOSE BUTTON
+    &.close {
+        width: 16px;
+        height: 16px;
+        font-size: 0;
+        color: transparent;
+        background-color: transparent;
+        @include bg-set;
+        background-image: url("/wsrv/app/img/new/common/ico_close.png");
+        padding: 0;
+        border: none;
+    }
+    // BLACK
+    &.black {
+        border-color: $cl-black;
+        background-color: $cl-black;
+        &:hover {
+            border-color: $cl-gr-60;
+            background-color: $cl-gr-60;
+        }
+        &:active {
+            border-color: $cl-gr-80;
+            background-color: $cl-gr-80;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-gr-30;
+            background-color: $cl-gr-30;
+        }
+    }
+    // WRAM GRAY + LINE
+    &.wg-line {
+        border-color: $cl-gr-50;
+        background-color: $cl-white;
+        color: $cl-gr-80;
+        &:hover {
+            border-color: $cl-gr-50;
+            background-color: $cl-gr-20;
+        }
+        &:active {
+            border-color: $cl-gr-50;
+            background-color: $cl-gr-40;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-gr-30;
+            background-color: $cl-white;
+            color: $cl-gr-50;
+        }
+    }
+    // COOL GRAY + LINE
+    &.cg-line {
+        border-color: $cl-sg-30;
+        background-color: $cl-white;
+        color: $cl-sg-60;
+        &:hover {
+            border-color: $cl-sg-30;
+            background-color: $cl-sg-20;
+        }
+        &:active {
+            border-color: $cl-sg-30;
+            background-color: $cl-sg-30;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-sg-30;
+            background-color: $cl-white;
+            color: $cl-sg-40;
+        }
+    }
+    // MAGENTA 
+    &.mg-line {
+        border-color: $cl-magenta-30;
+        background-color: $cl-magenta-5;
+        color: $cl-magenta-50;
+        &:hover {
+            border-color: $cl-magenta-30;
+            background-color: $cl-magenta-20;
+        }
+        &:active {
+            border-color: $cl-magenta-30;
+            background-color: $cl-magenta-30;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-purple-30;
+            background-color: $cl-purple-5;
+            color: $cl-magenta-30;
+        }
+    }
+    // PURPLE
+    &.purple {
+        border-color: $cl-purple-80;
+        background-color: $cl-purple-80;
+        color: $cl-white;
+        &:hover {
+            border-color: $cl-purple-50;
+            background-color: $cl-purple-50;
+        }
+        &:active {
+            border-color: $cl-purple-70;
+            background-color: $cl-purple-70;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-purple-30;
+            background-color: $cl-purple-30;
+        }
+    }
+    &.purple-line {
+        border-color: $cl-purple-30;
+        background-color: $cl-purple-5;
+        color: $cl-purple-80;
+        &:hover {
+            border-color: $cl-purple-30;
+            background-color: $cl-purple-20;
+        }
+        &:active {
+            border-color: $cl-purple-30;
+            background-color: $cl-purple-30;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-purple-30;
+            background-color: $cl-purple-5;
+            color: $cl-purple-30;
+            &.add {
+                span {
+                    &::before {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%23CBA7D8'/%3E%3C/svg%3E");
+                    }
+                }
+            }
+        }
+        &.add {
+            span {
+                &::before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%2362288B'/%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+    // BLUE
+    &.blue-line {
+        background-color: $cl-blue-5;
+        border-color: $cl-blue-30;
+        color: $cl-blue-70;
+        &:hover {
+            background-color: $cl-blue-20;
+            border-color: $cl-blue-30;
+        }
+        &:active {
+            background-color: $cl-blue-30;
+            border-color: $cl-blue-30;
+        }
+        &:disabled, .disabled {
+            background-color: $cl-blue-5;
+            border-color: $cl-blue-30;
+            color: $cl-blue-30;
+        }
+    }
+}

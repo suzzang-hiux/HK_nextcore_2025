@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>menu viewer</title>
+    <script>
+        var global_page_context_path = "";
+    </script>
+    <link href="/css/style.css?v=20211227_v1" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=72645.00063682641"></script>
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+
+
+</head>
+
+
+<body data-ep-view-mode="default" class="subContents legacy bg-white">
+    <div>
+        <div style="margin:10px 0px 10px 0px;">
+            <button onclick="menuCTRL.viewMenu()" class="btn btn-save">메뉴 호출</button>
+            <button onclick="menuCTRL.viewFn()" class="btn btn-save">fn 호출</button>
+            <button onclick="menuCTRL.viewToast()" class="btn btn-save">toast 호출</button>
+        </div>
+        <pre id="menuInfo"  style="width: calc(100% - 15px);height: calc(100% - 220px);position: absolute;">
+            <table style="width: 100%;height: 100%;">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center !important;">
+                            <img src="/wsrv/app/img/emptyimg.png" alt="">
+                            <p style="font-size: 24px;font-weight: bold;margin-top: 20px;">좌측 상단 전체메뉴에서 메뉴를 선택해주세요!</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </pre>
+    </div>
+</body>
+
+</html>
+<script>
+
+var menuCTRL = {
+    menuDescInfo: {}
+    , init() {
+        window.addEventListener("message",(evt)=>{
+            console.log('recv message ', evt.data)
+            const evtData = event.data;
+            let evtDataObj = evtData;
+
+            $('#menuInfo').html(JSON.stringify(evtDataObj, null, 4));
+        })
+    }
+    ,viewMenu(){
+        sendMessage({
+            viewType:"menu",
+            menuInfo:{
+                "menuCd": "MR001001",
+                "menuNm": "설계출재등록"
+            }
+        });
+    }
+    ,viewFn(){
+        sendMessage({
+            viewType:"fn",
+            view:"addErrorMsg",
+            viewOption:{
+                width:"600px", height:"350px", title:"오류접수",
+                param:{
+                    path:"보 상 > 소 송 > 소송지원관리 > 소송비용정산계산기"
+                }
+            }
+
+        });
+    }
+    ,viewToast(){
+        sendMessage({
+            viewType:"toast",
+            view:"Toast 테스트",
+        });
+    }
+    
+}
+
+function sendMessage(msg){
+    parent.postMessage(msg,"*")
+}
+menuCTRL.init();
+
+
+
+</script>
