@@ -15,6 +15,7 @@ var gnbVm = $portalApp.vueServiceBean({
         searchTimer : -1,
         searchView:false,
         searchData:[],
+        // 251216 추가
         showGnbScrollBtn: false,
     }
     ,created : function (){
@@ -56,7 +57,7 @@ var gnbVm = $portalApp.vueServiceBean({
         // 251216 추가
         // gnb 메뉴 스크롤 양옆 이동 
         var _this = this;
-        
+
         setTimeout(function () {
             _this.checkGnbScrollable();
         }, 0);
