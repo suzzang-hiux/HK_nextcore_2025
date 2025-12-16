@@ -6820,13 +6820,6 @@ body[data-theme=type3] .ep-lnb-arrow {
   pointer-events: all;
 }
 
-.wrap-back {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-
 body.subContents {
   height: 100%;
 }
