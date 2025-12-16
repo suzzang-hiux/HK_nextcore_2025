@@ -3,6 +3,7 @@
     width: 60px;
     height: 100%;
     position: relative;
+    flex-shrink: 0;
     &-inner {
         width: 100%;
         height: 100%;
@@ -16,19 +17,31 @@
         overflow-y: auto;
         will-change: background-color;
         transition: background-color 0.2s ease;
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
     .logo {
-        width: 36px;
-        height: 52px;
+        width: fit-content;
         margin-bottom: 12px;
+        position: relative;
+        @include flex(column, center, center, 4px);
         a {
             display: block;
-            width: 100%;
-            height: 100%;
+            width: 36px;
+            height: 52px;
             @include bg-set;
             background-image: url("/wsrv/app/img/new/heungkuk_logo.svg");
             will-change: background-image;
             transition: background-image 0.2s;
+        }
+        span {
+            width: 100%;
+            display: block;
+            position: relative;
+            padding-inline: 4px;
+            text-align: center;
+            @include font(11px, 400, 1.2);
         }
     }
     .home-menu, .all-menu {
@@ -91,42 +104,42 @@
                     background-position: center;
                     background-repeat: no-repeat;
                 }
-                &.type-1 {
+                &.groupware {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_groupware.png");
                     }
                 }
-                &.type-2 {
+                &.hr-info {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_human_info.png");
                     }
                 }
-                &.type-3 {
+                &.itsm {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_itsm.png");
                     }
                 }
-                &.type-4 {
+                &.hobby-view {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_data.png");
                     }
                 }
-                &.type-5 {
+                &.image-system {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_picture.png");
                     }
                 }
-                &.type-6 {
+                &.ai-assistant {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_ai.png");
                     }
                 }
-                &.type-7 {
+                &.password-change {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_password.png");
                     }
                 }
-                &.type-8 {
+                &.ip-change {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_lnb_network.png");
                     }
@@ -138,6 +151,10 @@
         width: 100%;
         position: relative;
         @include flex(column, center, flex-start, 0);
+    }
+    .ep-lnb-bottom {
+        position: relative;
+        bottom: auto;
     }
     &-switch {
         width: 100%;
@@ -193,8 +210,8 @@
         padding: 8px;
         @include border-box;
         position: absolute;
-        bottom: 62px;
-        left: 12px;
+        bottom: 76px;
+        left: 16px;
         @include font(13px, 400, 1.23);
         color: $cl-black;
         border-radius: 4px;
@@ -204,9 +221,9 @@
         will-change: opacity;
         transition: opacity 0.2s;
         @include z(modal);
+        pointer-events: none;
         &.on {
             opacity: 1;
-            pointer-events: all;
         }
     }
     &-arrow {
@@ -235,6 +252,38 @@
             }
             &.rotation {
                 transform: rotate(180deg);
+            }
+        }
+    }
+    .lnb-dim {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+    }
+    &.disabled {
+        .lnb-dim {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .ep-lnb-arrow {
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.10);
+                border-radius: 0 8px 8px 0;
             }
         }
     }
@@ -524,6 +573,7 @@
                     .scrollable-container {
                         width: 100%;
                         height: calc(100% - 40px);
+                        overflow-y: auto;
                     }
                     .result_list {
                         width: 100%;
@@ -1016,25 +1066,33 @@ body[data-theme="type3"] {
 
 //  ============= ▼ GNB ▼ =============
 .ep-gnb {
-    width: 100%;
+    width: calc(100vw - 60px);
     height: 40px;
     position: relative;
     padding-inline: 16px;
     background-color: $cl-sg-5;
     border-bottom: 1px solid $cl-sg-20;
-    @include flex(row, center, space-between, 0);
     color: $cl-gr-90;
     @include z(header);
     .gnb-left-area {
+        width: calc(100% - 322px);
         height: 100%;
+        @include flex(row, center, space-between, 20px);
         .gnb-menu {
-            width: fit-content;
+            flex: 1 1 auto;
+            min-width: 0;
             height: 100%;
+            overflow-x: auto;
             @include flex(row, center, flex-start, 33px);
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+                display: none;
+            }
             li {
                 width: fit-content;
                 height: 100%;
                 position: relative;
+                flex-shrink: 0;
                 > a {
                     width: 100%;
                     height: 100%;
@@ -1117,8 +1175,46 @@ body[data-theme="type3"] {
                 }
             }
         }
+        .btn-wrap {
+            width: fit-content;
+            flex-shrink: 0;
+            gap: 0;
+            button {
+                width: 24px;
+                height: 24px;
+                border-radius: 3px;
+                background-color: $cl-sg-5;
+                will-change: background-color;
+                transition: background-color 0.2s;
+                &::after {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    @include ps-center;
+                    @include bg-set;
+                    pointer-events: none;
+                }
+                &:hover {
+                    background-color: $cl-sg-30;
+                }
+                &:active {
+                    background-color: $cl-sg-40;
+                }
+                &.prev {
+                    &::after {
+                        background-image: url("/wsrv/app/img/new/common/ico_arrows_align_left.png");
+                    }
+                }
+                &.next {
+                    &::after {
+                        background-image: url("/wsrv/app/img/new/common/ico_arrows_align_right.png");
+                    }
+                }
+            }
+        }
     }
     .gnb-right-area {
+        width: 310px;
         .menu-right-area {
             width: fit-content;
             position: relative;
@@ -1400,15 +1496,68 @@ body[data-theme="type3"] {
             }
         }
     }
+    .gnb-dim {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include z(modal);
+        background-color: rgba(0, 0, 0, 0.10);
+        opacity: 0;
+        pointer-events: none;
+    }
+    &.disabled {
+        .gnb-dim {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
 }
 // ============= ▲ GNB ▲ =============
 
 
 //  ============= ▼ CONTENT ▼ =============
+.wrap-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+body.subContents {
+    height: 100%;
+}
 .ep-content {
     width: 100%;
     position: relative;
-    background-color: $cl-white;
+    background-color: $cl-sg-20;
+}
+.contents-grid {
+    width: 100%;
+    position: relative;
+    @include flex(row, stretch , flex-start, 12px);
+    padding: 16px;
+    .col-xs-3 {
+        width: 20.5%;
+        position: relative;
+        background-color: $cl-white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+        .pencake-portlet-box {
+            width: 100%;
+            position: relative;
+            & + .pencake-portlet-box {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid $cl-gr-30;
+            }
+        }
+    }
+    .col-xs-5 {
+        flex: 1;
+    }
 }
 // ============= ▲ CONTENT ▲ =============
 
@@ -1426,47 +1575,37 @@ body[data-theme="type3"] {
         .menu-left-area {
             li {
                 a {
-                    &.type-1 {
+                    &.customer-register {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_human_plus.png");
                         }
                     }
-                    &.type-2 {
+                    &.customer-list {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_human.png");
                         }
                     }
-                    &.type-3 {
+                    &.consent {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_paper_check.png");
                         }
                     }
-                    &.type-4 {
+                    &.analysis {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_diagram.png");
                         }
                     }
-                    &.type-5 {
+                    &.print {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_print.png");
                         }
                     }
-                    &.type-6 {
+                    &.disease-manual {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_book.png");
                         }
                     }
-                    &.type-7 {
-                        &::before {
-                            background-image: url("/wsrv/app/img/new/common/ico_lnb_picture.png");
-                        }
-                    }
-                    &.type-8 {
-                        &::before {
-                            background-image: url("/wsrv/app/img/new/common/ico_lnb_password.png");
-                        }
-                    }
-                    &.type-9 {
+                    &.safe-register {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_lnb_security.png");
                         }

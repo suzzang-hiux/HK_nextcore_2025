@@ -120,9 +120,12 @@
 		<div id="lnbMenuContainer" class="ep-lnb vue_selector">
 			<div class="ep-lnb-inner">
 				<div class="ep-lnb-top">
+					<!-- 251216 로고 텍스트 추가 -->
 					<div class="logo">
 						<a href="javascript:;"></a>
+						<span class="text">개발계</span>
 					</div>
+					<!-- // 251216 로고 텍스트 추가 -->
 					<div class="home-menu">
 						<a href="javascript:;" @click="toggleContentFrame('biz')">
 							홈
@@ -133,25 +136,26 @@
 							전체메뉴
 						</a>
 					</div>
+					<!-- 251216 LNB 메뉴 클래스 변경 -->
 					<nav class="menu-left-area">
 						<ul>
 							<li>
-								<a href="javascript:;" class="type-1">그룹웨어</a>
+								<a href="javascript:;" class="groupware">그룹웨어</a>
 							</li>
 							<li>
-								<a href="javascript:;" class="type-2">인사정보</a>
+								<a href="javascript:;" class="hr-info">인사정보</a>
 							</li>
 							<li>
-								<a href="javascript:;" class="type-3">ITSM</a>
+								<a href="javascript:;" class="itsm">ITSM</a>
 							</li>
 							<li>
-								<a href="javascript:;" class="type-4">흥미뷰</a>
+								<a href="javascript:;" class="hobby-view">흥미뷰</a>
 							</li>
 							<li>
-								<a href="javascript:;" class="type-5">이미지<br>시스템</a>
+								<a href="javascript:;" class="image-system">이미지<br>시스템</a>
 							</li>
 							<li>
-								<a href="javascript:;" class="type-6">AI<br>Assistant</a>
+								<a href="javascript:;" class="ai-assistant">AI<br>Assistant</a>
 							</li>
 						</ul>
 					</nav>
@@ -159,12 +163,13 @@
 				<div class="ep-lnb-bottom">
 					<ul class="menu-left-area">
 						<li>
-							<a href="javascript:;" class="type-7" @click="changePassword();">비밀번호<br>변경</a>
+							<a href="javascript:;" class="password-change" @click="changePassword();">비밀번호<br>변경</a>
 						</li>
 						<li>
-							<a href="javascript:;" class="type-8">IP변경</a>
+							<a href="javascript:;" class="ip-change">IP변경</a>
 						</li>
 					</ul>
+					<!-- // 251216 LNB 메뉴 클래스 변경 -->
 					<div class="ep-lnb-switch" @mouseover="showResizeToolTip = true" @mouseleave="showResizeToolTip = false">
 						<input type="checkbox" class="hidden" id="lnbAutoResize" />
 						<label for="lnbAutoResize">
@@ -172,6 +177,9 @@
 						</label>
 					</div>
 				</div>
+				<!-- 251216 LNB DIM 추가 -->
+				<div class="lnb-dim"></div>
+				<!-- // 251216 LNB DIM 추가 -->
 			</div>
 			<div class="resize-tip" :class="{ on: showResizeToolTip }">
 				자동축소 기능을 켜면 현재 브라우저 가로폭에 맞춰 화면 전체가 비율로 축소/확대됩니다. <br />
@@ -268,7 +276,13 @@
 								<button type="button" class="btn purple-line add" @click="addGnbMenu(item)"><span>메뉴 추가</span></button>
 							</div>
 						</li>
-					</ul>
+					</ul>				
+					<!-- 251216 메뉴 이동 버튼 추가 -->
+					<div class="btn-wrap" v-if="showGnbScrollBtn">
+						<button type="button" class="prev" title="왼쪽으로 이동" @click="scrollPrev"></button>
+						<button type="button" class="next" title="오른쪽으로 이동" @click="scrollNext"></button>
+					</div>
+					<!-- // 251216 메뉴 이동 버튼 추가 -->
 				</div>
 				<div class="gnb-right-area">
 					<ul class="menu-right-area">
@@ -356,6 +370,9 @@
 						<!-- // 로그아웃 -->
 					</ul>
 				</div>
+				<!-- 251216 GNB DIM 추가 -->
+				<div class="gnb-dim"></div>
+				<!-- // 251216 GNB DIM 추가 -->
 			</div>
 			<!-- ▲ GNB END ▲ -->
 
@@ -370,8 +387,7 @@
 					<div class="wh100per">
 						<div class="main-content-wrapper" data-cont-type="legacy">
 							<!-- 상단 좌측 업무메뉴 클릭하면 기간계화면 우측으로 밀림 클래스 ( slideRight-small / slideRight-big )추가 -->
-							<iframe src="/menu/view.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
-								class="main-content-area"></iframe>
+							<iframe src="/menu/view.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame" class="main-content-area"></iframe>
 							<!-- <iframe src="/html/legacyMain.html" frameborder="0" name="epContentViewFrame" id="epContentViewFrame"
                             class="main-content-area slideRight-small"></iframe> -->
 						</div>

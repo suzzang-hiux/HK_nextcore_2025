@@ -174,49 +174,52 @@ var mainMenuArea = $portalApp.vueServiceBean({
             // }
             
             var scrollPosition = {top:0,left:0};
-            $("#menuWrapper").mCustomScrollbar({
-    			theme:"minimal-dark" //3d-thick ,minimal-dark, rounded
-    			,axis :"yx"
-    			,autoHideScrollbar :false
-    			,callbacks:{
-    				onBeforeUpdate: function (){
-    					var sEle = $(this);
+            // 251216 커스텀스크롤 제거
+            // $("#menuWrapper").mCustomScrollbar({
+    		// 	theme:"minimal-dark" //3d-thick ,minimal-dark, rounded
+    		// 	,axis :"yx"
+    		// 	,autoHideScrollbar :false
+    		// 	,callbacks:{
+    		// 		onBeforeUpdate: function (){
+    		// 			var sEle = $(this);
     					
-    					var isVerticalVisible = sEle.find('.mCSB_container').hasClass('mCS_y_hidden');
+    		// 			var isVerticalVisible = sEle.find('.mCSB_container').hasClass('mCS_y_hidden');
     					
-    					if(isVerticalVisible){
-    						sEle.mCustomScrollbar('scrollTo',[scrollPosition.top, scrollPosition.left],{trigger:"internal", dir:'y', timeout:1, scrollInertia : 0, scrollEasing:"linear"});
-    					}else{
-    						scrollPosition.top = Math.abs(sEle.find('.mCSB_container').css('top').replace(/px/gi,''));;
-    						scrollPosition.left = Math.abs(sEle.find('.mCSB_container').css('left').replace(/px/gi,'')); 
-    					}	
-    				}
-    			}
-    		});
+    		// 			if(isVerticalVisible){
+    		// 				sEle.mCustomScrollbar('scrollTo',[scrollPosition.top, scrollPosition.left],{trigger:"internal", dir:'y', timeout:1, scrollInertia : 0, scrollEasing:"linear"});
+    		// 			}else{
+    		// 				scrollPosition.top = Math.abs(sEle.find('.mCSB_container').css('top').replace(/px/gi,''));;
+    		// 				scrollPosition.left = Math.abs(sEle.find('.mCSB_container').css('left').replace(/px/gi,'')); 
+    		// 			}	
+    		// 		}
+    		// 	}
+    		// });
             
             var bmScrollPosition = {top:0,left:0};
-            $("#favMenuWrapper").mCustomScrollbar({
-    			theme:"minimal-dark" //3d-thick ,minimal-dark, rounded
-    			,axis :"yx"
-    			,autoHideScrollbar :false
-    			,callbacks:{
-    				onBeforeUpdate: function (){
-    					var sEle = $(this);
-						var isVerticalVisible = sEle.find('.mCSB_container').hasClass('mCS_y_hidden');
+            // 251216 커스텀스크롤 제거
+            // $("#favMenuWrapper").mCustomScrollbar({
+    		// 	theme:"minimal-dark" //3d-thick ,minimal-dark, rounded
+    		// 	,axis :"yx"
+    		// 	,autoHideScrollbar :false
+    		// 	,callbacks:{
+    		// 		onBeforeUpdate: function (){
+    		// 			var sEle = $(this);
+			// 			var isVerticalVisible = sEle.find('.mCSB_container').hasClass('mCS_y_hidden');
     					
-    					if(isVerticalVisible){
-    						sEle.mCustomScrollbar('scrollTo',[bmScrollPosition.top, bmScrollPosition.left],{trigger:"internal", dir:'y', timeout:1, scrollInertia : 0, scrollEasing:"linear"});
-    					}else{
-    						bmScrollPosition.top = Math.abs(sEle.find('.mCSB_container').css('top').replace(/px/gi,''));;
-    						bmScrollPosition.left = Math.abs(sEle.find('.mCSB_container').css('left').replace(/px/gi,'')); 
-    					}
-    				}
-    			}
-    		});
+    		// 			if(isVerticalVisible){
+    		// 				sEle.mCustomScrollbar('scrollTo',[bmScrollPosition.top, bmScrollPosition.left],{trigger:"internal", dir:'y', timeout:1, scrollInertia : 0, scrollEasing:"linear"});
+    		// 			}else{
+    		// 				bmScrollPosition.top = Math.abs(sEle.find('.mCSB_container').css('top').replace(/px/gi,''));;
+    		// 				bmScrollPosition.left = Math.abs(sEle.find('.mCSB_container').css('left').replace(/px/gi,'')); 
+    		// 			}
+    		// 		}
+    		// 	}
+    		// });
             
-            $("#mainMenuSearchResult").mCustomScrollbar({
-    			theme:"minimal-dark" //3d-thick ,minimal-dark, rounded
-    		});
+            // 251216 커스텀스크롤 제거
+            // $("#mainMenuSearchResult").mCustomScrollbar({
+    		// 	theme:"minimal-dark"
+    		// });
         }
      	// 접기 펼치기
         ,mainMenuTreeToggle(mode){

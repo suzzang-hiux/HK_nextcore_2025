@@ -15,6 +15,7 @@ var gnbVm = $portalApp.vueServiceBean({
         searchTimer : -1,
         searchView:false,
         searchData:[],
+        showGnbScrollBtn: false,
     }
     ,created : function (){
     	var allItems = {"rootNode" :{
@@ -51,6 +52,18 @@ var gnbVm = $portalApp.vueServiceBean({
         }
 
         this.gnbMenuList = allItems.rootNode.children;
+
+        // 251216 추가
+        // gnb 메뉴 스크롤 양옆 이동 
+        var _this = this;
+        
+        setTimeout(function () {
+            _this.checkGnbScrollable();
+        }, 0);
+
+        $(window).on('resize.gnb', function () {
+            _this.checkGnbScrollable();
+        });
     }
     ,methods: {
         init: function () {
@@ -185,6 +198,26 @@ var gnbVm = $portalApp.vueServiceBean({
                     }
                 });
             }, 0);
+        }
+        // 251216 추가
+        // gnb 메뉴 스크롤 양옆 이동 
+        ,checkGnbScrollable: function () {
+            var el = this.$refs.gnbMenu;
+            if (!el) return;
+
+            this.showGnbScrollBtn = el.scrollWidth > el.clientWidth;
+        },
+        scrollPrev: function () {
+            var el = this.$refs.gnbMenu;
+            if (!el) return;
+
+            el.scrollLeft -= 200;
+        },
+        scrollNext: function () {
+            var el = this.$refs.gnbMenu;
+            if (!el) return;
+
+            el.scrollLeft += 200;
         }
     }
 });
