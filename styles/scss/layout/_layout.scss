@@ -258,7 +258,7 @@
     .lnb-dim {
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -268,6 +268,9 @@
         pointer-events: none;
     }
     &.disabled {
+        .ep-lnb-inner {
+            overflow: hidden;
+        }
         .lnb-dim {
             opacity: 1;
             pointer-events: all;
@@ -1115,62 +1118,9 @@ body[data-theme="type3"] {
                         left: -16px;
                     }
                 }
-                .gnb-submenu {
-                    display: none;
-                    width: fit-content;
-                    height: fit-content;
-                    position: absolute;
-                    top: 40px;
-                    left: -14px;
-                    padding: 8px;
-                    border-radius: 4px;
-                    border: 1px solid $cl-black;
-                    background: $cl-white;
-                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
-                    white-space: nowrap;
-                    @include z(modal);
-                    .sub-menu-wrapper {
-                        ul {
-                            width: calc(100% + 16px);
-                            margin-left: -8px;
-                            @include flex(column, stretch, flex-start, 0);
-                            max-height: 400px;
-                            overflow-y: auto;
-                            li {
-                                width: 100%;
-                                position: relative;
-                                a {
-                                    width: 100%;
-                                    position: relative;
-                                    padding: 4px 8px;
-                                    @include flex(row, center, flex-start, 0);
-                                    @include font(13px, 500, 1.25);
-                                    color: $cl-black;
-                                    text-align: left;
-                                    background-color: $cl-white;
-                                    will-change: background-color;
-                                    transition: background-color 0.3s ease;
-                                    &:hover {
-                                        background-color: $cl-sg-10;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .btn {
-                        width: 100%;
-                        min-width: 90px;
-                        padding: 4px 6px;
-                        margin: 8px auto 0;
-                        @include font(13px, 500, 1);
-                    }
-                }
                 &.active {
                     > a {
                         color: $cl-p-magenta;
-                    }
-                    .gnb-submenu {
-                        display: block;
                     }
                 }
             }
@@ -1210,6 +1160,53 @@ body[data-theme="type3"] {
                         background-image: url("/wsrv/app/img/new/common/ico_arrows_align_right.png");
                     }
                 }
+            }
+        }
+        .gnb-submenu {
+            width: fit-content;
+            height: fit-content;
+            position: fixed;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid $cl-black;
+            background: $cl-white;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+            white-space: nowrap;
+            @include z(modal);
+            .sub-menu-wrapper {
+                ul {
+                    width: calc(100% + 16px);
+                    margin-left: -8px;
+                    @include flex(column, stretch, flex-start, 0);
+                    max-height: 400px;
+                    overflow-y: auto;
+                    li {
+                        width: 100%;
+                        position: relative;
+                        a {
+                            width: 100%;
+                            position: relative;
+                            padding: 4px 8px;
+                            @include flex(row, center, flex-start, 0);
+                            @include font(13px, 500, 1.25);
+                            color: $cl-black;
+                            text-align: left;
+                            background-color: $cl-white;
+                            will-change: background-color;
+                            transition: background-color 0.3s ease;
+                            &:hover {
+                                background-color: $cl-sg-10;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn {
+                width: 100%;
+                min-width: 90px;
+                padding: 4px 6px;
+                margin: 8px auto 0;
+                @include font(13px, 500, 1);
             }
         }
     }
@@ -1432,35 +1429,6 @@ body[data-theme="type3"] {
                 transition: background-image 0.2s;
                 &:hover {
                     background-image: url("/wsrv/app/img/new/common/ico_profile_hover.png");
-                    .user-info {
-                        opacity: 1;
-                        pointer-events: all;
-                    }
-                }
-                .user-info {
-                    display: block;
-                    width: fit-content;
-                    position: absolute;
-                    top: 29px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    border-radius: 4px;
-                    background-color: $cl-white;
-                    border: 1px solid $cl-black;
-                    white-space: nowrap;
-                    @include flex(row, center, center, 8px);
-                    padding: 8px;
-                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
-                    @include font(13px, 700, 1.2);
-                    color: $cl-black;
-                    opacity: 0;
-                    pointer-events: none;
-                    transition: opacity 0.2s;
-                    @include z(modal);
-                    span {
-                        font-weight: 400;
-                        color: $cl-p-magenta;
-                    }
                 }
             }
         }
@@ -1537,17 +1505,20 @@ body.subContents {
 .contents-grid {
     width: 100%;
     position: relative;
-    @include flex(row, stretch , flex-start, 12px);
+    @include flex(row, stretch, flex-start, 12px);
     padding: 16px;
     .col-xs-3 {
         width: 20.5%;
+        height: fit-content;
         position: relative;
+        padding: 16px;
         background-color: $cl-white;
         border-radius: 8px;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
         .pencake-portlet-box {
             width: 100%;
             position: relative;
+            padding: 0;
             & + .pencake-portlet-box {
                 margin-top: 20px;
                 padding-top: 20px;
@@ -1557,6 +1528,32 @@ body.subContents {
     }
     .col-xs-5 {
         flex: 1;
+        .pencake-portlet-box {
+            width: 100%;
+            position: relative;
+            border-radius: 8px;
+            background: $cl-white;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+
+        }
+    }
+}
+
+.pencake-portlet-box {
+    .pencake-portlet-content {
+        width: 100%;
+        position: relative;
+        .title-box {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, space-between, 8px);
+            margin-bottom: 8px;
+            .portlet_title {
+                @include font(16px, 700, 1.25);
+                color: $cl-black;
+                margin: 0;
+            }
+        }
     }
 }
 // ============= ▲ CONTENT ▲ =============

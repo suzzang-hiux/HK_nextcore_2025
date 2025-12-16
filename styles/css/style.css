@@ -5396,7 +5396,7 @@ iframe {
 .ep-lnb .lnb-dim {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -5404,6 +5404,9 @@ iframe {
   background-color: rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
+}
+.ep-lnb.disabled .ep-lnb-inner {
+  overflow: hidden;
 }
 .ep-lnb.disabled .lnb-dim {
   opacity: 1;
@@ -6364,71 +6367,8 @@ body[data-theme=type3] .ep-lnb-arrow {
   transform: translateY(-50%);
   left: -16px;
 }
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu {
-  display: none;
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  top: 40px;
-  left: -14px;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #000;
-  background: #fff;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  z-index: 30;
-}
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu .sub-menu-wrapper ul {
-  width: calc(100% + 16px);
-  margin-left: -8px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 0;
-  max-height: 400px;
-  overflow-y: auto;
-}
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu .sub-menu-wrapper ul li {
-  width: 100%;
-  position: relative;
-}
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu .sub-menu-wrapper ul li a {
-  width: 100%;
-  position: relative;
-  padding: 4px 8px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #000;
-  text-align: left;
-  background-color: #fff;
-  will-change: background-color;
-  transition: background-color 0.3s ease;
-}
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu .sub-menu-wrapper ul li a:hover {
-  background-color: #EAF0F5;
-}
-.ep-gnb .gnb-left-area .gnb-menu li .gnb-submenu .btn {
-  width: 100%;
-  min-width: 90px;
-  padding: 4px 6px;
-  margin: 8px auto 0;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1;
-}
 .ep-gnb .gnb-left-area .gnb-menu li.active > a {
   color: #EC008C;
-}
-.ep-gnb .gnb-left-area .gnb-menu li.active .gnb-submenu {
-  display: block;
 }
 .ep-gnb .gnb-left-area .btn-wrap {
   width: fit-content;
@@ -6467,6 +6407,63 @@ body[data-theme=type3] .ep-lnb-arrow {
 }
 .ep-gnb .gnb-left-area .btn-wrap button.next::after {
   background-image: url("/wsrv/app/img/new/common/ico_arrows_align_right.png");
+}
+.ep-gnb .gnb-left-area .gnb-submenu {
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 30;
+}
+.ep-gnb .gnb-left-area .gnb-submenu .sub-menu-wrapper ul {
+  width: calc(100% + 16px);
+  margin-left: -8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.ep-gnb .gnb-left-area .gnb-submenu .sub-menu-wrapper ul li {
+  width: 100%;
+  position: relative;
+}
+.ep-gnb .gnb-left-area .gnb-submenu .sub-menu-wrapper ul li a {
+  width: 100%;
+  position: relative;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  will-change: background-color;
+  transition: background-color 0.3s ease;
+}
+.ep-gnb .gnb-left-area .gnb-submenu .sub-menu-wrapper ul li a:hover {
+  background-color: #EAF0F5;
+}
+.ep-gnb .gnb-left-area .gnb-submenu .btn {
+  width: 100%;
+  min-width: 90px;
+  padding: 4px 6px;
+  margin: 8px auto 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
 }
 .ep-gnb .gnb-right-area {
   width: 310px;
@@ -6730,41 +6727,6 @@ body[data-theme=type3] .ep-lnb-arrow {
 .ep-gnb .gnb-right-area .dropdown .user-img:hover {
   background-image: url("/wsrv/app/img/new/common/ico_profile_hover.png");
 }
-.ep-gnb .gnb-right-area .dropdown .user-img:hover .user-info {
-  opacity: 1;
-  pointer-events: all;
-}
-.ep-gnb .gnb-right-area .dropdown .user-img .user-info {
-  display: block;
-  width: fit-content;
-  position: absolute;
-  top: 29px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 4px;
-  background-color: #fff;
-  border: 1px solid #000;
-  white-space: nowrap;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  z-index: 30;
-}
-.ep-gnb .gnb-right-area .dropdown .user-img .user-info span {
-  font-weight: 400;
-  color: #EC008C;
-}
 .ep-gnb .gnb-right-area .hint--info a {
   width: fit-content;
   display: flex;
@@ -6842,7 +6804,9 @@ body.subContents {
 }
 .contents-grid .col-xs-3 {
   width: 20.5%;
+  height: fit-content;
   position: relative;
+  padding: 16px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
@@ -6850,6 +6814,7 @@ body.subContents {
 .contents-grid .col-xs-3 .pencake-portlet-box {
   width: 100%;
   position: relative;
+  padding: 0;
 }
 .contents-grid .col-xs-3 .pencake-portlet-box + .pencake-portlet-box {
   margin-top: 20px;
@@ -6858,6 +6823,35 @@ body.subContents {
 }
 .contents-grid .col-xs-5 {
   flex: 1;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box {
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.pencake-portlet-box .pencake-portlet-content {
+  width: 100%;
+  position: relative;
+}
+.pencake-portlet-box .pencake-portlet-content .title-box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.pencake-portlet-box .pencake-portlet-content .title-box .portlet_title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000;
+  margin: 0;
 }
 
 .wrapper.portal .ep-lnb .logo a {

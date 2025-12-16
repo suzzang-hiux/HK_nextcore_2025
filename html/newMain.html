@@ -264,19 +264,21 @@
 				<div class="gnb-left-area">
 					<ul class="gnb-menu" ref="gnbMenu">
 						<li v-for="(item , idx) in gnbMenuList" :class="activeGnbItem.MENU_ID == item.MENU_ID?'active':''">
-							<a href="javascript:;" @click.stop="openSubMenu(item)" :title="item.MENU_NM">{{item.MENU_NM}}</a>
-							<div class="gnb-submenu">
-								<div class="sub-menu-wrapper" v-if="item.children.length > 0">
-									<ul>
-										<li v-for="(childItem , idx) in item.children">
-											<a href="javascript:;" @click="openMenu(childItem.MENU_ID)" :title="childItem.MENU_NM">{{childItem.MENU_NM}}</a>
-										</li>
-									</ul>
-								</div>
-								<button type="button" class="btn purple-line add" @click="addGnbMenu(item)"><span>메뉴 추가</span></button>
-							</div>
+							<a href="javascript:;" @click.stop="openSubMenu(item, $event)" :title="item.MENU_NM">{{item.MENU_NM}}</a>
 						</li>
-					</ul>				
+					</ul>
+					<!-- 251216 추가 수정 : 투뎁스 메뉴 분리 -->	
+					<div class="gnb-submenu" v-if="activeGnbItem.MENU_ID" :style="submenuStyle">
+						<div class="sub-menu-wrapper" v-if="activeGnbItem.children && activeGnbItem.children.length">
+							<ul>
+								<li v-for="childItem in activeGnbItem.children" :key="childItem.MENU_ID">
+									<a href="javascript:;" @click="openMenu(childItem.MENU_ID)" :title="childItem.MENU_NM">{{childItem.MENU_NM}}</a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn purple-line add" @click="addGnbMenu(activeGnbItem)"><span>메뉴 추가</span></button>
+					</div>
+					<!-- // 251216 추가 수정 : 투뎁스 메뉴 분리 -->	
 					<!-- 251216 메뉴 이동 버튼 추가 -->
 					<div class="btn-wrap" v-if="showGnbScrollBtn">
 						<button type="button" class="prev" title="왼쪽으로 이동" @click="scrollPrev"></button>
@@ -313,11 +315,7 @@
 						<!-- // 검색 -->
 						<!-- 프로필 -->
 						<li class="dropdown">
-							<a href="javascript:;" class="user-img" @click="showUserDropdown = !showUserDropdown">
-								<strong class="user-info">
-									&#44608;&#50689;&#53468; <span>77001964</span>
-								</strong>
-							</a>
+							<a href="javascript:;" class="user-img" @click="showUserDropdown = !showUserDropdown" title="&#44608;&#50689;&#53468; 77001964"></a>
 							<div class="dropdown-box" :class="{ active: showUserDropdown }">
 								<div class="dropdown-header">
 									<h3 class="dropdown-title">사이드바 색상변경</h3>

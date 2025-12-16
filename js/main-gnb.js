@@ -131,13 +131,22 @@ var gnbVm = $portalApp.vueServiceBean({
             });
         }
         // 서브 메뉴 열기
-        ,openSubMenu:function(item){
+        // 251216 추가 수정 : 투뎁스 메뉴 분리
+        ,openSubMenu:function(item, e){
             if(this.activeGnbItem.MENU_ID == item.MENU_ID){
                 this.closeSubMenu();    
                 return; 
             }
 
             this.activeGnbItem = item;
+
+            var rect = e.currentTarget.getBoundingClientRect();
+            var OFFSET_X = 14;
+
+            this.submenuStyle = {
+                top: rect.bottom + 'px',
+                left: rect.left - OFFSET_X + 'px'
+            };
         }
         // 서브 메뉴 닫기
         ,closeSubMenu(){
