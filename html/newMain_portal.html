@@ -210,15 +210,20 @@
 						<div class="search-area">
 							<div class="input-box search">
 								<input type="hidden">
-								<input type="text" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
+								<!-- 251226 수정 : INPUT delete 기능 추가 -->
+								<div class="input-type-txt">
+									<input type="text" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
 									placeholder="메뉴명/화면명 검색" autocomplete="false" style="ime-mode:active;" />
+									<button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+								</div>
+								<!-- // 251226 수정 : INPUT delete 기능 추가 -->
 								<button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
 							</div>
 							<span class="warning-txt orange">부여된 권한에 대한 메뉴 검색만 가능합니다.</span>
 						</div>
 						<div class="menu-area">
 							<div class="menu-area-inner">
-								<div class="menu-tree" :class="menuViewType=='biz'?'scroll-hidden':''" v-show="menuViewType=='biz'"> <!-- 251226 첫번째 탭일 때 'scroll-hidden'클래스 추가 -->
+								<div class="menu-tree" :class="menuViewType=='biz'?'scroll-hidden':''" v-show="menuViewType=='biz'"> <!-- 251226 수정 :  첫번째 탭일 때 'scroll-hidden'클래스 추가 -->
 									<div class="menu-box-item">
 										<h3>고객</h3>
 										<div class="btn-wrap col">
@@ -288,12 +293,12 @@
 								</div>
 							</div>
 						</div>
-						<!-- 251226 메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
+						<!-- 251226 수정 :  메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
 						<div class="btn-wrap" v-if="menuViewType=='all'">
 							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('open')">메뉴 전체열기</button>
 							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('close')">메뉴 전체닫기</button>
 						</div>
-						<!-- // 251226 메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
+						<!-- // 251226 수정 :  메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
 					</div>
 				</div>
 			</div>
@@ -336,7 +341,12 @@
 						<!-- 검색 -->
 						<li>
 							<div class="gnb-search-box">
-								<input type="text" id="searchText" @keyup="searchMenu()" class="ep-gnb-search" placeholder="메뉴명/화면명 검색" autocomplete="false" style="ime-mode:active;">
+								<!-- 251226 수정 : INPUT delete 기능 추가 -->
+								<div class="input-type-txt">
+									<input type="text" id="searchText" @keyup="searchMenu()" class="ep-gnb-search" placeholder="메뉴명/화면명 검색" autocomplete="false" style="ime-mode:active;">
+									<button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+								</div>
+								<!-- // 251226 수정 : INPUT delete 기능 추가 -->
 							</div>
 							<div class="menu-search-result" v-if="searchView">
 								<div class="result-txt">
@@ -436,7 +446,7 @@
                             class="main-content-area slideRight-small"></iframe> -->
 						</div>
 						<div class="main-content-wrapper on" data-cont-type="main">
-							<iframe src="/html/home_pt_FCbranchManager.html" frameborder="0" class="main-content-area"></iframe>
+							<iframe src="/html/home_pt_employee.html" frameborder="0" class="main-content-area"></iframe>
 						</div>
 					</div>
 				</main>

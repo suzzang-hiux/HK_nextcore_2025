@@ -771,4 +771,46 @@ $(document).on('click.lnb', function(e) {
         mainMenuArea._setEnableMenu(false);
     }
 })
+
+    // 251226 수정 : INPUT 스크립트 추가 START
+    $(document)
+    .on('focus', '.input-type-txt .common-input', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        }
+    })
+
+    .on('input', '.input-type-txt .common-input', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        } else {
+            $wrap.removeClass('has-value');
+        }
+    })
+
+    .on('blur', '.input-type-txt .common-input', function () {
+        const $wrap = $(this).closest('.input-type-txt');
+        $wrap.removeClass('has-value');
+    })
+
+    .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+        e.preventDefault();
+
+        const $wrap = $(this).closest('.input-type-txt');
+        const $input = $wrap.find('.common-input');
+
+        $input.val('');
+        $wrap.removeClass('has-value');
+
+        setTimeout(function () {
+            $input.focus();
+        }, 0);
+    });
+    // 251226 수정 : INPUT 스크립트 추가 END
 });

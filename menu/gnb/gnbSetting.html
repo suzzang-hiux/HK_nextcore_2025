@@ -80,8 +80,13 @@
 					<div class="search-area">
 						<div class="input-box search">
 							<input type="hidden">
-							<input type="type" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
+							<!-- 251226 수정 : INPUT delete 기능 추가 -->
+							<div class="input-type-txt">
+								<input type="type" v-model="searchVal" id="searchVal" @keyup="searchMenu()" class="common-input search-form-tran"
 								placeholder="화면명, 화면 ID로 검색" autocomplete="false" style="ime-mode:active;" />
+								<button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+							</div>
+							<!-- // 251226 수정 : INPUT delete 기능 추가 -->
 							<button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
 						</div>
 					</div>
@@ -346,19 +351,31 @@
 									return dflt;
 								}
 							}
-						}).on("dblclick.jstree", function (evt, data) {
-							var ref = _this.jstreeObj.jstree(true);
-							var sel = ref.get_selected();
+						})
+						// 251226 수정 : .jstree-ocl가 아니라 .jstree-anchor를 클릭했을 때 .jstree-children 생성 START
+						.on("select_node.jstree", function (evt, data) {
+							if (data.event && data.event.which === 3) {
+								return;
+							}
 
-							if (sel.length < 1) return false;
+							var tree = _this.jstreeObj.jstree(true);
+							var node = data.node;
 
-							if ($(evt.target).closest('.jstree-anchor').length < 1) return false;
+							if (!node.children || node.children.length === 0) {
+								return;
+							}
 
-							ref.edit(sel[0]);
+							tree.toggle_node(node);
+						})
+						.on("dblclick.jstree", function () {
+							var tree = _this.jstreeObj.jstree(true);
+							var sel = tree.get_selected();
 
-							return false;
+							if (!sel || sel.length < 1) return;
 
+							tree.edit(sel[0]);
 						});
+						// 251226 수정 : .jstree-ocl가 아니라 .jstree-anchor를 클릭했을 때 .jstree-children 생성 END
 
 						if (_this.treeInitSelectPosition != 'unused') {
 							$('#gnbTree').on("ready.jstree", () => {
@@ -477,5 +494,47 @@
 		}
 	})
 
+	// 251226 수정 : INPUT 스크립트 추가 START
+	$(function () {
+		$(document)
+		.on('focus', '.input-type-txt .common-input', function () {
+			const $input = $(this);
+			const $wrap = $input.closest('.input-type-txt');
 
+			if ($input.val().length > 0) {
+				$wrap.addClass('has-value');
+			}
+		})
+
+		.on('input', '.input-type-txt .common-input', function () {
+			const $input = $(this);
+			const $wrap = $input.closest('.input-type-txt');
+
+			if ($input.val().length > 0) {
+				$wrap.addClass('has-value');
+			} else {
+				$wrap.removeClass('has-value');
+			}
+		})
+
+		.on('blur', '.input-type-txt .common-input', function () {
+			const $wrap = $(this).closest('.input-type-txt');
+			$wrap.removeClass('has-value');
+		})
+
+		.on('mousedown', '.input-type-txt .delete-btn', function (e) {
+			e.preventDefault();
+
+			const $wrap = $(this).closest('.input-type-txt');
+			const $input = $wrap.find('.common-input');
+
+			$input.val('');
+			$wrap.removeClass('has-value');
+
+			setTimeout(function () {
+				$input.focus();
+			}, 0);
+		});
+	})
+	// 251226 수정 : INPUT 스크립트 추가 END
 </script>

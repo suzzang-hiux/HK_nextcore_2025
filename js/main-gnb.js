@@ -70,7 +70,7 @@ var gnbVm = $portalApp.vueServiceBean({
         init: function () {
         	var _this = this; 
         	
-            // 251226 wrapper 클래스 portal => ga 변경
+            // 251226 수정 :  wrapper 클래스 portal => ga 변경
         	var theme = $('.wrapper').hasClass('ga') ? 'type1' : 'type0';
             
             try{
@@ -250,5 +250,47 @@ $('iframe').attr('tabindex', '-1').on('focus', function () {
 $(window).on('blur', function () {
     gnbVm.closeSubMenu();
 });
+
+    // 251226 수정 : INPUT 스크립트 추가 START
+    $(document)
+    .on('focus', '.input-type-txt .ep-gnb-search', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        }
+    })
+
+    .on('input', '.input-type-txt .ep-gnb-search', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        } else {
+            $wrap.removeClass('has-value');
+        }
+    })
+
+    .on('blur', '.input-type-txt .ep-gnb-search', function () {
+        const $wrap = $(this).closest('.input-type-txt');
+        $wrap.removeClass('has-value');
+    })
+
+    .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+        e.preventDefault();
+
+        const $wrap = $(this).closest('.input-type-txt');
+        const $input = $wrap.find('.ep-gnb-search');
+
+        $input.val('');
+        $wrap.removeClass('has-value');
+
+        setTimeout(function () {
+            $input.focus();
+        }, 0);
+    });
+    // 251226 수정 : INPUT 스크립트 추가 END
 
 });

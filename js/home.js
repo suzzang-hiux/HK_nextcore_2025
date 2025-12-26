@@ -378,8 +378,9 @@ $(function () {
     });
 
     // 공통 탭
-    $(document).on(
-        'click', '[data-event] .common-tab li > button', function () {
+    $(document)
+    .on(
+        'click', '[data-event] .common-tab li > button', function() {
             const $btn = $(this);
             const $li = $btn.closest('li');
             const $tabWrap = $btn.closest('[data-event]');
@@ -412,5 +413,48 @@ $(function () {
         const initIndex = $activeLi.length ? $activeLi.index() : 0;
 
         $wrap.find('.tab-content .cnt-item').hide().eq(initIndex).show();
+    });
+
+    // TEXT/NUMBER INPUT 삭제버튼
+    // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
+    // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus
+    $(document)
+    .on('focus', '.input-type-txt .common-input', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        }
+    })
+
+    .on('input', '.input-type-txt .common-input', function () {
+        const $input = $(this);
+        const $wrap = $input.closest('.input-type-txt');
+
+        if ($input.val().length > 0) {
+            $wrap.addClass('has-value');
+        } else {
+            $wrap.removeClass('has-value');
+        }
+    })
+
+    .on('blur', '.input-type-txt .common-input', function () {
+        const $wrap = $(this).closest('.input-type-txt');
+        $wrap.removeClass('has-value');
+    })
+
+    .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+        e.preventDefault();
+
+        const $wrap = $(this).closest('.input-type-txt');
+        const $input = $wrap.find('.common-input');
+
+        $input.val('');
+        $wrap.removeClass('has-value');
+
+        setTimeout(function () {
+            $input.focus();
+        }, 0);
     });
 })

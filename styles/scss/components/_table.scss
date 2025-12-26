@@ -39,6 +39,9 @@
         @include font(13px, 400, 1);
         color: $cl-black;
         text-align: center;
+        .txt-btn {
+            font-size: 13px;
+        }
     }
     &[data-table-bg="white"] {
         tbody {
