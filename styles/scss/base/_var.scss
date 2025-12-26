@@ -210,6 +210,7 @@ $cl-sg-50: #8996A7;
 $cl-sg-60: #707F91;
 $cl-sg-70: #596474;
 $cl-sg-80: #3E4854;
+$cl-sg-90: #2C333C;
 
 // MAGENTA COLOR
 $cl-magenta-5: #FDF2FA;
@@ -238,6 +239,56 @@ $cl-blue-30: #AFD6F8;
 $cl-blue-40: #8BC6F8;
 $cl-blue-70: #2481E0;
 $cl-blue-80: #085FB8;
+
+// GREEN COLOR
+$cl-green-5: #F0FAF4;
+$cl-green-10: #E7F8E7;
+$cl-green-20: #CDF2CC;
+$cl-green-30: #A0E8A1;
+$cl-green-40: #74DF78;
+$cl-green-50: #00CE30;
+$cl-green-60: #0CAE20;
+$cl-green-70: #0E9C0E;
+$cl-green-80: #097F09;
+$cl-green-90: #0A680A;
+$cl-green-100: #044104;
+
+// YELLOW COLOR
+$cl-yellow-5: #FFFAEB;
+$cl-yellow-10: #FFF7DC;
+$cl-yellow-20: #FFF1C1;
+$cl-yellow-30: #F8DD7D;
+$cl-yellow-40: #F2CB38;
+$cl-yellow-50: #F1C100;
+$cl-yellow-60: #CF9419;
+$cl-yellow-70: #A16207;
+$cl-yellow-80: #854D0E;
+$cl-yellow-90: #713F12;
+$cl-yellow-100: #422006;
+
+// RED COLOR
+$cl-red-10: #FFEDEC;
+$cl-red-20: #FFD9D6;
+$cl-red-30: #FFC3BF;
+$cl-red-40: #FFA19A;
+$cl-red-60: #EF2111;
+$cl-red-70: #C31205;
+
+// ORANGE COLOR
+$cl-orange-60: #EA580C;
+
+// CYAN COLOR
+$cl-cyan-5: #EEF8F8;
+$cl-cyan-10: #E0F4F5;
+$cl-cyan-20: #C8EEF1;
+$cl-cyan-30: #9FE0E4;
+$cl-cyan-40: #68C5CD;
+$cl-cyan-50: #58B9C3;
+$cl-cyan-60: #469EA9;
+$cl-cyan-70: #3F8A91;
+$cl-cyan-80: #38767A;
+$cl-cyan-90: #2B5353;
+$cl-cyan-100: #173838;
 
 // ============================== FONT ==============================
 // FONT-SIZE
@@ -286,5 +337,9 @@ $spaceMounts: (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60);
     }
     .pd-#{$space} {
         padding: #{$space}px !important;
+    }
+    // GAP
+    .gap-#{$space} {
+        gap: #{$space}px !important;
     }
 }

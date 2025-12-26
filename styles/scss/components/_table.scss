@@ -2,16 +2,26 @@
     width: 100%;
     position: relative;
     border-top: 1px solid $cl-black;
-    &[data-table-layout="fixed"] {
-        table-layout: fixed;
-    }
-    tbody {
+    table-layout: fixed;
+    thead, tbody {
         tr {
             border-bottom: 1px solid $cl-gr-40;
         }
     }
+    tbody {
+        th {
+            border-right: 1px solid $cl-gr-40;
+        }
+        tr {
+            &:nth-child(even) {
+                td {
+                    background-color: rgba(200, 200, 200, 0.20);;
+                }
+            }
+        }
+    }
     th, td {
-        height: 24px;
+        height: 28px;
         padding-inline: 4px;
         vertical-align: middle;
     }
@@ -19,13 +29,55 @@
         background-color: $cl-sg-20;
         @include font(13px, 500, 1);
         color: $cl-black;
-        text-align: left;
-        border-right: 1px solid $cl-gr-40;
+        text-align: center;
+        &.point-bg {
+            background-color: $cl-red-10;
+        }
     }
     td {
         background-color: $cl-white;
         @include font(13px, 400, 1);
         color: $cl-black;
-        text-align: left;
+        text-align: center;
+    }
+    &[data-table-bg="white"] {
+        tbody {
+            tr {
+                td {
+                    background-color: $cl-white;
+                }
+            }
+        }
+    }
+}
+
+.scroll-table {
+    width: 100%;
+    position: relative;
+    border-top: 1px solid $cl-black;
+    overflow-y: auto;
+    &::-webkit-scrollbar-track {
+        background-color: $cl-gr-5;
+        border-radius: 0;
+    }
+    .common-table {
+        border-top: none;
+        thead {
+            th {
+                position: -webkit-sticky; 
+                position: sticky; 
+                top: 0;
+                z-index: 5;
+            }
+        }
+    }
+}
+
+.table-with-btn {
+    .btn-wrap {
+        padding-top: 8px;
+        margin-top: -2px;
+        border-top: 1px solid $cl-gr-40;
+        background-color: $cl-white;
     }
 }

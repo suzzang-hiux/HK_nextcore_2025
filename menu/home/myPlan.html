@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>내 정보 조회</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+            <div class="my-plan-detail" id="myPlanData">
+                <div data-event="tab" data-tab-name="myPlanTab">
+                    <div class="common-tab" data-tab-type="block">
+                        <ul>
+                            <li class="active">
+                                <button type="button">지점플랜</button>
+                            </li>
+                            <li>
+                                <button type="button">마이플랜</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="cnt-item">
+                            <div class="scroll-table left">
+                                <table class="common-table">
+                                    <colgroup>
+                                        <col style="width: auto;">
+                                        <col style="width: 166px;">
+                                    </colgroup>
+                                    <thead> 
+                                        <tr>
+                                            <th>상품</th>
+                                            <th>플랜명</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr 
+                                            v-for="productItem in productList" 
+                                            :key="productItem.productId" 
+                                            :title="productItem.productName"
+                                            :class="{ select: selectedProductId === productItem.productId }"
+                                            @click="selectRow('product', productItem.productId)"
+                                        >
+                                            <td>{{ productItem.productName }}</td>
+                                            <td>{{ productItem.planName }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="scroll-table right">
+                                <table class="common-table">
+                                    <colgroup>
+                                        <col style="width: auto;">
+                                        <col style="width: 35%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>담보명</th>
+                                            <th>최대가입금액(만원)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr 
+                                            v-for="guaranteeItem in guaranteeList" 
+                                            :key="guaranteeItem.guaranteeId" 
+                                            :title="guaranteeItem.guaranteeName"
+                                            :class="{ select: selectedGuaranteeId === guaranteeItem.guaranteeId }"
+                                            @click="selectRow('guarantee', guaranteeItem.guaranteeId)"
+                                        >
+                                            <td>{{ guaranteeItem.guaranteeName }}</td>
+                                            <td>{{ guaranteeItem.guaranteePrice.toLocaleString() }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty">
+                                    <p class="mascot-empty blue">
+                                        데이터가 없습니다.
+                                    </p>
+                                </div>
+                                <!-- 플랜 선택 안 했을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty">
+                                    <p class="mascot-empty blue">
+                                        플랜을 선택하세요.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cnt-item">
+                            <div class="scroll-table left my">
+                                <table class="common-table">
+                                    <colgroup>
+                                        <col style="width: 28px;">
+                                        <col style="width: auto;">
+                                        <col style="width: 166px;">
+                                    </colgroup>
+                                    <thead> 
+                                        <tr>
+                                            <th></th>
+                                            <th>상품</th>
+                                            <th>플랜명</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            v-for="productItem in productList" 
+                                            :key="productItem.productId" 
+                                            :title="productItem.productName"
+                                            :class="{ select: selectedProductId === productItem.productId }"
+                                            @click="selectRow('product', productItem.productId)"
+                                        >
+                                            <td>
+                                                <label class="input-box" @click.stop>
+                                                    <input type="checkbox" class="common-checkbox" data-input-size="big" name="myPlanChk" :id="'myPlanChk_' + productItem.productId" :value="'myPlanChk_' + productItem.productId" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td>{{ productItem.productName }}</td>
+                                            <td>{{ productItem.planName }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty">
+                                    <p class="mascot-empty blue">
+                                        데이터가 없습니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="scroll-table right">
+                                <table class="common-table">
+                                    <colgroup>
+                                        <col style="width: auto;">
+                                        <col style="width: 35%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>담보명</th>
+                                            <th>최대가입금액(만원)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="display: none;">
+                                        <tr 
+                                            v-for="guaranteeItem in guaranteeList" 
+                                            :key="guaranteeItem.guaranteeId" 
+                                            :title="guaranteeItem.guaranteeName"
+                                            :class="{ select: selectedGuaranteeId === guaranteeItem.guaranteeId }"
+                                            @click="selectRow('guarantee', guaranteeItem.guaranteeId)"
+                                        >
+                                            <td>{{ guaranteeItem.guaranteeName }}</td>
+                                            <td>{{ guaranteeItem.guaranteePrice.toLocaleString() }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty">
+                                    <p class="mascot-empty blue">
+                                        데이터가 없습니다.
+                                    </p>
+                                </div>
+                                <!-- 플랜 선택 안 했을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty" style="display: block;">
+                                    <p class="mascot-empty blue">
+                                        플랜을 선택하세요.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="popup-bottom">
+			<div class="btn-wrap">
+                <button type="button" class="btn cg-line" data-btn-size="m" v-if="activeTabIndex === 1">플랜삭제</button>
+				<button type="button" class="btn" data-btn-size="m">선택 플랜으로 설계</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+    $(function (){
+        // 공통 탭
+        $(document).on(
+            'click', '[data-event] .common-tab li > button', function () {
+                const $btn = $(this);
+                const $li = $btn.closest('li');
+                const $tabWrap = $btn.closest('[data-event]');
+
+                // eventType "tab" : 콘텐츠 레이아웃이 바뀌는 tab. hide/show 제어함
+                // eventType "view-tab" : 콘텐츠 레이아웃 바뀌지 않고 데이터만 변경됨
+                const eventType = $tabWrap.data('event');
+                const tabName = $tabWrap.data('tab-name');
+                const tabIndex = $li.index();
+
+                $li.addClass('active').siblings().removeClass('active');
+
+                // tab 인 경우만 cnt-item 전환
+                if (eventType === 'tab') {
+                    const $contents = $tabWrap.find('.tab-content .cnt-item');
+
+                    $contents.hide().eq(tabIndex).show();
+                }
+
+                $(document).trigger('portal:tab-change', {
+                    name: tabName,
+                    index: tabIndex
+                });
+            }
+        );
+        // 탭 초기 상태
+        $('[data-event="tab"]').each(function() {
+            const $wrap = $(this);
+            const $activeLi = $wrap.find('.common-tab li.active');
+            const initIndex = $activeLi.length ? $activeLi.index() : 0;
+
+            $wrap.find('.tab-content .cnt-item').hide().eq(initIndex).show();
+        });
+
+        // 테스트 데이터
+        $portalApp.vueServiceBean({
+            el: "#epAppViewArea",
+            data: {
+                activeTabIndex: 0,
+                selectedProductId: null,
+                selectedGuaranteeId: null,
+                productList: [
+                    {productId: 1, productName: '흥Good 행복한 파워종합보험', planName: '암주치플랜'},
+                    {productId: 2, productName: '실손의료보험', planName: '중입자플랜'},
+                    {productId: 3, productName: '다이렉트 실손의료보험', planName: '암주치플랜'},
+                    {productId: 4, productName: '이튼튼한 치아보험', planName: '암주치플랜'},
+                    {productId: 5, productName: '더플러스 종합보험', planName: '중입자플랜'},
+                    {productId: 6, productName: '유병력자 실손의료보험', planName: '암주치플랜'},
+                    {productId: 7, productName: '흥Good 모두 담은 암보험PLUS', planName: '암주치플랜'},
+                    {productId: 8, productName: '흥Good 모두 담은 123 치매보험', planName: '중입자플랜'},
+                    {productId: 9, productName: '흥Good The건강한 종합보험', planName: '암주치플랜'},
+                    {productId: 10, productName: '흥Good 선(先)넘은 3대질병보장보험', planName: '암주치플랜'},
+                    {productId: 11, productName: '흥Good 든든한 3N5간편종합보험', planName: '중입자플랜'},
+                    {productId: 12, productName: '흥Good 가족사랑 간편치매간병보험', planName: '암주치플랜'},
+                    {productId: 13, productName: '흥Good The건강한 0550 종합보험', planName: '암주치플랜'},
+                    {productId: 14, productName: '흥Good 든든한 325 암만 생각해도 간편종합보험', planName: '암주치플랜'},
+                    {productId: 15, productName: '흥Good 플러스 간편치매간병보험', planName: '암주치플랜'},
+                    {productId: 16, productName: '흥Good 행복한 파워종합보험', planName: '암주치플랜'},
+                    {productId: 17, productName: '실손의료보험', planName: '중입자플랜'},
+                    {productId: 18, productName: '다이렉트 실손의료보험', planName: '암주치플랜'},
+                ],
+                guaranteeList: [
+                    {guaranteeId: 1, guaranteeName: '보험료 납입면제대상보장(3대질병진단 및 상해 질병후유장애(80%이상)', guaranteePrice: 50000},
+                    {guaranteeId: 2, guaranteeName: '뇌출혈진단비(감액없음)', guaranteePrice: 2000},
+                    {guaranteeId: 3, guaranteeName: '뇌졸중진단비(감액없음)', guaranteePrice: 10000},
+                    {guaranteeId: 4, guaranteeName: '뇌혈관질환진단비(감액없음)', guaranteePrice: 1000},
+                    {guaranteeId: 5, guaranteeName: '암진단비(소액암 및 유사암제외)(면책없음)(감액없음)', guaranteePrice: 1000},
+                    {guaranteeId: 6, guaranteeName: '급성심근경색증진단비(감액없음)', guaranteePrice: 10},
+                    {guaranteeId: 7, guaranteeName: '허혈성심장질환진단비(감액없음)', guaranteePrice: 10000},
+                    {guaranteeId: 8, guaranteeName: '신화상진단비', guaranteePrice: 20000},
+                    {guaranteeId: 9, guaranteeName: '질병수술비', guaranteePrice:  50000},
+                ]
+            },
+            mounted() {
+                const vm = this;
+
+                $(document).on('portal:tab-change', function (e, data) {
+                    vm.activeTabIndex = data.index;
+                });
+            },
+            methods: {
+                selectRow(type, id) {
+                    if (type === 'product') {
+                        this.selectedProductId = id;
+                    } else if (type === 'guarantee') {
+                        this.selectedGuaranteeId = id;
+                    }
+                }
+            }
+        });
+    })
+</script>

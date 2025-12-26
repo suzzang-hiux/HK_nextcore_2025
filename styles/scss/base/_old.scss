@@ -101,7 +101,6 @@ a:hover {
     text-decoration: none
 }
 a:focus{
-    color: inherit;
     text-decoration: none
 }
 
@@ -192,25 +191,25 @@ body.wrapper {
     z-index: -1;
 }
 /****  부트스트랩 필요클래스만 요약  ****/
-.row{
-    margin-right: -15px;
-    margin-left: -15px;
-    &::after,
-    &::before{
-        display: table;
-        content: '';
-    }
-    &::after{
-        clear: both;
-    }
-}
-.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
+// .row{
+//     margin-right: -15px;
+//     margin-left: -15px;
+//     &::after,
+//     &::before{
+//         display: table;
+//         content: '';
+//     }
+//     &::after{
+//         clear: both;
+//     }
+// }
+// .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+//     float: left;
+//     position: relative;
+//     min-height: 1px;
+//     padding-right: 15px;
+//     padding-left: 15px;
+// }
 .col-xs-1{width: 8.33333333%}
 .col-xs-2{width: 16.66666667%}
 .col-xs-3{width: 25%;}
@@ -2352,88 +2351,88 @@ main {
     }
 }
 // owl 슬라이더
-.my-owl {
-    width:100%;
-    height: 357px;
-    margin:0 auto;
-    border-radius: 6px;
-    border: 1px solid $boxLineColor;
-    overflow: hidden;
-    position: relative;
-    transition: all .3s ease-in-out;
-    & > .owl-carousel{
-        height: 357px;
-        & > .owl-stage-outer{
-            & > .owl-stage{
-                background-color:transparent;
-                & > .owl-item{
-                    transition:transform 0.3s;
-                    & > .item{
-                        border-radius: 6px;
-                        background-size:contain;
-                        background-repeat:no-repeat;
-                        background-position:center;
-                        margin:0;
-                        padding: 24px 24px 0 24px;
-                        width: 100%;
-                        height: 357px;
-                        display: table;
-                        img{
-                            width: auto;
-                            margin: 0 auto;
-                            display: table-cell;
-                            vertical-align: middle;
-                        }
+// .my-owl {
+//     width:100%;
+//     height: 357px;
+//     margin:0 auto;
+//     border-radius: 6px;
+//     border: 1px solid $boxLineColor;
+//     overflow: hidden;
+//     position: relative;
+//     transition: all .3s ease-in-out;
+//     & > .owl-carousel{
+//         height: 357px;
+//         & > .owl-stage-outer{
+//             & > .owl-stage{
+//                 background-color:transparent;
+//                 & > .owl-item{
+//                     transition:transform 0.3s;
+//                     & > .item{
+//                         border-radius: 6px;
+//                         background-size:contain;
+//                         background-repeat:no-repeat;
+//                         background-position:center;
+//                         margin:0;
+//                         padding: 24px 24px 0 24px;
+//                         width: 100%;
+//                         height: 357px;
+//                         display: table;
+//                         img{
+//                             width: auto;
+//                             margin: 0 auto;
+//                             display: table-cell;
+//                             vertical-align: middle;
+//                         }
                         
-                    }
-                }
-            } 
-        }
-        .owl-nav{
-            position: absolute;
-            right: 10px;
-            bottom: 9px;
-            z-index: 3;
-            // @media (min-width:1440px){
-            //     bottom: 50px;
-            // }
-            button{
-                margin-left: 6px;
-            }
-            .owl-prev{
-                background: url(/wsrv/app/img/owl-prev.png) no-repeat 0 0;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                box-shadow: $boxShadow_gray;
-                &:focus,
-                &:hover{
-                    background: url(/wsrv/app/img/owl-prev-on.png);
-                }
-                span{
-                    font-size: 0;
-                }
-            }
-            .owl-next{
-                background: url(/wsrv/app/img/owl-next.png) no-repeat 0 0;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                box-shadow: $boxShadow_gray;
-                &:focus,
-                &:hover{
-                    background: url(/wsrv/app/img/owl-next-on.png);
-                }
-                span{
-                    font-size: 0;
-                }
-            }
-        }
-    }
-    &:hover{
-        box-shadow: $boxShadow_gray;
-    }
-}
+//                     }
+//                 }
+//             } 
+//         }
+//         .owl-nav{
+//             position: absolute;
+//             right: 10px;
+//             bottom: 9px;
+//             z-index: 3;
+//             // @media (min-width:1440px){
+//             //     bottom: 50px;
+//             // }
+//             button{
+//                 margin-left: 6px;
+//             }
+//             .owl-prev{
+//                 background: url(/wsrv/app/img/owl-prev.png) no-repeat 0 0;
+//                 display: inline-block;
+//                 width: 20px;
+//                 height: 20px;
+//                 box-shadow: $boxShadow_gray;
+//                 &:focus,
+//                 &:hover{
+//                     background: url(/wsrv/app/img/owl-prev-on.png);
+//                 }
+//                 span{
+//                     font-size: 0;
+//                 }
+//             }
+//             .owl-next{
+//                 background: url(/wsrv/app/img/owl-next.png) no-repeat 0 0;
+//                 display: inline-block;
+//                 width: 20px;
+//                 height: 20px;
+//                 box-shadow: $boxShadow_gray;
+//                 &:focus,
+//                 &:hover{
+//                     background: url(/wsrv/app/img/owl-next-on.png);
+//                 }
+//                 span{
+//                     font-size: 0;
+//                 }
+//             }
+//         }
+//     }
+//     &:hover{
+//         box-shadow: $boxShadow_gray;
+//     }
+// }
 .sales{
     height: 380px;
     .item{

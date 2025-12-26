@@ -70,7 +70,8 @@ var gnbVm = $portalApp.vueServiceBean({
         init: function () {
         	var _this = this; 
         	
-        	var theme = $('.wrapper').hasClass('portal') ? 'type1' : 'type0';
+            // 251226 wrapper 클래스 portal => ga 변경
+        	var theme = $('.wrapper').hasClass('ga') ? 'type1' : 'type0';
             
             try{
             	if (this.userPersonalize) {

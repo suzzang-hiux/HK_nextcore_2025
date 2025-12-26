@@ -1,0 +1,1522 @@
+.pencake-portlet-content {
+    // =========================== 프로필 영역
+    .my-profile {
+        &-top {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, flex-start, 8px);
+            margin-bottom: 16px;
+            .img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .info {
+                .hello-txt {
+                    @include font(16px, 700, 1.2);
+                    color: $cl-gr-100;
+                    margin-bottom: 4px;
+                    span {
+                        color: $cl-blue;
+                    }
+                }
+                .my-num {
+                    @include font(12px, 400, 1.16);
+                }
+            }
+            &.prize-fc {
+                &::after {
+                    content: "";
+                    width: 68px;
+                    height: 80px;
+                    position: absolute;
+                    top: -16px;
+                    right: 0;
+                    @include bg-set;
+                    background-image: url("/wsrv/app/img/new/common/img_designer_prize_fc.png");
+                }
+            }
+            &.prize-ga-1 {
+                &::after {
+                    content: "";
+                    width: 68px;
+                    height: 80px;
+                    position: absolute;
+                    top: -16px;
+                    right: 0;
+                    @include bg-set;
+                    background-image: url("/wsrv/app/img/new/common/img_designer_prize_ga.png");
+                }
+            }
+            &.prize-ga-2 {
+                &::after {
+                    content: "";
+                    width: 68px;
+                    height: 80px;
+                    position: absolute;
+                    top: -16px;
+                    right: 0;
+                    @include bg-set;
+                    background-image: url("/wsrv/app/img/new/common/img_designer_prize_ga-2.png");
+                }
+            }
+        }
+        &-bottom {
+            width: 100%;
+            position: relative;
+            @include flex(column, flex-start, flex-start, 4px);
+            .btn {
+                width: 100%;
+            }
+            .btn-wrap {
+                flex-wrap: wrap;
+                .btn {
+                    width: calc(50% - 2px);
+                    flex: auto;
+                }
+            }
+        }
+    }
+
+    // =========================== 즐겨찾기
+    .setting-btn {
+        width: 16px;
+        height: 16px;
+        @include bg-set;
+        background-image: url("/wsrv/app/img/new/common/ico_setting.png");
+    }
+    .favorite-area {
+        max-height: 208px;
+        overflow-y: auto;
+        .favorite-item {
+            width: 100%;
+            position: relative;
+            @include flex(row, flex-start, space-between, 8px);
+            a {
+                width: 100%;
+                position: relative;
+                @include font(13px, 400, 1.2);
+                color: $cl-gr-80;
+                will-change: color;
+                transition: color 0.2s;
+                &:hover {
+                    color: $cl-magenta-50;
+                }
+            }
+            .remove-btn {
+                width: 16px;
+                height: 16px;
+                padding: 0;
+                font-size: 0;
+                color: transparent;
+                @include bg-set;
+                background-image: url("/wsrv/app/img/new/common/ico_star_active.png");
+                border: none;
+            }
+            & + .favorite-item {
+                margin-top: 8px;
+            }
+        }
+        .empty {
+            position: relative;
+            height: 230px;
+            .mascot-empty {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    // =========================== 설계동의/연령계산기/직업조회 탭
+    .blue-bg-box {
+        width: 100%;
+        position: relative;
+        border-radius: 4px;
+        background-color: $cl-blue-5;
+        padding: 12px;
+        .info-flex {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, flex-start, 8px 18px);
+            flex-wrap: wrap;
+            li {
+                width: calc(50% - 9px);
+                position: relative;
+                @include flex(row, center, flex-start, 8px);
+                .tit {
+                    @include font(13px, 400, 1.2);
+                    color: $cl-gr-80;
+                }
+                .info {
+                    flex: 1;
+                    @include font(13px, 500, 1.2);
+                    color: $cl-black;
+                    text-align: right;
+                    @include ellipsis(100%);
+                }
+                & + li {
+                    &::before {
+                        content: "";
+                        width: 1px;
+                        height: 8px;
+                        position: absolute;
+                        top: 4px;
+                        left: -8px;
+                        background-color: $cl-gr-40;
+                    }
+                }
+                &.full {
+                    width: 100%;
+                    &::before {
+                        display: none;
+                    }
+                    & + li {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== Quick Link
+    .quick-link-list {
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        .btn {
+            width: 100%;
+        }
+        &.column {
+            @include flex(column, flex-start, flex-start, 4px);
+        }
+    }
+
+    // =========================== 데스크 전화번호
+    .call-list {
+        li {
+            position: relative;
+            padding-left: 6px;
+            @include font(12px, 400, 1.16);
+            color: $cl-gr-80;
+            a {
+                @include font(12px, 700, 1.16);
+                color: $cl-black;
+                margin-left: 4px;
+            }
+            &::before {
+                content: "";
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                background-color: $cl-gr-80;
+                position: absolute;
+                top: 5px;
+                left: 0;
+            }
+            & + li {
+                margin-top: 4px;
+            }
+        }
+    }
+
+    // =========================== 배너
+    .my-owl {
+        width: calc(100% + 32px);
+        margin: -16px;
+        border-radius: 8px;
+        overflow: hidden;
+        .owl-carousel {
+            .item {
+                width: 100%;
+                height: 220px;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    position: absolute;
+                    @include ps-center;
+                }
+                .txt-posi {
+                    width: 668px;
+                    height: 220px;
+                    position: absolute;
+                    @include ps-center;
+                    .txt-box {
+                        width: 100%;
+                        padding: 55px 324px 0 40px;
+                        @include flex(column, flex-start, flex-start, 8px);
+                        word-break: keep-all;
+                        .owl-tit {
+                            font-family: 'Heungkukseed';
+                            @include font(20px, 700, 1.2);
+                            letter-spacing: -0.4px;
+                            color: #0F766E;
+                            span {
+                                color: $cl-magenta-50;
+                            }
+                        }
+                        .owl-info {
+                            font-family: 'Heungkukseed';
+                            @include font(14px, 500, 1.28);
+                            letter-spacing: -0.28px;
+                            color: $cl-gr-90;
+                        }
+                        .owl-desc {
+                            @include font(12px, 500, 1.16);
+                            color: $cl-gr-80;
+                        }
+                    }
+                }
+            }
+            .owl-nav {
+                width: fit-content;
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                @include flex(row, center, flex-start, 0);
+                border-radius: 2px;
+                border: 1px solid $cl-sg-30;
+                button {
+                    width: 18px;
+                    height: 18px;
+                    position: relative;
+                    background-color: $cl-white;
+                    will-change: background-color, border-color, color;
+                    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+                    span {
+                        display: none;
+                    }
+                    &:first-child {
+                        width: 19px;
+                        border-right: 1px solid $cl-sg-30;
+                    }
+                    &::after {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        @include bg-set;
+                        @include ps-center;
+                    }
+                    &.owl-prev {
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M7.1098 2.73453C7.21704 2.62731 7.37839 2.59497 7.51849 2.65298C7.65858 2.71104 7.74993 2.84801 7.74993 2.99966V8.99964C7.74993 9.15129 7.65858 9.28827 7.51849 9.34632C7.37839 9.40434 7.21704 9.37199 7.1098 9.26478L4.10983 6.26479C3.96339 6.11834 3.96339 5.88096 4.10983 5.73452L7.1098 2.73453Z' fill='%23707F91'/%3E%3C/svg%3E");
+                        }
+                    }
+                    &.owl-next {
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M4.48144 2.65299C4.62156 2.59497 4.78289 2.62729 4.89013 2.73453L7.8901 5.73452C8.03654 5.88096 8.03654 6.11834 7.8901 6.26479L4.89013 9.26477C4.78289 9.37201 4.62156 9.40433 4.48144 9.34631C4.34132 9.28827 4.25 9.15131 4.25 8.99964V2.99967C4.25 2.848 4.34132 2.71103 4.48144 2.65299Z' fill='%23707F91'/%3E%3C/svg%3E");
+                        }
+                    }
+                    &:hover {
+                        background-color: $cl-sg-20;
+                    }
+                    &:active {
+                        background-color: $cl-sg-30;
+                    }
+                    &:disabled, &.disabled {
+                        background-color: $cl-white;
+                        color: $cl-sg-40;
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== SOS 접수현황
+    .up-sos-top {
+        width: fit-content;
+        position: relative;
+        @include flex(row, center, flex-end, 8px);
+        .label-box {
+            flex-shrink: 0;
+            @include flex(row, center, flex-start, 4px);
+            p {
+                @include font(12px, 500, 1);
+                color: $cl-gr-80;
+            }
+        }
+    }
+    .sos-list {
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 4px;
+        li {
+            height: 128px;
+            padding: 16px 12px;
+            border-radius: 8px;
+            background-color: $cl-white;
+            border: 1px solid $cl-gr-30;
+            @include flex(column, flex-start, flex-start, 0);
+            .sos-item {
+                &-label {
+                    @include flex(row, center, flex-start, 4px);
+                    margin-bottom: 8px;
+                    .label {
+                        font-size: 12px;
+                        padding: 3px 6px;
+                    }
+                }
+                &-title {
+                    flex: 1;
+                    position: relative;
+                    p {
+                        @include font(13px, 500, 1);
+                        color: $cl-black;
+                        margin-bottom: 3px;
+                    }
+                    .list-link {
+                        a {
+                            @include font(13px, 400, 1.23);
+                            color: $cl-black;
+                        }
+                    }
+                }
+                &-info {
+                    width: 100%;
+                    @include flex(row, center, space-between, 12px);
+                    margin-top: 4px;
+                    span {
+                        @include font(12px, 400, 1);
+                        color: $cl-gr-80;
+                    }
+                }
+            }
+            &:last-child {
+                display: none;
+            }
+        }
+        @media (min-width: 1760px) {
+            grid-template-columns: repeat(4, 1fr);
+            li {
+                &:last-child {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    // =========================== 업무요청 진행명세
+    .work-request-top {
+        width: fit-content;
+        position: relative;
+        @include flex(row, center, flex-end, 8px);
+        .radio-flex {
+            @include flex(row, center, flex-end, 8px);
+            flex-shrink: 0;
+        }
+    }
+    .work-request-table {
+        width: 100%;
+        position: relative;
+        margin-top: 4px;
+        @include flex(column, flex-start, flex-start, 0);
+        .scroll-table {
+            max-height: 254px;
+            .common-table {
+                tbody {
+                    tr {
+                        td:nth-child(3) {
+                            @include ellipsis(100%);
+                        }
+                    }
+                }
+            }
+        }
+        .empty {
+            width: 100%;
+            height: 160px;
+            position: relative;
+            .mascot-empty {
+                @include ps-center;
+            }
+        }
+    }
+
+    // =========================== 이 달의 실적
+    .month-record-top {
+        @include flex(row, center, flex-start, 8px);
+        .radio-flex {
+            @include flex(row, center, flex-start, 6px);
+        }
+    }
+    .month-record-wrap {
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        .record-box {
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid $cl-gr-20;
+            background-color: $cl-white;
+            padding: 20px;
+            @include flex(column, flex-start, flex-start, 0);
+            .box-tit {
+                width: 100%;
+                position: relative;
+                @include flex(row, center, space-between, 12px);
+                margin-bottom: 12px;
+                h4 {
+                    @include flex(row, center, flex-start, 4px);
+                    @include font(14px, 700, 1.2);
+                    color: $cl-black;
+                    span {
+                        @include font(12px, 500, 1.2);
+                        color: $cl-sg-50;
+                    }
+                }
+            }
+            .box-cnt {
+                width: 100%;
+                position: relative;
+                .total-box {
+                    width: 100%;
+                    position: relative;
+                    @include flex(row, center, space-between, 8px);
+                    padding: 16px;
+                    border-radius: 8px;
+                    > p {
+                        width: 50px;
+                        flex-shrink: 0;
+                        @include font(13px, 500, 1.2);
+                        color: $cl-sg-60;
+                        position: relative;
+                        padding-left: 14px;
+                        &::before {
+                            content: "";
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            @include ps-icon;
+                        }
+                    }
+                    strong {
+                        @include flex(row, center, flex-start, 0);
+                        @include font(13px, 600, 1);
+                        color: $cl-black;
+                        span {
+                            @include font(18px, 700, 1);
+                        }
+                    }
+                    .chart-wrap {
+                        width: fit-content;
+                        position: relative;
+                        margin: 0 auto;
+                        .donut-chart {
+                            width: 146px;
+                            height: 146px;
+                            // transform: scale(0.7);
+                            svg {
+                                @include ps-center;
+                                // transform: translate(-50%, -50%) rotate(-90deg);
+                            }
+                        }
+                        .percent {
+                            @include ps-center;
+                            @include flex(row, center, flex-start, 0);
+                            color: $cl-green-70;
+                            span {
+                                @include font(22px, 700, 1);
+                            }
+                        }
+                    }
+                    .state-bar {
+                        .bar-wrap {
+                            .title {
+                                width: 36px;
+                            }
+                            .bar-inner {
+                                max-width: calc(100% - 85px);
+                            }
+                        }
+                    }
+                    .total-box-top {
+                        width: 100%;
+                        position: relative;
+                        @include flex(row, center, space-between, 8px);
+                        margin-bottom: 16px;
+                    }
+                    &.goal {
+                        background-color: $cl-blue-5;
+                        > p {
+                            &::before {
+                                background-color: $cl-blue-70;
+                            }
+                        }
+                    }
+                    &.record {
+                        background-color: $cl-white;
+                        border: 1px solid $cl-sg-30;
+                        > p {
+                            &::before {
+                                background-color: $cl-magenta-50;
+                            }
+                        }
+                    }
+                    &.user {
+                        background-color: $cl-white;
+                        border: 1px solid $cl-sg-30;
+                        > p {
+                            width: fit-content;
+                            &::before {
+                                background-color: $cl-sg-30;
+                            }
+                        }
+                    }
+                    &.chart {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        background-color: $cl-sg-5;
+                        > p {
+                            &::before {
+                                background-color: $cl-green-70;
+                            }
+                        }
+                    }
+                    &.fc-branchmanager {
+                        background-color: $cl-purple-5;
+                        > p {
+                            &::before {
+                                background-color: $cl-purple-50;
+                            }
+                        }
+                    }
+                    &.fc-manager {
+                        background-color: $cl-cyan-5;
+                        @include flex(column, flex-start, flex-start, 0);
+                        .state-bar {
+                            .bar-wrap {
+                                .bar-inner {
+                                    max-width: calc(100% - 76px);
+                                }
+                            }
+                        }
+                    }
+                    & + .total-box {
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .common-tab {
+                ul {
+                    gap: 12px;
+                }
+            }
+            .record-group-type {
+                width: 100%;
+                position: relative;
+                .group-item {
+                    width: 100%;
+                    position: relative;
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    padding: 12px 16px;
+                    strong {
+                        @include font(14px, 600, 1.28);
+                        color: $cl-black;
+                    }
+                    ul {
+                        width: 100%;
+                        position: relative;
+                        li {
+                            width: 100%;
+                            position: relative;
+                            margin-top: 4px;
+                            @include flex(row, center, space-between, 8px);
+                            span {
+                                display: block;
+                                @include font(13px, 500, 1.23);
+                                color: $cl-sg-60;
+                                &.tit {
+                                    padding-left: 14px;
+                                    &::before {
+                                        content: "";
+                                        width: 8px;
+                                        height: 8px;
+                                        border-radius: 50%;
+                                        @include ps-icon;
+                                    }
+                                }
+                                &.info {
+                                    font-weight: 600;
+                                }
+                            }
+                            &:nth-child(1) {
+                                span.tit {
+                                    &::before {
+                                        background-color: $cl-blue-70;
+                                    }
+                                }
+                            }
+                            &:nth-child(2) {
+                                span.tit {
+                                    &::before {
+                                        background-color: $cl-magenta-50;
+                                    }
+                                }
+                            }
+                            &:nth-child(3) {
+                                span.tit {
+                                    &::before {
+                                        background-color: $cl-green-70;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & + .group-item {
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .spot-state {
+                width: 100%;
+                flex: 1;
+                position: relative;
+                @include flex(column, flex-start, space-between, 12px);
+                .gray-bg-box {
+                    width: 100%;
+                    position: relative;
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    padding: 16px;
+                    @include flex(row, center, center, 4px);
+                    p {
+                        @include font(13px, 600, 1.2);
+                        color: $cl-black
+                    }
+                    strong {
+                        @include flex(row, center, center, 0);
+                        @include font(13px, 600, 1.2);
+                        color: $cl-magenta-50;
+                        span {
+                            @include font(18px, 700, 1.2);
+                        }
+                    }
+                }
+            }
+            .state-bar {
+                width: 100%;
+                position: relative;
+                .bar-wrap {
+                    width: 100%;
+                    position: relative;
+                    @include flex(row, center, flex-start, 8px);
+                    .title {
+                        width: 60px;
+                        @include font(13px, 500, 1.23);
+                        color: $cl-sg-60;
+                        span {
+                            display: block;
+                            font-size: 11px;
+                        }
+                    }
+                    .bar-inner {
+                        flex: 1;
+                        position: relative;
+                        max-width: calc(100% - 100px);
+                        .bar {
+                            width: 0%;
+                            height: 16px;
+                            position: relative;
+                            border-radius: 8px;
+                            width: calc(var(--rate, 0) * 1%);
+                            transition: width 0.7s ease-out;
+                            &.magenta {
+                                background-color: $cl-magenta-50;
+                            }
+                            &.gray {
+                                background-color: $cl-sg-30;
+                            }
+                            &.purple {
+                                background-color: $cl-purple-50;
+                            }
+                            &.cyan {
+                                background-color: $cl-cyan-40;
+                            }
+                        }
+                        .num {
+                            @include font(13px, 700, 1.23);
+                            color: $cl-sg-80;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: calc(100% + 8px);
+                            white-space: nowrap;
+                        }
+                    }
+                    & + .bar-wrap {
+                        margin-top: 12px;
+                    }
+                }
+            }
+            .scroll-table {
+                &.ga-branchmanager {
+                    height: 355px;
+                    .common-table {
+                        th {
+                            line-height: 1.23;
+                            height: 76px;
+                        }
+                    }
+                }
+                .empty {
+                    width: 100%;
+                    height: calc(100% - 75px);
+                    position: relative;
+                    .mascot-empty {
+                        @include ps-center;
+                    }
+                }
+            }
+            .common-table {
+                & + .common-table {
+                    margin-top: 20px;
+                }
+            }
+            .edu-manager-act {
+                .gray-box {
+                    width: 100%;
+                    position: relative;
+                    @include flex(row, center, flex-start, 0);
+                    border-radius: 8px;
+                    background-color: $cl-gr-5;
+                    margin-bottom: 20px;
+                    .box {
+                        width: 50%;
+                        height: 54px;
+                        position: relative;
+                        @include flex(row, center, center, 4px);
+                        p {
+                            @include font(13px, 600, 1.2);
+                            color: $cl-black;
+                        }
+                        strong {
+                            @include flex(row, center, flex-start, 0);
+                            @include font(13px, 600, 1.2);
+                            color: $cl-sg-80;
+                            span {
+                                @include font(18px, 700, 1.2);
+                            }
+                            &.purple {
+                                color: $cl-purple-50;
+                            }
+                            &.magenta {
+                                color: $cl-magenta-50;
+                            }
+                        }
+                        & + .box {
+                            &::before {
+                                content: "";
+                                width: 1px;
+                                height: 12px;
+                                background-color: $cl-gr-40;
+                                @include ps-icon;
+                            }
+                        }
+                    }
+                }
+                .state-bar {
+                    .bar-wrap {
+                        & + .bar-wrap {
+                            margin-top: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .flex-col {
+            @include flex(column, flex-start, flex-start, 8px);
+            .record-box {
+                flex: 1;
+                width: 100%;
+            }
+        }
+        &.is-hidden {
+            .record-box {
+                .state-bar {
+                    .bar-wrap {
+                        .bar-inner {
+                            .bar {
+                                transition: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== 추천상품
+    .recommand-goods {
+        width: 100%;
+        position: relative;
+        @include flex(row, stretch, flex-start, 8px);
+        .goods-box {
+            flex: 1;
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid $cl-sg-20;
+            background-color: $cl-white;
+            @include flex(column, flex-start, flex-start, 0);
+            overflow: hidden;
+            .item-info {
+                flex: 1;
+                width: 100%;
+                min-height: 158px;
+                position: relative;
+                padding: 20px;
+                background-size: cover !important;
+                background-position: center right !important;
+                background-repeat: no-repeat !important;
+                word-break: break-all;
+                .desc {
+                    display: block;
+                    font-family: 'Heungkukseed';
+                    @include font(12px, 500, 1.3);
+                    color: $cl-sg-70;
+                    letter-spacing: -0.24px;
+                }
+                .name {
+                    display: block;
+                    width: 60%;
+                    margin-top: 8px;
+                    font-family: 'Heungkukseed';
+                    @include font(18px, 700, 1.22);
+                    color: $cl-sg-90 !important;
+                }
+                .sub-img {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    object-fit: contain;
+                    background-size: contain !important;
+                    background-position: bottom  right !important;
+                    background-repeat: no-repeat !important;
+                }
+            }
+            .item-btn {
+                width: 100%;
+                padding: 8px;
+                border-top: 1px solid $cl-sg-20;
+                flex-shrink: 0;
+                @include flex(row, center, flex-start, 4px);
+                .btn {
+                    flex: 1;
+                    width: calc(50% - 2px);
+                    height: 52px;
+                    border-radius: 4px;
+                    @include font(14px, 600, 1.28);
+                    white-space: wrap;
+                    flex-shrink: 0;
+                    &.dg-fill {
+                        background-color: $cl-sg-80;
+                        &:hover {
+                            background-color: $cl-gr-60;
+                        }
+                        &:active {
+                            background-color: $cl-gr-80;
+                        }
+                        &:disabled, &.disabled {
+                            background-color: $cl-gr-30;
+                        }
+                    }
+                    &.cg-line {
+                        background-color: $cl-sg-5;
+                        border-color: $cl-sg-40;
+                        color: $cl-sg-80;
+                        &:hover {
+                            border-color: $cl-sg-30;
+                            background-color: $cl-sg-20;
+                        }
+                        &:active {
+                            border-color: $cl-sg-30;
+                            background-color: $cl-sg-30;
+                        }
+                        &:disabled, &.disabled {
+                            border-color: $cl-sg-30;
+                            background-color: $cl-white;
+                            color: $cl-sg-40;
+                        }
+                    }
+                }
+            }
+        }
+        &.type-1 {
+            .goods-box {
+                .item-info {
+                    .sub-img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+        &.type-2 {
+            .goods-box {
+                .item-info {
+                    .sub-img {
+                        width: 143px;
+                        height: 143px;
+                    }
+                }
+            }
+        }
+        &.type-3 {
+            .goods-box {
+                .item-info {
+                    .sub-img {
+                        width: 90px;
+                        height: 90px;
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== 나의 일정
+    .my-calendar-box {
+        width: 100%;
+        position: relative;
+        background-color: $cl-sg-5;
+        border-radius: 4px;
+        padding-top: 12px;
+        .ui-datepicker {
+            width: 100%;
+            padding-inline: 12px;
+            background-color: transparent;
+            border: none;
+            color: inherit;
+            .ui-datepicker-header {
+                width: 100%;
+                position: relative;
+                background-color: transparent;
+                color: $cl-black;
+                padding: 0;
+                margin-bottom: 12px;
+                > a {
+                    top: -1px !important;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 0;
+                    span {
+                        display: none;
+                    }
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        @include ps-center;
+                        @include bg-set;
+                    }
+                    &.ui-datepicker-prev {
+                        left: 0 !important;
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M10.4571 4.47124C10.7174 4.21089 10.7174 3.78888 10.4571 3.52853C10.1967 3.26818 9.77472 3.26818 9.51437 3.52853L5.56125 7.48166C5.27522 7.76798 5.27522 8.2318 5.56125 8.51812L9.51437 12.4712C9.77472 12.7316 10.1967 12.7316 10.4571 12.4712C10.7174 12.2109 10.7174 11.7889 10.4571 11.5285L6.92844 7.99989L10.4571 4.47124Z' fill='black'/%3E%3C/svg%3E");
+                        }
+                    }
+                    &.ui-datepicker-next {
+                        left: auto !important;
+                        right: 0 !important;
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M5.54194 4.47124C5.28159 4.21089 5.28159 3.78888 5.54194 3.52853C5.80229 3.26818 6.2243 3.26818 6.48465 3.52853L10.4378 7.48166C10.7238 7.76798 10.7238 8.2318 10.4378 8.51812L6.48465 12.4712C6.2243 12.7316 5.80229 12.7316 5.54194 12.4712C5.28159 12.2109 5.28159 11.7889 5.54194 11.5285L9.07059 7.99989L5.54194 4.47124Z' fill='black'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+                .ui-datepicker-title {
+                    width: 100%;
+                    margin: 0;
+                    text-align: center;
+                    border-color: transparent;
+                    @include font(13px, 700, 1);
+                    color: $cl-black;
+                    .ui-datepicker-month {
+                        margin-left: 4px;
+                    }
+                    select {
+                        width: fit-content;
+                        height: fit-content;
+                        padding-right: 16px;
+                        margin: 0;
+                        border: none;
+                        background-color: transparent;
+                        font-family: "Pretendard";
+                        @include font(13px, 700, 1);
+                        color: $cl-black !important;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background-repeat: no-repeat !important;
+                        background-position: right 0 center !important;
+                        background-size: 16px 16px;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M12.0002 5.5C12.2024 5.5 12.385 5.62178 12.4624 5.80859C12.5398 5.99542 12.4967 6.21053 12.3537 6.35351L8.3537 10.3535C8.15844 10.5487 7.84192 10.5488 7.64667 10.3535L3.64667 6.35351C3.50374 6.21054 3.46062 5.99539 3.53795 5.80859C3.61533 5.62179 3.798 5.50004 4.00019 5.5H12.0002Z' fill='black'/%3E%3C/svg%3E");
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .ui-datepicker-buttonpane { 
+                top: -27px;
+                left: auto;
+                right: 65px;
+                .ui-datepicker-current {
+                    margin: 0;
+                    float: inherit;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 2px 6px;
+                    border-radius: 2px;
+                    @include flex(row, center, center, 0);
+                    @include font(12px, 500, 1);
+                    border: 1px solid $cl-gr-50;
+                    background-color: $cl-white;
+                    font-family: "Pretendard";
+                    color: $cl-gr-80;
+                    white-space: nowrap;
+                    will-change: background-color, border-color, color;
+                    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+                    &:hover {
+                        border-color: $cl-gr-50;
+                        background-color: $cl-gr-20;
+                    }
+                    &:active {
+                        border-color: $cl-gr-50;
+                        background-color: $cl-gr-40;
+                    }
+                    &:disabled, &.disabled {
+                        border-color: $cl-gr-30;
+                        background-color: $cl-white;
+                        color: $cl-gr-50;
+                    }
+                }
+            }
+            .ui-datepicker-calendar {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                height: 168px;
+                table-layout: fixed;
+                thead {
+                    tr {
+                        th {
+                            @include font(12px, 400, 1);
+                            padding: 6px 4px;
+                            &:first-child {
+                                color: $cl-red-60;
+                            }
+                            &:last-child {
+                                color: $cl-blue-70;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            @include font(12px, 400, 1);
+                            padding: 0 !important;
+                            text-align: center;
+                            a {
+                                width: 24px;
+                                height: 24px;
+                                padding: 6px 4px !important;
+                                margin: 0 auto;
+                                @include font(12px, 400, 1);
+                                color: $cl-black;
+                                text-align: center;
+                                border-radius: 6px;
+                                will-change: background-color;
+                                transition: background-color 0.2s;
+                                &.ui-priority-secondary {
+                                    opacity: 1;
+                                    color: $cl-gr-50;
+                                }
+                                &.ui-state-active {
+                                    background-color: $cl-purple-80;
+                                    color: $cl-white !important;
+                                    &.ui-state-hover {
+                                        background-color: $cl-purple-50;
+                                    }
+                                }
+                                &.ui-state-highlight {
+                                    background-color: $cl-yellow-30;
+                                    color: $cl-black !important;
+                                    border: none;
+                                    &.ui-state-active {
+                                        background-color: $cl-purple-80;
+                                        color: $cl-white !important;
+                                        &:hover {
+                                            background-color: $cl-purple-50;
+                                        }
+                                    }
+                                    &.ui-state-hover {
+                                        background-color: $cl-yellow-50;
+                                    }
+                                }
+                                &.ui-state-hover {
+                                    background-color: $cl-sg-30;
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                width: 10px;
+                                height: 2px;
+                                color: transparent;
+                                background-color: $cl-magenta-50;
+                                border-radius: 2px;
+                                font-size: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                top: auto;
+                                bottom: 3px;
+                            }
+                            &:first-child {
+                                a {
+                                    color: $cl-red-60;
+                                    &.ui-priority-secondary {
+                                        color: $cl-red-40;
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                a {
+                                    color: $cl-blue-70;
+                                    &.ui-priority-secondary {
+                                        color: $cl-blue-40;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .schedule-box {
+            width: 100%;
+            position: relative;
+            padding: 12px;
+            margin-top: 12px;
+            &::before {
+                content: "";
+                width: calc(100% - 24px);
+                height: 1px;
+                background-color: $cl-sg-30;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .today-flex {
+                width: 100%;
+                position: relative;
+                @include flex(row, center, space-between, 4px);
+                margin-bottom: 4px;
+                h4 {
+                    flex: 1;
+                    @include font(13px, 700, 1.2);
+                    color: $cl-black;
+                }
+                .btn-wrap {
+                    width: fit-content;
+                    justify-content: flex-end;
+                    flex-shrink: 0;
+                    button {
+                        flex: auto;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+        .my-calendar-list {
+            width: 100%;
+            position: relative;
+            padding: 0 14px 12px;
+            border-radius: 4px;
+            background-color: $cl-sg-5;
+            max-height: 301px;
+            overflow-y: auto;
+            ul {
+                padding-left: 18px;
+                li {
+                    width: 100%;
+                    position: relative;
+                    padding-bottom: 12px;
+                    .top-flex {
+                        width: 100%;
+                        position: relative;
+                        @include flex(row, center, space-between, 8px);
+                        margin-bottom: 4px;
+                        strong {
+                            @include font(13px, 700, 1.23);
+                            color: $cl-sg-60;
+                        }
+                        .btn-wrap {
+                            width: fit-content;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                        width: 1px;
+                        height: calc(100% - 26px);
+                        background-color: $cl-sg-30;
+                        position: absolute;
+                        top: 22px;
+                        left: -13px;
+                    }
+                    &::after {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        @include bg-set;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Crect width='12' height='12' rx='6' fill='%238996A7'/%3E%3Ccircle cx='6' cy='6' r='3' fill='white'/%3E%3C/svg%3E");
+                        position: absolute;
+                        top: 3px;
+                        left: -19px;
+                    }
+                    &.latest {
+                        .top-flex {
+                            strong {
+                                color: $cl-magenta-50;
+                            }
+                        }
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Crect width='12' height='12' rx='6' fill='%23F4B5D7'/%3E%3Ccircle cx='6' cy='6' r='3' fill='%23EC008C'/%3E%3C/svg%3E");
+                        }
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.list-type {
+            .ui-datepicker-calendar {
+                display: none;
+            }
+        }
+    }
+
+    // =========================== 공지사항
+    .noti-list {
+        li {
+            a {
+                width: 100%;
+                position: relative;
+                @include flex(row, center, flex-start, 8px);
+                .title {
+                    flex: 1;
+                    position: relative;
+                    @include ellipsis(100%);
+                    @include font(12px, 400, 1);
+                    color: $cl-black;
+                    will-change: color;
+                    transition: color 0.2s;
+                }
+                .date {
+                    width: 56px;
+                    text-align: right;
+                    @include font(12px, 400, 1);
+                    color: $cl-gr-80 !important;
+                }
+                &:hover {
+                    .title {
+                        color: $cl-magenta-50;
+                    }
+                }
+            }
+            & + li {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    // =========================== 최근가입설계찾기
+    .recent-plan {
+        .scroll-table {
+            margin-top: 8px;
+            &.recent {
+                max-height: 158px;
+                .common-table {
+                    tr {
+                        th {
+                            height: 44px;
+                        }
+                        td {
+                            &:nth-child(3) {
+                                @include ellipsis(100%);
+                            }
+                        }
+                    }
+                }
+            }
+            &.user {
+                max-height: 186px;
+                .common-table {
+                    tr {
+                        td {
+                            height: fit-content;
+                            padding-block: 6px;
+                        }
+                    }
+                }
+            }
+        }
+        .empty {
+            width: 100%;
+            position: relative;
+            padding-block: 14px;
+        }
+        .input-box {
+            align-items: stretch;
+            gap: 4px;
+            .inner {
+                width: 100%;
+            }
+            .btn {
+                flex: 1;
+                height: auto;
+            }
+        }
+    }
+
+    // =========================== 오늘의할일
+    .today-work {
+        .input-col-box {
+            width: fit-content;
+            margin-bottom: 8px;
+        }
+        .scroll-table {
+            height: 366px;
+        }
+        .empty {
+            height: 330px;
+            position: relative;
+            .mascot-empty {
+                @include ps-center;
+            }
+        }
+        .pending-box {
+            width: 100%;
+            height: 100%;
+            .flex-inner {
+                height: 100%;
+                position: relative;
+                @include flex(column, center, center, 8px);
+                .txt {
+                    @include flex(row, center, flex-start, 4px);
+                    @include font(13px, 400, 1.23);
+                    color: $cl-black;
+                    strong {
+                        @include flex(row, center, baseline, 0);
+                        font-weight: 700;
+                        color: $cl-magenta-50;
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== 나의 실적
+    .my-record-wrap {
+        width: 100%;
+        position: relative;
+        .this-month {
+            width: 100%;
+            position: relative;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            background-color: $cl-magenta-5;
+            h4 {
+                @include font(13px, 500, 1.23);
+                color: $cl-black;
+                margin-bottom: 8px;
+            }
+            .price {
+                width: 100%;
+                position: relative;
+                padding: 4px;
+                border-radius: 4px;
+                background-color: $cl-white;
+                text-align: right;
+                @include font(13px, 700, 1.23);
+                color: $cl-magenta-50;
+                @include flex(row, center, flex-end, 1px);
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    // =========================== 나의 메모
+    .memo-paging {
+        width: 100%;
+        position: relative;
+        max-height: 69px;
+        overflow-y: auto;
+        li {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, flex-start, 0);
+            border-radius: 2px;
+            border: 1px solid $cl-gr-50;
+            background-color: $cl-white;
+            a {
+                height: 18px;
+                display: block;
+                padding-inline: 4px;
+                @include font(12px, 400, 18px);
+                @include ellipsis(100%);
+                border-right: 1px solid $cl-gr-50;
+            }
+            .close {
+                background-color: $cl-gr-5;
+                border-color: transparent;
+            }
+            & + li {
+                margin-top: 4px;
+            }
+        }
+    }
+
+    // =========================== 조사진행현황
+    .survey-state {
+        .scroll-table {
+            margin-top: 4px;
+            max-height: 254px;
+        }
+        .empty {
+            width: 100%;
+            height: 160px;
+            position: relative;
+            .mascot-empty {
+                @include ps-center;
+            }
+        }
+    }
+}

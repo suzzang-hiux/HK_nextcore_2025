@@ -120,12 +120,10 @@
 		<div id="lnbMenuContainer" class="ep-lnb vue_selector">
 			<div class="ep-lnb-inner">
 				<div class="ep-lnb-top">
-					<!-- 251216 로고 텍스트 추가 -->
 					<div class="logo">
 						<a href="javascript:;"></a>
 						<span class="text">개발계</span>
 					</div>
-					<!-- // 251216 로고 텍스트 추가 -->
 					<div class="home-menu">
 						<a href="javascript:;" @click="toggleContentFrame('biz')">
 							홈
@@ -137,42 +135,22 @@
 						</a>
 					</div>
 					<nav class="menu-left-area">
-						<!-- 251216 LNB 메뉴 클래스 변경 -->
 						<ul>
 							<li>
-								<a href="javascript:;" class="customer-register">고객등록</a>
-							</li>
-							<li>
-								<a href="javascript:;" class="customer-list">고객목록</a>
-							</li>
-							<li>
-								<a href="javascript:;" class="consent">설계동의</a>
-							</li>
-							<li>
-								<a href="javascript:;" class="analysis">보장분석</a>
+								<a href="javascript:;" class="navi">네이버<br />길찾기</a>
 							</li>
 						</ul>
 					</nav>
 				</div>
 				<div class="ep-lnb-bottom">
 					<ul class="menu-left-area">
-						<li>
-							<a href="javascript:;" class="print">출력</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="disease-manual">질병심사<br />매뉴얼</a>
-						</li>
-                        <li>
-							<a href="javascript:;" class="image-system">이미지<br />시스템</a>
-						</li>
                         <li>
 							<a href="javascript:;" class="password-change">비밀번호<br />변경</a>
 						</li>
                         <li>
-							<a href="javascript:;" class="safe-register">안전번호<br />등록</a>
+							<a href="javascript:;" class="ip-change">IP변경</a>
 						</li>
 					</ul>
-					<!-- // 251216 LNB 메뉴 클래스 변경 -->
 					<div class="ep-lnb-switch" @mouseover="showResizeToolTip = true" @mouseleave="showResizeToolTip = false">
 						<input type="checkbox" class="hidden" id="lnbAutoResize" />
 						<label for="lnbAutoResize">
@@ -180,9 +158,7 @@
 						</label>
 					</div>
 				</div>
-				<!-- 251216 LNB DIM 추가 -->
 				<div class="lnb-dim"></div>
-				<!-- // 251216 LNB DIM 추가 -->
 			</div>
 			<div class="resize-tip" :class="{ on: showResizeToolTip }">
 				자동축소 기능을 켜면 현재 브라우저 가로폭에 맞춰 화면 전체가 비율로 축소/확대됩니다. <br />
@@ -199,12 +175,13 @@
 					<div class="menu-content-top">
 						<ul class="menu-tab">
 							<li :class="menuViewType=='biz'?'on':''">
-								<a href="javascript:;" @click="viewTabMenu('biz')">빠른메뉴</a>
+								<a href="javascript:;" @click="viewTabMenu('biz')">전체메뉴</a>
 							</li>
-							<li :class="menuViewType=='all'?'on':''">
-								<a href="javascript:;" @click="viewTabMenu('all')">전체메뉴</a>
+							<li :class="menuViewType=='my'?'on':''">
+								<a href="javascript:;" @click="viewTabMenu('my')">즐겨찾기</a>
 							</li>
 						</ul>
+						<a href="javascript:;" class="book_mark_setting" @click="favoriteSetting()" aria-label="설정"></a>
 					</div>
 					<div class="menu-content-bottom">
 						<div class="search-area">
@@ -218,54 +195,15 @@
 						</div>
 						<div class="menu-area">
 							<div class="menu-area-inner">
-								<div class="menu-tree" :class="menuViewType=='biz'?'scroll-hidden':''" v-show="menuViewType=='biz'"> <!-- 251226 첫번째 탭일 때 'scroll-hidden'클래스 추가 -->
-									<div class="menu-box-item">
-										<h3>고객</h3>
-										<div class="btn-wrap col">
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">고객등록(개인)</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">고객목록</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">정보확인결재</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">통합개인고객 등록/조회</a>
-										</div>
-									</div>
-									<div class="menu-box-item">
-										<h3>설계청약</h3>
-										<div class="btn-wrap col">
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">설계목록</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">계약목록</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">모바일 전자서명 진행현황</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">QA심사대상</a>
-										</div>
-									</div>
-									<div class="menu-box-item">
-										<h3>업무지원</h3>
-										<div class="btn-wrap col">
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">청구서류안내</a>
-											<a href="javascript:;" class="btn mg-line" data-btn-size="m">통합영수증조회</a>
-										</div>
-									</div>
-									<div class="menu-box-item border-top">
-										<div class="tit-flex">
-											<h3>즐겨찾기</h3>
-											<a href="javascript:;" class="book_mark_setting" @click="favoriteSetting()" aria-label="설정"></a>
-										</div>
-										<div id="favMenuWrapper">
-											<div class="menu-favorite">
-												<ul id="favoriteArea">
-												</ul>
-											</div>
-										</div>
-										<!-- 즐겨찾기 없을 시 아래 div block -->
-										<div class="fav-empty" style="display: none;">
-											<p>
-												등록된 즐겨찾기가 없습니다. <br />
-												<span class="setting"></span> 편집에서 추가하세요.
-											</p>
-										</div>
-									</div>
+								<div id="menuWrapper" class="menu-tree" v-show="menuViewType=='biz'">
+									<div id="mainMenuTree" class="biz-menu" v-show="menuViewType=='biz'"></div>
 								</div>
-								<div id="menuWrapper" class="menu-tree" v-show="menuViewType=='all'">
-									<div id="mainMenuTree" class="biz-menu" v-show="menuViewType=='all'"></div>
+								<div id="favMenuWrapper" class="menu-tree" v-show="menuViewType=='my'">
+									<div class="menu-favorite">
+										<!-- tree -->
+										<ul id="favoriteArea">
+										</ul>
+									</div>
 								</div>
 							</div>
 
@@ -288,12 +226,10 @@
 								</div>
 							</div>
 						</div>
-						<!-- 251226 메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
-						<div class="btn-wrap" v-if="menuViewType=='all'">
+						<div class="btn-wrap">
 							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('open')">메뉴 전체열기</button>
 							<button class="btn wg-line" data-btn-size="s" @click="mainMenuTreeToggle('close')">메뉴 전체닫기</button>
 						</div>
-						<!-- // 251226 메뉴 전체열기/닫기 '전체메뉴' 탭일 때만 노출 -->
 					</div>
 				</div>
 			</div>
@@ -436,7 +372,7 @@
                             class="main-content-area slideRight-small"></iframe> -->
 						</div>
 						<div class="main-content-wrapper on" data-cont-type="main">
-							<iframe src="/html/home_pt_FCbranchManager.html" frameborder="0" class="main-content-area"></iframe>
+							<iframe src="/html/home_pt_outsourcing.html" frameborder="0" class="main-content-area"></iframe>
 						</div>
 					</div>
 				</main>

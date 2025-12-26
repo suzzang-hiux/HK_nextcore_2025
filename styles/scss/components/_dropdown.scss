@@ -24,6 +24,11 @@
             height: 20px;
             @include bg-set;
             background-image: url("/wsrv/app/img/new/common/ico_close.png");
+            background-color: transparent;
+            border: none;
+            &::after {
+                display: none;
+            }
         }
     }
     .dropdown-content {

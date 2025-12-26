@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta charset="UTF-8">
+    <meta env="SOP-YTKIM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+        var global_page_context_path = "";
+        var ePortalConfig = {
+            "runtime": "local"
+            , "license": false
+            , "websocket": ""
+            , "mainPageId": ""
+            , "page_id": '7bd27055ad014707ba23bdcba63b01b5'
+            , "userInfo": {}
+            , "link": {
+                "portalMain": ""
+            }
+            , "domain": {
+                "webmail": ""
+                , "nas": ""
+                , "hompage": ""
+            }
+            , "context": {
+                "epplt": ("" || global_page_context_path)
+                , "noti": ("" || '/alarm')
+                , "board": ("" || '')
+            }
+            , "fileupload": {
+                "useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+                , "useMigFileExt": 'xls|xlsx'
+                , "pencakeAttach": '/staticimg'
+            }
+        };
+        ePortalConfig.userInfo['_ep_USR_PWD'] = '$2a$10$PnV738Vcdc5X9zBzbViWbOprzvNetMcbP4IuIth/0HKAviqtOAWPu';
+        ePortalConfig.userInfo['_ep_ORG_SP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTN_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_DTYCD'] = '';
+        ePortalConfig.userInfo['_ep_ORNNM'] = '포탈관리그룹';
+        ePortalConfig.userInfo['_ep_AMG_ORNCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_NM'] = '포탈관리자';
+        ePortalConfig.userInfo['_ep_STF_FLG_CDNM'] = '정상';
+        ePortalConfig.userInfo['_ep_ORG_FLGCD'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATRCD'] = '';
+        ePortalConfig.userInfo['_ep_id'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORG_FLG_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_STF_FLGCD'] = '1';
+        ePortalConfig.userInfo['_ep_CLPCD'] = '';
+        ePortalConfig.userInfo['_ep_BDT_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTNCD'] = '';
+        ePortalConfig.userInfo['_ep_ORG_SPCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_ID'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORNCD'] = 'admin';
+        ePortalConfig.userInfo['_ep_DTY_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATR_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BDTCD'] = '';
+        ePortalConfig.userInfo['_ep_EMPNO'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_EMP_PART'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TPCD'] = '';
+        ePortalConfig.userInfo['_ep_CLP_CDNM'] = '';
+
+        ePortalConfig.groupInfo = ['AUTHENTICATED_USERS', 'PORTAL_ADMINISTRATORS', 'PUBLIC', 'admin', 'default_page']
+        ePortalConfig.userId = ePortalConfig.userInfo[("" || '_ep_USR_ID')];
+        ePortalConfig.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.nm = ePortalConfig.userInfo[("" || '_ep_USR_NM')];
+    </script>
+
+    <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+    <link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
+    <link href="/wsrv/app/js/plugins/owl/assets/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=30207.9915487681"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+    <script src="/wsrv/app/js/plugins/vue/vue.min.js"></script>
+    <script src="/wsrv/app/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/wsrv/app/js/pencake.js?version=51862.79271819944"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=33210.91559244459"></script>
+</head>
+
+<body data-ep-view-mode="default" class="subContents ga">
+    <div class="contents-grid" id="mainWrapper">
+        <!-- ============= ▼ LEFT CONTENTS START ▼ ============= -->
+        <div class="col-xs-3">
+            <section class="pencake-page-container" data-pencake-container-id="" data-pencake-container-viewname="왼쪽">
+                <!-- 내 프로필 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div class="my-profile" id="myProfileWrap">
+                            <!-- **
+                                FC 우수인증설계사 일 경우 'prize-fc' 클래스 추가
+                                GA 우수인증설계사(일반) 일 경우 'prize-ga-1' 클래스 추가
+                                GA 우수인증설계사(명장) 일 경우 'prize-ga-2' 클래스 추가
+                            ** -->
+                            <div class="my-profile-top prize-ga-2">
+                                <div class="img">
+                                    <!-- 캐릭터 이미지 랜덤 노출 -->
+                                    <img src="/wsrv/app/img/new/common/img_profile_lulu.png" alt="" />
+                                    <img src="/wsrv/app/img/new/common/img_profile_lio.png" alt="" style="display: none;" />
+                                    <img src="/wsrv/app/img/new/common/img_profile_bunny.png" alt="" style="display: none;" />
+                                    <img src="/wsrv/app/img/new/common/img_profile_catch.png" alt="" style="display: none;" /> 
+                                    <img src="/wsrv/app/img/new/common/img_profile_h.png" alt=""  style="display: none;" />
+                                </div>
+                                <div class="info">
+                                    <h2 class="hello-txt">
+                                        <span>안유진</span>님 <br/>
+                                        안녕하세요.
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="my-profile-bottom">
+                                <a href="javascript:;" class="btn dg-line" data-btn-size="l" @click="myInfoView">내 정보 조회</a>
+                                <a href="javascript:;" target="_blank" class="btn magenta" data-btn-size="l">고객등록</a>
+                                <div class="btn-wrap">
+                                    <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">장기가입설계</a>
+                                    <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">가입설계동의</a>
+                                    <a href="javascript:;" target="_blank" class="btn purple-line" data-btn-size="l">설계비서</a>
+                                    <a href="javascript:;" target="_bl ank" class="btn purple-line" data-btn-size="l">스마트보장분석</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 내 프로필 -->
+                <!-- 설계동의/연령계산기/직업조회 탭 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div data-event="tab" data-tab-name="assistTab">
+                            <div class="title-box">
+                                <div class="common-tab">
+                                    <ul>
+                                        <li class="active">
+                                            <button type="button">설계동의</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">연령계산기</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">직업조회</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="cnt-item">
+                                    <div class="input-col-box">
+                                        <label class="input-label required" for="customerName">고객명</label>
+                                        <div class="inner">
+                                            <input type="text" class="common-input" id="customerName" placeholder="고객명 입력" required />
+                                        </div>
+                                    </div>
+                                    <div class="input-col-box">
+                                        <label class="input-label required" for="residentNum_1">주민등록번호</label>
+                                        <div class="inner">
+                                            <input type="number" class="common-input" id="residentNum_1" placeholder="6자리" required />
+                                            <span class="dash">-</span>
+                                            <input type="number" class="common-input" id="residentNum_2" placeholder="7자리" required />
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap mt-12">
+                                        <a href="javascript:;" class="btn mg-line" data-btn-size="l">LMS</a>
+                                        <a href="javascript:;" class="btn mg-line" data-btn-size="l">동의서출력</a>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="input-col-box">
+                                        <label class="input-label required" for="birthdayInput">생년월일</label>
+                                        <div class="inner">
+                                            <input type="number" class="common-input" id="birthdayInput" placeholder="8자리 입력" required />
+                                            <button type="button" class="btn cg-fill" data-btn-size="m">계산</button>
+                                        </div>
+                                    </div>
+                                    <div class="blue-bg-box mt-12">
+                                        <ul class="info-flex">
+                                            <li>
+                                                <span class="tit">보험연령</span>
+                                                <p class="info">43세</p>
+                                            </li>
+                                            <li>
+                                                <span class="tit">만연령</span>
+                                                <p class="info">42세</p>
+                                            </li>
+                                            <li class="full">
+                                                <span class="tit">상령일</span>
+                                                <p class="info">2025-12-31</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="input-col-box">
+                                        <label class="input-label" for="jobInput">직업명</label>
+                                        <div class="inner">
+                                            <input type="text" class="common-input" id="jobInput" placeholder="직업명 입력" />
+                                            <button type="button" class="btn cg-fill" data-btn-size="m">조회</button>
+                                        </div>
+                                    </div>
+                                    <div class="blue-bg-box mt-12">
+                                        <ul class="info-flex">
+                                            <li class="full">
+                                                <span class="tit">직업명</span>
+                                                <p class="info">식품관련업체 사무직 경리</p>
+                                            </li>
+                                            <li>
+                                                <span class="tit">코드</span>
+                                                <p class="info">15220A</p>
+                                            </li>
+                                            <li>
+                                                <span class="tit">급수</span>
+                                                <p class="info">1급/3군</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 설계동의/연령계산기/직업조회 탭 -->
+                <!-- 즐겨찾기 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div class="title-box">
+                            <h3 class="portlet_title">즐겨찾기</h3>
+                            <button type="button" class="setting-btn" title="즐겨찾기 관리"></button>
+                        </div>
+                        <ul id="favoriteList" class="favorite-area">
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">가입설계</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">일반보험 계약조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">심사대상일괄조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">설계출재등록</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">자동차사고처리(통합)</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">자동차보험 관심고객 정보조회 및 관리</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">당좌수표책입력</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">예금주관리</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li> 
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="">사업비계정코드 관리</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <!-- 즐겨찾기 없을 시 아래 li block -->
+                            <li class="empty" style="display: none;">
+                                <p class="mascot-empty pink">
+                                    등록된 즐겨찾기가 없습니다. <br />
+                                    <span class="setting"></span> 편집에서 추가하세요.
+                                </p>
+							</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 즐겨찾기 -->
+            </section>
+        </div>
+        <!-- ============= ▲ LEFT CONTENTS END ▲ ============= -->
+        <!-- ============= ▼ CENTER CONTENTS START ▼ ============= -->
+        <div class="col-xs-5">
+            <section class="pencake-page-container" data-pencake-container-id="" data-pencake-container-viewname="가운데">
+                <!-- 추천상품 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div id="recommendGoods">
+                            <div class="title-box">
+                                <h3 class="portlet_title">추천상품</h3>
+                                <div class="btn-wrap" data-width="auto">
+                                    <a href="javascript:;" class="txt-btn plus" @click="myPlanView">지점/MY플랜</a>
+                                    <a href="javascript:;" class="txt-btn plus">전체상품보기</a>
+                                </div>
+                            </div>
+                            <!-- 추천상품 갯수별 클래스
+                                1개 : item-1
+                                2개 : item-2
+                                3개 : item-3
+                            -->
+                            <div class="recommand-goods type-2">
+                                <div class="goods-box">
+                                    <div class="item-info" style="background-image: url('/wsrv/app/img/new/common/gredient_bg_1.jpg');">
+                                        <span class="desc">유병자・고령자 간편가입</span>
+                                        <strong class="name">흥Good 든든 3N5 간편종합보험</strong>
+                                        <div style="background-image: url('/wsrv/app/img/new/common/goods_mascot_1.png');" class="sub-img"></div>
+                                    </div>
+                                    <div class="item-btn">
+                                        <a href="javascript:;" class="btn dg-fill">특화플랜II</a>
+                                        <a href="javascript:;" class="btn cg-line">바로보장 <br />플랜III</a>
+                                    </div>
+                                </div>
+                                <div class="goods-box">
+                                    <div class="item-info" style="background-image: url('/wsrv/app/img/new/common/gredient_bg_2.jpg');">
+                                        <span class="desc">오! 건강 어른이 할인형 보험</span>
+                                        <strong class="name">흥Good The 건강한 0550 종합보험</strong>
+                                        <div style="background-image: url('/wsrv/app/img/new/common/goods_mascot_2.png');" class="sub-img"></div>
+                                    </div>
+                                    <div class="item-btn">
+                                        <a href="javascript:;" class="btn dg-fill">특화플랜II</a>
+                                        <a href="javascript:;" class="btn cg-line">MZ건강 <br />고지형플랜</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 추천상품 -->
+                <!-- 오늘의 할일 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div data-event="tab" data-tab-name="todayWorkTab">
+                            <div class="title-box">
+                                <div class="common-tab">
+                                    <ul>
+                                        <li class="active">
+                                            <button type="button">
+                                                설계현황<span class="state">14</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                심사<span class="state">4</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                전자서명<span class="state">12</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button>
+                                                완판<span class="state">6</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                수금대상<span class="state">2</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                실효예정<span class="state">10</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                미결현황<span class="state">3</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                동의만료<span class="state">10</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button">
+                                                상령일<span class="state">3</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="input-col-box">
+                                            <div class="inner">
+                                                <input type="text" class="common-input" id="todayPlanSearch" placeholder="설계번호 또는 고객명 입력" />
+                                                <button type="button" class="btn cg-fill" data-btn-size="m">조회</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: 15%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>피보험자</th>
+                                                            <th>설계번호</th>
+                                                            <th>상품명</th>
+                                                            <th>설계상태</th>
+                                                            <th>보험료(원)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">든든한 SMILE 운전자종합보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">74,880</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">행복든든 재산종합보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">99,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 가족사랑 간편치매간병보험</td>
+                                                            <td>가입설계중</td>
+                                                            <td class="text-right">44,650</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">48,250</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">든든한 SMILE 운전자종합보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">74,880</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">행복든든 재산종합보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">99,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 가족사랑 간편치매간병보험</td>
+                                                            <td>가입설계중</td>
+                                                            <td class="text-right">44,650</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">48,250</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">더플러스 종합보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">47,680</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">다이렉트 실손의료보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">35,490</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 든든한 325 암만 생각해도 간편종합보험</td>
+                                                            <td>가입설계중</td>
+                                                            <td class="text-right">103,548</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">연금저저축손해보험 흥국화재연금보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">63,570</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">연금저축손해보험 행복디딤돌보험</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td class="text-right">16,900</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good The건강한 종합보험 </td>
+                                                            <td>가입설계중</td>
+                                                            <td class="text-right">120,360</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 13%;">
+                                                        <col style="width: 13%;">
+                                                        <col style="width: 13%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>피보험자</th>
+                                                            <th>설계번호</th>
+                                                            <th>상품명</th>
+                                                            <th>심사상태</th>
+                                                            <th>보험료(원)</th>
+                                                            <th>청약일</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">든든한 SMILE 운전자종합보험</td>
+                                                            <td>1차심사중</td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">든든한 SMILE 운전자종합보험</td>
+                                                            <td>1차심사중</td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>1차심사중</td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">흥Good 가족사랑 간편치매간병보험</td>
+                                                            <td>1차심사중</td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 16%;">
+                                                        <col style="width: 16%;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 12%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>설계번호</th>
+                                                            <th>계약번호</th>
+                                                            <th>청약일</th>
+                                                            <th>설계상태</th>
+                                                            <th>전자서명 진행상태</th>
+                                                            <th>스캔여부</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>계약완료</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td>서명 전(모)</td>
+                                                            <td>N</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>계약완료</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td>서명 전(모)</td>
+                                                            <td>N</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>계약완료</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>보험료계산완료</td>
+                                                            <td>서명 전(모)</td>
+                                                            <td>N</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>심사중</td>
+                                                            <td>서명완료</td>
+                                                            <td>Y</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 16%;">
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 15%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>계약번호</th>
+                                                            <th>계약자</th>
+                                                            <th>피보험자</th>
+                                                            <th>모니터링일자</th>
+                                                            <th>통화상태</th>
+                                                            <th>처리기간</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td>2025-12-31</td>
+                                                            <td>-</td>
+                                                            <td>2025-12-31</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 15%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 10%">
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 13%;">
+                                                        <col style="width: 12%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>계약번호</th>
+                                                            <th>상품명</th>
+                                                            <th>계약자</th>
+                                                            <th>피보험자</th>
+                                                            <th>보험료(원)</th>
+                                                            <th>이체일</th>
+                                                            <th>은행명</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">든든한 SMILE 운전자종합보험</td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>KB국민</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td class="text-left">행복든든 재산종합보험</td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>신한</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 15%;">
+                                                        <col style="width: 13%">
+                                                        <col style="width: 13%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: 15%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>계약번호</th>
+                                                            <th>계약자</th>
+                                                            <th>피보험자</th>
+                                                            <th>실납보험료(원)</th>
+                                                            <th>최종납입년월</th>
+                                                            <th>최종납입회차</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">123456789012</a></td>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">김지원</a></td>
+                                                            <td class="text-right">00,000</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>240</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table">
+                                                <div class="pending-box">
+                                                    <div class="flex-inner">
+                                                        <div class="txt">
+                                                            전월 마감기준 미결 건이 
+                                                            <strong><span>3</span>건</strong>
+                                                            존재합니다.
+                                                        </div>
+                                                        <a href="javascript:;" class="btn mg-line" data-btn-size="l">상세보기</a>
+                                                    </div>
+                                                </div>
+                                                <!-- 데이터 없을 시 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table"> 
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 13%;">
+                                                        <col style="width: 13%">
+                                                        <col style="width: 22%;">
+                                                        <col style="width: 22%;">
+                                                        <col style="width: auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>고객명</th>
+                                                            <th>성별</th>
+                                                            <th>나이</th>
+                                                            <th>동의만료일</th>
+                                                            <th>연락처</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세(831231)</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table"> 
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 13%;">
+                                                        <col style="width: 13%">
+                                                        <col style="width: 22%;">
+                                                        <col style="width: 22%;">
+                                                        <col style="width: auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>고객명</th>
+                                                            <th>성별</th>
+                                                            <th>보험연령</th>
+                                                            <th>상령일</th>
+                                                            <th>연락처</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>여</td>
+                                                            <td>43세</td>
+                                                            <td>2025-12-31</td>
+                                                            <td>010-1234-****</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!-- // 오늘의 할일 -->
+            </section>
+        </div>
+        <!-- ============= ▲ CENTER CONTENTS END ▲ ============= -->
+        <!-- ============= ▼ RIGHT CONTENTS START ▼ ============= -->
+        <div class="col-xs-3">
+            <section class="pencake-page-container" data-pencake-container-id="" data-pencake-container-viewname="오른쪽">
+                <!-- 나의 실적 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div class="title-box">
+                            <h3 class="portlet_title">나의 실적</h3>
+                            <div class="common-switch">
+                                <input type="checkbox" class="hidden" id="myRecordDataHide" v-model="isRecordHidden" />
+                                <label for="myRecordDataHide">
+                                    <span class="txt">숨김</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="my-record-wrap">
+                            <div class="this-month">
+                                <h4>당월 전체 매출</h4>
+                                <div class="price">
+                                    <span>45,050,000</span>원
+                                </div>
+                            </div>
+                            <table class="common-table" data-table-bg="white">
+                                <colgroup>
+                                    <col style="width: 25%;">
+                                    <col style="width: 20%;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>건수</th>
+                                        <th>매출(천원)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>장기</td>
+                                        <td>16</td>
+                                        <td class="text-right">14,050</td>
+                                    </tr>
+                                    <tr>
+                                        <td>일반</td>
+                                        <td>23</td>
+                                        <td class="text-right">21,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>자동차</td>
+                                        <td>8</td>
+                                        <td class="text-right">9,500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 나의 실적 -->
+                <!-- Quick Link -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div class="title-box">
+                            <h3 class="portlet_title">Quick Link</h3>
+                        </div>
+                        <div class="quick-link-list column">
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">이미지시스템</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">VOC</a>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">소비자보호</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">보험사기제보</a>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">현장 FAQ</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">현장 Q&A</a>
+                            </div>
+                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">영업전용 모바일 접수 안내 문자 받기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Quick Link -->
+                <!-- 공지사항 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div data-event="tab" data-tab-name="notiTab">
+                            <div class="title-box flex-start">
+                                <div class="common-tab">
+                                    <ul>
+                                        <li class="active">
+                                            <button type="button">HBS 교육방송</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">공지사항</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                            </div>
+                            <div class="tab-content">
+                                <div class="cnt-item">
+                                    <ul class="noti-list">
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="[HBS] 보상을 알려드림 [기타심장부정맥 편을 알려드립니다.]">
+                                                <p class="title">[HBS] 보상을 알려드림 [기타심장부정맥 편을 알려드립니다.]</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="[HBS] 메디컬컨설팅">
+                                                <p class="title">[HBS] 메디컬컨설팅</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="[HBS] 메디컬컨설팅">
+                                                <p class="title">[HBS] 메디컬컨설팅</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="[HBS] 메디컬컨설팅">
+                                                <p class="title">[HBS] 메디컬컨설팅</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="[HBS] 메디컬컨설팅">
+                                                <p class="title">[HBS] 메디컬컨설팅</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="cnt-item">
+                                    <ul class="noti-list">
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="U-Pride가 새롭게 오픈합니다.">
+                                                <p class="title">U-Pride가 새롭게 오픈합니다.</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="유프라이드 접속방법 변경 안내">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="유프라이드 접속방법 변경 안내">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="유프라이드 접속방법 변경 안내">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                        <li> 
+                                            <a href="javascript:;" target="_blank" title="유프라이드 접속방법 변경 안내">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                                <span class="date">25-11-07</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 공지사항 -->
+                <!-- 데스크 전화번호 -->
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <ul class="call-list">
+                            <li>
+                                흥국화재 콜센터<a href="tel:031-786-8088">1688-1688</a>
+                            </li>
+                            <li>
+                                모니터링 콜센터<a href="tel:031-786-8088">1688-6997</a>
+                            </li>
+                            <li>
+                                전산헬프데스크<a href="tel:031-786-8088">031-786-8088</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 데스크 전화번호 -->
+            </section>
+        </div>
+        <!-- ============= ▲ RIGHT CONTENTS END ▲ ============= -->
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="/js/home.js"></script> 

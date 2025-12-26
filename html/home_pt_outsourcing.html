@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta charset="UTF-8">
@@ -97,7 +98,7 @@
     <script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=33210.91559244459"></script>
 </head>
 
-<body data-ep-view-mode="default" class="subContents">
+<body data-ep-view-mode="default" class="subContents ga">
     <div class="contents-grid" id="mainWrapper">
         <!-- ============= ▼ LEFT CONTENTS START ▼ ============= -->
         <div class="col-xs-3">
@@ -106,7 +107,7 @@
                 <div class="pencake-portlet-box" data-pencake-portlet-id="">
                     <div class="pencake-portlet-content">
                         <div class="my-profile" id="myProfileWrap">
-                            <div class="my-profile-top">
+                            <div class="my-profile-top"> 
                                 <div class="img">
                                     <!-- 캐릭터 이미지 랜덤 노출 -->
                                     <img src="/wsrv/app/img/new/common/img_profile_lulu.png" alt="" />
@@ -127,7 +128,7 @@
                                 <a href="javascript:;" class="btn dg-line" data-btn-size="l" @click="myInfoView">내 정보 조회</a>
                                 <div class="btn-wrap">
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 FAQ</a>
-                                    <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 FAQ</a>
+                                    <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 Q&A</a>
                                     <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">화상회의</a>
                                     <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">원격지원</a>
                                 </div>
@@ -197,15 +198,19 @@
                         <div class="title-box">
                             <h3 class="portlet_title">Quick Link</h3>
                         </div>
-                        <div class="quick-link-list">
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">홈페이지</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">영업포탈</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">이유다이렉트</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">태광신문고</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">VOC</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">KMS</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">MOTP 등록/해지</a>
-                            <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">판매상품약관보기</a>
+                        <div class="quick-link-list column">
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">흥국화재</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">영업포탈</a>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">MOTP 등록/해지</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">태광신문고</a>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">VOC</a>
+                                <a href="javascript:;" target="_blank" class="btn wg-line" data-btn-size="m">KMS</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -378,100 +383,111 @@
                     </div>
                 </div>
                 <!-- // U-pride SOS 접수현황 -->
-                <!-- 업무요청 진행명세 -->
+                <!-- 조사진행현황 -->
                 <div class="pencake-portlet-box" data-pencake-portlet-id="">
                     <div class="pencake-portlet-content">
                         <div class="title-box">
                             <h3 class="portlet_title">
-                                업무요청 진행명세(FUN)
+                                조사진행현황
                                 <span>(최근 3개월)</span>
                             </h3>
-                            <div class="work-request-top">
-                                <div class="radio-flex">
-                                    <label class="input-box">
-                                        <input type="radio" class="common-radio" name="workRequest" id="workRequest_sort_1" value="workRequest_sort_1" checked />
-                                        <span class="txt">담당기준</span>
-                                    </label>
-                                    <label class="input-box">
-                                        <input type="radio" class="common-radio" name="workRequest" id="workRequest_sort_2" value="workRequest_sort_2" />
-                                        <span class="txt">요청기준</span>
-                                    </label>
-                                </div>
-                                <div class="btn-wrap">
-                                    <button type="button" class="btn wg-line retry" title="새로고침" data-btn-size="s"></button>
-                                    <button type="button" class="btn wg-line link" data-btn-size="s">
-                                        <span>바로가기</span>
-                                    </button>
-                                </div>
+                            <div class="btn-wrap" data-width="auto">
+                                <button type="button" class="btn wg-line retry" title="새로고침" data-btn-size="s"></button>
+                                <a href="javascript:;" class="btn wg-line link" data-btn-size="s">
+                                    <span>바로가기</span>
+                                </a>
+                                <a href="javascript:;" class="btn cg-fill" data-btn-size="s">조사진행등록</a>
                             </div>
                         </div>
-                        <div class="work-request-table">
+                        <div class="survey-state">
                             <div class="scroll-table">
                                 <table class="common-table">
                                     <colgroup>
-                                        <col style="width: 7.8%;">
-                                        <col style="width: 12.5%;">
+                                        <col style="width: 12%;">
                                         <col style="width: auto;">
-                                        <col style="width: 13%;">
+                                        <col style="width: 8%;">
+                                        <col style="width: 10%;">
                                         <col style="width: 15%;">
-                                        <col style="width: 12.5%;">
+                                        <col style="width: 8%;">
+                                        <col style="width: 15%;">
+                                        <col style="width: 10%;">
                                     </colgroup>
                                     <thead>
                                         <tr>
-                                            <th>상태</th>
-                                            <th>대분류</th>
-                                            <th>제목</th>
-                                            <th>요청일</th>
-                                            <th>요청팀</th>
-                                            <th>요청자</th>
+                                            <th>진행단계</th>
+                                            <th>청구번호</th>
+                                            <th>피보험자</th>
+                                            <th>담보</th>
+                                            <th>담당파트</th>
+                                            <th>담당자</th>
+                                            <th>의뢰일자</th>
+                                            <th>경과일</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>요청</td>
-                                            <td>현장 Q&A</td>
-                                            <td class="text-left">뇌/심 기왕력자 가입 및 보상 안내</td>
+                                            <td>입력상태</td>
+                                            <td><a href="javascript:;" class="txt-btn blue">20251126-99999</a></td>
+                                            <td>김*원</td>
+                                            <td>인담보</td>
+                                            <td>부산손사</td>
+                                            <td>장원영</td>
                                             <td>2025-11-26</td>
-                                            <td>장기보상지원팀</td>
-                                            <td>장원영</td>
+                                            <td>108</td>
                                         </tr>
                                         <tr>
-                                            <td>접수</td>
-                                            <td>업무요청</td>
-                                            <td class="text-left">암 기왕력자 유병자 보험 후 보상여부 암 기왕력자 유병자 보험 후 보상여부</td>
-                                            <td>2025-11-17</td>
-                                            <td>장기보상지원팀</td>
+                                            <td>입력상태</td>
+                                            <td><a href="javascript:;" class="txt-btn blue">20251126-99999</a></td>
+                                            <td>김*원</td>
+                                            <td>인담보</td>
+                                            <td>부산손사</td>
                                             <td>장원영</td>
+                                            <td>2025-11-26</td>
+                                            <td>108</td>
                                         </tr>
                                         <tr>
-                                            <td>이관</td>
-                                            <td>오류수정</td>
-                                            <td class="text-left">심사질문/인수제한 사유 문의드립니다.</td>
-                                            <td>2025-11-14</td>
-                                            <td>장기보상지원팀</td>
+                                            <td>입력상태</td>
+                                            <td><a href="javascript:;" class="txt-btn blue">20251126-99999</a></td>
+                                            <td>김*원</td>
+                                            <td>인담보</td>
+                                            <td>부산손사</td>
                                             <td>장원영</td>
+                                            <td>2025-11-26</td>
+                                            <td>108</td>
                                         </tr>
                                         <tr>
-                                            <td>보류</td>
-                                            <td>VOC 민원</td>
-                                            <td class="text-left">국외의 의료관련법에서 정한 의료기관 문의드립니다.</td>
-                                            <td>2025-11-10</td>
-                                            <td>장기심사센터</td>
+                                            <td>입력상태</td>
+                                            <td><a href="javascript:;" class="txt-btn blue">20251126-99999</a></td>
+                                            <td>김*원</td>
+                                            <td>인담보</td>
+                                            <td>부산손사</td>
                                             <td>장원영</td>
+                                            <td>2025-11-26</td>
+                                            <td>108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>입력상태</td>
+                                            <td><a href="javascript:;" class="txt-btn blue">20251126-99999</a></td>
+                                            <td>김*원</td>
+                                            <td>인담보</td>
+                                            <td>부산손사</td>
+                                            <td>장원영</td>
+                                            <td>2025-11-26</td>
+                                            <td>108</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
-                            <div class="empty" style="display: none;">
-                                <p class="mascot-empty blue">
-                                    데이터가 없습니다.
-                                </p>
+                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                <div class="empty" style="display: none;">
+                                    <p class="mascot-empty blue">
+                                        데이터가 없습니다.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- // 업무요청 진행명세 -->
+                <!-- // 조사진행현황 -->
             </section>
         </div>
         <!-- ============= ▲ CENTER CONTENTS END ▲ ============= -->
@@ -780,8 +796,8 @@
             </section>
         </div>
         <!-- ============= ▲ RIGHT CONTENTS END ▲ ============= -->
-    </div>  
+    </div>
 </body>
 </html>
 
-<script type="text/javascript" src="/js/home.js"></script>
+<script type="text/javascript" src="/js/home.js"></script> 
