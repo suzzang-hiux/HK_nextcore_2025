@@ -67,6 +67,9 @@
                     &::after {
                         display: none;
                     }
+                    &:hover {
+                        background-color: $cl-gr-20;
+                    }
                 }
                 &.active {
                     button, a {

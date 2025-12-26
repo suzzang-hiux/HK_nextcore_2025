@@ -5885,8 +5885,14 @@ iframe {
   line-height: 16px;
   color: #000;
   margin: 0;
+  will-change: color;
+  transition: color 0.2s;
 }
 .menu-content .menu-content-box .menu-content-bottom .menu-area .menu-search-result .result_list li > a .highlight {
+  color: #EC008C;
+}
+.menu-content .menu-content-box .menu-content-bottom .menu-area .menu-search-result .result_list li > a:hover {
+  text-decoration: none;
   color: #EC008C;
 }
 .menu-content .menu-content-box .menu-content-bottom .menu-area .menu-search-result .result_list li .location {
@@ -8717,6 +8723,9 @@ body.popup button {
 }
 .common-tab[data-tab-type=block] ul li button::after, .common-tab[data-tab-type=block] ul li a::after {
   display: none;
+}
+.common-tab[data-tab-type=block] ul li button:hover, .common-tab[data-tab-type=block] ul li a:hover {
+  background-color: #E8E8E8;
 }
 .common-tab[data-tab-type=block] ul li.active button, .common-tab[data-tab-type=block] ul li.active a {
   border-color: #000;

@@ -765,8 +765,14 @@
                                 @include font(13px, 500, 16px);
                                 color: $cl-black;
                                 margin: 0;
+                                will-change: color;
+                                transition: color 0.2s;
                                 .highlight {
                                     color: $cl-p-magenta;
+                                }
+                                &:hover {
+                                    text-decoration: none;
+                                    color: $cl-magenta-50;
                                 }
                             }
                             .location {

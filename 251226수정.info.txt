@@ -1,0 +1,45 @@
+★ 251226 수정사항 (날짜로 주석처리) ★
+
+1. 포탈/외주손사 wrapper 클래스 변경 (ga) - 스크립트도 같이 변경
+2. 영업포탈 즐겨찾기 목록 관련 'scroll-hidden' 클래스 추가
+3. text input에 입력 값 삭제 기능 추가 (스크립트도 추가)
+ - lnb, gnb
+ - 메뉴관리 팝업
+
+
+=============================================
+
+
+★ 추가된 페이지 ★
+
+1. 유프라이드 홈
+/html/home_uPride.html
+2. 영포_임직원 홈
+/html/home_pt_employee.html
+3. 영포_FC지점장 홈
+/html/home_pt_FCbranchManager.html
+4. 영포_FC설계사 홈
+/html/home_pt_FCdesigner.html
+5. 영포_FC육성특화매니저 홈
+/html/home_pt_FCfosterManager.html
+6. 영포_GA지점장 홈
+/html/home_pt_GAbranchManager
+7. 영포_GA사용인 홈
+/html/home_pt_GAuser.html
+8. 영포_GA설계매니저 홈
+/html/home_pt_GAdesignManager.html
+9. 영포_GA교육매니저 홈
+/html/home_pt_GAeduManager.html
+10. 외주손사 공통프레임
+/html/newMain_outsourcing.html
+11. 외주손사 홈
+/html/home_pt_outsourcing.html
+12. 서비스 장애/오류/안내
+/html/service.html
+13. 내 정보 관리 팝업
+/menu/home/myInfo.html
+14. 지점/MY플랜 팝업
+menu/home/myPlan.html
+
+
+이 외에 css, img 파일은 덮어쓰기 부탁드립니다 !
