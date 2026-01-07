@@ -8800,6 +8800,7 @@ body.popup button {
   display: block;
   min-width: 56px;
   margin: 0 auto;
+  font-size: 12px;
 }
 .request-sos .sos-left-area .scroll-table .common-table tr td:nth-child(3) p {
   width: 100%;
@@ -9109,7 +9110,7 @@ body.popup button {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 4px;
 }
 .request-sos .sos-detail-comment .comment-list > ul > li .file-box ul {
@@ -10477,10 +10478,18 @@ body.popup button {
   background-color: #F5F5F5;
 }
 .scroll-table::-webkit-scrollbar-button:vertical:start:decrement {
-  background: #F5F5F5 url("/wsrv/app/img/new/common/ico_scroll_align_up.png") 50% 0/contain no-repeat;
+  background-color: #F5F5F5;
+  background-image: url("/wsrv/app/img/new/common/ico_scroll_align_up.png");
+  background-position: 50% 0 !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }
 .scroll-table::-webkit-scrollbar-button:vertical:end:increment {
-  background: #F5F5F5 url("/wsrv/app/img/new/common/ico_scroll_align_down.png") 50% 100%/contain no-repeat;
+  background-color: #F5F5F5;
+  background-image: url("/wsrv/app/img/new/common/ico_scroll_align_down.png");
+  background-position: 50% 0 !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }
 
 .table-with-btn .btn-wrap {

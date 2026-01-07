@@ -119,10 +119,18 @@
         background-color: $cl-gr-5;
     }
     &::-webkit-scrollbar-button:vertical:start:decrement {
-        background: $cl-gr-5 url('/wsrv/app/img/new/common/ico_scroll_align_up.png') 50% 0 / contain no-repeat;
+        background-color: $cl-gr-5;
+        background-image: url('/wsrv/app/img/new/common/ico_scroll_align_up.png');
+        background-position: 50% 0 !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
     }
     &::-webkit-scrollbar-button:vertical:end:increment {
-        background: $cl-gr-5 url('/wsrv/app/img/new/common/ico_scroll_align_down.png') 50% 100% / contain no-repeat;
+        background-color: $cl-gr-5;
+        background-image: url('/wsrv/app/img/new/common/ico_scroll_align_down.png');
+        background-position: 50% 0 !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
     }
 }
 

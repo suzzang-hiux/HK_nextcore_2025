@@ -379,6 +379,7 @@ body.popup {
                             display: block;
                             min-width: 56px;
                             margin: 0 auto;
+                            font-size: 12px;
                         }
                         &:nth-child(3) {
                             p {
@@ -635,7 +636,7 @@ body.popup {
                     }
                     .file-box {
                         margin-block: 8px;
-                        @include flex(row, flex-start, flex-start, 4px);
+                        @include flex(row, flex-start, space-between, 4px);
                         ul {
                             @include flex(row, center, flex-start, 2px 4px);
                             flex-wrap: wrap;
