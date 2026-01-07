@@ -141,6 +141,18 @@
             }
         }
     }
+    // TITLE CENTER LAYER
+    &.type-centerTit {
+        .ui-dialog-titlebar {
+            .ui-dialog-title {
+                width: 100%;
+                text-align: center;
+            }
+            .ui-dialog-titlebar-close {
+                display: none;
+            }
+        }
+    }
 }
 
 .ui-widget-overlay {
@@ -911,6 +923,13 @@ body.popup {
         > div {
             width: 100%;
         }
+        .sos-detail-content {
+            .detail-title-box {
+                .label {
+                    transform: translateY(0);
+                }
+            }
+        }
     }
 }
 
@@ -1229,6 +1248,7 @@ body.popup {
                 padding: 12px;
                 background-color: $cl-sg-20;
                 border-bottom: 1px solid $cl-gr-40;
+                font-size: 14px;
                 span {
                     color: $cl-magenta-50;
                 }
@@ -1289,7 +1309,6 @@ body.popup {
             content: "";
             width: 80px;
             height: 80px;
-            border-radius: 50%;
             position: absolute;
             top: 0;
             left: 50%;
@@ -1335,7 +1354,7 @@ body.popup {
                     white-space: nowrap;
                 }
                 .common-input {
-                    width: 120px;
+                    width: 90px;
                 }
             }
             & + .left-input-area {
@@ -1597,6 +1616,13 @@ body.popup {
             text-align: left;
             margin-bottom: 12px;
         }
+        .table-tit {
+            display: block;
+            @include font(14px, 700, 1.28);
+            color: $cl-black;
+            text-align: left;
+            margin-bottom: 4px;
+        }
         .scroll-table {
             height: 311px;
             border-bottom: 1px solid $cl-gr-40;
@@ -1607,6 +1633,7 @@ body.popup {
         .warning-txt {
             font-size: 13px;
             text-align: left;
+            color: #616161;
         }
         .scroll-table {
             height: 171px;
@@ -1686,9 +1713,7 @@ body.popup {
                 }
                 tbody {
                     td {
-                        &:last-child {
-                            text-align: right;
-                        }
+                        text-align: right;
                     }
                 }
             }
@@ -1699,11 +1724,11 @@ body.popup {
         .common-table.total {
             border-top-color: $cl-gr-40;
             tbody {
+                th, td {
+                    background-color: $cl-purple-5;
+                }
                 td {
-                    background-color: $cl-sg-20;
-                    &:last-child {
-                        text-align: right;
-                    }
+                    text-align: right;
                 }
             }
         }
@@ -1721,12 +1746,13 @@ body.popup {
         }
         .scroll-table {
             height: 254px;
+            border-bottom: none;
         }
         .common-table.total {
             border-top-color: $cl-gr-40;
             tbody {
-                td {
-                    background-color: $cl-sg-20;
+                th, td {
+                    background-color: $cl-purple-5;
                 }
             }
         }
@@ -1739,28 +1765,45 @@ body.popup {
         }
     }
     // 군장병 실손중지 처리대상
-    &.maturity-notice {
+    &.millitary-indemnity {
         .scroll-table {
             height: 254px;
             border-bottom: 1px solid $cl-gr-40;
         }
+        .warning-txt {
+            color: #616161;
+        }
     }
     // 저회차 수금율 현황알림
     &.low-collection {
-        .noti-box {
-            p, li {
-                @include font(13px, 400, 1.23);
-                color: $cl-orange-60;
-                &.bold-txt {
-                    font-weight: 700;
+        .top-flex {
+            width: 100%;
+            position: relative;
+            @include flex(row, flex-start, flex-start, 12px);
+            margin-bottom: 12px;
+            > * {
+                width: 50%;
+            }
+            .noti-box {
+                p, li {
+                    @include font(13px, 400, 1.23);
+                    color: $cl-orange-60;
+                    &.bold-txt {
+                        font-weight: 700;
+                    }
+                }
+                ul {
+                    padding-left: 8px;
+                    li {
+                        & + li {
+                            margin-top: 4px;
+                        }
+                    }
                 }
             }
-            ul {
-                padding-left: 8px;
-                li {
-                    & + li {
-                        margin-top: 4px;
-                    }
+            .common-table {
+                .btn {
+                    margin-left: auto;
                 }
             }
         }

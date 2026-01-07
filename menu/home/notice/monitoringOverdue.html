@@ -69,39 +69,42 @@ var ePortalConfig = {
 		<div class="main">
             <div class="notice-layer-wrap monitoring-overdue">
                 <p class="warning-txt">상세내용은 완판 모니터링 결과조회에서 확인하시고, 기간 내 모니터링 완료바랍니다.</p>
-                <div class="scroll-table">
-                    <table class="common-table" data-table-bg="white" data-table-border="true">
-                        <colgroup>
-                            <col style="width: auto;">
-                            <col style="width: 100px;">
-                            <col style="width: 100px;">
-                            <col style="width: 120px;">
-                            <col style="width: 100px;">
-                            <col style="width: 100px;">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>증권번호</th>
-                                <th>계약자</th>
-                                <th>피보험자</th>
-                                <th>모니터링 가능기간</th>
-                                <th>인수 거부일수</th>
-                                <th>경과일수</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                    <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
-                    <div class="empty" style="display: block;">
-                        <p class="txt-empty">조회된 데이터가 없습니다.</p>
+                <div class="table-wrap">
+                    <h3 class="table-tit">총 0건</h3>
+                    <div class="scroll-table">
+                        <table class="common-table" data-table-bg="white" data-table-border="true">
+                            <colgroup>
+                                <col style="width: auto;">
+                                <col style="width: 100px;">
+                                <col style="width: 100px;">
+                                <col style="width: 120px;">
+                                <col style="width: 100px;">
+                                <col style="width: 100px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>증권번호</th>
+                                    <th>계약자</th>
+                                    <th>피보험자</th>
+                                    <th>모니터링 가능기간</th>
+                                    <th>인수 거부일수</th>
+                                    <th>경과일수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                        <div class="empty" style="display: block;">
+                            <p class="txt-empty">조회된 데이터가 없습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 		</div>
         <div class="popup-bottom">
 			<div class="btn-wrap">
-				<button type="button" class="btn" data-btn-size="m">확인</button>
+				<button type="button" class="btn black" data-btn-size="m">닫기</button>
 			</div>
 		</div>
 	</div>

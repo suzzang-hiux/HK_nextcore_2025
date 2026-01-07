@@ -68,46 +68,41 @@ var ePortalConfig = {
 	<div id="epAppViewArea" class="wrap-popup">
 		<div class="main">
             <div class="notice-layer-wrap low-collection">
-                <div class="noti-box">
-                    <p class="bold-txt text-left text_orange mb-4">※ 필독 공지 (저회차 수금율 확인사항)</p>
-                    <p class="warning-txt mb-4" data-mark="star">장기계약 계속분 초년도(2~13회) 수금율 관리 공지</p>
-                    <ul>
-                        <li>- 저회차 수금율 관리가 효과적으로 이루저 질 수 있도록 만전을 기해주시기 바랍니다.</li>
-                        <li>- 자세한 문의사항은 장기계약업무팀 수납마감 담당자(02-2002-6042)로 연락바랍니다.</li>
-                    </ul>
-                </div>
-                <div class="search-wrap mt-12">
-                    <div class="left-input-area">
-                        <div class="input-box">
-                            <label class="input-label">귀속조직</label>
-                            <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
-                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
-                            </div>
-                        </div>
-                        <div class="input-box">
-                            <label class="input-label">취급자코드</label>
-                            <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
-                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
-                            </div>
-                        </div>
-                        <div class="input-box">
-                            <label class="input-label">취급자명</label>
-                            <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
-                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
-                            </div>
-                        </div>
-                        <div class="input-box">
-                            <label class="input-label">수급마감률</label>
-                            <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
-                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
-                            </div>
-                        </div>
+                <div class="top-flex">
+                    <div class="noti-box">
+                        <p class="bold-txt text-left text_orange mb-4">※ 필독 공지 (저회차 수금율 확인사항)</p>
+                        <p class="warning-txt mb-4" data-mark="star">장기계약 계속분 초년도(2~13회) 수금율 관리 공지</p>
+                        <ul>
+                            <li>- 저회차 수금율 관리가 효과적으로 이루저 질 수 있도록 만전을 기해주시기 바랍니다.</li>
+                            <li>- 자세한 문의사항은 장기계약업무팀 수납마감 담당자(02-2002-6042)로 연락바랍니다.</li>
+                        </ul>
                     </div>
-                    <a href="javascript:;" class="btn purple last-btn" data-btn-size="s">화면으로 바로가기</a>
+                    <table class="common-table" data-table-bg="white" data-table-border="true">
+                        <colgroup>
+                            <col style="width: 15%;">
+                            <col style="width: auto;">
+                            <col style="width: 15%;">
+                            <col style="width: auto;">
+                            <col style="width: 15%;">
+                            <col style="width: auto;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>귀속조직</th>
+                                <td></td>
+                                <th>취급자코드</th>
+                                <td></td>
+                                <th>취급자명</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th class="point-bg">수급마감월</th>
+                                <td colspan="5">
+                                    <button type="button" class="btn wg-line" data-btn-size="s">화면으로 바로가기</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="bottom-table-wrap">
                     <div class="table-wrap">
@@ -180,11 +175,6 @@ var ePortalConfig = {
                     </div>
                 </div>
             </div>
-		</div>
-        <div class="popup-bottom">
-			<div class="btn-wrap">
-				<button type="button" class="btn" data-btn-size="m">확인</button>
-			</div>
 		</div>
 	</div>
 </body>
