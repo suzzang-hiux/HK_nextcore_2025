@@ -364,7 +364,7 @@ var ePortalConfig = {
                 <!-- // SOS 목록 -->
                 <!-- SOS 상세 -->
                 <div class="sos-right-area">
-                    <div class="right-area-cnt sos-detail-content" style="display: none;">
+                    <div class="right-area-cnt sos-detail-content">
                         <div class="content-box">
                             <div class="detail-title-box">
                                 <span class="label purple">답변완료</span>
@@ -544,7 +544,7 @@ var ePortalConfig = {
                             </div>
                         </div>
                     </div>
-                    <div class="right-area-cnt sos-detail-register">
+                    <div class="right-area-cnt sos-detail-register" style="display: none;">
                         <div class="content-box">
                             <table class="common-table mb-8" data-table-bg="white" data-table-border="true">
                                 <colgroup>
@@ -775,6 +775,11 @@ var ePortalConfig = {
 
 <script>
     $(function (){
+        $('.sos-left-area .popup-bottom .btn').on('click', function () {
+            $('.sos-detail-content').hide();
+            $('.sos-detail-register').show();
+        });
+
         // 추천버튼 클릭 시 이모지 박스 오픈
         const $emojiBox = $('.emoji-box');
         let isOpen = false;
