@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>저회차 수금율 현황알림</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+            <div class="notice-layer-wrap low-collection">
+                <div class="noti-box">
+                    <p class="bold-txt text-left text_orange mb-4">※ 필독 공지 (저회차 수금율 확인사항)</p>
+                    <p class="warning-txt mb-4" data-mark="star">장기계약 계속분 초년도(2~13회) 수금율 관리 공지</p>
+                    <ul>
+                        <li>- 저회차 수금율 관리가 효과적으로 이루저 질 수 있도록 만전을 기해주시기 바랍니다.</li>
+                        <li>- 자세한 문의사항은 장기계약업무팀 수납마감 담당자(02-2002-6042)로 연락바랍니다.</li>
+                    </ul>
+                </div>
+                <div class="search-wrap mt-12">
+                    <div class="left-input-area">
+                        <div class="input-box">
+                            <label class="input-label">귀속조직</label>
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label class="input-label">취급자코드</label>
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label class="input-label">취급자명</label>
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label class="input-label">수급마감률</label>
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="" value="" autocomplete="false" readonly />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="btn purple last-btn" data-btn-size="s">화면으로 바로가기</a>
+                </div>
+                <div class="bottom-table-wrap">
+                    <div class="table-wrap">
+                        <div class="table-top">
+                            <strong class="table-tit">취급점 수금율 현황</strong>
+                            <span>(단위 : 천원, %)</span>
+                        </div>
+                        <div class="scroll-table">
+                            <table class="common-table" data-table-bg="white" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 20%;">
+                                    <col style="width: 20%;">
+                                    <col style="width: 14%;">
+                                    <col style="width: 23%;">
+                                    <col style="width: 23%;">
+                                    <col style="width: 20%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>조직코드</th>
+                                        <th>조직명</th>
+                                        <th>회차</th>
+                                        <th>예상수금액<br />(자원)</th>
+                                        <th>총수금액<br />(실적)</th>
+                                        <th class="point-bg">수금율</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                            <div class="empty" style="display: block;">
+                                <p class="txt-empty">데이터가 존재하지 않습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <div class="table-top">
+                            <strong class="table-tit">취급자/사용인 수금율 현황</strong>
+                            <span>(단위 : 원, %)</span>
+                        </div>
+                        <div class="scroll-table">
+                            <table class="common-table" data-table-bg="white" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 20%;">
+                                    <col style="width: 20%;">
+                                    <col style="width: 14%;">
+                                    <col style="width: 23%;">
+                                    <col style="width: 23%;">
+                                    <col style="width: 20%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>조직코드</th>
+                                        <th>조직명</th>
+                                        <th>회차</th>
+                                        <th>예상수금액<br />(자원)</th>
+                                        <th>총수금액<br />(실적)</th>
+                                        <th class="point-bg">수금율</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                            <div class="empty" style="display: block;">
+                                <p class="txt-empty">데이터가 존재하지 않습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="popup-bottom">
+			<div class="btn-wrap">
+				<button type="button" class="btn" data-btn-size="m">확인</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -13,6 +13,12 @@
         @include font(12px, 400, 1.16);
         color: inherit;
     }
+    &[data-mark="star"] {
+        padding-left: 8px;
+        &::before {
+            content: "*";
+        }
+    }
 }
 
 // NOTI TEXT
@@ -36,6 +42,56 @@
         margin-top: 4px;
     }
 }
+ul.dot-noti {
+    padding-left: 0;
+    &::before {
+        display: none;
+    }
+    li {
+        width: 100%;
+        position: relative;
+        padding-left: 8px;
+        @include font(12px, 400, 1.2);
+        color: $cl-gr-80;
+        &::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $cl-gr-80;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+        & + li {
+            margin-top: 4px;
+        }
+    }
+}
+
+// COUNTER LIST
+.num-list {
+    counter-reset: number 0;
+    > li {
+        position: relative;
+        padding-left: 12px;
+        @include font(12px, 400, 1.16);
+        color: $cl-black;
+        &::before {
+            counter-increment: number 1;
+            content: counter(number) '.';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        & + li {
+            margin-top: 4px;
+        }
+        &:nth-child(n + 10) {
+            padding-left: 18px;
+        }
+    }
+}
 
 // ALIGN
 .text-center {
@@ -52,5 +108,21 @@
 
 // COLOR
 .text_blue {
-    color: $cl-blue;
+    color: $cl-blue-70 !important;
+}
+
+.text_purple {
+    color: $cl-purple-80 !important;
+}
+
+.text_orange {
+    color: $cl-orange-60 !important;
+}
+
+.text_green {
+    color: $cl-green-70 !important;
+}
+
+.text_gray-80 {
+    color: $cl-gr-80 !important;
 }

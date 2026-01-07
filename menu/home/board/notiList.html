@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>공지사항</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main pd-0">
+            <div class="noti-list-layer">
+                <!-- 리스트 -->
+                <div class="layer-cnt list">
+                    <div class="content-box">
+                        <div class="table-top">
+                            <div class="left-box">
+                                <div class="custom-select" style="--width: 60px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="selectLine" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="selectLine">
+                                        <li data-option-name="10">10줄</li>
+                                        <li data-option-name="20" class="select">20줄</li>
+                                        <li data-option-name="30">30줄</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="right-box">
+                                <div class="custom-select" style="--width: 90px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="select_1" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="select_1">
+                                        <li data-option-name="option_1" class="select">제목+내용</li>
+                                        <li data-option-name="option_2">옵션222</li>
+                                        <li data-option-name="option_3">옵션333</li>
+                                    </ul>
+                                </div>
+                                <div class="input-type-txt">
+									<input type="text" class="common-input" data-input-size="s" placeholder="검색어를 입력하세요." autocomplete="false" />
+									<button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+								</div>
+                                <button type="button" class="btn wg-line search" data-btn-size="s" title="검색" aria-label="검색"></button>
+                            </div>
+                        </div>
+                        <div class="scroll-table">
+                            <table class="common-table" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 56px;">
+                                    <col style="width: auto;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 90px;">
+                                    <col style="width: 90px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 40px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>순번</th>
+                                        <th>제목</th>
+                                        <th>소속</th>
+                                        <th>작성자</th>
+                                        <th>등록일</th>
+                                        <th>조회수</th>
+                                        <th>첨부</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1116</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥Good영업비서 단순설계 적용 안내 흥Good영업비서 단순설계 적용 안내 흥Good영업비서 단순설계 적용 안내</p>
+                                                <span class="new"></span>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td class="has-file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1115</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥Good영업비서 오픈 안내</p>
+                                                <span class="new"></span>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td class="has-file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1114</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 영업포탈/유프라이드 전산 사용 일시 불가 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[필독] 유프라이드&이미지시스템 오류 시 해결방법 / 영업포탈 정상 작동을 위한 캐시 삭제 방법</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">유프라이드&이미지시스템 접속 불가 시 (익스플로러 오류)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">영업포탈 정상 작동을 위한 캐시 삭제 방법</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">계약관리 OPEN 안내 (배서, 부활, 간편변경, 갱신설계)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">기간계 시스템 전환 작업으로 인한 서비스 중단 안내 (04/15 22:00 ~ 04/16 22:00, 24시간)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥국화재 네트워크 장비 교체 작업 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1116</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥Good영업비서 단순설계 적용 안내 흥Good영업비서 단순설계 적용 안내 흥Good영업비서 단순설계 적용 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td class="has-file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1115</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥Good영업비서 오픈 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td class="has-file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1114</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 영업포탈/유프라이드 전산 사용 일시 불가 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[필독] 유프라이드&이미지시스템 오류 시 해결방법 / 영업포탈 정상 작동을 위한 캐시 삭제 방법</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">유프라이드 접속방법 변경 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">유프라이드&이미지시스템 접속 불가 시 (익스플로러 오류)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">영업포탈 정상 작동을 위한 캐시 삭제 방법</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">계약관리 OPEN 안내 (배서, 부활, 간편변경, 갱신설계)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">기간계 시스템 전환 작업으로 인한 서비스 중단 안내 (04/15 22:00 ~ 04/16 22:00, 24시간)</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1113</td>
+                                        <td>
+                                            <div class="title-box">
+                                                <p class="title">[공지] 흥국화재 네트워크 장비 교체 작업 안내</p>
+                                            </div>
+                                        </td>
+                                        <td>서소문GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-11-26</td>
+                                        <td>7</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="common-pagination">
+                            <button type="button" class="btn db-arrow first disabled"></button>
+                            <button type="button" class="btn arrow prev disabled">이전</button>
+                            <div class="num-flex">
+                                <button type="button" class="btn select">1</button>
+                                <button type="button" class="btn">2</button>
+                                <button type="button" class="btn">3</button>
+                                <button type="button" class="btn">4</button>
+                                <button type="button" class="btn">5</button>
+                                <button type="button" class="btn">6</button>
+                                <button type="button" class="btn">7</button>
+                                <button type="button" class="btn">8</button>
+                                <button type="button" class="btn">9</button>
+                                <button type="button" class="btn">10</button>
+                            </div>
+                            <button type="button" class="btn arrow next">다음</button>
+                            <button type="button" class="btn db-arrow last"></button>
+                        </div>
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn" data-btn-size="m" id="registerBtn" @click="registerNoti">등록</button>
+                            <button type="button" class="btn black" data-btn-size="m">닫기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 리스트 -->
+                <!-- 상세 -->
+                <div class="layer-cnt detail" style="display: none;">
+                    <div class="content-box">
+                        <div class="noti-detail-wrap">
+                            <h2 class="noti-tit">[공지] 영업포탈/유프라이드 전산 사용 일시 불가 안내</h2>
+                            <div class="top-info">
+                                <ul>
+                                    <li class="name">TM지원Part 장원영</li>
+                                    <li class="date">2025-11-26 14:36:57</li>
+                                    <li class="view">42</li>
+                                </ul>
+                            </div>
+                            <div class="detail-content">
+                                <div class="inner-txt">
+                                    전산 작업 이슈로 영업포탈/유프라이드 서비스가 일시 중지될 예정이오니 업무에 참고 부탁드립니다.
+                                    <br /><br />
+                                    ■ 작업시간 : 2024. 11. 15(금) 오후 6시 ~ 11. 16(토) 오전 10시 <br /> 
+                                    ∙ 작업시간동안 설계/수납 등 전부 불가합니다. (영업포탈 사용 불가)
+                                    <br /><br />
+                                    ■ 중단서비스 : 영업포탈, 유프라이드 <br />
+                                    ∙ 현재 유프라이드 팝업에는 8시 작업 시작으로 되어 있으나 9시로 조정되었습니다.
+                                    <br /><br />
+                                    ■ 작업사유 : 기간계 DB/OS 업그레이드 작업 <br />
+                                    ※ 참고 : 상황에 따라 작업시간 연장 가능.
+                                </div>
+                            </div>
+                            <table class="common-table" data-table-bg="white" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col style="width: auto;">
+                                    <col style="width: 85px;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>첨부파일</th>
+                                        <td>
+                                            <ul class="file-list">
+                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_1.xlsx[153.54KB]</a></li>
+                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_2.xlsx[153.54KB]</a></li>
+                                            </ul>
+                                        </td>
+                                        <td><button type="button" class="btn wg-line" data-btn-size="s">전체다운로드</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn wg-line" data-btn-size="m">삭제</button>
+                            <button type="button" class="btn wg-line" data-btn-size="m">목록</button>
+                            <button type="button" class="btn" data-btn-size="m">수정</button>
+                            <button type="button" class="btn black" data-btn-size="m">닫기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 상세 -->
+            </div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+    // 커스텀 셀렉트
+    $('.custom-select').each(function () {
+        const $select = $(this);
+        const $selected = $select.find('.select-option li.select');
+
+        if ($selected.length) {
+        const text = $selected.text().trim();
+        const value = $selected.data('option-name');
+
+        const $input = $select.find('.select-input');
+        $input.val(text);
+        $input.attr('data-select-value', value);
+
+        $select.addClass('has-value');
+        }
+    });
+
+    $(document)
+    .on('click', '.custom-select .select-btn', function(e) {
+        e.stopPropagation();
+        
+        const $select = $(this).closest('.custom-select');
+        $('.custom-select').not($select).removeClass('is-open');
+        $select.toggleClass('is-open');
+    })
+
+    $(document)
+    .on('click', '.custom-select .select-option li', function (e) {
+        e.stopPropagation();
+
+        const $li = $(this);
+        const $select = $li.closest('.custom-select');
+
+        const text = $li.text().trim();
+        const value = $li.data('option-name');
+
+        const $input = $select.find('.select-input');
+
+        $input.val(text);
+        $input.attr('data-select-value', value);
+
+        $li.addClass('select').siblings().removeClass('select');
+        $select.addClass('has-value');
+
+        $select.removeClass('is-open');
+    });
+
+    $(document).on('click', function () {
+        $('.custom-select').removeClass('is-open');
+    });
+
+    // 공지사항 등록 팝업
+    $portalApp.vueServiceBean({
+        el: "#registerBtn",
+        methods: {
+            registerNoti: function() {
+                PencakeCustomCTRL.showModal("/menu/home/board/notiRegister.html", {
+                    targetId: 'notiRegister',
+                    width: 1000,
+                    height: 700,
+                    showTitle: true,
+                    title: "공지사항",
+                });
+            }
+        }
+    });
+</script>

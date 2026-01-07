@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta charset="UTF-8">
+    <meta env="SOP-YTKIM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+        var global_page_context_path = "";
+        var ePortalConfig = {
+            "runtime": "local"
+            , "license": false
+            , "websocket": ""
+            , "mainPageId": ""
+            , "page_id": '7bd27055ad014707ba23bdcba63b01b5'
+            , "userInfo": {}
+            , "link": {
+                "portalMain": ""
+            }
+            , "domain": {
+                "webmail": ""
+                , "nas": ""
+                , "hompage": ""
+            }
+            , "context": {
+                "epplt": ("" || global_page_context_path)
+                , "noti": ("" || '/alarm')
+                , "board": ("" || '')
+            }
+            , "fileupload": {
+                "useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+                , "useMigFileExt": 'xls|xlsx'
+                , "pencakeAttach": '/staticimg'
+            }
+        };
+        ePortalConfig.userInfo['_ep_USR_PWD'] = '$2a$10$PnV738Vcdc5X9zBzbViWbOprzvNetMcbP4IuIth/0HKAviqtOAWPu';
+        ePortalConfig.userInfo['_ep_ORG_SP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTN_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_DTYCD'] = '';
+        ePortalConfig.userInfo['_ep_ORNNM'] = '포탈관리그룹';
+        ePortalConfig.userInfo['_ep_AMG_ORNCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_NM'] = '포탈관리자';
+        ePortalConfig.userInfo['_ep_STF_FLG_CDNM'] = '정상';
+        ePortalConfig.userInfo['_ep_ORG_FLGCD'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATRCD'] = '';
+        ePortalConfig.userInfo['_ep_id'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORG_FLG_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_STF_FLGCD'] = '1';
+        ePortalConfig.userInfo['_ep_CLPCD'] = '';
+        ePortalConfig.userInfo['_ep_BDT_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTNCD'] = '';
+        ePortalConfig.userInfo['_ep_ORG_SPCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_ID'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORNCD'] = 'admin';
+        ePortalConfig.userInfo['_ep_DTY_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATR_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BDTCD'] = '';
+        ePortalConfig.userInfo['_ep_EMPNO'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_EMP_PART'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TPCD'] = '';
+        ePortalConfig.userInfo['_ep_CLP_CDNM'] = '';
+
+        ePortalConfig.groupInfo = ['AUTHENTICATED_USERS', 'PORTAL_ADMINISTRATORS', 'PUBLIC', 'admin', 'default_page']
+        ePortalConfig.userId = ePortalConfig.userInfo[("" || '_ep_USR_ID')];
+        ePortalConfig.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.nm = ePortalConfig.userInfo[("" || '_ep_USR_NM')];
+    </script>
+
+    <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+    <link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
+    <link href="/wsrv/app/js/plugins/owl/assets/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=30207.9915487681"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+    <script src="/wsrv/app/js/plugins/vue/vue.min.js"></script>
+    <script src="/wsrv/app/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/wsrv/app/js/pencake.js?version=51862.79271819944"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=33210.91559244459"></script>
+</head>
+
+<body data-ep-view-mode="default" class="subContents ga">
+    <div class="contents-grid" id="mainWrapper">
+        <!-- 홈 연관팝업 목록 -->
+        <div class="flex-col gap-8">
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_1">정보보호(보안) 서약서</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_2">금융소비자보호 서약서</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_3">고객정보 모집경로 확인 (준법감시 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_4">Compliance Day 교육 확인 (컴플라이언스 교육 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_5">자금세탁방지 교육 확인</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_6">건전한 영업행위를 준수합니다. (건전한 영업행위 준수 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_7">증권 및 약관전달 기일경과 안내 (만기도래 예정 대상건 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_8">법인카드 Watching 안내 (만기도래 예정 대상건 팝업2)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_9">완전판매 모니터링 미완료 경과일 안내 (직업급수 상이계약 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_10">사용인 보수교육 알림</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_11">모집자 휴대폰번호 정확성 체크</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_12">일반보험 미결관리대상현황</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_13">미청산 가수 보험료 현황 (가수보험료조회 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_14">장기계약 만기도래 예정 대상건 안내 (만기도래 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_15">금리인하요구권 심사결과 미통보현황 (금리인하요구권 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_16">군장병 실손중지 처리대상</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_17">저회차 수금율 현황알림</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_18">완판모니터링 미완료 안내 (불완전판매 모니터링 팝업)</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_19">금융소비자보호소식 팝업</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="/js/home.js"></script>
+<script>
+    $(function (){
+        $portalApp.vueServiceBean({
+            el: "#mainWrapper",
+            methods: {
+                showPop_1: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/securityPledge.html", {
+                        targetId: 'securityPledge',
+                        width: 900,
+                        height: 700,
+                        showTitle: true,
+                        title: "정보보호(보안) 서약서"
+                    });
+                },
+                showPop_2: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/consumerPledge.html", {
+                        targetId: 'consumerPledge',
+                        width: 900,
+                        height: 700,
+                        showTitle: true,
+                        title: "금융소비자보호 서약서"
+                    });
+                },
+                showPop_3: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/sourceCheck.html", {
+                        targetId: 'sourceCheck',
+                        width: 700,
+                        height: 435,
+                        showTitle: true,
+                        title: "고객정보 모집경로 확인"
+                    });
+                },
+                showPop_4: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/complianceDay.html", {
+                        targetId: 'complianceDay',
+                        width: 700,
+                        height: 305,
+                        showTitle: true,
+                        title: "Compliance Day 교육 확인"
+                    });
+                },
+                showPop_5: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/trainingCheck.html", {
+                        targetId: 'trainingCheck',
+                        width: 700,
+                        height: 305,
+                        showTitle: true,
+                        title: "자금세탁방지 교육 확인"
+                    });
+                },
+                showPop_6: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/salesPledge.html", {
+                        targetId: 'salesPledge',
+                        width: 700,
+                        height: 715,
+                        showTitle: true,
+                        title: "건전한 영업행위를 준수합니다."
+                    });
+                },
+                showPop_7: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/overdueNotice.html", {
+                        targetId: 'overdueNotice',
+                        width: 600,
+                        height: 595,
+                        showTitle: true,
+                        title: "증권 및 약관전달 기일경과 안내"
+                    });
+                },
+                showPop_8: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/watchingNotice.html", {
+                        targetId: 'watchingNotice',
+                        width: 600,
+                        height: 710,
+                        showTitle: true,
+                        title: "법인카드 Watching 안내"
+                    });
+                },
+                showPop_9: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/monitoringOverdue.html", {
+                        targetId: 'monitoringOverdue',
+                        width: 800,
+                        height: 460,
+                        showTitle: true,
+                        title: "완전판매 모니터링 미완료 경과일 안내"
+                    });
+                },
+                showPop_10: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/educationAlert.html", {
+                        targetId: 'educationAlert',
+                        width: 600,
+                        height: 335,
+                        showTitle: true,
+                        title: "보수교육 알림"
+                    });
+                },
+                showPop_11: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/phoneVerification.html", {
+                        targetId: 'phoneVerification',
+                        width: 500,
+                        height: 297,
+                        showTitle: true,
+                        title: "모집자 휴대폰번호 정확성 체크"
+                    });
+                },
+                showPop_12: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/managementStatus.html", {
+                        targetId: 'managementStatus',
+                        width: 700,
+                        height: 380,
+                        showTitle: true,
+                        title: "일반보험 미결관리대상현황"
+                    });
+                },
+                showPop_13: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/premiumInquiry.html", {
+                        targetId: 'premiumInquiry',
+                        width: 700,
+                        height: 435,
+                        showTitle: true,
+                        title: "미청산 가수 보험료 현황"
+                    });
+                },
+                showPop_14: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/maturityNotice.html", {
+                        targetId: 'maturityNotice',
+                        width: 700,
+                        height: 435,
+                        showTitle: true,
+                        title: "장기계약 만기도래 예정 대상건 안내"
+                    });
+                },
+                showPop_15: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/reductionRequest.html", {
+                        targetId: 'reductionRequest',
+                        width: 700,
+                        height: 405,
+                        showTitle: true,
+                        title: "금리인하요구권 심사결과 미통보현황"
+                    });
+                },
+                showPop_16: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/militaryIndemnity.html", {
+                        targetId: 'militaryIndemnity',
+                        width: 800,
+                        height: 400,
+                        showTitle: true,
+                        title: "군장병 실손중지 처리대상"
+                    });
+                },
+                showPop_17: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/lowCollection.html", {
+                        targetId: 'lowCollection',
+                        width: 1000,
+                        height: 600,
+                        showTitle: true,
+                        title: "저회차 수금율 현황알림"
+                    });
+                },
+                showPop_18: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/monitoringMisselling.html", {
+                        targetId: 'monitoringMisselling',
+                        width: 800,
+                        height: 515,
+                        showTitle: true,
+                        title: "[흥국화재] 완판모니터링 미완료 안내"
+                    });
+                },
+                showPop_19: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/board/notiList.html", {
+                        targetId: 'notiList',
+                        width: 1000,
+                        height: 700,
+                        showTitle: true,
+                        title: "금융소비자보호 소식"
+                    });
+                },
+            }
+        });
+    })
+</script>

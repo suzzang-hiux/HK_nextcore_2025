@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>SOS 요청</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main pd-0">
+            <div class="request-sos">
+                <!-- SOS 목록 -->
+                <div class="sos-left-area" id="sosLeftArea">
+                    <div class="content-box">
+                        <div class="table-top">
+                            <div class="left-box">
+                                <div class="custom-select" style="--width: 60px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="selectLine" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="selectLine">
+                                        <li data-option-name="10">10줄</li>
+                                        <li data-option-name="20" class="select">20줄</li>
+                                        <li data-option-name="30">30줄</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="right-box">
+                                <div class="custom-select" style="--width: 76px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="select_1" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="select_1">
+                                        <li data-option-name="option_1">옵션111</li>
+                                        <li data-option-name="option_2">옵션222</li>
+                                        <li data-option-name="option_3">옵션333</li>
+                                    </ul>
+                                </div>
+                                <div class="custom-select" style="--width: 60px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="select_2" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="select_2">
+                                        <li data-option-name="option_1" class="select">전체</li>
+                                        <li data-option-name="option_2">옵션222</li>
+                                        <li data-option-name="option_3">옵션333</li>
+                                    </ul>
+                                </div>
+                                <div class="custom-select" style="--width: 90px;" data-select-size="m" data-state="">
+                                    <div class="input-box">
+                                        <input type="text" class="select-input" data-select-input="select_3" data-select-value="" placeholder="선택" value="" readonly>
+                                        <button type="button" class="select-btn"></button>
+                                    </div>
+                                    <span class="noti">메세지를 입력하세요.</span>
+                                    <ul class="select-option" data-select-option="select_3">
+                                        <li data-option-name="option_1" class="select">제목+내용</li>
+                                        <li data-option-name="option_2">옵션222</li>
+                                        <li data-option-name="option_3">옵션333</li>
+                                    </ul>
+                                </div>
+                                <div class="input-type-txt">
+									<input type="text" class="common-input" data-input-size="s" placeholder="검색어를 입력하세요." autocomplete="false" />
+									<button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+								</div>
+                                <button type="button" class="btn wg-line search" data-btn-size="s" title="검색" aria-label="검색"></button>
+                            </div>
+                        </div>
+                        <div class="scroll-table">
+                            <table class="common-table" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 50px;">
+                                    <col style="width: 68px;">
+                                    <col style="width: auto;">
+                                    <col style="width: 76px;">
+                                    <col style="width: 54px;">
+                                    <col style="width: 86px;">
+                                    <col style="width: 50px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>문의유형</th>
+                                        <th>제목</th>
+                                        <th>소속</th>
+                                        <th>작성자</th>
+                                        <th>등록일</th>
+                                        <th>조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="new">
+                                        <td>13174</td>
+                                        <td><span class="label blue-line">사용문의</span></td>
+                                        <td><p>[장기손사] 장기일반손사 → 사고처리 → 손해사정(장기인)</p></td>
+                                        <td>TM지원Part</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-25</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13173</td>
+                                        <td><span class="label purple-line">업무지침</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13172</td>
+                                        <td><span class="label gray-line">제안</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13171</td>
+                                        <td><span class="label orange-line">결함</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>바른손해사정</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13170</td>
+                                        <td><span class="label green-line">결함아님</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>HTS손해</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13174</td>
+                                        <td><span class="label blue-line">사용문의</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>TM지원Part</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-25</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13173</td>
+                                        <td><span class="label purple-line">업무지침</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>13172</td>
+                                        <td><span class="label gray-line">제안</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13171</td>
+                                        <td><span class="label orange-line">결함</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>바른손해사정</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13170</td>
+                                        <td><span class="label green-line">결함아님</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>HTS손해</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13174</td>
+                                        <td><span class="label blue-line">사용문의</span></td>
+                                        <td><p>[장기손사] 장기일반손사 → 사고처리 → 손해사정(장기인)</p></td>
+                                        <td>TM지원Part</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-25</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13173</td>
+                                        <td><span class="label purple-line">업무지침</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13172</td>
+                                        <td><span class="label gray-line">제안</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13171</td>
+                                        <td><span class="label orange-line">결함</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>바른손해사정</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13170</td>
+                                        <td><span class="label green-line">결함아님</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>HTS손해</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13174</td>
+                                        <td><span class="label blue-line">사용문의</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>TM지원Part</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-25</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13173</td>
+                                        <td><span class="label purple-line">업무지침</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>13172</td>
+                                        <td><span class="label gray-line">제안</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>안산GA지점</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13171</td>
+                                        <td><span class="label orange-line">결함</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>바른손해사정</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13170</td>
+                                        <td><span class="label green-line">결함아님</span></td>
+                                        <td><p>[이미지시스템] 기반관리 → 기반관리 → 기반관리</p></td>
+                                        <td>HTS손해</td>
+                                        <td>장원영</td>
+                                        <td>2025-12-24</td>
+                                        <td>42</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="common-pagination">
+                            <button type="button" class="btn db-arrow first disabled"></button>
+                            <button type="button" class="btn arrow prev disabled">이전</button>
+                            <div class="num-flex">
+                                <button type="button" class="btn select">1</button>
+                                <button type="button" class="btn">2</button>
+                                <button type="button" class="btn">3</button>
+                                <button type="button" class="btn">4</button>
+                                <button type="button" class="btn">5</button>
+                                <button type="button" class="btn">6</button>
+                                <button type="button" class="btn">7</button>
+                                <button type="button" class="btn">8</button>
+                                <button type="button" class="btn">9</button>
+                                <button type="button" class="btn">10</button>
+                            </div>
+                            <button type="button" class="btn arrow next">다음</button>
+                            <button type="button" class="btn db-arrow last"></button>
+                        </div>
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn" data-btn-size="m">등록</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- // SOS 목록 -->
+                <!-- SOS 상세 -->
+                <div class="sos-right-area">
+                    <div class="right-area-cnt sos-detail-content" style="display: none;">
+                        <div class="content-box">
+                            <div class="detail-title-box">
+                                <span class="label purple">답변완료</span>
+                                <h2>[장기손사] 장기일반손사 → 사고처리 → 손해사정(장기인) </h2>
+                            </div>
+                            <div class="detail-wrap">
+                                <div class="top-info">
+                                    <ul>
+                                        <li class="name">TM지원Part 장원영</li>
+                                        <li class="date">2025-11-26 14:36:57</li>
+                                        <li class="view">42</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="inner-txt">
+                                        설계/증권/사원번호 : 99999999-99999 <br />
+                                        연락처 : 02-1234-5678 <br />
+                                        본부/센터명 : 에이치앤티손해사정
+                                    </div>
+                                    <div class="recommand-flex">
+                                        <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
+                                        <ul>
+                                            <li class="like">3</li>
+                                            <li class="fun">2</li>
+                                            <li class="useful">14</li>
+                                            <li class="disagree">1</li>
+                                            <li class="angry">2</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <table class="common-table" data-table-bg="white" data-table-border="true">
+                                    <colgroup>
+                                        <col style="width: 80px;">
+                                        <col style="width: auto;">
+                                        <col style="width: 85px;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>첨부파일</th>
+                                            <td>
+                                                <ul class="file-list">
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한 파일_1.xlsx[153.54KB]</a></li>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한 파일_2.xlsx[153.54KB]</a></li>
+                                                </ul>
+                                            </td>
+                                            <td><button type="button" class="btn wg-line" data-btn-size="s">전체다운로드</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th>키워드(태그)</th>
+                                            <td colspan="2">
+                                                <ul class="keyword-list">
+                                                    <li>입력된 태그 1</li>
+                                                    <li>입력된 태그 2</li>
+                                                    <li>입력된 태그 3</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="sos-detail-comment">
+                                <div class="comment-input-box">
+                                    <div class="title-box">
+                                        <h4>댓글쓰기</h4>
+                                        <div class="flex-row gap-8">
+                                            <label class="input-box">
+                                                <input type="checkbox" class="common-checkbox" data-input-size="big" name="sosAnswer" :id="" />
+                                                <span></span>
+                                                <p class="txt">답변</p>
+                                            </label>
+                                            <p class="user-info">안유진</p>
+                                        </div>
+                                    </div>
+                                    <textarea class="common-textarea" placeholder="답변을 입력해주세요. 답변이 아닐 경우 답변체크를 해제하세요." rows="3"></textarea>
+                                    <ul class="file-list">
+                                        <li>
+                                            <div class="file-name">
+                                                <p>파일명파일명파일명파일명파일명파일명파일명파일명.xlsx</p>
+                                                <span class="capacity">[153.54 KB]</span>
+                                            </div>
+                                            <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                        </li>
+                                        <li>
+                                            <div class="file-name">
+                                                <p>파일명.xlsx</p>
+                                                <span class="capacity">[153.54 KB]</span>
+                                            </div>
+                                            <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                        </li>
+                                        <li>
+                                            <div class="file-name">
+                                                <p>파일명.xlsx</p>
+                                                <span class="capacity">[153.54 KB]</span>
+                                            </div>
+                                            <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <div class="input-box">
+                                            <input type="file" class="hidden common-file-input" id="addCommentFile" />
+                                            <label class="btn cg-fill" data-btn-size="m" for="addCommentFile">파일추가</label>
+                                        </div>
+                                        <button type="button" class="btn" data-btn-size="m">댓글저장</button>
+                                    </div>
+                                </div>
+                                <div class="comment-list">
+                                    <div class="list-top">
+                                        <strong>댓글 <span>2</span></strong>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="comment-user-info">
+                                                <div class="user">
+                                                    <p class="name">IT지원팀(T/S) 안유진</p>
+                                                    <span class="label">답변</span>
+                                                </div>
+                                                <div class="date">2025-11-26 15:47:23</div>
+                                            </div>
+                                            <div class="comment-content">
+                                                해당 영수증 모두 보험금 지급일 이후 영수증 수정이 이루어졌습니다.
+                                            </div>
+                                            <div class="file-box">
+                                                <ul>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일등록한파일등록한파일등록한파일_1.xlsx[153.54KB]</a></li>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일_2.xlsx[153.54KB]</a></li>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일_3.xlsx[153.54KB]</a></li>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일_4.xlsx[153.54KB]</a></li>
+                                                </ul>
+                                                <button type="button" class="btn wg-line">전체다운로드</button>
+                                            </div>
+                                            <div class="recommand-flex">
+                                                <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
+                                                <ul>
+                                                    <li class="like">3</li>
+                                                    <li class="fun">2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="btn-wrap my-btn">
+                                                <button type="button" class="btn black-line" data-btn-size="m">삭제</button>
+                                                <button type="button" class="btn black-line" data-btn-size="m">수정</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="comment-user-info">
+                                                <div class="user">
+                                                    <p class="name">장기보상시스템Part 김지원</p>
+                                                </div>
+                                                <div class="date">2025-11-26 15:47:23</div>
+                                            </div>
+                                            <div class="comment-content">
+                                                납면배서는 사고일 기준으로 이력을 생성하다보니, 진배서종료일자와 현배서의 시작일자가 맞아야 하는데, 역전되어 처리되다보니, 해당사고일자로 중복으로 조회되어 오류 발생하였습니다.
+                                            </div>
+                                            <div class="file-box">
+                                                <ul>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일_1.xlsx[153.54KB]</a></li>
+                                                    <li><a href="javascript:;" class="txt-btn blue">등록한파일_2.xlsx[153.54KB]</a></li>
+                                                </ul>
+                                                <button type="button" class="btn wg-line">전체다운로드</button>
+                                            </div>
+                                            <div class="recommand-flex">
+                                                <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
+                                                <ul>
+                                                    <li class="disagree">1</li>
+                                                    <li class="angry">4</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-bottom">
+                            <div class="btn-wrap">
+                                <button type="button" class="btn cg-line" data-btn-size="m">삭제</button>
+                                <button type="button" class="btn" data-btn-size="m">수정</button>
+                                <button type="button" class="btn black" data-btn-size="m">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-area-cnt sos-detail-register">
+                        <div class="content-box">
+                            <table class="common-table mb-8" data-table-bg="white" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="required">화면경로</th>
+                                        <td>
+                                            <div class="flex-row gap-4 grow-item">
+                                                <div class="input-box">
+                                                    <div class="input-type-txt">
+                                                        <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                                <span>→</span>
+                                                <div class="input-box">
+                                                    <div class="input-type-txt">
+                                                        <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                                <span>→</span>
+                                                <div class="input-box">
+                                                    <div class="input-type-txt">
+                                                        <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                                <span>→</span>
+                                                <div class="input-box">
+                                                    <div class="input-type-txt">
+                                                        <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">업무선택</th>
+                                        <td>
+                                            <div class="flex-row gap-8">
+                                                <div class="input-box" data-width="auto">
+                                                    <div class="custom-select" style="--width: 240px;" data-select-size="m" data-state="">
+                                                        <div class="input-box">
+                                                            <input type="text" class="select-input" data-select-input="selectLine" placeholder="선택" value="" readonly>
+                                                            <button type="button" class="select-btn"></button>
+                                                        </div>
+                                                        <span class="noti">메세지를 입력하세요.</span>
+                                                        <ul class="select-option" data-select-option="selectLine">
+                                                            <li>업무 1</lilass=>
+                                                            <li>업무 2</li>
+                                                            <li>업무 3</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <p class="warning-txt" data-mark="star">업무를 선택해주세요.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>문의유형</th>
+                                        <td>
+                                            <div class="flex-row gap-4">
+                                                <label class="input-box" data-width="auto">
+                                                    <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_0" value="sos_type_0" checked />
+                                                    <span class="txt text_blue">사용문의</span>
+                                                </label>
+                                                <label class="input-box" data-width="auto">
+                                                    <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_1" value="sos_type_1" />
+                                                    <span class="txt text_purple">업무지원</span>
+                                                </label>
+                                                <label class="input-box" data-width="auto">
+                                                    <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_2" value="sos_type_2" />
+                                                    <span class="txt text_orange">결함</span>
+                                                </label>
+                                                <label class="input-box" data-width="auto">
+                                                    <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_3" value="sos_type_3" />
+                                                    <span class="txt text_green">결함아님</span>
+                                                </label>
+                                                <label class="input-box" data-width="auto">
+                                                    <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_4" value="sos_type_4" />
+                                                    <span class="txt text_gray-80">제안</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>작성자</th>
+                                        <td>TM지원Part 장원영</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">연락처</th>
+                                        <td>
+                                            <div class="flex-row gap-8">
+                                                <div class="input-box" data-width="auto">
+                                                    <div class="input-type-txt">
+                                                        <input type="number" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                                <p class="warning-txt text_gray-80" data-mark="star">예&#41; 000-000-0000</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">관련정보</th>
+                                        <td>
+                                            <div class="flex-row gap-8">
+                                                <div class="input-box" data-width="auto">
+                                                    <div class="input-type-txt">
+                                                        <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                        <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                    </div>
+                                                </div>
+                                                <p class="warning-txt text_gray-80" data-mark="star">번호 (설계/증권/사원/사고번호) 택일</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- 에디터 영역 -->
+                            <div class="editor" style="width: 100%; height: 285px; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; border: 1px solid #bdbdbd;">
+                                에디터 영역
+                            </div>
+                            <!-- // 에디터 영역 -->
+                            <table class="common-table mt-8" data-table-bg="white" data-table-border="true">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col style="width: auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>첨부파일</th>
+                                        <td>
+                                            <div class="input-box">
+                                                <input type="file" class="hidden common-file-input" id="addRequestFile" />
+                                                <label class="btn cg-fill" data-btn-size="s" for="addRequestFile">파일추가</label>
+                                            </div>
+                                            <ul class="file-list mt-4">
+                                                <li>
+                                                    <div class="file-name">
+                                                        <p>파일명파일명파일명파일명파일명파일명파일명파일명.xlsx</p>
+                                                        <span class="capacity">[153.54 KB]</span>
+                                                    </div>
+                                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                                </li>
+                                                <li>
+                                                    <div class="file-name">
+                                                        <p>파일명.xlsx</p>
+                                                        <span class="capacity">[153.54 KB]</span>
+                                                    </div>
+                                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                                </li>
+                                                <li>
+                                                    <div class="file-name">
+                                                        <p>파일명.xlsx</p>
+                                                        <span class="capacity">[153.54 KB]</span>
+                                                    </div>
+                                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>키워드(태그)</th>
+                                        <td>
+                                            <ul class="keyword-list">
+                                                <li class="tag">
+                                                    <p>입력된 태그 1</p>
+                                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                                </li>
+                                                <li class="tag">
+                                                    <p>입력된 태그 2</p>
+                                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                                </li>
+                                                <li class="input-tag">
+                                                    <div class="input-box" data-width="auto">
+                                                        <div class="input-type-txt">
+                                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="popup-bottom">
+                            <div class="btn-wrap">
+                                <button type="button" class="btn cg-line" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button>
+                                <button type="button" class="btn" data-btn-size="m">저장</button>
+                                <button type="button" class="btn black" data-btn-size="m">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // SOS 상세 -->
+                <div class="emoji-box" hidden>
+                    <ul>
+                        <li>
+                            <button type="button" class="like">좋아요</button>
+                        </li>
+                        <li>
+                            <button type="button" class="fun">재밌어요</button>
+                        </li>
+                        <li>
+                            <button type="button" class="useful">유익해요</button>
+                        </li>
+                        <li>
+                            <button type="button" class="disagree">동의못해요</button>
+                        </li>
+                        <li>
+                            <button type="button" class="angry">화나요</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+    $(function (){
+        // 추천버튼 클릭 시 이모지 박스 오픈
+        const $emojiBox = $('.emoji-box');
+        let isOpen = false;
+        let $currentBtn = null;
+
+        $(document).on('click', '.emoji-open', function(e) {
+            e.stopPropagation();
+
+            const $btn = $(this);
+            $currentRecommand = $btn.closest('.recommand-flex');
+            openEmojiBox($btn);
+        })
+
+        $(document).on('click', '.emoji-box', function (e) {
+            e.stopPropagation();
+        });
+        
+        $(document).on('click', function () {
+            if (isOpen) {
+                closeEmojiBox();
+            }
+        });
+
+        function openEmojiBox($btn) {
+            const btnRect = $btn[0].getBoundingClientRect();
+            const emojiHeight = $emojiBox.outerHeight();
+            const gap = 8;
+
+            let top = btnRect.top + window.scrollY - emojiHeight - gap;
+            let left = btnRect.left + window.scrollX + btnRect.width / 2;
+
+            if (top < window.scrollY) {
+                top = btnRect.bottom + window.scrollY + gap;
+            }
+
+            $emojiBox.css({top: top, left: left, transform: 'translateX(-50%)'}).removeAttr('hidden').show();
+            isOpen = true;
+            $currentBtn = $btn;
+        }
+
+        function closeEmojiBox() {
+            $emojiBox.hide().attr('hidden', true);
+            isOpen = false;
+            $currentBtn = null;
+        }
+
+        // 커스텀 셀렉트
+        $('.custom-select').each(function () {
+            const $select = $(this);
+            const $selected = $select.find('.select-option li.select');
+
+            if ($selected.length) {
+            const text = $selected.text().trim();
+            const value = $selected.data('option-name');
+
+            const $input = $select.find('.select-input');
+            $input.val(text);
+            $input.attr('data-select-value', value);
+
+            $select.addClass('has-value');
+            }
+        });
+
+        $(document)
+        .on('click', '.custom-select .select-btn', function(e) {
+            e.stopPropagation();
+            
+            const $select = $(this).closest('.custom-select');
+            $('.custom-select').not($select).removeClass('is-open');
+            $select.toggleClass('is-open');
+        })
+
+        $(document)
+        .on('click', '.custom-select .select-option li', function (e) {
+            e.stopPropagation();
+
+            const $li = $(this);
+            const $select = $li.closest('.custom-select');
+
+            const text = $li.text().trim();
+            const value = $li.data('option-name');
+
+            const $input = $select.find('.select-input');
+
+            $input.val(text);
+            $input.attr('data-select-value', value);
+
+            $li.addClass('select').siblings().removeClass('select');
+            $select.addClass('has-value');
+
+            $select.removeClass('is-open');
+        });
+
+        $(document).on('click', function () {
+            $('.custom-select').removeClass('is-open');
+        });
+
+        // TEXT/NUMBER INPUT 삭제버튼
+        // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
+        // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus
+        $(document)
+        .on('focus', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            }
+        })
+
+        .on('input', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            } else {
+                $wrap.removeClass('has-value');
+            }
+        })
+
+        .on('blur', '.input-type-txt .common-input', function () {
+            const $wrap = $(this).closest('.input-type-txt');
+            $wrap.removeClass('has-value');
+        })
+
+        .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+            e.preventDefault();
+
+            const $wrap = $(this).closest('.input-type-txt');
+            const $input = $wrap.find('.common-input');
+
+            $input.val('');
+            $wrap.removeClass('has-value');
+
+            setTimeout(function () {
+                $input.focus();
+            }, 0);
+        });
+
+        // 미리보기 팝업 오픈
+        $portalApp.vueServiceBean({
+            el: "#previewBtn",
+            methods: {
+                contentPreview: function() {
+                    PencakeCustomCTRL.showModal("/menu/state/requestSOS_preview.html", {
+                        targetId: 'sosPreview',
+                        width: 1200,
+                        height: 700,
+                        showTitle: true,
+                        title: "SOS 요청 미리보기",
+                    });
+                }
+            }
+        });
+    })
+</script>

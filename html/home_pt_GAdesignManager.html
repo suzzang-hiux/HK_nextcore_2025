@@ -731,10 +731,12 @@
                 <!-- 공지사항 -->
                 <div class="pencake-portlet-box" data-pencake-portlet-id="">
                     <div class="pencake-portlet-content">
-                        <div class="title-box">
+                        <!-- 260109 수정사항 : 공지 팝업 버튼 추가 -->
+                        <div class="title-box" id="notiTitleWrap">
                             <h3 class="portlet_title">공지사항</h3>
-                            <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                            <a href="javascript:;" class="txt-btn plus" @click="notiView">전체보기</a>
                         </div>
+                        <!-- // 260109 수정사항 : 공지 팝업 버튼 추가 -->
                         <ul class="noti-list">
                             <li> 
                                 <a href="javascript:;" target="_blank" title="U-Pride가 새롭게 오픈합니다.">

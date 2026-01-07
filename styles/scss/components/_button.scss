@@ -13,6 +13,12 @@
     &[data-width="auto"] {
         width: fit-content;
     }
+    &[data-align="center"] {
+        margin-inline: auto;
+    }
+    &[data-align="between"] {
+        justify-content: space-between;
+    }
     &.txt-center {
         button, a {
             flex: none;
@@ -20,6 +26,10 @@
             display: block;
             text-align: center;
         }
+    }
+    p {
+        @include font(13px, 400, 1.23);
+        color: $cl-black;
     }
 }
 
@@ -35,6 +45,7 @@
     color: $cl-white;
     text-align: center;
     white-space: nowrap;
+    cursor: pointer;
     will-change: background-color, border-color, color;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     span {
@@ -233,6 +244,22 @@
             background-color: $cl-gr-30;
         }
     }
+    &.black-line {
+        border-color: $cl-gr-70;
+        background-color: $cl-white;
+        color: $cl-black;
+        &:hover {
+            background-color: $cl-gr-20;
+        }
+        &:active {
+            background-color: $cl-gr-70;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-gr-30;
+            background-color: $cl-white;
+            color: $cl-gr-50;
+        }
+    }
     // DARK GRAY
     &.dg-fill {
         border-color: transparent;
@@ -391,6 +418,20 @@
         }
     }
     // BLUE
+    &.blue-fill {
+        border-color: transparent;
+        background-color: $cl-blue-70;
+        color: $cl-white;
+        &:hover {
+            background-color: $cl-blue-40;
+        }
+        &:active {
+            background-color: $cl-blue-80;
+        }
+        &:disabled, &.disabled {
+            background-color: $cl-blue-30;
+        }
+    }
     &.blue-line {
         background-color: $cl-blue-5;
         border-color: $cl-blue-30;

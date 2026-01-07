@@ -1312,7 +1312,8 @@
                 <div class="pencake-portlet-box" data-pencake-portlet-id="">
                     <div class="pencake-portlet-content">
                         <div data-event="tab" data-tab-name="notiTab">
-                            <div class="title-box flex-start">
+                            <!-- 260109 수정사항 : 공지 팝업 버튼 추가 -->
+                            <div class="title-box flex-start" id="notiTitleWrap">
                                 <div class="common-tab">
                                     <ul>
                                         <li class="active">
@@ -1323,8 +1324,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                <a href="javascript:;" class="txt-btn plus" @click="notiView">전체보기</a>
                             </div>
+                            <!-- // 260109 수정사항 : 공지 팝업 버튼 추가 -->
                             <div class="tab-content">
                                 <div class="cnt-item">
                                     <ul class="noti-list">

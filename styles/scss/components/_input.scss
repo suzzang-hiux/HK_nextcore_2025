@@ -23,6 +23,9 @@
             }
         }
     }
+    &[data-width="auto"] {
+        width: fit-content;
+    }
 }
 
 .input-col-box {
@@ -57,36 +60,35 @@
     }
 }
 
-.input-box, .input-col-box {
-    .input-type-txt {
-        width: 100%;
-        position: relative;
+.input-type-txt {
+    width: 100%;
+    position: relative;
+    .delete-btn {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4px;
+        @include bg-set;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8.00016 1.33331C11.6821 1.33331 14.6668 4.31808 14.6668 7.99998C14.6668 11.6819 11.6821 14.6666 8.00016 14.6666C4.31826 14.6666 1.3335 11.6819 1.3335 7.99998C1.3335 4.31808 4.31826 1.33331 8.00016 1.33331ZM10.7046 5.2949C10.4442 5.03485 10.0221 5.03471 9.76188 5.2949L7.99951 7.05662L6.23779 5.2949C5.97742 5.03483 5.55534 5.03464 5.29508 5.2949C5.03483 5.55516 5.03501 5.97724 5.29508 6.23761L7.0568 7.99933L5.29508 9.7617C5.03489 10.022 5.03503 10.4441 5.29508 10.7044C5.55542 10.9647 5.97746 10.9647 6.23779 10.7044L7.99951 8.94204L9.76188 10.7044C10.0222 10.9646 10.4443 10.9647 10.7046 10.7044C10.9649 10.4441 10.9648 10.0221 10.7046 9.7617L8.94222 7.99933L10.7046 6.23761C10.9649 5.97728 10.9649 5.55523 10.7046 5.2949Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+        opacity: 0;
+        pointer-events: none;
+        will-change: opacity;
+        transition: opacity 0.2s;
+    }
+    &.has-value {
         .delete-btn {
-            width: 16px;
-            height: 16px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 4px;
-            @include bg-set;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8.00016 1.33331C11.6821 1.33331 14.6668 4.31808 14.6668 7.99998C14.6668 11.6819 11.6821 14.6666 8.00016 14.6666C4.31826 14.6666 1.3335 11.6819 1.3335 7.99998C1.3335 4.31808 4.31826 1.33331 8.00016 1.33331ZM10.7046 5.2949C10.4442 5.03485 10.0221 5.03471 9.76188 5.2949L7.99951 7.05662L6.23779 5.2949C5.97742 5.03483 5.55534 5.03464 5.29508 5.2949C5.03483 5.55516 5.03501 5.97724 5.29508 6.23761L7.0568 7.99933L5.29508 9.7617C5.03489 10.022 5.03503 10.4441 5.29508 10.7044C5.55542 10.9647 5.97746 10.9647 6.23779 10.7044L7.99951 8.94204L9.76188 10.7044C10.0222 10.9646 10.4443 10.9647 10.7046 10.7044C10.9649 10.4441 10.9648 10.0221 10.7046 9.7617L8.94222 7.99933L10.7046 6.23761C10.9649 5.97728 10.9649 5.55523 10.7046 5.2949Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
-            opacity: 0;
-            pointer-events: none;
-            will-change: opacity;
-            transition: opacity 0.2s;
-        }
-        &.has-value {
-            .delete-btn {
-                opacity: 1;
-                pointer-events: all;
-            }
+            opacity: 1;
+            pointer-events: all;
         }
     }
 }
 
 // TEXT INPUT
 .common-input {
-    width: 100%;
+    --width: 100%;
+    width: var(--width);
     height: 24px;
     position: relative;
     border-radius: 3px;
@@ -116,6 +118,9 @@
     //     background-color: $cl-purple-5;
     //     border-color: $cl-purple-30;
     // }
+    &[data-input-size="s"] {
+        height: 20px;
+    }
     &[type='number'] {
         appearance: none;
         -moz-appearance: textfield;
@@ -125,6 +130,22 @@
         &::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
+        }
+    }
+    &[type='date'] {
+        background: $cl-white url("/wsrv/app/img/new/common/ico_calendar.png") no-repeat right 4px center / 12px 12px;
+        &::-webkit-calendar-picker-indicator {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: none;
+            color: transparent;
+            cursor: pointer;
+        }
+        &:read-only, &.disabled, &:disabled {
+            background: $cl-gr-5 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center / 12px 12px;
         }
     }
 }
@@ -160,6 +181,17 @@
             }
         }
     }
+    &[data-input-size="big"] {
+        & + .txt {
+            padding-left: 24px;
+            font-size: 13px;
+            &::before {
+                width: 20px;
+                height: 20px;
+                top: -3px;
+            }
+        }
+    }
 }
 
 // CHECKBOX
@@ -190,6 +222,16 @@
             will-change: background-image;
             transition: background-image 0.2s;
         }
+        & + .txt {
+            @include font(12px, 400, 1);
+            color: $cl-black;
+            margin-left: 4px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     }
     &:checked {
         & + span {
@@ -216,7 +258,7 @@
             }
         }
     }
-    [data-input-size="big"] {
+    &[data-input-size="big"] {
         & + span {
             width: 20px;
             height: 20px;
@@ -224,6 +266,9 @@
             &::after {
                 width: 16px;
                 height: 16px;
+            }
+            & + .txt {
+                font-size: 13px;
             }
         }
     }

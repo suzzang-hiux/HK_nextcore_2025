@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>군장병 실손중지 처리대상</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+            <div class="notice-layer-wrap maturity-notice">
+                <div class="scroll-table">
+                    <table class="common-table" data-table-bg="white" data-table-border="true">
+                        <colgroup>
+                            <col style="width: 14%;">
+                            <col style="width: 14%;">
+                            <col style="width: auto;">
+                            <col style="width: 14%;">
+                            <col style="width: 14%;">
+                            <col style="width: 14%;">
+                            <col style="width: 14%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>취급자</th>
+                                <th>취급자명</th>
+                                <th>증권번호</th>
+                                <th>계약자</th>
+                                <th>피보험자</th>
+                                <th>입영일</th>
+                                <th>배서예정일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                    <div class="empty" style="display: block;">
+                        <p class="txt-empty">데이터가 존재하지 않습니다.</p>
+                    </div>
+                </div>
+                <p class="warning-txt mt-8">군장병 실손중지 예약접수 대상이오니, 입영일 당일 배서처리 진행 바랍니다.</p>
+            </div>
+		</div>
+        <div class="popup-bottom">
+			<div class="btn-wrap">
+				<button type="button" class="btn" data-btn-size="m">확인</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

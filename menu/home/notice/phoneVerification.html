@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>보수교육 알림</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+            <div class="notice-layer-wrap phone-verification">
+                <p>가입설계를 시작하기 전에 <b class="text_orange">휴대폰번호</b>를 확인해주세요!</p>
+                <p class="mt-4"><b>설계 및 계약관련 정보 서비스를 제공</b>해 드리고자 합니다.</p>
+                <div class="gray-bg">
+                    <div class="flex-row gap-4">
+                        <p>휴대폰 번호</p>
+                        <div class="input-box">
+                            <div class="custom-select" style="--width: 60px;" data-select-size="l" data-state="">
+                                <div class="input-box">
+                                    <input type="text" class="select-input" data-select-input="selectLine" data-select-value="" placeholder="선택" value="" readonly>
+                                    <button type="button" class="select-btn"></button>
+                                </div>
+                                <span class="noti">메세지를 입력하세요.</span>
+                                <ul class="select-option" data-select-option="selectLine">
+                                    <li data-option-name="010" class="select">010</li>
+                                    <li data-option-name="010">010</li>
+                                </ul>
+                            </div>
+                            <div class="input-type-txt">
+                                <input type="tel" class="common-input" style="--width: 100px;" data-input-size="m" placeholder="" autocomplete="false" value="1234-5678" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="warning-txt">반드시 본인이 사용중인 휴대폰번호 입력</p>
+                <p class="warning-txt mt-4">7월부터 휴대폰번호가 없는 경우 설계 진행이 불가할 예정으로 사전에 등록 <br />부탁드리겠습니다.</p>
+            </div>
+		</div>
+        <div class="popup-bottom">
+			<div class="btn-wrap" data-align="between">
+                <p>※ 팝업 안내 문구 영역</p>
+				<div class="btn-wrap">
+                    <button type="button" class="btn purple" data-btn-size="m">등록(수정)</button>
+                    <button type="button" class="btn pl-22 pr-22" data-btn-size="m">확인</button>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+    $(function (){
+        // 커스텀 셀렉트
+        $('.custom-select').each(function () {
+            const $select = $(this);
+            const $selected = $select.find('.select-option li.select');
+
+            if ($selected.length) {
+            const text = $selected.text().trim();
+            const value = $selected.data('option-name');
+
+            const $input = $select.find('.select-input');
+            $input.val(text);
+            $input.attr('data-select-value', value);
+
+            $select.addClass('has-value');
+            }
+        });
+
+        $(document)
+        .on('click', '.custom-select .select-btn', function(e) {
+            e.stopPropagation();
+            
+            const $select = $(this).closest('.custom-select');
+            $('.custom-select').not($select).removeClass('is-open');
+            $select.toggleClass('is-open');
+        })
+
+        $(document)
+        .on('click', '.custom-select .select-option li', function (e) {
+            e.stopPropagation();
+
+            const $li = $(this);
+            const $select = $li.closest('.custom-select');
+
+            const text = $li.text().trim();
+            const value = $li.data('option-name');
+
+            const $input = $select.find('.select-input');
+
+            $input.val(text);
+            $input.attr('data-select-value', value);
+
+            $li.addClass('select').siblings().removeClass('select');
+            $select.addClass('has-value');
+
+            $select.removeClass('is-open');
+        });
+
+        $(document).on('click', function () {
+            $('.custom-select').removeClass('is-open');
+        });
+
+        // TEXT/NUMBER INPUT 삭제버튼
+        // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
+        // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus
+        $(document)
+        .on('focus', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            }
+        })
+
+        .on('input', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            } else {
+                $wrap.removeClass('has-value');
+            }
+        })
+
+        .on('blur', '.input-type-txt .common-input', function () {
+            const $wrap = $(this).closest('.input-type-txt');
+            $wrap.removeClass('has-value');
+        })
+
+        .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+            e.preventDefault();
+
+            const $wrap = $(this).closest('.input-type-txt');
+            const $input = $wrap.find('.common-input');
+
+            $input.val('');
+            $wrap.removeClass('has-value');
+
+            setTimeout(function () {
+                $input.focus();
+            }, 0);
+        });
+    })
+</script>

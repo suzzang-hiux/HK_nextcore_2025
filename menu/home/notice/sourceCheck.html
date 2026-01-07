@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>고객정보 모집경로 확인</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main">
+            <div class="notice-layer-wrap source-check">
+                <p class="bold-txt mb-8">관련근거 : 신용정보의 이용 및 보호에 관한 법률 제 41조의 2, <br />신용정보의 이용 및 보호에 관한 법률 시행렬 제 35조의 2 </p>
+                <div class="scroll-table">
+                    <table class="common-table" data-table-bg="white" data-table-border="true">
+                        <colgroup>
+                            <col style="width: auto;">
+                            <col style="width: 175px;">
+                            <col style="width: 155px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>확인내용</th>
+                                <th>대상기간</th>
+                                <th class="point-bg">확인</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. 적정한 수단이나 방법으로 취득하거나 제공받은 신용정보를 모집업무에 이용하였는지 여부</td>
+                                <td>24. 01 ~ 24. 03</td>
+                                <td>
+                                    <div class="flex-row gap-4">
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_1" id="radio_1-1" />
+                                            <span class="txt">적정</span>
+                                        </label>
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_1" id="radio_1-2" />
+                                            <span class="txt">부적정</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2. 모집업무에 이용한 개인신용정보 등을 취득한 경로를 고객정보 전산등록 시에 적정하게 입력하였는지 여부</td>
+                                <td>24. 01 ~ 24. 03</td>
+                                <td>
+                                    <div class="flex-row gap-4">
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_2" id="radio_2-1" />
+                                            <span class="txt">적정</span>
+                                        </label>
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_2" id="radio_2-2" />
+                                            <span class="txt">부적정</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3. 모집업무에 이용한 개인신용정보를 안전하게 보관하고 있는지 여부</td>
+                                <td>24. 01 ~ 24. 03</td>
+                                <td>
+                                    <div class="flex-row gap-4">
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_3" id="radio_3-1" />
+                                            <span class="txt">적정</span>
+                                        </label>
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_3" id="radio_3-2" />
+                                            <span class="txt">부적정</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4. 모집업무에 이용한 개인신용정보를 이용목적 달성, 이용기간 종료 등에 따라 적절히 파기하였는지 여부</td>
+                                <td>24. 01 ~ 24. 03</td>
+                                <td>
+                                    <div class="flex-row gap-4">
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_4" id="radio_4-1" />
+                                            <span class="txt">적정</span>
+                                        </label>
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_4" id="radio_4-2" />
+                                            <span class="txt">부적정</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5. 개인신용정보를 제3자에게 제공하지 아니하고, 위탁한 업무 목적으로만 이용하였는지 여부</td>
+                                <td>24. 01 ~ 24. 03</td>
+                                <td>
+                                    <div class="flex-row gap-4">
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_5" id="radio_5-1" />
+                                            <span class="txt">적정</span>
+                                        </label>
+                                        <label class="input-box">
+                                            <input type="radio" class="common-radio" data-input-size="big" name="radio_5" id="radio_5-2" />
+                                            <span class="txt">부적정</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="bold-txt mt-8 mb-8">
+                    본인은 보험 가입설계, 상품소개 등을 위해 개인(신용)정보를 고객 동의를 받고 수집하였고, <br />
+                    이용∙보관∙파기 등 업무에 상기와 같이 사용∙관리 하고 있음을 확인합니다.
+                </p>
+                <div class="btn-wrap" data-width="auto" data-align="center">
+                    <button type="button" class="btn pl-24 pr-24" data-btn-size="l">완료</button>
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+</html>

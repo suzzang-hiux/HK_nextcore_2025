@@ -7,10 +7,45 @@ $(function () {
                 PencakeCustomCTRL.showModal("/menu/home/myInfo.html", {
                     targetId: 'myDetailInfo',
                     width: 400,
-                    height: 244,
+                    // 260109 수정사항 : height 수정
+                    height: 260,
                     showTitle: true,
                     title: "내 정보 조회",
                     dialogClass: 'type-border'
+                });
+            }
+        }
+    });
+
+    // 260109 수정사항 : 하단 스크립트 추가
+    // 공지사항, HBS 전체보기
+    $portalApp.vueServiceBean({
+        el: "#notiTitleWrap",
+        data: {
+            tabIndex: 0,
+        },
+        mounted() {
+            const $wrap = $(this.$el);
+
+            if ($wrap.find('.common-tab').length) {
+                const $active = $wrap.find('.common-tab li.active');
+                this.tabIndex = $active.length ? $active.index() : 0;
+
+                $(document).on('portal:tab-change', (e, data) => {
+                    this.tabIndex = data.index;
+                });
+            }
+        },
+        methods: {
+            notiView: function() {
+                const isHbs = this.tabIndex === 0 && $(this.$el).find('.common-tab').length;
+
+                PencakeCustomCTRL.showModal("/menu/home/board/notiList.html", {
+                    targetId: isHbs ? 'hbsList' : 'notiList',
+                    width: 1000,
+                    height: 700,
+                    showTitle: true,
+                    title: isHbs ? 'HBS 교육방송' : '공지사항'
                 });
             }
         }

@@ -501,8 +501,8 @@
             }
         }
         .menu-content-bottom {
-            flex: 1;
             width: 100%;
+            height: 710px;
             position: relative;
             @include flex(column, flex-start, flex-start, 12px);
             padding: 12px 16px;
@@ -664,6 +664,8 @@
                         }
                     }
                     &.scroll-hidden {
+                        height: calc(100% + 32px);
+                        padding-bottom: 0;
                         overflow: hidden;
                         @include flex(column, flex-start, flex-start, 0);
                         .border-top {
@@ -681,6 +683,9 @@
                             .menu-favorite {
                                 ul {
                                     li {
+                                        &:last-child {
+                                            margin-bottom: 12px;
+                                        }
                                         a {
                                             padding-left: 0;
                                             color: $cl-gr-80;
@@ -883,6 +888,9 @@ body.popup {
                 .search-area {
                     border: none;
                     border-radius: 0;
+                    .common-input {
+                        border: 1px solid $cl-gr-40 !important;
+                    }
                 }
                 .search-box {
                     width: 100%;
@@ -1849,6 +1857,22 @@ body.subContents {
         }
     }
 }
+.txt-empty {
+    @include font(13px, 400, 1.23);
+    color: $cl-gr-60;
+    width: fit-content;
+    position: relative;
+    padding-left: 28px;
+    &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        @include ps-icon;
+        @include bg-set;
+        background-image: url("/wsrv/app/img/new/common/ico_alert_circle_contained.png");
+        opacity: 0.45;
+    }
+}
 
 .flex {
     &-row {
@@ -1866,8 +1890,80 @@ body.subContents {
 }
 // ============= ▲ CONTENT ▲ =============
 
-
-
+//  ============= ▼ STATE BAR ▼ =============
+.ep-state-bar {
+    width: 100%;
+    height: 26px;
+    position: relative;
+    padding-inline: 16px;
+    @include flex(row, center, space-between, 40px);
+    border-top: 1px solid $cl-sg-20;
+    background-color: $cl-sg-5;
+    .left-area {
+        p {
+            @include font(12px, 400, 1);
+            color: $cl-gr-80;
+            padding-left: 20px;
+            position: relative;
+            &::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                @include ps-icon;
+                @include bg-set;
+                background-image: url("/wsrv/app/img/new/common/ico_alert_circle_contained.png");
+            }
+        }
+    }
+    .right-area {
+        @include flex(row, center, flex-end, 4px);
+        .btn-wrap {
+            margin-right: 8px;
+            .btn {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                &.minus {
+                    &::after {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        display: block;
+                        @include bg-set;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M10 5.5C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H10Z' fill='%23707F91'/%3E%3C/svg%3E");
+                        flex-shrink: 0;
+                    }
+                }
+            }
+            .num {
+                @include font(12px, 400, 1);
+                color: $cl-sg-60;
+            }
+        }
+        .route-page {
+            position: relative;
+            .dropdown-box {
+                width: 400px;
+                bottom: 36px;
+                right: 0;
+                .common-table {
+                    th, td {
+                        height: fit-content;
+                        min-height: 24px;
+                        text-align: left;
+                        line-height: 1.23;
+                        padding: 2px 4px;
+                    }
+                }
+                &.active {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+}
+// ============= ▲ STATE BAR ▲ =============
 
 // ============================= PORTAL =============================
 .wrapper.ga {

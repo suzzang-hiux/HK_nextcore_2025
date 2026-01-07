@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>공지사항 미리보기</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body class="popup">
+<script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+	<div id="epAppViewArea" class="wrap-popup">
+		<div class="main pd-0">
+            <div class="noti-list-layer">
+                <div class="layer-cnt detail">
+                    <div class="content-box">
+                        <div class="noti-detail-wrap">
+                            <h2 class="noti-tit">[공지] 영업포탈/유프라이드 전산 사용 일시 불가 안내</h2>
+                            <div class="top-info">
+                                <ul>
+                                    <li class="name">TM지원Part 장원영</li>
+                                    <li class="date">2025-11-26 14:36:57</li>
+                                    <li class="view">42</li>
+                                </ul>
+                            </div>
+                            <div class="detail-content">
+                                <div class="inner-txt">
+                                    전산 작업 이슈로 영업포탈/유프라이드 서비스가 일시 중지될 예정이오니 업무에 참고 부탁드립니다.
+                                    <br /><br />
+                                    ■ 작업시간 : 2024. 11. 15(금) 오후 6시 ~ 11. 16(토) 오전 10시 <br /> 
+                                    ∙ 작업시간동안 설계/수납 등 전부 불가합니다. (영업포탈 사용 불가)
+                                    <br /><br />
+                                    ■ 중단서비스 : 영업포탈, 유프라이드 <br />
+                                    ∙ 현재 유프라이드 팝업에는 8시 작업 시작으로 되어 있으나 9시로 조정되었습니다.
+                                    <br /><br />
+                                    ■ 작업사유 : 기간계 DB/OS 업그레이드 작업 <br />
+                                    ※ 참고 : 상황에 따라 작업시간 연장 가능.
+                                    <br /><br />
+                                    <img src="/wsrv/app/img/new/common/noti_sample.jpg" alt="" />
+                                </div>
+                            </div>
+                            <table class="common-table" data-table-bg="white">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col style="width: auto;">
+                                    <col style="width: 85px;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>첨부파일</th>
+                                        <td>
+                                            <ul class="file-list">
+                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_1.xlsx[153.54KB]</a></li>
+                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_2.xlsx[153.54KB]</a></li>
+                                            </ul>
+                                        </td>
+                                        <td><button type="button" class="btn wg-line" data-btn-size="s">전체다운로드</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="popup-bottom">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn black" data-btn-size="m">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+</html>

@@ -9,7 +9,6 @@
         position: relative;
         padding: 12px 16px;
         background-color: $cl-purple-80;
-        margin-bottom: 16px;
         .ui-dialog-title {
             margin: 0;
             .tit {
@@ -165,6 +164,14 @@ body.popup {
             .btn-wrap {
                 width: fit-content;
                 margin-left: auto;
+                &[data-align="between"] {
+                    width: 100%;
+                    justify-content: space-between;
+                    button, a {
+                        flex: inherit;
+                        width: fit-content;
+                    }
+                }
             }
         }
     }
@@ -174,7 +181,7 @@ body.popup {
         display: block;
         margin-top: 0;
         overflow-y: auto;
-        padding: 0 16px 16px;
+        padding: 16px;
     }
     button {
         display: flex;
@@ -210,21 +217,12 @@ body.popup {
         .scroll-table {
             height: 450px;
             .common-table {
-                thead {
-                    th {
-                        border-right: 1px solid $cl-gr-40;
-                        &:last-child {
-                            border-right: none;
-                        }
-                    }
-                }
                 tbody {
                     tr {
                         cursor: pointer;
                         td {
                             &:first-child {
                                 text-align: left;
-                                border-right: 1px solid $cl-gr-40;
                                 @include ellipsis(100%);
                             }
                         }
@@ -297,6 +295,1498 @@ body.popup {
                 position: relative;
                 .mascot-empty {
                     @include ps-center;
+                }
+            }
+        }
+    }
+}
+
+// SOS 요청
+.request-sos {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex(row, flex-start, flex-start, 0);
+    > div {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        @include flex(column, flex-start, flex-start, 0);
+        & + div {
+            border-left: 1px solid $cl-black;
+        }
+        .content-box {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            position: relative;
+            padding: 16px;
+            overflow-y: auto;
+        }
+        > .right-area-cnt {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 0;
+        }
+    }
+    .table-top {
+        width: 100%;
+        position: relative;
+        @include flex(row, center, space-between, 12px);
+        margin-bottom: 8px;
+        .right-box {
+            @include flex(row, center, flex-end, 4px);
+            .btn {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+                padding: 0;
+                background-color: $cl-white;
+                border-color: $cl-gr-50;
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    @include ps-center;
+                    @include bg-set;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.125 1.125C7.33414 1.125 9.125 2.91586 9.125 5.125C9.125 6.0493 8.81016 6.89934 8.28369 7.57666L10.7285 10.0215C10.9237 10.2167 10.9238 10.5333 10.7285 10.7285C10.5333 10.9238 10.2167 10.9237 10.0215 10.7285L7.57666 8.28369C6.89934 8.81016 6.0493 9.125 5.125 9.125C2.91586 9.125 1.125 7.33414 1.125 5.125C1.125 2.91586 2.91586 1.125 5.125 1.125ZM5.125 2.125C3.46815 2.125 2.125 3.46815 2.125 5.125C2.125 6.78185 3.46815 8.125 5.125 8.125C6.78185 8.125 8.125 6.78185 8.125 5.125C8.125 3.46815 6.78185 2.125 5.125 2.125Z' fill='%23616161'/%3E%3C/svg%3E");
+                }
+                &:hover {
+                    border-color: $cl-gr-50;
+                    background-color: $cl-gr-20;
+                }
+                &:active {
+                    border-color: $cl-gr-50;
+                    background-color: $cl-gr-40;
+                }
+            }
+        }
+    }
+    .sos-left-area {
+        .scroll-table {
+            max-height: 506px;
+            .common-table {
+                tr {
+                    cursor: pointer;
+                    td {
+                        @include ellipsis(100%);
+                        .label {
+                            display: block;
+                            min-width: 56px;
+                            margin: 0 auto;
+                        }
+                        &:nth-child(3) {
+                            p {
+                                @include ellipsis(100%);
+                                text-align: left;
+                            }
+                        }
+                    }
+                    &.new {
+                        td {
+                            &:nth-child(3) {
+                                p {
+                                    padding-left: 20px;
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        width: 16px;
+                                        height: 16px;
+                                        position: absolute;
+                                        @include ps-icon;
+                                        @include bg-set;
+                                        background-image: url("/wsrv/app/img/new/common/ico_new.png");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .common-pagination {
+            margin-top: 8px;
+        }
+    }
+    .sos-detail-content {
+        .detail-title-box {
+            @include flex(row, flex-start, flex-start, 4px);
+            margin-bottom: 8px;
+            .label {
+                flex-shrink: 0;
+                transform: translateY(2px)
+            }
+            h2 {
+                @include font(16px, 700, 1.25);
+                color: $cl-black;
+            }
+        }
+        .detail-wrap {
+            width: 100%;
+            position: relative;
+            background-color: $cl-white;
+            .top-info {
+                width: 100%;
+                height: 28px;
+                position: relative;
+                background-color: $cl-sg-20;
+                border-top: 1px solid $cl-black;
+                border-bottom: 1px solid $cl-gr-40;
+                ul {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    @include flex(row, center, flex-start, 12px);
+                    padding-inline: 12px;
+                    li {
+                        @include font(13px, 500, 1);
+                        color: $cl-gr-80;
+                        padding-left: 20px;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            @include ps-icon;
+                            @include bg-set;
+                        }
+                        &.name {
+                            &::before {
+                                background-image: url("/wsrv/app/img/new/common/ico_user.png");
+                            }
+                        }
+                        &.date {
+                            &::before {
+                                background-image: url("/wsrv/app/img/new/common/ico_calendar.png");
+                                filter: contrast(10);
+                            }
+                        }
+                        &.view {
+                            &::before {
+                                background-image: url("/wsrv/app/img/new/common/ico_pw_eyes_on.png");
+                            }
+                        }
+                    }
+                }
+            }
+            .detail-content {
+                width: 100%;
+                position: relative;
+                padding: 12px;;
+                .inner-txt {
+                    width: 100%;
+                    position: relative;
+                    @include font(13px, 400, 1.23);
+                    color: $cl-black;
+                }
+                .recommand-flex {
+                    margin-top: 12px;
+                }
+            }
+            .common-table {
+                border-top: 1px solid $cl-gr-40;
+                tr {
+                    th, td {
+                        text-align: left;
+                        padding: 4px;
+                    }
+                }
+                ul {
+                    @include flex(row, center, flex-start, 4px);
+                    flex-wrap: wrap;
+                    &.file-list {
+                        margin-top: 0;
+                        li {
+                            width: fit-content;
+                            height: auto;
+                            border: none;
+                            border-radius: 0;
+                            padding-right: 0;
+                            a {
+                                display: block;
+                                height: fit-content;
+                            }
+                        }
+                    }
+                    &.keyword-list {
+                        li {
+                            width: fit-content;
+                            padding: 2px 6px;
+                            position: relative;
+                            border-radius: 4px;
+                            background-color: $cl-gr-20;
+                            @include font(13px, 500, 1.2);
+                            color: $cl-gr-80;
+                        }
+                    }
+                }
+                .wg-line {
+                    padding: 0 6px;
+                }
+            }
+        }
+    }
+    .sos-detail-comment {
+        width: 100%;
+        position: relative;
+        margin-top: 12px;
+        .comment-input-box {
+            width: 100%;
+            position: relative;
+            border: 1px solid $cl-gr-40;
+            background-color: $cl-sg-10;
+            margin-bottom: 12px;
+            padding: 12px;
+            .title-box {
+                width: 100%;
+                position: relative;
+                @include flex(row, center, space-between, 12px);
+                margin-bottom: 10px;
+                h4 {
+                    @include font(14px, 700, 1.2);
+                    color: $cl-black;
+                }
+                .user-info {
+                    flex-shrink: 0;
+                    @include font(13px, 700, 1.2);
+                    color: $cl-black;
+                    padding-left: 24px;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        @include ps-icon;
+                        @include bg-set;
+                        background-image: url("/wsrv/app/img/new/common/ico_profile.png");
+                    }
+                }
+            }
+            textarea {
+                min-height: 56px;
+                margin-bottom: -2px;
+            }
+            .btn-box {
+                width: 100%;
+                position: relative;
+                margin-top: 8px;
+                @include flex(row, center, space-between, 12px);
+            }
+        }
+        .comment-list {
+            width: 100%;
+            position: relative;
+            border: 1px solid $cl-gr-40;
+            background-color: $cl-white;
+            .list-top {
+                width: 100%;
+                position: relative;
+                padding: 12px;
+                border-bottom: 1px solid $cl-gr-40;
+                strong {
+                    @include flex(row, center, flex-start, 4px);
+                    @include font(14px, 700, 1);
+                    color: $cl-black;
+                    span {
+                        color: $cl-blue-70;
+                    }
+                }
+            }
+            > ul {
+                > li {
+                    width: 100%;
+                    position: relative;
+                    padding: 14px 12px 12px;
+                    .comment-user-info {
+                        @include flex(row, center, space-between, 12px);
+                        margin-bottom: 10px;
+                        .user {
+                            @include flex(row, center, flex-start, 4px);
+                            .name {
+                                flex-shrink: 0;
+                                @include font(13px, 700, 1.2);
+                                color: $cl-black;
+                                padding-left: 24px;
+                                position: relative;
+                                &::before {
+                                    content: "";
+                                    width: 20px;
+                                    height: 20px;
+                                    @include ps-icon;
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/ico_profile.png");
+                                }
+                            }
+                            .label {
+                                border-radius: 3px;
+                                background-color: $cl-yellow-20;
+                                color: $cl-orange-60;
+                            }
+                        }
+                        .date {
+                            @include font(12px, 400, 1.16);
+                            color: $cl-gr-60;
+                        }
+                    }
+                    .file-box {
+                        margin-block: 8px;
+                        @include flex(row, flex-start, flex-start, 4px);
+                        ul {
+                            @include flex(row, center, flex-start, 2px 4px);
+                            flex-wrap: wrap;
+                            li {
+                                a {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                    .my-btn {
+                        width: fit-content;
+                        position: absolute;
+                        bottom: 12px;
+                        right: 12px;
+                    }
+                    & + li {
+                        border-top: 1px solid $cl-gr-40;
+                    }
+                }
+            }
+        }
+    }
+    .recommand-flex {
+        width: 100%;
+        position: relative;
+        @include flex(row, center, flex-start, 4px);
+        .btn {
+            padding-left: 24px;
+            &::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                @include ps-icon;
+                left: 6px;
+                @include bg-set;
+                background-image: url("/wsrv/app/img/new/common/ico_thumb-up.png");
+            }
+        }
+        > ul {
+            @include flex(row, center, flex-start, 4px);
+            > li {
+                width: fit-content;
+                height: 24px;
+                position: relative;
+                padding: 0 6px 0 28px;
+                border-radius: 3px;
+                border: 1px solid $cl-gr-50;
+                background-color: $cl-white;
+                @include flex(row, center, flex-start, 0);
+                @include font(13px, 500, 1.2);
+                color: $cl-black;
+                &::before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    @include ps-icon;
+                    left: 4px;
+                    @include bg-set;
+                }
+                &.like {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
+                    }
+                }
+                &.fun {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
+                    }
+                }
+                &.useful {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
+                    }
+                }
+                &.disagree {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
+                    }
+                }
+                &.angry {
+                    &::before {
+                        background-image: url("/wsrv/app/img/new/common/ico_emoji_angry.png");
+                    }
+                }
+            }
+        }
+    }
+    .emoji-box {
+        width: 340px;
+        height: 84px;
+        @include border-box;
+        border-radius: 4px;
+        position: absolute;
+        @include z(modal);
+        display: none;
+        ul {
+            width: 100%;
+            position: relative;
+            padding: 12px;
+            @include flex(row, center, space-between, 4px);
+            li {
+                flex: 1;
+                button {
+                    width: 100%;
+                    position: relative;
+                    @include font(13px, 500, 1.2);
+                    text-align: center;
+                    color: $cl-black;
+                    padding-top: 44px;
+                    &::before {
+                        content: "";
+                        width: 40px;
+                        height: 40px;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        @include bg-set;
+                    }
+                    &.like {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
+                        }
+                    }
+                    &.fun {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
+                        }
+                    }
+                    &.useful {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
+                        }
+                    }
+                    &.disagree {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
+                        }
+                    }
+                    &.angry {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_emoji_angry.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sos-detail-register {
+        .common-table {
+            th, td {
+                text-align: left;
+                padding-block: 4px;
+            }
+            .grow-item {
+                input {
+                    width: 104px;
+                }
+            }
+            input {
+                width: 240px;
+            }
+        }
+        .keyword-list {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, flex-start, 4px);
+            flex-wrap: wrap;
+            li {
+                &.tag {
+                    width: fit-content;
+                    max-width: 100%;
+                    height: 20px;
+                    position: relative;
+                    border-radius: 4px;
+                    background-color: $cl-gr-20;
+                    @include flex(row, center, flex-start, 0);
+                    padding-inline: 6px 22px;
+                    p {
+                        @include font(13px, 500, 1);
+                        color: $cl-gr-80;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .del-btn {
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 0;
+                        &::after {
+                            content: "";
+                            width: 12px;
+                            height: 12px;
+                            @include ps-center;
+                            @include bg-set;
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M9.39646 1.89645C9.59173 1.70118 9.90823 1.70118 10.1035 1.89645C10.2987 2.09171 10.2987 2.40823 10.1035 2.60348L6.70701 5.99997L10.1035 9.39646C10.2987 9.59173 10.2987 9.90826 10.1035 10.1035C9.90826 10.2987 9.59173 10.2987 9.39646 10.1035L5.99997 6.70701L2.60348 10.1035C2.40823 10.2987 2.0917 10.2987 1.89645 10.1035C1.7012 9.90825 1.70122 9.59173 1.89645 9.39646L5.29294 5.99997L1.89645 2.60348C1.70118 2.40822 1.70118 2.09171 1.89645 1.89645C2.09171 1.70118 2.40822 1.70118 2.60348 1.89645L5.99997 5.29294L9.39646 1.89645Z' fill='%23616161'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+                &.input-tag {
+                    width: 120px;
+                    flex-shrink: 0;
+                    .input-box {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .file-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        margin-top: 8px;
+        li {
+            width: 100%;
+            height: 20px;
+            position: relative;
+            background-color: $cl-white;
+            border: 1px solid $cl-gr-50;
+            border-radius: 3px;
+            overflow: hidden;
+            padding-right: 20px;
+            .file-name {
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                padding: 1px 4px;
+                @include flex(row, center, flex-start, 2px);
+                p {
+                    flex: 0 1 auto;
+                    min-width: 0;
+                    max-width: 100%;
+                    @include font(13px, 400, 1.3);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .capacity {
+                    flex-shrink: 0;
+                    font-size: 12px;
+                }
+            }
+            .del-btn {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    @include ps-center;
+                    @include bg-set;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M9.39646 1.89645C9.59173 1.70118 9.90823 1.70118 10.1035 1.89645C10.2987 2.09171 10.2987 2.40823 10.1035 2.60348L6.707 5.99997L10.1035 9.39646C10.2987 9.59173 10.2987 9.90826 10.1035 10.1035C9.90826 10.2987 9.59173 10.2987 9.39646 10.1035L5.99997 6.707L2.60348 10.1035C2.40823 10.2987 2.0917 10.2987 1.89645 10.1035C1.7012 9.90825 1.70122 9.59173 1.89645 9.39646L5.29294 5.99997L1.89645 2.60348C1.70118 2.40822 1.70118 2.09171 1.89645 1.89645C2.09171 1.70118 2.40822 1.70118 2.60348 1.89645L5.99997 5.29294L9.39646 1.89645Z' fill='%239E9E9E'/%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+    // 미리보기
+    &.preview {
+        display: block;
+        > div {
+            width: 100%;
+        }
+    }
+}
+
+// 공지사항
+.noti-list-layer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .layer-cnt {
+        width: 100%;
+        height: 100%;
+        @include flex(column, flex-start, flex-start, 0);
+        .content-box {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            position: relative;
+            padding: 16px;
+            overflow-y: auto;
+        }
+    }
+    .table-top {
+        width: 100%;
+        position: relative;
+        @include flex(row, center, space-between, 12px);
+        margin-bottom: 8px;
+        .right-box {
+            @include flex(row, center, flex-end, 4px);
+            .btn {
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+                padding: 0;
+                background-color: $cl-white;
+                border-color: $cl-gr-50;
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    @include ps-center;
+                    @include bg-set;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.125 1.125C7.33414 1.125 9.125 2.91586 9.125 5.125C9.125 6.0493 8.81016 6.89934 8.28369 7.57666L10.7285 10.0215C10.9237 10.2167 10.9238 10.5333 10.7285 10.7285C10.5333 10.9238 10.2167 10.9237 10.0215 10.7285L7.57666 8.28369C6.89934 8.81016 6.0493 9.125 5.125 9.125C2.91586 9.125 1.125 7.33414 1.125 5.125C1.125 2.91586 2.91586 1.125 5.125 1.125ZM5.125 2.125C3.46815 2.125 2.125 3.46815 2.125 5.125C2.125 6.78185 3.46815 8.125 5.125 8.125C6.78185 8.125 8.125 6.78185 8.125 5.125C8.125 3.46815 6.78185 2.125 5.125 2.125Z' fill='%23616161'/%3E%3C/svg%3E");
+                }
+                &:hover {
+                    border-color: $cl-gr-50;
+                    background-color: $cl-gr-20;
+                }
+                &:active {
+                    border-color: $cl-gr-50;
+                    background-color: $cl-gr-40;
+                }
+            }
+        }
+    }
+    .list {
+        .scroll-table {
+            max-height: 506px;
+            .common-table {
+                tbody {
+                    tr {
+                        cursor: pointer;
+                        td {
+                            &:nth-child(2) {
+                                text-align: left;
+                            }
+                            .title-box {
+                                width: 100%;
+                                position: relative;
+                                @include flex(row, center, flex-start, 4px);
+                                overflow: hidden;
+                                .title {
+                                    flex: 0 1 auto;
+                                    min-width: 0;
+                                    max-width: 100%;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    word-break: break-all;
+                                }
+                                .new {
+                                    width: 16px;
+                                    height: 16px;
+                                    flex-shrink: 0;
+                                    @include bg-set;
+                                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8.00016 1.33301C4.32016 1.33301 1.3335 4.31967 1.3335 7.99967C1.3335 11.6797 4.32016 14.6663 8.00016 14.6663C11.6802 14.6663 14.6668 11.6797 14.6668 7.99967C14.6668 4.31967 11.6802 1.33301 8.00016 1.33301ZM10.6668 9.99967C10.6668 10.2663 10.5068 10.513 10.2535 10.613C10.1735 10.6463 10.0868 10.6663 10.0002 10.6663C9.82683 10.6663 9.6535 10.5997 9.52683 10.473L6.66683 7.61301V10.0063C6.66683 10.373 6.36683 10.673 6.00016 10.673C5.6335 10.673 5.3335 10.373 5.3335 10.0063V6.00634C5.3335 5.73967 5.4935 5.49301 5.74683 5.39301C5.9935 5.28634 6.28016 5.34634 6.4735 5.53967L9.3335 8.39967V6.00634C9.3335 5.63967 9.6335 5.33967 10.0002 5.33967C10.3668 5.33967 10.6668 5.63967 10.6668 6.00634V10.0063V9.99967Z' fill='%23EC008C'/%3E%3C/svg%3E");
+                                }
+                            }
+                            &.has-file {
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    width: 16px;
+                                    height: 16px;
+                                    margin: 0 auto;
+                                    @include bg-set;
+                                    background-image: url("/wsrv/app/img/new/common/ico_paperclip.png");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .common-pagination {
+            margin-top: 8px;
+        }
+    }
+    .noti-detail-wrap {
+        width: 100%;
+        position: relative;
+        background-color: $cl-white;
+        .noti-tit {
+            @include font(16px, 700, 1.25);
+            color: $cl-black;
+            margin-bottom: 8px;
+        }
+        .top-info {
+            width: 100%;
+            height: 28px;
+            position: relative;
+            background-color: $cl-sg-20;
+            border-top: 1px solid $cl-black;
+            border-bottom: 1px solid $cl-gr-40;
+            ul {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                @include flex(row, center, flex-start, 12px);
+                padding-inline: 12px;
+                li {
+                    @include font(13px, 500, 1);
+                    color: $cl-gr-80;
+                    padding-left: 20px;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        @include ps-icon;
+                        @include bg-set;
+                    }
+                    &.name {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_user.png");
+                        }
+                    }
+                    &.date {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_calendar.png");
+                            filter: contrast(10);
+                        }
+                    }
+                    &.view {
+                        &::before {
+                            background-image: url("/wsrv/app/img/new/common/ico_pw_eyes_on.png");
+                        }
+                    }
+                }
+            }
+        }
+        .detail-content {
+            width: 100%;
+            position: relative;
+            padding: 12px;;
+            .inner-txt {
+                width: 100%;
+                position: relative;
+                @include font(13px, 400, 1.23);
+                color: $cl-black;
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+            }
+            .recommand-flex {
+                margin-top: 12px;
+            }
+        }
+        .common-table {
+            border-top: 1px solid $cl-gr-40;
+            tr {
+                th, td {
+                    text-align: left;
+                    padding: 4px;
+                }
+            }
+            ul {
+                @include flex(row, center, flex-start, 4px);
+                flex-wrap: wrap;
+                &.file-list {
+                    margin-top: 0;
+                    li {
+                        width: fit-content;
+                        height: auto;
+                        border: none;
+                        border-radius: 0;
+                        padding-right: 0;
+                        a {
+                            display: block;
+                            height: fit-content;
+                        }
+                    }
+                }
+                &.keyword-list {
+                    li {
+                        width: fit-content;
+                        padding: 2px 6px;
+                        position: relative;
+                        border-radius: 4px;
+                        background-color: $cl-gr-20;
+                        @include font(13px, 500, 1.2);
+                        color: $cl-gr-80;
+                    }
+                }
+            }
+            .wg-line {
+                padding: 0 6px;
+            }
+        }
+    }
+    &.register-noti {
+        .file-list {
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            margin-top: 8px;
+            li {
+                width: 100%;
+                height: 20px;
+                position: relative;
+                background-color: $cl-white;
+                border: 1px solid $cl-gr-50;
+                border-radius: 3px;
+                overflow: hidden;
+                padding-right: 20px;
+                .file-name {
+                    margin: 0;
+                    border: none;
+                    border-radius: 0;
+                    padding: 1px 4px;
+                    @include flex(row, center, flex-start, 2px);
+                    p {
+                        flex: 0 1 auto;
+                        min-width: 0;
+                        max-width: 100%;
+                        @include font(13px, 400, 1.3);
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .capacity {
+                        flex-shrink: 0;
+                        font-size: 12px;
+                    }
+                }
+                .del-btn {
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    &::after {
+                        content: "";
+                        width: 12px;
+                        height: 12px;
+                        @include ps-center;
+                        @include bg-set;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M9.39646 1.89645C9.59173 1.70118 9.90823 1.70118 10.1035 1.89645C10.2987 2.09171 10.2987 2.40823 10.1035 2.60348L6.707 5.99997L10.1035 9.39646C10.2987 9.59173 10.2987 9.90826 10.1035 10.1035C9.90826 10.2987 9.59173 10.2987 9.39646 10.1035L5.99997 6.707L2.60348 10.1035C2.40823 10.2987 2.0917 10.2987 1.89645 10.1035C1.7012 9.90825 1.70122 9.59173 1.89645 9.39646L5.29294 5.99997L1.89645 2.60348C1.70118 2.40822 1.70118 2.09171 1.89645 1.89645C2.09171 1.70118 2.40822 1.70118 2.60348 1.89645L5.99997 5.29294L9.39646 1.89645Z' fill='%239E9E9E'/%3E%3C/svg%3E");
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 홈 > 공지팝업 레이아웃
+.notice-layer-wrap {
+    width: 100%;
+    position: relative;
+    @include font(13px, 400, 1.23);
+    color: $cl-black;
+    .bold-txt {
+        display: block;
+        @include font(13px, 700, 1.23);
+        color: $cl-black;
+        text-align: center;
+    }
+    .gray-bg {
+        width: 100%;
+        position: relative;
+        border: 1px solid $cl-gr-40;
+        background-color: $cl-gr-5;
+        padding: 16px;
+        text-align: left;
+        overflow-y: auto;
+    }
+    .pledge-list {
+        width: 100%;
+        position: relative;
+        border: 1px solid $cl-gr-40;
+        counter-reset: number 0;
+        > li {
+            width: 100%;
+            position: relative;
+            background-color: $cl-white;
+            .title {
+                display: block;
+                width: 100%;
+                position: relative;
+                padding: 12px;
+                background-color: $cl-sg-20;
+                border-bottom: 1px solid $cl-gr-40;
+                span {
+                    color: $cl-magenta-50;
+                }
+                &::before {
+                    counter-increment: number 1;
+                    content: counter(number) '.';
+                    display: inline-block;
+                    margin-right: 4px;
+                }
+            }
+            .desc {
+                width: 100%;
+                position: relative;
+                padding: 12px;
+                background-color: $cl-white;
+                p, .dot-noti, li, strong {
+                    display: block;
+                    @include font(12px, 400, 1.16);
+                    color: $cl-black;
+                    & + p {
+                        margin-top: 4px;
+                    }
+                    & + strong {
+                        margin-top: 4px;
+                    }
+                    & + ol {
+                        margin-top: 4px;
+                    }
+                }
+                .dot-noti {
+                    &::before {
+                        top: 3px;
+                    }
+                }
+                .noti-txt {
+                    font-weight: 700;
+                    position: relative;
+                    &::before {
+                        content: "※";
+                        display: inline-block;
+                        margin-right: 4px;
+                    }
+                }
+            }
+            & + li {
+                border-top: 1px solid $cl-gr-40;
+            }
+        }
+    }
+    .mascot-title {
+        @include font(20px, 700, 1.2);
+        color: $cl-magenta-50;
+        padding-top: 88px;
+        margin-bottom: 8px;
+        position: relative;
+        text-align: center;
+        &::before {
+            content: "";
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include bg-set;
+            background-image: url("/wsrv/app/img/new/common/img_alarm_message_mascot.png");
+        }
+        & + .sub-tit {
+            @include font(14px, 500, 1.28);
+            color: $cl-black;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+    }
+    .empty {
+        width: 100%;
+        height: calc(100% - 30px);
+        position: relative;
+        .txt-empty {
+            @include ps-center;
+        }
+    }
+    .search-wrap {
+        width: 100%;
+        position: relative;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: $cl-blue-10;
+        margin-bottom: 12px;
+        .left-input-area {
+            width: 100%;
+            position: relative;
+            @include flex(row, center, flex-start, 12px);
+            flex-wrap: wrap;
+            .input-box {
+                width: fit-content;
+                gap: 4px;
+                .input-label {
+                    @include font(13px, 500, 1.23);
+                    color: $cl-black;
+                    text-align: left;
+                    flex-shrink: 0;
+                    white-space: nowrap;
+                }
+                .common-input {
+                    width: 120px;
+                }
+            }
+            & + .left-input-area {
+                margin-top: 4px;
+            }
+        }
+        .last-btn {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+    }
+    // 정보보호(보안) 서약서
+    &.security-pledge {
+        .gray-bg {
+            height: 516px;
+        }
+        .pledge-list {
+            .title {
+                @include flex(row, center, flex-start, 12px);
+                &::before {
+                    display: none;
+                }
+                h2 {
+                    width: 170px;
+                    flex-shrink: 0;
+                    @include font(20px, 700, 1.2);
+                    color: $cl-purple-80;
+                    @include flex(column, flex-end, flex-start, 4px);
+                    span {
+                        @include font(14px, 700, 1.28);
+                        color: $cl-purple-80;
+                    }
+                }
+                p {
+                    flex: 1;
+                    @include font(13px, 700, 1.23);
+                    color: $cl-black;
+                }
+            }
+            .security-noti-box {
+                margin: -12px;
+                @include flex(row, flex-start, flex-start, 0);
+                > div {
+                    width: 50%;
+                    position: relative;
+                    @include flex(row, stretch, flex-start, 0);
+                }
+                .tit-box {
+                    width: 32px;
+                    position: relative;
+                    background-color: $cl-purple-80;
+                    @include font(14px, 700, 1.28);
+                    color: $cl-white;
+                    padding: 12px 8px;
+                    @include flex(row, center, center, 0);
+                    text-align: center;
+                }
+                .desc-box {
+                    flex: 1;
+                    position: relative;
+                    padding: 12px;
+                }
+            }
+            .num-list {
+                li {
+                    line-height: 1.16;
+                    & + li {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+        .input-box {
+            width: fit-content;
+            margin: 8px auto;
+            span {
+                order: 2;
+            }
+            .txt {
+                order: 1;
+                margin-inline: 0 4px;
+            }
+        }
+    }
+    // 금융소비자보호 서약서
+    &.consumer-pledge {
+        .gray-bg {
+            height: 496px;
+        }
+    }
+    // 고객정보 모집경로 확인
+    &.source-check {
+        .scroll-table {
+            max-height: 234px;
+            .common-table {
+                tr {
+                    td {
+                        line-height: 1.23;
+                        &:first-child {
+                            text-align: left;
+                        }
+                        .flex-row {
+                            width: fit-content;
+                            margin: 0 auto;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Compliance Day 교육 확인
+    &.compliance-day {
+        .scroll-table {
+            max-height: 107px;
+            .common-table {
+                tr {
+                    td {
+                        padding: 6px;
+                        line-height: 1.23;
+                        .input-box {
+                            width: fit-content;
+                            margin: 0 auto;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 건전한 영업행위를 준수합니다.
+    &.sales-pledge {
+        .gray-line-box {
+            width: 100%;
+            position: relative;
+            @include flex(column, flex-start, flex-start, 8px);
+            .box {
+                width: 100%;
+                position: relative;
+                border: 1px solid $cl-gr-40;
+                background-color: $cl-white;
+                padding: 12px;
+                .title {
+                    @include font(13px, 400, 1.23);
+                    color: $cl-black;
+                    text-align: left;
+                    position: relative;
+                    padding-left: 8px;
+                    &::before {
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 50%;
+                        background-color: $cl-black;
+                        position: absolute;
+                        top: 5px;
+                        left: 0;
+                    }
+                }
+                .num-list {
+                    li {
+                        width: 100%;
+                        position: relative;
+                        background-color: $cl-sg-20;
+                        padding: 12px;
+                        @include flex(row, center, space-between, 24px);
+                        margin-top: 8px;
+                        &::before {
+                            display: none;
+                        }
+                        p {
+                            @include flex(row, flex-start, flex-start, 4px);
+                            text-align: left;
+                            @include font(14px, 700, 1.28);
+                            color: $cl-black;
+                            span {
+                                color: $cl-magenta-50;
+                            }
+                        }
+                        .input-box {
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 증권 및 약관전달 기일경과 안내
+    &.overdue-notice {
+        .info-box {
+            width: 100%;
+            position: relative;
+            border: 1px solid $cl-gr-40;
+            background-color: $cl-white;
+            padding: 20px;
+            text-align: left;
+            strong {
+                display: block;
+                @include font(13px, 700, 1.23);
+                color: $cl-black;
+                margin-bottom: 4px;
+            }
+            .num-list {
+                li {
+                    @include font(13px, 400, 1.23);
+                    color: $cl-black;
+                }
+            }
+            p {
+                @include font(13px, 400, 1.23);
+                color: $cl-black;
+                margin-top: 8px;
+                &::before {
+                    color: $cl-black;
+                }
+                &.dot-noti {
+                    &::before {
+                        background-color: $cl-black;
+                    }
+                }
+            }
+            hr {
+                height: 1px;
+                background-color: $cl-gr-40;
+                color: transparent;
+                border: 0;
+                margin-block: 8px;
+            }
+        }
+    }
+    // 법인카드 Watching 안내
+    &.watching-notice {
+        .table-tit {
+            display: block;
+            @include font(14px, 700, 1.28);
+            color: $cl-black;
+            text-align: left;
+            margin-bottom: 4px;
+        }
+        .common-table {
+            tr {
+                th, td {
+                    height: 24px;
+                }
+                th {
+                    text-align: left;
+                }
+                td {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    // 완전판매 모니터링 미완료 경과일 안내
+    &.monitoring-overdue {
+        .warning-txt {
+            font-size: 13px;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        .scroll-table {
+            height: 311px;
+            border-bottom: 1px solid $cl-gr-40;
+        }
+    }
+    // 불완전판매 모니터링
+    &.monitoring-misselling {
+        .warning-txt {
+            font-size: 13px;
+            text-align: left;
+        }
+        .scroll-table {
+            height: 171px;
+            border-bottom: 1px solid $cl-gr-40;
+        }
+    }
+    // 보수교육 알림
+    &.education-alert {
+        text-align: left;
+        .num-list {
+            li {
+                font-size: 13px;
+                color: $cl-black;
+                .dot-noti {
+                    margin-top: 4px;
+                }
+            }
+        }
+        .gray-bg {
+            border: none;
+            border-radius: 4px;
+            background-color: $cl-sg-20;
+            padding: 16px;
+            margin-top: 12px;
+            p {
+                @include font(14px, 700, 1.28);
+                color: $cl-black;
+                text-align: center;
+            }
+        }
+    }
+    // 보수교육 알림
+    &.phone-verification {
+        text-align: left;
+        .gray-bg {
+            border: none;
+            border-radius: 4px;
+            background-color: $cl-sg-20;
+            padding: 16px;
+            margin-block: 12px;
+            @include flex(row, center, center, 0);
+            overflow: visible;
+            .flex-row {
+                p {
+                    @include font(13px, 500, 1.23);
+                    color: $cl-black;
+                    flex-shrink: 0;
+                }
+                .input-box {
+                    gap: 4px;
+                }
+            }
+        }
+        .warning-txt {
+            font-size: 13px;
+        }
+    }
+    // 일반보험 미결관리대상현황
+    &.management-status {
+        .scroll-table {
+            height: 255px;
+            border-bottom: 1px solid $cl-gr-40;
+            .empty {
+                height: calc(100% - 60px);
+            }
+        }
+    }
+    // 미청산 가수 보험료 현황
+    &.premium-inquiry {
+        .scroll-table {
+            height: 254px;
+            .common-table {
+                thead {
+                    th {
+                        position: relative;
+                    }
+                }
+                tbody {
+                    td {
+                        &:last-child {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            .empty {
+                height: calc(100% - 60px);
+            }
+        }
+        .common-table.total {
+            border-top-color: $cl-gr-40;
+            tbody {
+                td {
+                    background-color: $cl-sg-20;
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+    // 장기계약 만기도래 예정 대상건 안내
+    &.maturity-notice {
+        .search-wrap {
+            .left-input-area {
+                .input-box {
+                    .input-label {
+                        width: 54px;
+                    }
+                }
+            }
+        }
+        .scroll-table {
+            height: 254px;
+        }
+        .common-table.total {
+            border-top-color: $cl-gr-40;
+            tbody {
+                td {
+                    background-color: $cl-sg-20;
+                }
+            }
+        }
+    }
+    // 금리인하요구권 심사결과 미통보현황
+    &.reduction-request {
+        .scroll-table {
+            height: 254px;
+            border-bottom: 1px solid $cl-gr-40;
+        }
+    }
+    // 군장병 실손중지 처리대상
+    &.maturity-notice {
+        .scroll-table {
+            height: 254px;
+            border-bottom: 1px solid $cl-gr-40;
+        }
+    }
+    // 저회차 수금율 현황알림
+    &.low-collection {
+        .noti-box {
+            p, li {
+                @include font(13px, 400, 1.23);
+                color: $cl-orange-60;
+                &.bold-txt {
+                    font-weight: 700;
+                }
+            }
+            ul {
+                padding-left: 8px;
+                li {
+                    & + li {
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+        .bottom-table-wrap {
+            @include flex(row, flex-start, flex-start, 0);
+            margin-top: 12px;
+            gap: 12px;
+            .table-wrap {
+                width: 100%;
+                position: relative;
+                .table-top {
+                    width: 100%;
+                    position: relative;
+                    @include flex(row, center, space-between, 8px);
+                    margin-bottom: 4px;
+                    @include font(14px, 700, 1.28);
+                    color: $cl-black;
+                    span {
+                        font-weight: 400;
+                    }
+                }
+                .scroll-table {
+                    height: 317px;
+                    border-bottom: 1px solid $cl-gr-40;
+                    .empty {
+                        height: calc(100% - 40px);
+                    }
                 }
             }
         }

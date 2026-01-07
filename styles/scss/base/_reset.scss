@@ -23,6 +23,7 @@ body {
     font-family: 'Pretendard';
     @include font(14px, 400, 1.2);
     color: $cl-black;
+    font-variant-numeric: tabular-nums;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -87,16 +88,18 @@ iframe {
 
 ::-webkit-scrollbar {
     width: 10px;
-    height: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background-color: $cl-gr-50;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
 }
 ::-webkit-scrollbar-track {
     background-color: transparent;
-    border-radius: 10px;
-    box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $cl-gr-50;
+    border-radius: 4px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-button {
+    height: 2px;
+    background-color: transparent;
 }
