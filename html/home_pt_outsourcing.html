@@ -508,7 +508,7 @@
                         <div id="myCalendarWrap">
                             <div class="title-box">
                                 <h3 class="portlet_title">나의 일정</h3>
-                                <button type="button" class="btn wg-line list" data-btn-size="xs" @click="calendarToggleMode">
+                                <button type="button" class="btn wg-line list" data-btn-size="xs" @click="calendarToggleMode" :class="{ 'list-type': calendarMode === 'list' }">
                                     <span>{{ calendarMode === 'calendar' ? '리스트' : '캘린더' }}</span>
                                 </button>
                             </div>

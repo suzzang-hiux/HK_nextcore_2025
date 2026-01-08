@@ -12232,6 +12232,29 @@ body.popup button {
   width: 90px;
   height: 90px;
 }
+.pencake-portlet-content .btn.list-type span, .pencake-portlet-content .btn.calendar-type span {
+  padding-left: 14px;
+  position: relative;
+}
+.pencake-portlet-content .btn.list-type span::before, .pencake-portlet-content .btn.calendar-type span::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.pencake-portlet-content .btn.list-type span::before {
+  background-image: url("/wsrv/app/img/new/common/ico_edit_list.png");
+}
+.pencake-portlet-content .btn.calendar-type span::before {
+  background-image: url("/wsrv/app/img/new/common/ico_calendar.png");
+  opacity: 0.8;
+}
 .pencake-portlet-content .my-calendar-box {
   width: 100%;
   height: 336px;
