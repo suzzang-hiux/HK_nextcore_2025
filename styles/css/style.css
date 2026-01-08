@@ -8851,7 +8851,6 @@ body.popup button {
 }
 .request-sos .sos-detail-content .detail-title-box .label {
   flex-shrink: 0;
-  transform: translateY(2px);
 }
 .request-sos .sos-detail-content .detail-title-box h2 {
   font-size: 16px;

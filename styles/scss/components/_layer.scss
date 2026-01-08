@@ -432,7 +432,6 @@ body.popup {
             margin-bottom: 8px;
             .label {
                 flex-shrink: 0;
-                transform: translateY(2px)
             }
             h2 {
                 @include font(16px, 700, 1.25);
