@@ -921,6 +921,7 @@
                     font-family: 'Heungkukseed';
                     @include font(18px, 700, 1.22);
                     color: $cl-sg-90 !important;
+                    word-break: break-word;
                 }
                 .sub-img {
                     position: absolute;

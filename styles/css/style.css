@@ -5119,9 +5119,19 @@ iframe {
   background-clip: padding-box;
 }
 
-::-webkit-scrollbar-button {
-  height: 2px;
+::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-left: 0;
+  border-right: 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .ep-lnb {
@@ -12147,6 +12157,7 @@ body.popup button {
   font-weight: 700;
   line-height: 1.22;
   color: #2C333C !important;
+  word-break: break-word;
 }
 .pencake-portlet-content .recommand-goods .goods-box .item-info .sub-img {
   position: absolute;

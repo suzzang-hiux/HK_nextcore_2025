@@ -89,6 +89,7 @@ iframe {
 ::-webkit-scrollbar {
     width: 10px;
 }
+
 ::-webkit-scrollbar-track {
     background-color: transparent;
 }
@@ -99,7 +100,18 @@ iframe {
     border-right: 2px solid transparent;
     background-clip: padding-box;
 }
-::-webkit-scrollbar-button {
-    height: 2px;
+
+::-webkit-scrollbar-corner {
     background-color: transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border-left: 0;
+    border-right: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
