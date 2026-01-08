@@ -1,0 +1,51 @@
+1. /html/home_popup.html
+- 홈 연관 팝업 모음 (width, height, class 참조)
+
+2. /html/newMain.html (유프라이드 공통프레임)
+- 하단 상태바 추가
+
+3. /html/home_uPride.html (유프라이드 홈)
+- 등록된 일정 없을 시 UI 추가
+
+4. /js/home.js
+- 나의 정보 팝업 height 수정
+- 공지사항, HBS 전체보기 팝업 스크립트 추가
+
+5. /js/main-state.js
+- 공통프레임 상태바 관련 js파일 추가
+
+6-1. /menu/home/board/notiList.html (공지사항 목록)
+6-2. /menu/home/board/notiRegister.html (공지사항 등록)
+6-3. /menu/home/board/notiPreview.html (공지사항 미리보기)
+- 공지사항/HBS 공지사항/금융소비자보호 소식 공통 팝업 추가
+
+7. /menu/home/myPlan.html (지점/MY플랜 팝업)
+- table에 data-table-border="true" 추가 (4개)
+
+8-1. /menu/home/notice/complianceDay.html (Compliance Day 교육 확인 (컴플라이언스 교육 팝업))
+8-2. /menu/home/notice/consumerPledge.html (금융소비자보호 서약서)
+8-3. /menu/home/notice/educationAlert.html (사용인 보수교육 알림)
+8-4. /menu/home/notice/lowCollection.html (저회차 수금율 현황알림)
+8-5. /menu/home/notice/managementStatus.html (일반보험 미결관리대상현황)
+8-6. /menu/home/notice/maturityNotice.html (장기계약 만기도래 예정 대상건 안내 (만기도래 팝업))
+8-7. /menu/home/notice/militaryIndemnity.html (군장병 실손중지 처리대상)
+8-8. /menu/home/notice/monitoringMisselling.html (완판모니터링 미완료 안내 (불완전판매 모니터링 팝업))
+8-9. /menu/home/notice/monitoringOverdue.html (완전판매 모니터링 미완료 경과일 안내 (직업급수 상이계약 팝업))
+8-10. /menu/home/notice/overdueNotice.html (증권 및 약관전달 기일경과 안내 (만기도래 예정 대상건 팝업))
+8-11. /menu/home/notice/phoneVerification.html (모집자 휴대폰번호 정확성 체크)
+8-12. /menu/home/notice/premiumInquiry.html (미청산 가수 보험료 현황 (가수보험료조회 팝업))
+8-13. /menu/home/notice/reductionRequest.html (금리인하요구권 심사결과 미통보현황 (금리인하요구권 팝업))
+8-14. /menu/home/notice/salesPledge.html (건전한 영업행위를 준수합니다. (건전한 영업행위 준수 팝업))
+8-15. /menu/home/notice/securityPledge.html (정보보호(보안) 서약서)
+8-16. /menu/home/notice/sourceCheck.html (고객정보 모집경로 확인 (준법감시 팝업))
+8-17. /menu/home/notice/trainingCheck.html (자금세탁방지 교육 확인)
+8-18. /menu/home/notice/watchingNotice.html (법인카드 Watching 안내 (만기도래 예정 대상건 팝업2))
+- 홈 연관팝업 추가
+
+9-1. /menu/state/requestSOS.html (SOS 요청)
+9-2. /menu/state/requestSOS_preview.html (SOS 요청 미리보기)
+- 홈 공통프레임 > SOS요청 팝업 추가
+
+이 외 수정사항은 260109 날짜로 주석처리 해두었으며 css, image 파일은 덮어쓰기 부탁드립니다!
+
+
