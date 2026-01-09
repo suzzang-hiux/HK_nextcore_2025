@@ -61,7 +61,7 @@
         }
         .ui-dialog-content {
             position: relative;
-            padding: 0 16px;
+            padding: 0 16px !important;
             @include font(13px, 400, 1.2);
             color: $cl-black;
             width: 100% !important;
@@ -926,6 +926,39 @@ body.popup {
             .detail-title-box {
                 .label {
                     transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+.sos-body {
+    background-color: $cl-white;
+    .request-sos {
+        @include flex(column, flex-start, flex-start, 0);
+        overflow: hidden;
+        .content-box {
+            width: 100%;
+            height: calc(100% - 44px);
+            padding: 16px;
+            overflow-y: auto;
+        }
+        .popup-bottom {
+            width: 100%;
+            height: 44px;
+            background-color: $cl-sg-5;
+            @include flex(row, center, flex-start, 40px);
+            padding-inline: 16px;
+            border-left: none;
+            .btn-wrap {
+                width: fit-content;
+                margin-left: auto;
+                &[data-align="between"] {
+                    width: 100%;
+                    justify-content: space-between;
+                    button, a {
+                        flex: inherit;
+                        width: fit-content;
+                    }
                 }
             }
         }

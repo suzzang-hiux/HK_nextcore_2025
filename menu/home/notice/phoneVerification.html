@@ -74,16 +74,12 @@ var ePortalConfig = {
                     <div class="flex-row gap-4">
                         <p>휴대폰 번호</p>
                         <div class="input-box">
-                            <div class="custom-select" style="--width: 60px;" data-select-size="l" data-state="">
-                                <div class="input-box">
-                                    <input type="text" class="select-input" data-select-input="selectLine" data-select-value="" placeholder="선택" value="" readonly>
-                                    <button type="button" class="select-btn"></button>
-                                </div>
-                                <span class="noti">메세지를 입력하세요.</span>
-                                <ul class="select-option" data-select-option="selectLine">
-                                    <li data-option-name="010" class="select">010</li>
-                                    <li data-option-name="010">010</li>
-                                </ul>
+                            <div class="common-select" style="--width: 60px;" data-type="border" data-select-size="l">
+                                <select>
+                                    <option selected>010</option>
+                                    <option>010</option>
+                                    <option>010</option>
+                                </select>
                             </div>
                             <div class="input-type-txt">
                                 <input type="tel" class="common-input" style="--width: 100px;" data-input-size="m" placeholder="" autocomplete="false" value="1234-5678" />
@@ -110,57 +106,6 @@ var ePortalConfig = {
 
 <script>
     $(function (){
-        // 커스텀 셀렉트
-        $('.custom-select').each(function () {
-            const $select = $(this);
-            const $selected = $select.find('.select-option li.select');
-
-            if ($selected.length) {
-            const text = $selected.text().trim();
-            const value = $selected.data('option-name');
-
-            const $input = $select.find('.select-input');
-            $input.val(text);
-            $input.attr('data-select-value', value);
-
-            $select.addClass('has-value');
-            }
-        });
-
-        $(document)
-        .on('click', '.custom-select .select-btn', function(e) {
-            e.stopPropagation();
-            
-            const $select = $(this).closest('.custom-select');
-            $('.custom-select').not($select).removeClass('is-open');
-            $select.toggleClass('is-open');
-        })
-
-        $(document)
-        .on('click', '.custom-select .select-option li', function (e) {
-            e.stopPropagation();
-
-            const $li = $(this);
-            const $select = $li.closest('.custom-select');
-
-            const text = $li.text().trim();
-            const value = $li.data('option-name');
-
-            const $input = $select.find('.select-input');
-
-            $input.val(text);
-            $input.attr('data-select-value', value);
-
-            $li.addClass('select').siblings().removeClass('select');
-            $select.addClass('has-value');
-
-            $select.removeClass('is-open');
-        });
-
-        $(document).on('click', function () {
-            $('.custom-select').removeClass('is-open');
-        });
-
         // TEXT/NUMBER INPUT 삭제버튼
         // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
         // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus

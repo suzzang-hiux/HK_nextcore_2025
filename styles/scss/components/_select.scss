@@ -19,162 +19,223 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M12.0002 5.5C12.2024 5.5 12.385 5.62178 12.4624 5.80859C12.5398 5.99542 12.4967 6.21053 12.3537 6.35351L8.3537 10.3535C8.15844 10.5487 7.84192 10.5488 7.64667 10.3535L3.64667 6.35351C3.50374 6.21054 3.46062 5.99539 3.53795 5.80859C3.61533 5.62179 3.798 5.50004 4.00019 5.5H12.0002Z' fill='black'/%3E%3C/svg%3E");
         cursor: pointer;
     }
+    &[data-type="border"] {
+        --width: 140px;
+        --height: 18px;
+        width: var(--width);
+        height: var(--height);
+        flex-shrink: 0;
+        position: relative;
+        border-radius: 2px;
+        select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 2px 20px 2px 4px;
+            cursor: pointer;
+            border-radius: inherit;
+            border: 1px solid $cl-gr-50;
+            font-family: "Pretendard";
+            @include font(12px, 400, 1);
+            color: $cl-black;
+            -o-appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: $cl-white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
+            outline: none;
+            &:active, &:focus {
+                border-color: $cl-purple-80;
+            }
+            &:disabled, &.disabled {
+                color: $cl-gr-50;
+                background: $cl-gr-5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='%23BDBDBD'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
+            }
+            &:read-only {
+                background: $cl-gr-5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
+            }
+        }
+        &[data-select-size="m"] {
+            --height: 20px;
+            border-radius: 3px;
+            select {
+                font-size: 13px;
+            }
+        }
+        &[data-select-size="l"] {
+            --height: 24px;
+            border-radius: 3px;
+            select {
+                font-size: 13px;
+            }
+            // .input-box {
+            //     .select-input {
+            //         font-size: 13px;
+            //         padding: 0 24px 0 4px;
+            //     }
+            //     .select-btn {
+            //         &::after {
+            //             width: 16px;
+            //             height: 16px;
+            //         }
+            //     }
+            // }
+        }
+    }
 }
 
 // 커스텀 셀렉트
-.custom-select {
-    --width: 140px;
-    --height: 18px;
-    width: var(--width);
-    height: var(--height);
-    flex-shrink: 0;
-    position: relative;
-    border-radius: 2px;
-    border: 1px solid $cl-gr-50;
-    background-color: $cl-white;
-    .input-box {
-        width: calc(100% + 2px);
-        height: calc(100% + 2px);
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        .select-input {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border: none;
-            outline: none;
-            padding: 0 20px 0 4px;
-            font-family: "Pretendard" !important;
-            @include font(12px, 400, 1);
-            @include ellipsis(100%);
-            color: $cl-black;
-            background-color: transparent;
-            &::placeholder {
-                color: $cl-gr-60;
-            }
-        }
-        .select-btn {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            position: absolute;
-            top: 0;
-            left: 0;            
-            &::after {
-                content: "";
-                width: 12px;
-                height: 12px;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 4px;
-                @include bg-set;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E");
-                will-change: transform;
-                transition: transform 0.2s;
-            }
-        }
-    }
-    .noti {
-        width: 100%;
-        position: relative;
-        margin-top: calc(var(--height) + 4px);
-        white-space: nowrap;
-        @include font(12px, 400, 1);
-        color: $cl-red-60;
-        display: none;
-    }
-    .select-option {
-        width: 100%;
-        max-height: 142px;
-        position: absolute;
-        top: calc(var(--height) + 4px);
-        left: 0;
-        border-radius: 2px;
-        border: 1px solid $cl-purple-80;
-        background-color: $cl-white;
-        padding-block: 4px;
-        overflow-y: auto;
-        @include z(modal);
-        display: none;
-        li {
-            width: 100%;
-            min-height: 22px;
-            position: relative;
-            padding: 4px;
-            background-color: $cl-white;
-            @include flex(row, center, flex-start, 0);
-            @include font(12px, 400, 1.16);
-            color: $cl-black;
-            text-align: left;
-            will-change: color, background-color;
-            transition: color 0.2s, background-color 0.2s;
-            cursor: pointer;
-            &:hover {
-                background-color: $cl-sg-10;
-            }
-            &.select {
-                background-color: $cl-purple-80;
-                color: $cl-white;
-            }
-        }
-    }
-    &.is-open {
-        border-color: $cl-purple-80;
-        .input-box {
-            .select-btn {
-                &::after {
-                    transform: translateY(-50%) rotate(180deg);
-                }
-            }
-        }
-        .select-option {
-            display: block;
-        }
-    }
-    &[data-state="disabled"] {
-        pointer-events: none;
-        background-color: $cl-gr-5;
-        border-color: $cl-gr-30;
-        .input-box {
-            .select-input {
-                color: $cl-gr-50;
-            }
-            .select-btn {
-                filter: opacity(0.4);
-            }
-        }
-    }
-    &[data-state="readonly"] {
-        pointer-events: none;
-        background-color: $cl-gr-5;
-        border-color: $cl-gr-50;
-    }
-    &[data-state="invalid"] {
-        border-color: $cl-red-40;
-        .noti {
-            display: block;
-        }
-    }
-    &[data-select-size="m"] {
-        --height: 20px;
-        border-radius: 3px;
-    }
-    &[data-select-size="l"] {
-        --height: 24px;
-        border-radius: 3px;
-        .input-box {
-            .select-input {
-                font-size: 13px;
-                padding: 0 24px 0 4px;
-            }
-            .select-btn {
-                &::after {
-                    width: 16px;
-                    height: 16px;
-                }
-            }
-        }
-    }
-}
+// .custom-select {
+//     --width: 140px;
+//     --height: 18px;
+//     width: var(--width);
+//     height: var(--height);
+//     flex-shrink: 0;
+//     position: relative;
+//     border-radius: 2px;
+//     .input-box {
+//         width: calc(100% + 2px);
+//         height: calc(100% + 2px);
+//         position: absolute;
+//         top: -1px;
+//         left: -1px;
+//         .select-input {
+//             width: 100%;
+//             height: 100%;
+//             position: relative;
+//             border: none;
+//             outline: none;
+//             padding: 0 20px 0 4px;
+//             font-family: "Pretendard" !important;
+//             @include font(12px, 400, 1);
+//             @include ellipsis(100%);
+//             color: $cl-black;
+//             background-color: transparent;
+//             &::placeholder {
+//                 color: $cl-gr-60;
+//             }
+//         }
+//         .select-btn {
+//             width: 100%;
+//             height: 100%;
+//             padding: 0;
+//             position: absolute;
+//             top: 0;
+//             left: 0;            
+//             &::after {
+//                 content: "";
+//                 width: 12px;
+//                 height: 12px;
+//                 position: absolute;
+//                 top: 50%;
+//                 transform: translateY(-50%);
+//                 right: 4px;
+//                 @include bg-set;
+//                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E");
+//                 will-change: transform;
+//                 transition: transform 0.2s;
+//             }
+//         }
+//     }
+//     .noti {
+//         width: 100%;
+//         position: relative;
+//         margin-top: calc(var(--height) + 4px);
+//         white-space: nowrap;
+//         @include font(12px, 400, 1);
+//         color: $cl-red-60;
+//         display: none;
+//     }
+//     .select-option {
+//         width: 100%;
+//         max-height: 142px;
+//         position: absolute;
+//         top: calc(var(--height) + 4px);
+//         left: 0;
+//         border-radius: 2px;
+//         border: 1px solid $cl-purple-80;
+//         background-color: $cl-white;
+//         padding-block: 4px;
+//         overflow-y: auto;
+//         @include z(modal);
+//         display: none;
+//         li {
+//             width: 100%;
+//             min-height: 22px;
+//             position: relative;
+//             padding: 4px;
+//             background-color: $cl-white;
+//             @include flex(row, center, flex-start, 0);
+//             @include font(12px, 400, 1.16);
+//             color: $cl-black;
+//             text-align: left;
+//             will-change: color, background-color;
+//             transition: color 0.2s, background-color 0.2s;
+//             cursor: pointer;
+//             &:hover {
+//                 background-color: $cl-sg-10;
+//             }
+//             &.select {
+//                 background-color: $cl-purple-80;
+//                 color: $cl-white;
+//             }
+//         }
+//     }
+//     &.is-open {
+//         border-color: $cl-purple-80;
+//         .input-box {
+//             .select-btn {
+//                 &::after {
+//                     transform: translateY(-50%) rotate(180deg);
+//                 }
+//             }
+//         }
+//         .select-option {
+//             display: block;
+//         }
+//     }
+//     &[data-state="disabled"] {
+//         pointer-events: none;
+//         background-color: $cl-gr-5;
+//         border-color: $cl-gr-30;
+//         .input-box {
+//             .select-input {
+//                 color: $cl-gr-50;
+//             }
+//             .select-btn {
+//                 filter: opacity(0.4);
+//             }
+//         }
+//     }
+//     &[data-state="readonly"] {
+//         pointer-events: none;
+//         background-color: $cl-gr-5;
+//         border-color: $cl-gr-50;
+//     }
+//     &[data-state="invalid"] {
+//         border-color: $cl-red-40;
+//         .noti {
+//             display: block;
+//         }
+//     }
+//     &[data-select-size="m"] {
+//         --height: 20px;
+//         border-radius: 3px;
+//     }
+//     &[data-select-size="l"] {
+//         --height: 24px;
+//         border-radius: 3px;
+//         .input-box {
+//             .select-input {
+//                 font-size: 13px;
+//                 padding: 0 24px 0 4px;
+//             }
+//             .select-btn {
+//                 &::after {
+//                     width: 16px;
+//                     height: 16px;
+//                 }
+//             }
+//         }
+//     }
+// }

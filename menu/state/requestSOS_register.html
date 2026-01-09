@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+<title>SOS 요청 등록</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta env="null">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="/wsrv/core/images/favicon.ico">
+
+<script>
+//document.domain='heungkukfire.co.kr';
+</script>
+
+<script>
+var global_page_context_path = "";
+var ePortalConfig = {
+	  "runtime" : "local"
+	, "license" : false
+	, "mainPageId" : ""
+	, "page_id" : ''
+	, "userInfo" : {}
+	, "attachRootUrl":'/staticimg'
+	, "link" : {
+		  "portalMain" : ""
+	}
+	, "domain" : {
+	}
+	, "context" : {
+		  "epplt" : (""||global_page_context_path)
+		, "board" : (""||'')
+	}
+	,"fileupload":{
+		"useFileExt":'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+		,"useMigFileExt":'xls|xlsx'
+		,"maxUploadSize": 104857600
+		,"maxUploadSizePerFile":20971520
+	}
+};
+</script>
+
+<link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+<link href="/wsrv/app/fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+<link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/bootstrap.js"></script> 
+<script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/pub.ep.ui.js"></script>
+
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.min.js"></script>
+<script type="text/javascript" src="/wsrv/core/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+<script type="text/javascript" src="/wsrv/app/js/plugins/sortablejs/Sortable.min.js"></script>
+
+<script type="text/javascript" src="/wsrv/app/js/pencake.js?version=75876.43041433542"></script>
+<script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=2254.602283735585"></script>
+</head>
+
+<body data-ep-view-mode="default" class="sos-body">
+    <div class="request-sos">
+        <div class="content-box">
+            <div class="sos-detail-register">
+                <table class="common-table mb-8" data-table-bg="white" data-table-border="true">
+                    <colgroup>
+                        <col style="width: 80px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="required">화면경로</th>
+                            <td>
+                                <div class="flex-row gap-4 grow-item">
+                                    <div class="input-box">
+                                        <div class="input-type-txt">
+                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                    <span>→</span>
+                                    <div class="input-box">
+                                        <div class="input-type-txt">
+                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                    <span>→</span>
+                                    <div class="input-box">
+                                        <div class="input-type-txt">
+                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                    <span>→</span>
+                                    <div class="input-box">
+                                        <div class="input-type-txt">
+                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="required">업무선택</th>
+                            <td>
+                                <div class="flex-row gap-8">
+                                    <div class="input-box" data-width="auto">
+                                        <div class="common-select" style="--width: 240px;" data-type="border" data-select-size="m">
+                                            <select>
+                                                <option selected>업무 1</option>
+                                                <option>업무 2</option>
+                                                <option>업무 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="warning-txt fs-13" data-mark="star">업무를 선택해주세요.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>문의유형</th>
+                            <td>
+                                <div class="flex-row gap-4">
+                                    <label class="input-box" data-width="auto">
+                                        <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_0" value="sos_type_0" checked />
+                                        <span class="txt text_blue">사용문의</span>
+                                    </label>
+                                    <label class="input-box" data-width="auto">
+                                        <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_1" value="sos_type_1" />
+                                        <span class="txt text_purple">업무지원</span>
+                                    </label>
+                                    <label class="input-box" data-width="auto">
+                                        <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_2" value="sos_type_2" />
+                                        <span class="txt text_orange">결함</span>
+                                    </label>
+                                    <label class="input-box" data-width="auto">
+                                        <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_3" value="sos_type_3" />
+                                        <span class="txt text_green">결함아님</span>
+                                    </label>
+                                    <label class="input-box" data-width="auto">
+                                        <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_4" value="sos_type_4" />
+                                        <span class="txt text_gray-80">제안</span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>작성자</th>
+                            <td>TM지원Part 장원영</td>
+                        </tr>
+                        <tr>
+                            <th class="required">연락처</th>
+                            <td>
+                                <div class="flex-row gap-8">
+                                    <div class="input-box" data-width="auto">
+                                        <div class="input-type-txt">
+                                            <input type="number" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                    <p class="warning-txt text_gray-80 fs-13" data-mark="star">예&#41; 000-000-0000</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="required">관련정보</th>
+                            <td>
+                                <div class="flex-row gap-8">
+                                    <div class="input-box" data-width="auto">
+                                        <div class="input-type-txt">
+                                            <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                            <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                        </div>
+                                    </div>
+                                    <p class="warning-txt text_gray-80 fs-13" data-mark="star">번호 (설계/증권/사원/사고번호) 택일</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 에디터 영역 -->
+                <div class="editor" style="width: 100%; height: 285px; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; border: 1px solid #bdbdbd;">
+                    에디터 영역
+                </div>
+                <!-- // 에디터 영역 -->
+                <table class="common-table mt-8" data-table-bg="white">
+                    <colgroup>
+                        <col style="width: 80px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td>
+                                <div class="input-box">
+                                    <input type="file" class="hidden common-file-input" id="addRequestFile" />
+                                    <label class="btn cg-fill" data-btn-size="s" for="addRequestFile">파일추가</label>
+                                </div>
+                                <ul class="file-list mt-4">
+                                    <li>
+                                        <div class="file-name">
+                                            <p>파일명파일명파일명파일명파일명파일명파일명파일명.xlsx</p>
+                                            <span class="capacity">[153.54 KB]</span>
+                                        </div>
+                                        <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                    </li>
+                                    <li>
+                                        <div class="file-name">
+                                            <p>파일명.xlsx</p>
+                                            <span class="capacity">[153.54 KB]</span>
+                                        </div>
+                                        <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                    </li>
+                                    <li>
+                                        <div class="file-name">
+                                            <p>파일명.xlsx</p>
+                                            <span class="capacity">[153.54 KB]</span>
+                                        </div>
+                                        <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>키워드(태그)</th>
+                            <td>
+                                <ul class="keyword-list">
+                                    <li class="tag">
+                                        <p>입력된 태그 1</p>
+                                        <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                    </li>
+                                    <li class="tag">
+                                        <p>입력된 태그 2</p>
+                                        <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                    </li>
+                                    <li class="input-tag">
+                                        <div class="input-box" data-width="auto">
+                                            <div class="input-type-txt">
+                                                <input type="text" class="common-input" data-input-size="s" placeholder="" autocomplete="false" />
+                                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="popup-bottom">
+            <div class="btn-wrap">
+                <button type="button" class="btn cg-line" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button>
+                <button type="button" class="btn" data-btn-size="m">저장</button>
+                <button type="button" class="btn black" data-btn-size="m">닫기</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(function (){
+        // TEXT/NUMBER INPUT 삭제버튼
+        // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
+        // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus
+        $(document)
+        .on('focus', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            }
+        })
+
+        .on('input', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            } else {
+                $wrap.removeClass('has-value');
+            }
+        })
+
+        .on('blur', '.input-type-txt .common-input', function () {
+            const $wrap = $(this).closest('.input-type-txt');
+            $wrap.removeClass('has-value');
+        })
+
+        .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+            e.preventDefault();
+
+            const $wrap = $(this).closest('.input-type-txt');
+            const $input = $wrap.find('.common-input');
+
+            $input.val('');
+            $wrap.removeClass('has-value');
+
+            setTimeout(function () {
+                $input.focus();
+            }, 0);
+        });
+
+        // 미리보기 팝업 오픈
+        $portalApp.vueServiceBean({
+            el: "#previewBtn",
+            methods: {
+                contentPreview: function() {
+                    PencakeCustomCTRL.showModal("/menu/state/requestSOS_preview.html", {
+                        targetId: 'sosPreview',
+                        width: 1200,
+                        height: 700,
+                        showTitle: true,
+                        title: "SOS 요청 미리보기",
+                    });
+                }
+            }
+        });
+    })
+</script>

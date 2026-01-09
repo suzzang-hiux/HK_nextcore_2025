@@ -73,31 +73,21 @@ var ePortalConfig = {
                     <div class="content-box">
                         <div class="table-top">
                             <div class="left-box">
-                                <div class="custom-select" style="--width: 60px;" data-select-size="m" data-state="">
-                                    <div class="input-box">
-                                        <input type="text" class="select-input" data-select-input="selectLine" data-select-value="" placeholder="선택" value="" readonly>
-                                        <button type="button" class="select-btn"></button>
-                                    </div>
-                                    <span class="noti">메세지를 입력하세요.</span>
-                                    <ul class="select-option" data-select-option="selectLine">
-                                        <li data-option-name="10">10줄</li>
-                                        <li data-option-name="20" class="select">20줄</li>
-                                        <li data-option-name="30">30줄</li>
-                                    </ul>
+                                <div class="common-select" style="--width: 60px;" data-type="border" data-select-size="m">
+                                    <select>
+                                        <option>10줄</option>
+                                        <option selected>20줄</option>
+                                        <option>30줄</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="right-box">
-                                <div class="custom-select" style="--width: 90px;" data-select-size="m" data-state="">
-                                    <div class="input-box">
-                                        <input type="text" class="select-input" data-select-input="select_1" data-select-value="" placeholder="선택" value="" readonly>
-                                        <button type="button" class="select-btn"></button>
-                                    </div>
-                                    <span class="noti">메세지를 입력하세요.</span>
-                                    <ul class="select-option" data-select-option="select_1">
-                                        <li data-option-name="option_1" class="select">제목+내용</li>
-                                        <li data-option-name="option_2">옵션222</li>
-                                        <li data-option-name="option_3">옵션333</li>
-                                    </ul>
+                                <div class="common-select" style="--width: 90px;" data-type="border" data-select-size="m">
+                                    <select>
+                                        <option selected>제목+내용</option>
+                                        <option>옵션222</option>
+                                        <option>옵션333</option>
+                                    </select>
                                 </div>
                                 <div class="input-type-txt">
 									<input type="text" class="common-input" data-input-size="s" placeholder="검색어를 입력하세요." autocomplete="false" />
@@ -394,23 +384,25 @@ var ePortalConfig = {
                                 </tbody>
                             </table>
                         </div>
-                        <div class="common-pagination">
-                            <button type="button" class="btn db-arrow first disabled"></button>
-                            <button type="button" class="btn arrow prev disabled">이전</button>
-                            <div class="num-flex">
-                                <button type="button" class="btn select">1</button>
-                                <button type="button" class="btn">2</button>
-                                <button type="button" class="btn">3</button>
-                                <button type="button" class="btn">4</button>
-                                <button type="button" class="btn">5</button>
-                                <button type="button" class="btn">6</button>
-                                <button type="button" class="btn">7</button>
-                                <button type="button" class="btn">8</button>
-                                <button type="button" class="btn">9</button>
-                                <button type="button" class="btn">10</button>
-                            </div>
-                            <button type="button" class="btn arrow next">다음</button>
-                            <button type="button" class="btn db-arrow last"></button>
+                        <div class="common-pagination" id="pagination">
+                            <nav class="pagination">
+                                <ul>
+                                    <li><a href="#none" title="맨처음" class="first"></a></li>
+                                    <li><a href="#none" title="이전" class="prev">이전</a></li>
+                                    <li><span class="page-numbers"><a href="#none" class="active">1</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">2</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">3</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">4</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">5</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">6</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">7</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">8</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">9</a></span></li>
+                                    <li><span class="page-numbers"><a href="#none">10</a></span></li>
+                                    <li><a href="#none" title="다음" class="next">다음</a></li>
+                                    <li><a href="#none" title="맨마지막" class="last"></a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <div class="popup-bottom">
@@ -485,57 +477,6 @@ var ePortalConfig = {
 </html>
 
 <script>
-    // 커스텀 셀렉트
-    $('.custom-select').each(function () {
-        const $select = $(this);
-        const $selected = $select.find('.select-option li.select');
-
-        if ($selected.length) {
-        const text = $selected.text().trim();
-        const value = $selected.data('option-name');
-
-        const $input = $select.find('.select-input');
-        $input.val(text);
-        $input.attr('data-select-value', value);
-
-        $select.addClass('has-value');
-        }
-    });
-
-    $(document)
-    .on('click', '.custom-select .select-btn', function(e) {
-        e.stopPropagation();
-        
-        const $select = $(this).closest('.custom-select');
-        $('.custom-select').not($select).removeClass('is-open');
-        $select.toggleClass('is-open');
-    })
-
-    $(document)
-    .on('click', '.custom-select .select-option li', function (e) {
-        e.stopPropagation();
-
-        const $li = $(this);
-        const $select = $li.closest('.custom-select');
-
-        const text = $li.text().trim();
-        const value = $li.data('option-name');
-
-        const $input = $select.find('.select-input');
-
-        $input.val(text);
-        $input.attr('data-select-value', value);
-
-        $li.addClass('select').siblings().removeClass('select');
-        $select.addClass('has-value');
-
-        $select.removeClass('is-open');
-    });
-
-    $(document).on('click', function () {
-        $('.custom-select').removeClass('is-open');
-    });
-
     // 공지사항 등록 팝업
     $portalApp.vueServiceBean({
         el: "#registerBtn",
