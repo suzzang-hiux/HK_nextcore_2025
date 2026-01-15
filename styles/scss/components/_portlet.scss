@@ -92,7 +92,7 @@
         background-image: url("/wsrv/app/img/new/common/ico_setting.png");
     }
     .favorite-area {
-        max-height: 208px;
+        height: 208px;
         overflow-y: auto;
         .favorite-item {
             width: 100%;
@@ -126,7 +126,7 @@
         }
         .empty {
             position: relative;
-            height: 230px;
+            height: 207px;
             .mascot-empty {
                 position: absolute;
                 top: 50%;
@@ -783,8 +783,11 @@
                     height: 358px;
                     .common-table {
                         th {
-                            line-height: 1.23;
-                            height: 76px;
+                            height: 24px;
+                            position: relative;
+                        }
+                        td {
+                            border: none;
                         }
                     }
                     &::after {

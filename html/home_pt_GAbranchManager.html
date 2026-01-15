@@ -399,25 +399,30 @@
                                     </div>
                                     <div class="box-cnt">
                                         <div class="scroll-table ga-branchmanager">
-                                            <table class="common-table">
+                                            <!-- 260115 수정사항 : 설계매니저 현황 테이블 th 내용 변경, data-table-border="true" 추가 -->
+                                            <table class="common-table" data-table-border="true">
                                                 <colgroup>
-                                                    <col style="width: 17%;">
-                                                    <col style="width: 11%;">
-                                                    <col style="width: 11%;">
-                                                    <col style="width: 11%;">
-                                                    <col style="width: 11%;">
-                                                    <col style="width: 11%;">
+                                                    <col style="width: 15%;">
+                                                    <col style="width: 12%;">
+                                                    <col style="width: 12%;">
+                                                    <col style="width: 12%;">
+                                                    <col style="width: 12%;">
+                                                    <col style="width: 12%;">
                                                     <col style="width: auto;">
                                                 </colgroup>
                                                 <thead>
                                                     <tr>
-                                                        <th>성명</th>
-                                                        <th>가<br />설<br />계</th>
-                                                        <th>진<br />설<br />계</th>
-                                                        <th>체<br />결<br />건</th>
-                                                        <th>체<br />결<br />율<br />%</th>
-                                                        <th>정<br />상<br />계<br />약</th>
-                                                        <th>체결보험료<br />(원)</th>
+                                                        <th rowspan="2">성명</th>
+                                                        <th rowspan="2">가설</th>
+                                                        <th rowspan="2">진설</th>
+                                                        <th colspan="2">체결</th>
+                                                        <th colspan="2">계약(만원)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>건</th>
+                                                        <th>%</th>
+                                                        <th>건</th>
+                                                        <th>보험P</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -428,7 +433,7 @@
                                                         <td>{{ isRecordHidden ? '-' : '4' }}</td>
                                                         <td>{{ isRecordHidden ? '-' : '65' }}</td>
                                                         <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502,198' }}</td>
+                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
@@ -437,61 +442,7 @@
                                                         <td>{{ isRecordHidden ? '-' : '3' }}</td>
                                                         <td>{{ isRecordHidden ? '-' : '100' }}</td>
                                                         <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '23,978,680' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '10' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '5' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '65' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502,198' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '24' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '100' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '23,978,680' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '10' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '5' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '65' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502,198' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '24' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '100' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '23,978,680' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '10' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '5' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '65' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502,198' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '10' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '5' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '4' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '65' }}</td>
-                                                        <td>{{ isRecordHidden ? '-' : '3' }}</td>
-                                                        <td class="text-right">{{ isRecordHidden ? '-' : '5,502,198' }}</td>
+                                                        <td class="text-right">{{ isRecordHidden ? '-' : '23,978' }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

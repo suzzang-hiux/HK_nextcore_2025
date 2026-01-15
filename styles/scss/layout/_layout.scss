@@ -119,12 +119,13 @@
             padding: 8px 4px;
             @include flex(column, center, center, 0);
             a {
-                width: 100%;
+                width: 50px;
                 position: relative;
                 padding-top: 24px;
                 text-align: center;
                 will-change: color;
                 transition: color 0.2s;
+                word-break: keep-all;
                 &:hover {
                     color: $cl-yellow-20;
                 }
