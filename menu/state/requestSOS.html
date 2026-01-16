@@ -67,9 +67,9 @@ var ePortalConfig = {
 <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
 	<div id="epAppViewArea" class="wrap-popup">
 		<div class="main pd-0">
-            <div class="request-sos">
+            <div class="board-layer flex"> <!-- SOS 요청 팝업에서는 'flex' 클래스 추가 -->
                 <!-- SOS 목록 -->
-                <div class="sos-left-area" id="sosLeftArea">
+                <div class="layer-cnt">
                     <div class="content-box">
                         <div class="table-top">
                             <div class="left-box">
@@ -110,7 +110,7 @@ var ePortalConfig = {
                                 <button type="button" class="btn wg-line search" data-btn-size="s" title="검색" aria-label="검색"></button>
                             </div>
                         </div>
-                        <div class="scroll-table">
+                        <div class="scroll-table sos-list">
                             <table class="common-table" data-table-border="true">
                                 <colgroup>
                                     <col style="width: 50px;">
@@ -345,7 +345,7 @@ var ePortalConfig = {
                 </div>
                 <!-- // SOS 목록 -->
                 <!-- SOS 상세 -->
-                <div class="sos-right-area">
+                <div class="layer-cnt">
                     <iframe src="/menu/state/requestSOS_detail.html" frameborder="0" class="main-content-area"></iframe>
                 </div>
                 <!-- // SOS 상세 -->
