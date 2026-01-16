@@ -1,0 +1,24 @@
+1. 공지사항 공통
+- noti-list-layer 클래스 'board-layer'로 변경
+- layer-cnt에 layer-cnt 제외 클래스 삭제
+- noti-detail-wrap 클래스 'board-detail-wrap'로 변경
+
+2. /menu/home/board/notiList.html
+- scroll-table에 'noti-list' 클래스 추가
+
+3. /menu/state/requestSOS.html
+- request-sos 클래스 'board-layer'로 변경 (sos 요청 팝업에는 flex 클래스 추가)
+- sos-left-area, sos-right-area 클래스 'layer-cnt'로 변경
+- scroll-table에 'sos-list' 클래스 추가
+
+4. /menu/state/requestSOS_detail.html, /menu/state/requestSOS_register.html
+- body 클래스를 'sos-body'에서 'board-layer inner-body'로 변경
+- request-sos 클래스 div 삭제
+- sos-detail-content 클래스 'board-detail-wrap' 로 변경
+
+5. /menu/state/requestSOS_register.html
+- table에 data-table-align="left" 추가
+- 연락처, 관련정보 input에 style="--width: 240px;" 추가
+
+6. /menu/state/requestSOS_preview.html
+- 공지사항 미리보기와 맞춤
