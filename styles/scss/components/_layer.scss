@@ -436,6 +436,12 @@ body.popup {
                                 text-align: left;
                             }
                         }
+                        .text_secondary {
+                            color: $cl-blue-80;
+                        }
+                        .fw-bold {
+                            font-weight: 500;
+                        }
                     }
                     &.new {
                         td {
@@ -617,6 +623,7 @@ body.popup {
                 .capacity {
                     flex-shrink: 0;
                     font-size: 12px;
+                    transform: translateY(-1px);
                 }
             }
             .del-btn {
@@ -728,22 +735,22 @@ body.popup {
                     left: 4px;
                     @include bg-set;
                 }
-                &.like {
+                &.heart {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
                     }
                 }
-                &.fun {
+                &.smile {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
                     }
                 }
-                &.useful {
+                &.wink {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
                     }
                 }
-                &.disagree {
+                &.difficulty {
                     &::before {
                         background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
                     }
@@ -880,6 +887,30 @@ body.popup {
                     & + li {
                         border-top: 1px solid $cl-gr-40;
                     }
+                    &.reply {
+                        background-color: $cl-sg-10;
+                        .reply-tit {
+                            @include font(14px, 700, 1.28);
+                            color: $cl-black;
+                            position: absolute;
+                            top: 12px;
+                            left: 12px;
+                        }
+                        .comment-user-info {
+                            justify-content: flex-end;
+                        }
+                        .btn-box {
+                            width: 100%;
+                            position: relative;
+                            margin-top: 8px;
+                            @include flex(row, center, flex-start);
+                            gap: 4px;
+                            .input-box {
+                                width: fit-content;
+                                margin-right: auto;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -916,22 +947,22 @@ body.popup {
                         transform: translateX(-50%);
                         @include bg-set;
                     }
-                    &.like {
+                    &.heart {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
                         }
                     }
-                    &.fun {
+                    &.smile {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
                         }
                     }
-                    &.useful {
+                    &.wink {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
                         }
                     }
-                    &.disagree {
+                    &.difficulty {
                         &::before {
                             background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
                         }

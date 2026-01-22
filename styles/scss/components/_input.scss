@@ -278,6 +278,7 @@
 .common-textarea {
     width: 100%;
     min-height: 72px;
+    display: block;
     position: relative;
     border-radius: 3px;
     border: 1px solid $cl-gr-50;

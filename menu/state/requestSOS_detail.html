@@ -83,10 +83,10 @@ var ePortalConfig = {
                 <div class="recommand-flex">
                     <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
                     <ul>
-                        <li class="like">3</li>
-                        <li class="fun">2</li>
-                        <li class="useful">14</li>
-                        <li class="disagree">1</li>
+                        <li class="heart">3</li>
+                        <li class="smile">2</li>
+                        <li class="wink">14</li>
+                        <li class="difficulty">1</li>
                         <li class="angry">2</li>
                     </ul>
                 </div>
@@ -194,8 +194,8 @@ var ePortalConfig = {
                         <div class="recommand-flex">
                             <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
                             <ul>
-                                <li class="like">3</li>
-                                <li class="fun">2</li>
+                                <li class="heart">3</li>
+                                <li class="smile">2</li>
                             </ul>
                         </div>
                         <div class="btn-wrap my-btn">
@@ -223,11 +223,46 @@ var ePortalConfig = {
                         <div class="recommand-flex">
                             <button type="button" class="btn blue-fill emoji-open" data-btn-size="m">추천</button>
                             <ul>
-                                <li class="disagree">1</li>
-                                <li class="angry">4</li>
+                                <li class="difficulty">1</li>
+                                <li class="angry">2</li>
                             </ul>
                         </div>
                     </li>
+                    <!-- 260122 수정사항 : 답글작성/수정 추가 -->
+                    <li class="reply">
+                        <strong class="reply-tit">답글작성</strong>
+                        <div class="comment-user-info">
+                            <div class="user">
+                                <p class="name">장기보상시스템Part 김지원</p>
+                            </div>
+                        </div>
+                        <textarea class="common-textarea" placeholder="" rows="3">납면배서는 사고일 기준으로 이력을 생성하다보니, 진배서종료일자와 현배서의 시작일자가 맞아야 하는데, 역전되어 처리되다보니, 해당사고일자로 중복으로 조회되어 오류 발생하였습니다.</textarea>
+                        <ul class="file-list grid-2">
+                            <li>
+                                <div class="file-name">
+                                    <p>파일명파일명파일명파일명파일명파일명파일명파일명.xlsx</p>
+                                    <span class="capacity">[153.54 KB]</span>
+                                </div>
+                                <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                            </li>
+                            <li>
+                                <div class="file-name">
+                                    <p>파일명.xlsx</p>
+                                    <span class="capacity">[153.54 KB]</span>
+                                </div>
+                                <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                            </li>
+                        </ul>
+                        <div class="btn-box">
+                            <div class="input-box">
+                                <input type="file" class="hidden common-file-input" id="addCommentFile" />
+                                <label class="btn cg-fill" data-btn-size="m" for="addCommentFile">파일추가</label>
+                            </div>
+                            <button type="button" class="btn" data-btn-size="m">댓글저장</button>
+                            <button type="button" class="btn black-line" data-btn-size="m">취소</button>
+                        </div>
+                    </li>
+                    <!-- // 260122 수정사항 : 답글작성/수정 추가 -->
                 </ul>
             </div>
         </div>
@@ -242,16 +277,16 @@ var ePortalConfig = {
     <div class="emoji-box" hidden>
         <ul>
             <li>
-                <button type="button" class="like">좋아요</button>
+                <button type="button" class="heart">좋아요</button>
             </li>
             <li>
-                <button type="button" class="fun">재밌어요</button>
+                <button type="button" class="smile">재밌어요</button>
             </li>
             <li>
-                <button type="button" class="useful">유익해요</button>
+                <button type="button" class="wink">유익해요</button>
             </li>
             <li>
-                <button type="button" class="disagree">동의못해요</button>
+                <button type="button" class="difficulty">동의못해요</button>
             </li>
             <li>
                 <button type="button" class="angry">화나요</button>

@@ -8205,6 +8205,7 @@ body.subContents {
 .common-textarea {
   width: 100%;
   min-height: 72px;
+  display: block;
   position: relative;
   border-radius: 3px;
   border: 1px solid #BDBDBD;
@@ -8864,6 +8865,12 @@ body.popup button {
   text-overflow: ellipsis;
   text-align: left;
 }
+.board-layer .scroll-table.sos-list .common-table tr td .text_secondary {
+  color: #085FB8;
+}
+.board-layer .scroll-table.sos-list .common-table tr td .fw-bold {
+  font-weight: 500;
+}
 .board-layer .scroll-table.sos-list .common-table tr.new td:nth-child(3) p {
   padding-left: 20px;
   position: relative;
@@ -9063,6 +9070,7 @@ body.popup button {
 .board-layer .file-list li .file-name .capacity {
   flex-shrink: 0;
   font-size: 12px;
+  transform: translateY(-1px);
 }
 .board-layer .file-list li .del-btn {
   width: 20px;
@@ -9216,16 +9224,16 @@ body.popup button {
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-.board-layer .recommand-flex > ul > li.like::before {
+.board-layer .recommand-flex > ul > li.heart::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
 }
-.board-layer .recommand-flex > ul > li.fun::before {
+.board-layer .recommand-flex > ul > li.smile::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
 }
-.board-layer .recommand-flex > ul > li.useful::before {
+.board-layer .recommand-flex > ul > li.wink::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
 }
-.board-layer .recommand-flex > ul > li.disagree::before {
+.board-layer .recommand-flex > ul > li.difficulty::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
 }
 .board-layer .recommand-flex > ul > li.angry::before {
@@ -9403,6 +9411,36 @@ body.popup button {
 .board-layer .board-detail-comment .comment-list > ul > li + li {
   border-top: 1px solid #CECECE;
 }
+.board-layer .board-detail-comment .comment-list > ul > li.reply {
+  background-color: #EAF0F5;
+}
+.board-layer .board-detail-comment .comment-list > ul > li.reply .reply-tit {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+  color: #000;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.board-layer .board-detail-comment .comment-list > ul > li.reply .comment-user-info {
+  justify-content: flex-end;
+}
+.board-layer .board-detail-comment .comment-list > ul > li.reply .btn-box {
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  gap: 4px;
+}
+.board-layer .board-detail-comment .comment-list > ul > li.reply .btn-box .input-box {
+  width: fit-content;
+  margin-right: auto;
+}
 .board-layer .emoji-box {
   width: 340px;
   height: 84px;
@@ -9451,16 +9489,16 @@ body.popup button {
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-.board-layer .emoji-box ul li button.like::before {
+.board-layer .emoji-box ul li button.heart::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_like.png");
 }
-.board-layer .emoji-box ul li button.fun::before {
+.board-layer .emoji-box ul li button.smile::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_fun.png");
 }
-.board-layer .emoji-box ul li button.useful::before {
+.board-layer .emoji-box ul li button.wink::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_useful.png");
 }
-.board-layer .emoji-box ul li button.disagree::before {
+.board-layer .emoji-box ul li button.difficulty::before {
   background-image: url("/wsrv/app/img/new/common/ico_emoji_disagree.png");
 }
 .board-layer .emoji-box ul li button.angry::before {
@@ -12466,6 +12504,7 @@ body.popup button {
 .pencake-portlet-content .memo-paging {
   width: 100%;
   position: relative;
+  margin-top: 8px;
   max-height: 69px;
   overflow-y: auto;
 }
