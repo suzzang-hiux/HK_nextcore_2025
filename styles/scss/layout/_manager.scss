@@ -1,0 +1,48 @@
+.manager-grid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex(row, stretch, flex-start);
+    .side-menu {
+        width: 260px;
+        position: relative;
+        background-color: $cl-gr-5;
+        border-right: 1px solid $cl-gr-30;
+        padding: 12px;
+        .link {
+            width: 100%;
+            position: relative;
+            @include flex(column, flex-start, flex-start);
+            gap: 4px;
+            li {
+                width: 100%;
+                a {
+                    width: 100%;
+                    position: relative;
+                    padding: 12px;
+                    @include flex(row, flex-start, flex-start);
+                    @include font(14px, 500, 1.23);
+                    color: $cl-gr-80;
+                    background-color: transparent;
+                    border-radius: 6px;
+                    transition: background-color 0.2s, color 0.2s, font-weight 0.2s;
+                    &:hover {
+                        background-color: $cl-gr-20;
+                        color: $cl-black;
+                        font-weight: 500;
+                    }
+                    &.active {
+                        background-color: $cl-gr-30;
+                        color: $cl-black;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        flex: 1;
+        position: relative;
+        padding: 12px;
+    }
+}
