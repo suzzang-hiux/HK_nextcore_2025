@@ -394,6 +394,7 @@
                         span {
                             @include font(13px, 400, 1.23);
                             color: $cl-black;
+                            @include ellipsis2(2, 100%, auto);
                         }
                     }
                 }
@@ -433,16 +434,21 @@
     }
     .work-request-table {
         width: 100%;
+        height: 100%;
         position: relative;
         margin-top: 4px;
         @include flex(column, flex-start, flex-start, 0);
         .scroll-table {
             max-height: 254px;
+            border-bottom: 1px solid $cl-gr-40;
             .common-table {
                 tbody {
                     tr {
                         td:nth-child(3) {
                             @include ellipsis(100%);
+                        }
+                        &:last-child {
+                            border-bottom: none;
                         }
                     }
                 }
@@ -450,7 +456,7 @@
         }
         .empty {
             width: 100%;
-            height: 160px;
+            height: calc(100% - 32px);
             position: relative;
             .mascot-empty {
                 @include ps-center;

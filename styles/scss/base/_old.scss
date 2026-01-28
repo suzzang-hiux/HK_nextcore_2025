@@ -2537,6 +2537,11 @@ main {
                 background: #48317d;
                 border: 0 none;
             }
+            span {
+                background-position: 26px 0;
+                left: auto;
+                right: 0;
+            }
         }
         .ui-datepicker-title{
             margin-left: 66px;
