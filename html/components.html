@@ -109,22 +109,989 @@
             border: 1px dashed #D0C3FF;
             border-radius: 8px;
         }
+        .components .cp-wrap .cp-box .cp-inner .inner-tit {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #151515;
+            margin-bottom: 16px;
+        }
         .components .cp-wrap .cp-box .cp-inner .flex-row {
             align-items: flex-start;
             gap: 4px;
+        }
+        .color-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .color-box .chip {
+            width: 90px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .color-box .chip span {
+            width: fit-content;
+            height: fit-content;
+            padding: 4px;
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            line-height: 1;
+            color: #151515;
+        }
+        .color-box .info {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.1;
+            color: #4b4b4b;
         }
     </style>
 </head>
 
 <body data-ep-view-mode="default" class="subContents">
     <div class="components">
-        <div class="page-tit">
+        <div class="page-tit"> 
             <span>
                 <b>Heungkuk Fire & Marine Insurance</b> Design System Guide
             </span>
             <h1>Components</h1>
         </div>
         <div class="cp-wrap">
+            <div class="cp-box">
+                <h2 class="cp-tit">Colors</h2>
+                <div class="cp-inner">
+                    <div class="flex-col">
+                        <strong class="inner-tit">Magenta</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FDF2FA;">
+                                    <span>#FDF2FA</span>
+                                </div>
+                                <p class="info">$cl-magenta-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FEEAFA;">
+                                    <span>#FEEAFA</span>
+                                </div>
+                                <p class="info">$cl-magenta-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFE3F6;">
+                                    <span>#FFE3F6</span>
+                                </div>
+                                <p class="info">$cl-magenta-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFBFE2;">
+                                    <span>#FFBFE2</span>
+                                </div>
+                                <p class="info">$cl-magenta-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F778BD;">
+                                    <span>#F778BD</span>
+                                </div>
+                                <p class="info">$cl-magenta-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EC008C;">
+                                    <span>#EC008C</span>
+                                </div>
+                                <p class="info">$cl-magenta-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #DB2777;">
+                                    <span>#DB2777</span>
+                                </div>
+                                <p class="info">$cl-magenta-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #BE185D;">
+                                    <span>#BE185D</span>
+                                </div>
+                                <p class="info">$cl-magenta-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #9D174D;">
+                                    <span>#9D174D</span>
+                                </div>
+                                <p class="info">$cl-magenta-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #831843;">
+                                    <span>#831843</span>
+                                </div>
+                                <p class="info">$cl-magenta-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #500724;">
+                                    <span>#500724</span>
+                                </div>
+                                <p class="info">$cl-magenta-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Purple</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F5F3FF;">
+                                    <span>#F5F3FF</span>
+                                </div>
+                                <p class="info">$cl-purple-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EDE9FE;">
+                                    <span>#EDE9FE</span>
+                                </div>
+                                <p class="info">$cl-purple-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #DDD6FE;">
+                                    <span>#DDD6FE</span>
+                                </div>
+                                <p class="info">$cl-purple-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #D0C3FF;">
+                                    <span>#D0C3FF</span>
+                                </div>
+                                <p class="info">$cl-purple-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #A78BFA;">
+                                    <span>#A78BFA</span>
+                                </div>
+                                <p class="info">$cl-purple-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #8B5CF6;">
+                                    <span>#8B5CF6</span>
+                                </div>
+                                <p class="info">$cl-purple-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #7C3AED;">
+                                    <span>#7C3AED</span>
+                                </div>
+                                <p class="info">$cl-purple-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #6D28D9;">
+                                    <span>#6D28D9</span>
+                                </div>
+                                <p class="info">$cl-purple-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #5B21B6;">
+                                    <span>#5B21B6</span>
+                                </div>
+                                <p class="info">$cl-purple-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #4C1D95;">
+                                    <span>#4C1D95</span>
+                                </div>
+                                <p class="info">$cl-purple-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #351B6F;">
+                                    <span>#351B6F</span>
+                                </div>
+                                <p class="info">$cl-purple-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Slate Gray</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F3F7FB;">
+                                    <span>#F3F7FB</span>
+                                </div>
+                                <p class="info">$cl-sg-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #E1EBF4;">
+                                    <span>#E1EBF4</span>
+                                </div>
+                                <p class="info">$cl-sg-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #DFE7F3;">
+                                    <span>#DFE7F3</span>
+                                </div>
+                                <p class="info">$cl-sg-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #C9D2DE;">
+                                    <span>#C9D2DE</span>
+                                </div>
+                                <p class="info">$cl-sg-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #A8B3C1;">
+                                    <span>#A8B3C1</span>
+                                </div>
+                                <p class="info">$cl-sg-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #768497;">
+                                    <span>#768497</span>
+                                </div>
+                                <p class="info">$cl-sg-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #475569;">
+                                    <span>#475569</span>
+                                </div>
+                                <p class="info">$cl-sg-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #334155;">
+                                    <span>#334155</span>
+                                </div>
+                                <p class="info">$cl-sg-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1E293B;">
+                                    <span>#1E293B</span>
+                                </div>
+                                <p class="info">$cl-sg-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #0F172A;">
+                                    <span>#0F172A</span>
+                                </div>
+                                <p class="info">$cl-sg-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #171D25;">
+                                    <span>#171D25</span>
+                                </div>
+                                <p class="info">$cl-sg-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Gray</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F8F8F8;">
+                                    <span>#F8F8F8</span>
+                                </div>
+                                <p class="info">$cl-gr-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EEE;">
+                                    <span>#EEEEEE</span>
+                                </div>
+                                <p class="info">$cl-gr-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #E0E0E0;">
+                                    <span>#E0E0E0</span>
+                                </div>
+                                <p class="info">$cl-gr-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #CACACA;">
+                                    <span>#CACACA</span>
+                                </div>
+                                <p class="info">$cl-gr-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #A5A7AC;">
+                                    <span>#A5A7AC</span>
+                                </div>
+                                <p class="info">$cl-gr-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #7F838B;">
+                                    <span>#7F838B</span>
+                                </div>
+                                <p class="info">$cl-gr-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #60676F;">
+                                    <span>#60676F</span>
+                                </div>
+                                <p class="info">$cl-gr-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #575F6C;">
+                                    <span>#575F6C</span>
+                                </div>
+                                <p class="info">$cl-gr-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #4B4B4B;">
+                                    <span>#4B4B4B</span>
+                                </div>
+                                <p class="info">$cl-gr-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #333;">
+                                    <span>#333333</span>
+                                </div>
+                                <p class="info">$cl-gr-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #151515;">
+                                    <span>#151515</span>
+                                </div>
+                                <p class="info">$cl-gr-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Navy</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EEF2F7;">
+                                    <span>#EEF2F7</span>
+                                </div>
+                                <p class="info">$cl-navy-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EAF4FF;">
+                                    <span>#EAF4FF</span>
+                                </div>
+                                <p class="info">$cl-navy-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #C1D8F2;">
+                                    <span>#C1D8F2</span>
+                                </div>
+                                <p class="info">$cl-navy-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #90B0D5;">
+                                    <span>#90B0D5</span>
+                                </div>
+                                <p class="info">$cl-navy-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #6B96C7;">
+                                    <span>#6B96C7</span>
+                                </div>
+                                <p class="info">$cl-navy-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #346FB2;">
+                                    <span>#346FB2</span>
+                                </div>
+                                <p class="info">$cl-navy-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1C589C;">
+                                    <span>#1C589C</span>
+                                </div>
+                                <p class="info">$cl-navy-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #233055;">
+                                    <span>#233055</span>
+                                </div>
+                                <p class="info">$cl-navy-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #052B57;">
+                                    <span>#052B57</span>
+                                </div>
+                                <p class="info">$cl-navy-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #031F3F;">
+                                    <span>#031F3F</span>
+                                </div>
+                                <p class="info">$cl-navy-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #02162C;">
+                                    <span>#02162C</span>
+                                </div>
+                                <p class="info">$cl-navy-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Cyan</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F5FFFF;">
+                                    <span>#F5FFFF</span>
+                                </div>
+                                <p class="info">$cl-cyan-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #E0F4F5;">
+                                    <span>#E0F4F5</span>
+                                </div>
+                                <p class="info">$cl-cyan-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #ABD8E3;">
+                                    <span>#ABD8E3</span>
+                                </div>
+                                <p class="info">$cl-cyan-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #75C0D1;">
+                                    <span>#75C0D1</span>
+                                </div>
+                                <p class="info">$cl-cyan-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #3D9FB8;">
+                                    <span>#3D9FB8</span>
+                                </div>
+                                <p class="info">$cl-cyan-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #268097;">
+                                    <span>#268097</span>
+                                </div>
+                                <p class="info">$cl-cyan-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1F687A;">
+                                    <span>#1F687A</span>
+                                </div>
+                                <p class="info">$cl-cyan-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #17505E;">
+                                    <span>#17505E</span>
+                                </div>
+                                <p class="info">$cl-cyan-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #113B45;">
+                                    <span>#113B45</span>
+                                </div>
+                                <p class="info">$cl-cyan-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #0E3139;">
+                                    <span>#0E3139</span>
+                                </div>
+                                <p class="info">$cl-cyan-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #091F25;">
+                                    <span>#091F25</span>
+                                </div>
+                                <p class="info">$cl-cyan-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Blue</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F0F7FF;">
+                                    <span>#F0F7FF</span>
+                                </div>
+                                <p class="info">$cl-blue-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EAF4FF;">
+                                    <span>#EAF4FF</span>
+                                </div>
+                                <p class="info">$cl-blue-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #BFDBFE;">
+                                    <span>#BFDBFE</span>
+                                </div>
+                                <p class="info">$cl-blue-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #93C5FD;">
+                                    <span>#93C5FD</span>
+                                </div>
+                                <p class="info">$cl-blue-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #60A5FA;">
+                                    <span>#60A5FA</span>
+                                </div>
+                                <p class="info">$cl-blue-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #3B82F6;">
+                                    <span>#3B82F6</span>
+                                </div>
+                                <p class="info">$cl-blue-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #2563EB;">
+                                    <span>#2563EB</span>
+                                </div>
+                                <p class="info">$cl-blue-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1D4ED8;">
+                                    <span>#1D4ED8</span>
+                                </div>
+                                <p class="info">$cl-blue-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1E40AF;">
+                                    <span>#1E40AF</span>
+                                </div>
+                                <p class="info">$cl-blue-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #1E3A8A;">
+                                    <span>#1E3A8A</span>
+                                </div>
+                                <p class="info">$cl-blue-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #172554;">
+                                    <span>#172554</span>
+                                </div>
+                                <p class="info">$cl-blue-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Green</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #ECFDF5;">
+                                    <span>#ECFDF5</span>
+                                </div>
+                                <p class="info">$cl-green-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #D2F7E4;">
+                                    <span>#D2F7E4</span>
+                                </div>
+                                <p class="info">$cl-green-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #A8EDCE;">
+                                    <span>#A8EDCE</span>
+                                </div>
+                                <p class="info">$cl-green-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #74E2B7;">
+                                    <span>#74E2B7</span>
+                                </div>
+                                <p class="info">$cl-green-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #3BCF99;">
+                                    <span>#3BCF99</span>
+                                </div>
+                                <p class="info">$cl-green-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #10B981;">
+                                    <span>#10B981</span>
+                                </div>
+                                <p class="info">$cl-green-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #059669;">
+                                    <span>#059669</span>
+                                </div>
+                                <p class="info">$cl-green-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #047857;">
+                                    <span>#047857</span>
+                                </div>
+                                <p class="info">$cl-green-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #065F46;">
+                                    <span>#065F46</span>
+                                </div>
+                                <p class="info">$cl-green-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #064E3B;">
+                                    <span>#064E3B</span>
+                                </div>
+                                <p class="info">$cl-green-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #022C22;">
+                                    <span>#022C22</span>
+                                </div>
+                                <p class="info">$cl-green-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Yellow</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFFAEB;">
+                                    <span>#FFFAEB</span>
+                                </div>
+                                <p class="info">$cl-yellow-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFF7DC;">
+                                    <span>#FFF7DC</span>
+                                </div>
+                                <p class="info">$cl-yellow-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FEF08A;">
+                                    <span>#FEF08A</span>
+                                </div>
+                                <p class="info">$cl-yellow-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FDE047;">
+                                    <span>#FDE047</span>
+                                </div>
+                                <p class="info">$cl-yellow-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FACC15;">
+                                    <span>#FACC15</span>
+                                </div>
+                                <p class="info">$cl-yellow-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EAB308;">
+                                    <span>#EAB308</span>
+                                </div>
+                                <p class="info">$cl-yellow-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #CF9419;">
+                                    <span>#CF9419</span>
+                                </div>
+                                <p class="info">$cl-yellow-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #A16207;">
+                                    <span>#A16207</span>
+                                </div>
+                                <p class="info">$cl-yellow-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #854D0E;">
+                                    <span>#854D0E</span>
+                                </div>
+                                <p class="info">$cl-yellow-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #713F12;">
+                                    <span>#713F12</span>
+                                </div>
+                                <p class="info">$cl-yellow-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #422006;">
+                                    <span>#422006</span>
+                                </div>
+                                <p class="info">$cl-yellow-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Orange</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFF7ED;">
+                                    <span>#FFF7ED</span>
+                                </div>
+                                <p class="info">$cl-orange-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FFEDD5;">
+                                    <span>#FFEDD5</span>
+                                </div>
+                                <p class="info">$cl-orange-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FED7AA;">
+                                    <span>#FED7AA</span>
+                                </div>
+                                <p class="info">$cl-orange-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FDBA74;">
+                                    <span>#FDBA74</span>
+                                </div>
+                                <p class="info">$cl-orange-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FB923C;">
+                                    <span>#FB923C</span>
+                                </div>
+                                <p class="info">$cl-orange-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F97316;">
+                                    <span>#F97316</span>
+                                </div>
+                                <p class="info">$cl-orange-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EA580C;">
+                                    <span>#EA580C</span>
+                                </div>
+                                <p class="info">$cl-orange-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #C2410C;">
+                                    <span>#C2410C</span>
+                                </div>
+                                <p class="info">$cl-orange-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #9F3D1D;">
+                                    <span>#9F3D1D</span>
+                                </div>
+                                <p class="info">$cl-orange-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #86361B;">
+                                    <span>#86361B</span>
+                                </div>
+                                <p class="info">$cl-orange-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #431407;">
+                                    <span>#431407</span>
+                                </div>
+                                <p class="info">$cl-orange-100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Red</strong>
+                        <div class="flex-row gap-0">
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FEF3F2;">
+                                    <span>#FEF3F2</span>
+                                </div>
+                                <p class="info">$cl-red-5</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FEE2E2;">
+                                    <span>#FEE2E2</span>
+                                </div>
+                                <p class="info">$cl-red-10</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FECACA;">
+                                    <span>#FECACA</span>
+                                </div>
+                                <p class="info">$cl-red-20</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #FCA5A5;">
+                                    <span>#FCA5A5</span>
+                                </div>
+                                <p class="info">$cl-red-30</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #F87171;">
+                                    <span>#F87171</span>
+                                </div>
+                                <p class="info">$cl-red-40</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #EF4444;">
+                                    <span>#EF4444</span>
+                                </div>
+                                <p class="info">$cl-red-50</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #DC2626;">
+                                    <span>#DC2626</span>
+                                </div>
+                                <p class="info">$cl-red-60</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #B91C1C;">
+                                    <span>#B91C1C</span>
+                                </div>
+                                <p class="info">$cl-red-70</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #991B1B;">
+                                    <span>#991B1B</span>
+                                </div>
+                                <p class="info">$cl-red-80</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #7C2D12;">
+                                    <span>#7C2D12</span>
+                                </div>
+                                <p class="info">$cl-red-90</p>
+                            </div>
+                            <div class="color-box">
+                                <div class="chip" style="background-color: #431407;">
+                                    <span>#431407</span>
+                                </div>
+                                <p class="info">$cl-red-100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Inputs</h2>
+                <div class="cp-inner">
+                    <div class="flex-col">
+                        <strong class="inner-tit">Text Field</strong>
+                        <div class="input-box">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="text" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="disabled" disabled />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box invalid mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="text" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                            <span class="invalid-txt">메시지를 입력하세요.</span>
+                        </div>
+                        <div class="input-box mt-16">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" placeholder="placeholder" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" placeholder="placeholder" value="text" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" placeholder="placeholder" value="disabled" disabled />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                        </div>
+                        <div class="input-box invalid mt-8">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" placeholder="placeholder" value="text" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                            <span class="invalid-txt">메시지를 입력하세요.</span>
+                        </div>
+                        <div class="input-box search mt-8">
+                            <input type="hidden">
+                            <div class="input-type-txt">
+                                <input type="text" class="common-input" placeholder="placeholder" autocomplete="false" />
+                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                            </div>
+                            <button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Checkbox</strong>
+                        <label class="input-box">
+                            <input type="checkbox" class="common-checkbox" name="" id="" />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" name="" id="" checked />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" name="" id="" disabled />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" name="" id="" checked disabled />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-16">
+                            <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" checked />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" disabled />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" checked disabled />
+                            <span></span>
+                            <p class="txt">Check Labels</p>
+                        </label>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Radio</strong>
+                        <label class="input-box">
+                            <input type="radio" class="common-radio" name="" id="" value="" />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" name="" id="" value="" checked />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" name="" id="" value="" disabled />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" name="" id="" value="" disabled checked />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-16">
+                            <input type="radio" class="common-radio" data-input-size="big" name="" id="" value="" />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" data-input-size="big" name="" id="" value="" checked />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" data-input-size="big" name="" id="" value="" disabled />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                        <label class="input-box mt-8">
+                            <input type="radio" class="common-radio" data-input-size="big" name="" id="" value="" disabled checked />
+                            <span class="txt">Radio Labels</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
             <div class="cp-box">
                 <h2 class="cp-tit">Buttons</h2>
                 <div class="cp-inner">
@@ -348,4 +1315,46 @@
 </body>
 </html>
 
-<script type="text/javascript" src="/js/home.js"></script>
+<script>
+    $(function() {
+        $(document)
+        .on('focus', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            }
+        })
+
+        .on('input', '.input-type-txt .common-input', function () {
+            const $input = $(this);
+            const $wrap = $input.closest('.input-type-txt');
+
+            if ($input.val().length > 0) {
+                $wrap.addClass('has-value');
+            } else {
+                $wrap.removeClass('has-value');
+            }
+        })
+
+        .on('blur', '.input-type-txt .common-input', function () {
+            const $wrap = $(this).closest('.input-type-txt');
+            $wrap.removeClass('has-value');
+        })
+
+        .on('mousedown', '.input-type-txt .delete-btn', function (e) {
+            e.preventDefault();
+
+            const $wrap = $(this).closest('.input-type-txt');
+            const $input = $wrap.find('.common-input');
+
+            $input.val('');
+            $wrap.removeClass('has-value');
+
+            setTimeout(function () {
+                $input.focus();
+            }, 0);
+        });
+    })
+</script>

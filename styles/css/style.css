@@ -8065,6 +8065,20 @@ body.subContents {
   right: 24px;
   padding: 0;
 }
+.input-box.invalid {
+  flex-wrap: wrap;
+}
+.input-box.invalid .common-input {
+  border-color: #EF4444;
+}
+.input-box.invalid .invalid-txt {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #EF4444;
+}
 .input-box[data-width=auto] {
   width: fit-content;
 }
@@ -8222,6 +8236,22 @@ body.subContents {
 .common-radio:checked + .txt::before {
   border: 5px solid #5B21B6;
 }
+.common-radio:disabled + .txt::before, .common-radio.disabled + .txt::before {
+  background-color: #F6F8F9;
+}
+.common-radio:disabled:checked + .txt::before, .common-radio.disabled:checked + .txt::before {
+  border: 1px solid #C9D2DE !important;
+}
+.common-radio:disabled:checked + .txt::after, .common-radio.disabled:checked + .txt::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #C9D2DE;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
 .common-radio[data-input-size=big] + .txt {
   min-height: 20px;
   line-height: 20px;
@@ -8234,6 +8264,12 @@ body.subContents {
 }
 .common-radio[data-input-size=big]:checked + .txt::before {
   border-width: 7px;
+}
+.common-radio[data-input-size=big]:disabled:checked + .txt::after, .common-radio[data-input-size=big].disabled:checked + .txt::after {
+  width: 6px;
+  height: 6px;
+  top: 7px;
+  left: 7px;
 }
 
 .common-checkbox {
