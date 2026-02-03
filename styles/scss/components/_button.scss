@@ -29,7 +29,7 @@
     }
     p {
         @include font(13px, 400, 1.23);
-        color: $cl-black;
+        color: $cl-gr-100;
     }
 }
 
@@ -40,8 +40,8 @@
     border-radius: 2px;
     @include flex(row, center, center, 0);
     @include font(12px, 500, 1);
-    border: 1px solid $cl-p-magenta;
-    background-color: $cl-p-magenta;
+    border: 1px solid $cl-magenta-50;
+    background-color: $cl-magenta-50;
     color: $cl-white;
     text-align: center;
     white-space: nowrap;
@@ -63,8 +63,9 @@
         color: $cl-white;
     }
     &:disabled, &.disabled {
-        border-color: $cl-magenta-30;
-        background-color: $cl-magenta-30;
+        border-color: $cl-magenta-20;
+        background-color: $cl-magenta-20;
+        color: $cl-sg-40;
         pointer-events: none;
     }
     &[data-btn-size="s"] {
@@ -263,98 +264,192 @@
     // DARK GRAY
     &.dg-fill {
         border-color: transparent;
-        background-color: $cl-black;
+        background-color: $cl-sg-70;
         color: $cl-white;
         &:hover {
+            background-color: $cl-gr-50;
+        }
+        &:active {
             background-color: $cl-gr-60;
         }
-        &:active {
-            background-color: $cl-gr-80;
-        }
         &:disabled, &.disabled {
-            background-color: $cl-gr-30;
+            background-color: $cl-gr-20;
+            color: $cl-gr-40;
         }
     }
-    // DARK GRAY + LINE
     &.dg-line {
-        border-color: $cl-gr-70;
+        border-color: $cl-sg-50;
         background-color: $cl-white;
-        color: $cl-black;
+        color: $cl-sg-70;
         &:hover {
+            border-color: $cl-sg-40;
             background-color: $cl-gr-20;
         }
         &:active {
+            border-color: $cl-sg-40;
             background-color: $cl-gr-40;
         }
         &:disabled, &.disabled {
-            border-color: $cl-gr-30;
+            border-color: $cl-sg-30;
             background-color: $cl-white;
-            color: $cl-gr-50;
+            color: $cl-gr-40;
         }
     }
-    // WRAM GRAY + LINE
-    &.wg-line {
-        border-color: $cl-gr-50;
+    // WRAM GRAY
+    &.wg-fill {
+        border-color: transparent;
         background-color: $cl-white;
-        color: $cl-gr-80;
+        color: $cl-gr-60;
         &:hover {
-            border-color: $cl-gr-50;
             background-color: $cl-gr-20;
         }
         &:active {
-            border-color: $cl-gr-50;
             background-color: $cl-gr-40;
         }
         &:disabled, &.disabled {
-            border-color: $cl-gr-30;
             background-color: $cl-white;
-            color: $cl-gr-50;
+            color: $cl-gr-40;
+        }
+    }
+    &.wg-line {
+        border-color: $cl-sg-30;
+        background-color: $cl-white;
+        color: $cl-gr-60;
+        &:hover {
+            background-color: $cl-gr-20;
+        }
+        &:active {
+            background-color: $cl-gr-40;
+        }
+        &:disabled, &.disabled {
+            border-color: $cl-sg-20;
+            background-color: $cl-white;
+            color: $cl-gr-40;
         }
     }
     // COOL GRAY
-    &.cg-fill {
-        border-color: $cl-sg-60;
-        background-color: $cl-sg-60;
+    // &.cg-fill {
+    //     border-color: $cl-sg-60;
+    //     background-color: $cl-sg-60;
+    //     color: $cl-white;
+    //     &:hover {
+    //         border-color: $cl-sg-40;
+    //         background-color: $cl-sg-40;
+    //     }
+    //     &:active {
+    //         border-color: $cl-sg-80;
+    //         background-color: $cl-sg-80;
+    //     }
+    //     &:disabled, &.disabled {
+    //         border-color: $cl-sg-30;
+    //         background-color: $cl-sg-30;
+    //     }
+    // }
+    // &.cg-line {
+    //     border-color: $cl-sg-30;
+    //     background-color: $cl-white;
+    //     color: $cl-sg-60;
+    //     &:hover {
+    //         border-color: $cl-sg-30;
+    //         background-color: $cl-sg-20;
+    //     }
+    //     &:active {
+    //         border-color: $cl-sg-30;
+    //         background-color: $cl-sg-30;
+    //     }
+    //     &:disabled, &.disabled {
+    //         border-color: $cl-sg-30;
+    //         background-color: $cl-white;
+    //         color: $cl-sg-40;
+    //     }
+    // }
+    &.cg-fill-1 {
+        border-color: transparent;
+        background-color: $cl-sg-50;
         color: $cl-white;
         &:hover {
-            border-color: $cl-sg-40;
+            background-color: $cl-sg-30;
+        }
+        &:active {
+            background-color: $cl-sg-40;
+        }
+        &:disabled, &.disabled {
+            background-color: $cl-sg-20;
+            color: $cl-sg-40;
+        }
+    }
+    &.cg-fill-2 {
+        border-color: transparent;
+        background-color: #DDE3EA;
+        color: $cl-sg-60;
+        &:hover {
             background-color: $cl-sg-40;
         }
         &:active {
-            border-color: $cl-sg-80;
-            background-color: $cl-sg-80;
+            background-color: $cl-sg-50;
+        }
+        &:disabled, &.disabled {
+            background-color: $cl-sg-10;
+            color: $cl-sg-40;
+        }
+    }
+    &.cg-line-1 {
+        border-color: $cl-sg-30;
+        background-color: #EEF2F7;
+        color: $cl-sg-50;
+        &:hover {
+            background-color: $cl-sg-10;
+        }
+        &:active {
+            background-color: $cl-sg-30;
         }
         &:disabled, &.disabled {
             border-color: $cl-sg-30;
-            background-color: $cl-sg-30;
+            background-color: #EEF2F7;
+            color: $cl-gr-40;
         }
     }
-    // COOL GRAY + LINE
-    &.cg-line {
+    &.cg-line-2  {
         border-color: $cl-sg-30;
         background-color: $cl-white;
-        color: $cl-sg-60;
+        color: $cl-sg-50;
         &:hover {
-            border-color: $cl-sg-30;
             background-color: $cl-sg-20;
         }
         &:active {
-            border-color: $cl-sg-30;
             background-color: $cl-sg-30;
         }
         &:disabled, &.disabled {
             border-color: $cl-sg-30;
             background-color: $cl-white;
-            color: $cl-sg-40;
+            color: $cl-sg-30;
         }
     }
     // MAGENTA 
-    &.mg-line {
-        border-color: $cl-magenta-30;
-        background-color: $cl-magenta-5;
+    // &.mg-line {
+    //     border-color: $cl-magenta-30;
+    //     background-color: $cl-magenta-5;
+    //     color: $cl-magenta-50;
+    //     &:hover {
+    //         border-color: $cl-magenta-30;
+    //         background-color: $cl-magenta-20;
+    //     }
+    //     &:active {
+    //         border-color: $cl-magenta-30;
+    //         background-color: $cl-magenta-30;
+    //     }
+    //     &:disabled, &.disabled {
+    //         border-color: $cl-purple-30;
+    //         background-color: $cl-purple-5;
+    //         color: $cl-magenta-30;
+    //     }
+    // }
+    &.magenta-light {
+        border-color: $cl-magenta-10;
+        background-color: $cl-magenta-10;
         color: $cl-magenta-50;
         &:hover {
-            border-color: $cl-magenta-30;
+            border-color: $cl-magenta-20;
             background-color: $cl-magenta-20;
         }
         &:active {
@@ -362,35 +457,68 @@
             background-color: $cl-magenta-30;
         }
         &:disabled, &.disabled {
-            border-color: $cl-purple-30;
-            background-color: $cl-purple-5;
-            color: $cl-magenta-30;
+            border-color: $cl-magenta-10;
+            background-color: $cl-magenta-10;
+            color: $cl-sg-40;
         }
     }
     // PURPLE
     &.purple {
-        border-color: $cl-purple-80;
-        background-color: $cl-purple-80;
+        border-color: $cl-purple-90;
+        background-color: $cl-purple-90;
         color: $cl-white;
         &:hover {
-            border-color: $cl-purple-50;
-            background-color: $cl-purple-50;
+            border-color: $cl-purple-40;
+            background-color: $cl-purple-40;
         }
         &:active {
             border-color: $cl-purple-70;
             background-color: $cl-purple-70;
         }
         &:disabled, &.disabled {
-            border-color: $cl-purple-30;
-            background-color: $cl-purple-30;
+            border-color: $cl-purple-20;
+            background-color: $cl-purple-20;
+            color: $cl-sg-40;
         }
     }
-    &.purple-line {
-        border-color: $cl-purple-30;
-        background-color: $cl-purple-5;
-        color: $cl-purple-80;
+    // &.purple-line {
+    //     border-color: $cl-purple-30;
+    //     background-color: $cl-purple-5;
+    //     color: $cl-purple-80;
+    //     &:hover {
+    //         border-color: $cl-purple-30;
+    //         background-color: $cl-purple-20;
+    //     }
+    //     &:active {
+    //         border-color: $cl-purple-30;
+    //         background-color: $cl-purple-30;
+    //     }
+    //     &:disabled, &.disabled {
+    //         border-color: $cl-purple-30;
+    //         background-color: $cl-purple-5;
+    //         color: $cl-purple-30;
+    //         &.add {
+    //             span {
+    //                 &::before {
+    //                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%23CBA7D8'/%3E%3C/svg%3E");
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     &.add {
+    //         span {
+    //             &::before {
+    //                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%2362288B'/%3E%3C/svg%3E");
+    //             }
+    //         }
+    //     }
+    // }
+    &.purple-light {
+        border-color: $cl-purple-10;
+        background-color: $cl-purple-10;
+        color: $cl-purple-90;
         &:hover {
-            border-color: $cl-purple-30;
+            border-color: $cl-purple-20;
             background-color: $cl-purple-20;
         }
         &:active {
@@ -398,21 +526,14 @@
             background-color: $cl-purple-30;
         }
         &:disabled, &.disabled {
-            border-color: $cl-purple-30;
-            background-color: $cl-purple-5;
-            color: $cl-purple-30;
-            &.add {
-                span {
-                    &::before {
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%23CBA7D8'/%3E%3C/svg%3E");
-                    }
-                }
-            }
+            border-color: $cl-purple-10;
+            background-color: $cl-purple-10;
+            color: $cl-gr-40;
         }
         &.add {
             span {
                 &::before {
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.5 10V6.5H2C1.72386 6.5 1.5 6.27614 1.5 6C1.5 5.72386 1.72386 5.5 2 5.5H5.5V2C5.5 1.72386 5.72386 1.5 6 1.5C6.27614 1.5 6.5 1.72386 6.5 2V5.5H10C10.2761 5.5 10.5 5.72386 10.5 6C10.5 6.27614 10.2761 6.5 10 6.5H6.5V10C6.5 10.2761 6.27614 10.5 6 10.5C5.72386 10.5 5.5 10.2761 5.5 10Z' fill='%2362288B'/%3E%3C/svg%3E");
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M7.33333 13.3333V8.66667H2.66667C2.29848 8.66667 2 8.36819 2 8C2 7.63181 2.29848 7.33333 2.66667 7.33333H7.33333V2.66667C7.33333 2.29848 7.63181 2 8 2C8.36819 2 8.66667 2.29848 8.66667 2.66667V7.33333H13.3333C13.7015 7.33333 14 7.63181 14 8C14 8.36819 13.7015 8.66667 13.3333 8.66667H8.66667V13.3333C8.66667 13.7015 8.36819 14 8 14C7.63181 14 7.33333 13.7015 7.33333 13.3333Z' fill='%234C1D95'/%3E%3C/svg%3E");
                 }
             }
         }
@@ -420,34 +541,65 @@
     // BLUE
     &.blue-fill {
         border-color: transparent;
-        background-color: $cl-blue-70;
+        background-color: $cl-navy-60;
         color: $cl-white;
         &:hover {
-            background-color: $cl-blue-40;
+            background-color: $cl-navy-40;
         }
         &:active {
-            background-color: $cl-blue-80;
+            background-color: $cl-navy-70;
         }
         &:disabled, &.disabled {
-            background-color: $cl-blue-30;
+            background-color: $cl-navy-10;
+            color: $cl-sg-40;
         }
     }
     &.blue-line {
-        background-color: $cl-blue-5;
+        background-color: $cl-blue-10;
         border-color: $cl-blue-30;
-        color: $cl-blue-70;
+        color: $cl-blue-80;
         &:hover {
             background-color: $cl-blue-20;
-            border-color: $cl-blue-30;
         }
         &:active {
             background-color: $cl-blue-30;
-            border-color: $cl-blue-30;
         }
         &:disabled, .disabled {
             background-color: $cl-blue-5;
-            border-color: $cl-blue-30;
-            color: $cl-blue-30;
+            border-color: $cl-blue-20;
+            color: $cl-sg-40;
+        }
+    }
+    // GREEN
+    &.green-fill {
+        border-color: transparent;
+        background-color: $cl-cyan-50;
+        color: $cl-white;
+        &:hover {
+            background-color: $cl-cyan-40;
+        }
+        &:active {
+            background-color: $cl-cyan-80;
+        }
+        &:disabled, &.disabled {
+            background-color: $cl-cyan-10;
+            color: $cl-sg-40;
+        }
+    }
+    &.green-line {
+        background-color: $cl-green-5;
+        border-color: $cl-green-30;
+        color: $cl-green-70;
+        &:hover {
+            background-color: $cl-green-10;
+        }
+        &:active {
+            background-color: $cl-green-20;
+        }
+        &:disabled, .disabled {
+            background-color: $cl-green-5;
+            border-color: $cl-green-20;
+            color: $cl-sg-40;
         }
     }
 }

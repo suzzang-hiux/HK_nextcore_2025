@@ -25,7 +25,7 @@
         width: fit-content;
         margin-bottom: 12px;
         position: relative;
-        @include flex(column, center, center, 4px);
+        @include flex(column, center, center, 12px);
         a {
             display: block;
             width: 36px;
@@ -39,9 +39,12 @@
             width: 100%;
             display: block;
             position: relative;
-            padding-inline: 4px;
+            padding: 2px 6px;
             text-align: center;
-            @include font(11px, 400, 1.2);
+            @include font(13px, 500, 1.2);
+            border-radius: 4px;
+            background-color: $cl-magenta-10;
+            color: $cl-magenta-50;
         }
     }
     .home-menu, .all-menu {
@@ -316,7 +319,7 @@
         }
         input:checked + label {
             &::before {
-                background-color: $cl-yellow;
+                background-color: $cl-yellow-50;
             }
             &::after {
                 left: 30px;
@@ -440,9 +443,9 @@
         height: 100%;
         position: relative;
         border-radius: 4px;
-        border: 1px solid $cl-black;
+        border: 1px solid $cl-sg-40;
         background-color: $cl-white;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
         @include flex(column, flex-start, flex-start, 0);
         padding: 0;
         overflow: hidden;
@@ -452,7 +455,7 @@
             position: relative;
             padding-right: 16px;
             @include flex(row, center, space-between, 4px);
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-20;
             .menu-tab {
                 width: fit-content;
                 height: 100%;
@@ -529,7 +532,7 @@
                 .menu-tree {
                     width: 100%;
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: $grayscale05;
                     padding: 12px 16px;
                     border: none;
                     .jstree-default {
@@ -563,14 +566,15 @@
                         .jstree-anchor {
                             height: 20px;
                             @include font(13px, 400, 20px);
+                            color: $cl-gr-100;
                             transition: color 0.3s;
                             &.jstree-hovered {
-                                background-color: none !important;
+                                background-color: transparent !important;
                                 box-shadow: none !important;
-                                color: $cl-p-magenta !important;
+                                color: $cl-magenta-50 !important;
                             }
                             // &.jstree-clicked {
-                            //     color: $cl-p-magenta !important;
+                            //     color: $cl-magenta-50 !important;
                             //     font-weight: 700;
                             // }
                         }
@@ -676,7 +680,7 @@
                                 position: sticky;
                                 top: 0;
                                 left: 0;
-                                background-color: $cl-gr-5;
+                                background-color: $grayscale05;
                                 padding-block: 12px 8px;
                                 margin-bottom: 0;
                                 z-index: 100;
@@ -706,7 +710,7 @@
                 .menu-search-result {
                     position: relative;
                     border-radius: 8px;
-                    border: 1px solid $cl-gr-30;
+                    border: 1px solid $cl-sg-20;
                     margin: 0;
                     overflow: hidden;
                     .result-txt {
@@ -715,11 +719,12 @@
                         @include flex(row, center, space-between, 4px);
                         height: 40px;
                         padding-inline: 16px;
-                        border-bottom: 1px solid $cl-gr-30;
+                        border-bottom: 1px solid $cl-sg-20;
                         h2 {
                             @include font(13px, 700, 1);
                             color: $cl-black;
                             em {
+                                color: $cl-magenta-60;
                                 &::before, &::after {
                                     display: none;
                                 }
@@ -769,12 +774,12 @@
                             > a {
                                 width: fit-content;
                                 @include font(13px, 500, 16px);
-                                color: $cl-black;
+                                color: $cl-gr-100;
                                 margin: 0;
                                 will-change: color;
                                 transition: color 0.2s;
                                 .highlight {
-                                    color: $cl-p-magenta;
+                                    color: $cl-magenta-50;
                                 }
                                 &:hover {
                                     text-decoration: none;
@@ -789,11 +794,12 @@
                                 color: $cl-gr-80;
                             }
                             & + li {
-                                border-top: 1px solid $cl-gr-30;
+                                border-top: 1px solid $cl-sg-20;
                             }
                             &.empty {
                                 padding: 17px 0;
                                 @include flex(row, center, center, 0);
+                                border-bottom: 1px solid $cl-sg-20;
                                 span {
                                     @include font(13px, 400, 1.2);
                                     color: $cl-gr-60;
@@ -825,7 +831,7 @@
                                 @include flex(row, center, flex-start, 0);
                                 @include font(13px, 400, 1.2);
                                 padding-left: 24px;
-                                color: $cl-black;
+                                color: $cl-gr-100;
                                 will-change: color;
                                 transition: color 0.2s ease;
                                 &::before {
@@ -837,7 +843,7 @@
                                     background-image: url("/wsrv/app/img/new/common/tree_page.png");
                                 }
                                 &:hover {
-                                    color: $cl-p-magenta;
+                                    color: $cl-magenta-50;
                                 }
                             }
                         }
@@ -890,7 +896,10 @@ body.popup {
                     border: none;
                     border-radius: 0;
                     .common-input {
-                        border: 1px solid $cl-gr-40 !important;
+                        border: 1px solid $cl-sg-30 !important;
+                        &:focus {
+                            border-color: $cl-purple-80 !important;
+                        }
                     }
                 }
                 .search-box {
@@ -898,7 +907,7 @@ body.popup {
                     height: 380px;
                     position: relative;
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: #F8F8F8;
                     border: none;
                     padding: 0;
                     margin-top: 8px;
@@ -978,7 +987,7 @@ body.popup {
                                 }
                             }
                             & + li {
-                                border-top: 1px solid $cl-gr-30;
+                                border-top: 1px solid $cl-sg-10;
                             }
                         }
                     }
@@ -998,7 +1007,7 @@ body.popup {
                     width: 100%;
                     height: 380px;
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: #F8F8F8;
                     padding: 12px 16px;
                     &.jstree-default {
                         .jstree-node {
@@ -1031,14 +1040,15 @@ body.popup {
                         .jstree-anchor {
                             height: 20px;
                             @include font(13px, 400, 20px);
+                            color: $cl-gr-100;
                             transition: color 0.3s;
                             &.jstree-hovered {
                                 background-color: none !important;
                                 box-shadow: none !important;
-                                color: $cl-p-magenta !important;
+                                color: $cl-magenta-50 !important;
                             }
                             // &.jstree-clicked {
-                            //     color: $cl-p-magenta !important;
+                            //     color: $cl-magenta-50 !important;
                             //     font-weight: 700;
                             // }
                         }
@@ -1137,6 +1147,7 @@ body.popup {
                     span {
                         @include font(13px, 400, 1.2);
                         position: relative;
+                        color: $cl-purple-80 !important;
                         &::before {
                             content: "※";
                             display: inline-block;
@@ -1149,6 +1160,9 @@ body.popup {
                 width: 100%;
                 position: relative;
                 margin-top: 12px;
+                .dot-noti {
+                    font-size: 13px;
+                }
             }
             &.fav {
                 > section {
@@ -1172,7 +1186,9 @@ body.popup {
     }
     .vakata-context {
         padding: 8px 0;
-        @include border-box;
+        border: 1px solid $cl-gr-100;
+        background-color: $cl-white;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
         border-radius: 4px;
         li {
             a {
@@ -1205,24 +1221,28 @@ body.popup {
 body[data-theme="type0"] {
     .ep-lnb {
         &-inner {
-            background-color: $cl-p-magenta;
+            background-color: $cl-magenta-50;
         }
         &-arrow {
-            background-color: $cl-p-magenta;
+            background-color: $cl-magenta-50;
         }
     }
 }
 body[data-theme="type1"] {
     .ep-lnb {
         &-inner {
-            background-color: $cl-p-purple;
+            background-color: $cl-purple-100;
         }
         &-arrow {
-            background-color: $cl-p-purple;
+            background-color: $cl-purple-100;
         }
         .logo {
             a {
                 background-image: url("/wsrv/app/img/new/heungkuk_logo_point.svg");
+            }
+            .text {
+                background-color: $cl-purple-10;
+                color: $cl-purple-80;
             }
         }
     }
@@ -1230,20 +1250,32 @@ body[data-theme="type1"] {
 body[data-theme="type2"] {
     .ep-lnb {
         &-inner {
-            background-color: $cl-blue;
+            background-color: #0087D4;
         }
         &-arrow {
-            background-color: $cl-blue;
+            background-color: #0087D4;
+        }
+        .logo {
+            .text {
+                background-color: #E6F5FF;
+                color: #0284C7;
+            }
         }
     }
 }
 body[data-theme="type3"] {
     .ep-lnb {
         &-inner {
-            background-color: $cl-sg-70;
+            background-color: $cl-sg-60;
         }
         &-arrow {
-            background-color: $cl-sg-70;
+            background-color: $cl-sg-60;
+        }
+        .logo {
+            .text {
+                background-color: $cl-gr-10;
+                color: $cl-gr-80;
+            }
         }
     }
 }
@@ -1256,7 +1288,7 @@ body[data-theme="type3"] {
     height: 40px;
     position: relative;
     padding-inline: 16px;
-    background-color: $cl-sg-5;
+    background-color: #EEF2F7;
     border-bottom: 1px solid $cl-sg-20;
     color: $cl-gr-90;
     @include z(header);
@@ -1303,7 +1335,7 @@ body[data-theme="type3"] {
                 }
                 &.active {
                     > a {
-                        color: $cl-p-magenta;
+                        color: $cl-magenta-50;
                     }
                 }
             }
@@ -1351,9 +1383,9 @@ body[data-theme="type3"] {
             position: fixed;
             padding: 8px;
             border-radius: 4px;
-            border: 1px solid $cl-black;
+            border: 1px solid $cl-sg-40;
             background: $cl-white;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
             white-space: nowrap;
             @include z(modal);
             .sub-menu-wrapper {
@@ -1447,16 +1479,16 @@ body[data-theme="type3"] {
                                     height: 16px;
                                     border-radius: 50%;
                                     &.type0 {
-                                        background-color: $cl-p-magenta;
+                                        background-color: $cl-magenta-50;
                                     }
                                     &.type1 {
-                                        background-color: $cl-p-purple;
+                                        background-color: $cl-purple-100;
                                     }
                                     &.type2 {
-                                        background-color: $cl-blue;
+                                        background-color: #0087D4;
                                     }
                                     &.type3 {
-                                        background-color: $cl-gr-70;
+                                        background-color: $cl-sg-60;
                                     }
                                 }
                             }
@@ -1472,7 +1504,7 @@ body[data-theme="type3"] {
                         transform: translateY(-50%);
                         right: 32px;
                         @include bg-set;
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M7.99967 1.3335C11.6816 1.3335 14.6663 4.31826 14.6663 8.00016C14.6663 11.6821 11.6816 14.6668 7.99967 14.6668C4.31778 14.6668 1.33301 11.6821 1.33301 8.00016C1.33301 4.31826 4.31778 1.3335 7.99967 1.3335ZM10.7041 5.29508C10.4438 5.03503 10.0217 5.03489 9.76139 5.29508L7.99902 7.0568L6.2373 5.29508C5.97693 5.03501 5.55485 5.03483 5.2946 5.29508C5.03434 5.55534 5.03452 5.97742 5.2946 6.23779L7.05631 7.99951L5.2946 9.76188C5.0344 10.0221 5.03454 10.4442 5.2946 10.7046C5.55493 10.9649 5.97697 10.9649 6.2373 10.7046L7.99902 8.94222L9.76139 10.7046C10.0218 10.9648 10.4438 10.9649 10.7041 10.7046C10.9644 10.4443 10.9643 10.0222 10.7041 9.76188L8.94173 7.99951L10.7041 6.23779C10.9644 5.97746 10.9644 5.55542 10.7041 5.29508Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M7.99967 1.33331C11.6816 1.33331 14.6663 4.31808 14.6663 7.99998C14.6663 11.6819 11.6816 14.6666 7.99967 14.6666C4.31778 14.6666 1.33301 11.6819 1.33301 7.99998C1.33301 4.31808 4.31778 1.33331 7.99967 1.33331ZM10.7041 5.2949C10.4438 5.03485 10.0217 5.03471 9.76139 5.2949L7.99902 7.05662L6.2373 5.2949C5.97693 5.03483 5.55485 5.03464 5.2946 5.2949C5.03434 5.55516 5.03452 5.97724 5.2946 6.23761L7.05631 7.99933L5.2946 9.7617C5.0344 10.022 5.03454 10.4441 5.2946 10.7044C5.55493 10.9647 5.97697 10.9647 6.2373 10.7044L7.99902 8.94204L9.76139 10.7044C10.0218 10.9646 10.4438 10.9647 10.7041 10.7044C10.9644 10.4441 10.9643 10.0221 10.7041 9.7617L8.94173 7.99933L10.7041 6.23761C10.9644 5.97728 10.9644 5.55523 10.7041 5.2949Z' fill='%23A5A7AC'/%3E%3C/svg%3E");
                         opacity: 0;
                         pointer-events: none;
                         will-change: opacity;
@@ -1497,10 +1529,10 @@ body[data-theme="type3"] {
                 outline: none;
                 transition: border-color 0.2s;
                 &::placeholder {
-                    color: $cl-sg-60;
+                    color: $cl-sg-50;
                 }
                 &:hover, &:focus, &:active {
-                    border-color: $cl-black;
+                    border-color: #151515;
                 }
             }
             &::after {
@@ -1535,11 +1567,12 @@ body[data-theme="type3"] {
                 @include flex(row, center, space-between, 4px);
                 height: 40px;
                 padding-inline: 16px;
-                border-bottom: 1px solid $cl-gr-30;
+                border-bottom: 1px solid $cl-gr-10;
                 h2 {
                     @include font(13px, 700, 1);
                     color: $cl-black;
                     em {
+                        color: $cl-magenta-60;
                         &::before, &::after {
                             display: none;
                         }
@@ -1591,12 +1624,12 @@ body[data-theme="type3"] {
                     > a {
                         width: fit-content;
                         @include font(13px, 500, 16px);
-                        color: $cl-black;
+                        color: $cl-gr-100;
                         margin: 0;
                         will-change: color;
                         transition: color 0.2s;
                         .highlight {
-                            color: $cl-p-magenta;
+                            color: $cl-magenta-50;
                         }
                     }
                     .location {
@@ -1618,7 +1651,7 @@ body[data-theme="type3"] {
                         z-index: 60;
                     }
                     & + li {
-                        border-top: 1px solid $cl-gr-30;
+                        border-top: 1px solid $cl-gr-10;
                     }
                     &.empty {
                         padding: 17px 0;
@@ -1665,7 +1698,7 @@ body[data-theme="type3"] {
                 width: fit-content;
                 @include flex(row, center, flex-start, 4px);
                 @include font(11px, 500, 1);
-                color: $cl-sg-60;
+                color: $cl-sg-50;
                 position: relative;
                 padding-right: 24px;
                 transition: color 0.2s;
@@ -1729,7 +1762,7 @@ body.subContents {
 .ep-content {
     width: 100%;
     position: relative;
-    background-color: $cl-sg-20;
+    background-color: $cl-sg-5;
 }
 .contents-grid {
     width: 100%;
@@ -1746,7 +1779,7 @@ body.subContents {
         padding: 16px;
         background-color: $cl-white;
         border-radius: 8px;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
         .pencake-portlet-box {
             width: 100%;
             position: relative;
@@ -1754,7 +1787,7 @@ body.subContents {
             & + .pencake-portlet-box {
                 margin-top: 20px;
                 padding-top: 20px;
-                border-top: 1px solid $cl-gr-30;
+                border-top: 1px solid $cl-sg-10;
             }
         }
     }
@@ -1776,8 +1809,8 @@ body.subContents {
                 flex: 1;
                 .pencake-portlet-content {
                     height: 100%;
-                    border-bottom: 1px solid $cl-gr-40;
-                    &:has(.table-with-btn) {
+                    border-bottom: 1px solid $cl-sg-30;
+                    &:has(.table-with-btn), &:has(.recommand-goods) {
                         border-bottom: none;
                     }
                 }
@@ -1802,7 +1835,7 @@ body.subContents {
             .portlet_title {
                 @include flex(row, center, flex-start, 4px);
                 @include font(16px, 700, 1.25);
-                color: $cl-black;
+                color: $cl-gr-80;
                 margin: 0;
                 flex-shrink: 0;
                 span {
@@ -1868,17 +1901,18 @@ body.subContents {
     }
 }
 .txt-empty {
-    @include font(13px, 400, 1.23);
+    @include font(13px, 400, 1.1);
     color: $cl-gr-60;
     width: fit-content;
     position: relative;
-    padding-left: 28px;
+    padding-left: 24px;
     &::before {
         content: "";
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         @include ps-icon;
         @include bg-set;
+        top: 49%;
         background-image: url("/wsrv/app/img/new/common/ico_alert_circle_contained.png");
         opacity: 0.45;
     }
@@ -1908,7 +1942,7 @@ body.subContents {
     padding-inline: 16px;
     @include flex(row, center, space-between, 40px);
     border-top: 1px solid $cl-sg-20;
-    background-color: $cl-sg-5;
+    background-color: #EEF2F7;
     .left-area {
         p {
             @include font(12px, 400, 1);
@@ -1963,6 +1997,9 @@ body.subContents {
                         text-align: left;
                         line-height: 1.23;
                         padding: 2px 4px;
+                    }
+                    td {
+                        background-color: $cl-white;
                     }
                 }
                 &.active {

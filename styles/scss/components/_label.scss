@@ -1,97 +1,105 @@
 .label {
-    display: block;
     width: fit-content;
-    padding: 2px 6px;
-    border-radius: 50px;
+    height: 16px;
+    padding-inline: 6px;
+    @include flex(row, center, center, 0);
+    border-radius: 2px;
     @include font(11px, 500, 1);
-    color: $cl-white;
-    background-color: $cl-p-magenta;
-    border: 1px solid transparent;
+    color: $cl-magenta-50;
+    background-color: $cl-magenta-10;
+    border: 1px solid transparent; 
     &[data-label-size="m"] {
+        height: 18px;
         font-size: 12px;
-        padding: 3px 6px;
     }
     &[data-label-size="l"] {
+        height: 20px;
         font-size: 13px;
-        padding: 4px 6px;
     }
-    &[data-label-type="box"] {
+    &[data-label-type="box"]  {
         border-radius: 3px;
         &.purple {
             background-color: $cl-purple-20;
             color: $cl-purple-80;
         }
     }
-    // magenta
-    &.magenta {
-        background-color: $cl-p-magenta;
+    &[data-label-radius="true"] {
+        border-radius: 50px;
     }
+    // magenta
     &.magenta-line {
         background-color: $cl-white;
-        border-color: $cl-p-magenta;
-        color: $cl-p-magenta;
+        border-color: $cl-magenta-20;
+        color: $cl-magenta-50;
     }
     // PURPLE
     &.purple {
-        background-color: $cl-purple-60;
+        background-color: $cl-purple-10;
+        color: $cl-purple-80;
     }
     &.purple-line {
         background-color: $cl-white;
-        border-color: $cl-purple-80;
+        border-color: $cl-purple-20;
         color: $cl-purple-80;
     }
     // BLUE
     &.blue {
-        background-color: $cl-blue-70;
+        background-color: #E6F5FF;
+        color: #0284C7;
     }
     &.blue-line {
         background-color: $cl-white;
-        border-color: $cl-blue-70;
-        color: $cl-blue-70;
+        border-color: #CEECFC;
+        color: #0284C7;
     }
     // GREEN
     &.green {
-        background-color: $cl-green-70;
+        background-color: #E8F6EC;
+        color: #018B62;
     }
     &.green-line {
         background-color: $cl-white;
-        border-color: $cl-green-70;
-        color: $cl-green-70;
+        border-color: #CCECD5;
+        color: #018B62;
     }
     // YELLOW
     &.yellow {
-        background-color: $cl-yellow-50;
+        background-color: $cl-yellow-10;
+        color: $cl-yellow-60;
     }
     &.yellow-line {
         background-color: $cl-white;
-        border-color: $cl-yellow-50;
-        color: $cl-orange-60;
+        border-color: $cl-yellow-20;
+        color: $cl-yellow-60;
     }
     // RED
     &.red {
-        background-color: $cl-red-60;
+        background-color: #FFF2F2;
+        color: #DC2626;
     }
     &.red-line {
         background-color: $cl-white;
-        border-color: $cl-red-60;
+        border-color: #FFDEDE;
         color: $cl-red-60;
     }
     // ORANGE
     &.orange {
-        background-color: $cl-orange-60;
+        background-color: #FFF2E5;
+        color: #F97316;
     }
     &.orange-line {
         background-color: $cl-white;
-        border-color: $cl-orange-60;
+        border-color: #FFE7CB;
         color: $cl-orange-60;
     }
     // GRAY
     &.gray {
-        background-color: $cl-gr-60;
+        background-color: $cl-gr-10;
+        color: $cl-gr-80;
     }
     &.gray-line {
         background-color: $cl-white;
-        border-color: $cl-gr-80;
+        border-color: $cl-gr-20;
         color: $cl-gr-80;
     }
 }

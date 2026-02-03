@@ -23,11 +23,12 @@
                     color: $cl-gr-100;
                     margin-bottom: 4px;
                     span {
-                        color: $cl-blue;
+                        color: $cl-blue-70;
                     }
                 }
                 .my-num {
                     @include font(12px, 400, 1.16);
+                    color: $cl-gr-100;
                 }
             }
             &.prize-fc {
@@ -213,7 +214,7 @@
             color: $cl-gr-80;
             a {
                 @include font(12px, 700, 1.16);
-                color: $cl-black;
+                color: $cl-gr-100;
                 margin-left: 4px;
             }
             &::before {
@@ -289,7 +290,7 @@
                 right: 16px;
                 @include flex(row, center, flex-start, 0);
                 border-radius: 2px;
-                border: 1px solid $cl-sg-30;
+                border: 1px solid $cl-sg-40;
                 button {
                     width: 18px;
                     height: 18px;
@@ -302,7 +303,7 @@
                     }
                     &:first-child {
                         width: 19px;
-                        border-right: 1px solid $cl-sg-30;
+                        border-right: 1px solid $cl-sg-40;
                     }
                     &::after {
                         content: "";
@@ -366,7 +367,7 @@
                 @include flex(column, flex-start, flex-start, 0);
                 background-color: $cl-white;
                 border-radius: 8px;
-                border: 1px solid $cl-gr-30;
+                border: 1px solid $cl-sg-10;
                 will-change: background-color;
                 transition: background-color 0.2s;
                 &:hover {
@@ -378,8 +379,41 @@
                     @include flex(row, center, flex-start, 4px);
                     margin-bottom: 8px;
                     .label {
+                        height: 18px;
                         font-size: 12px;
-                        padding: 3px 6px;
+                        &.is-waiting {
+                            background-color: #FFF2E5;
+                            color: $cl-orange-60;
+                        }
+                        &.is-done {
+                            background-color: $cl-gr-10;
+                            color: $cl-gr-80;
+                        }
+                        &.is-question {
+                            background-color: transparent;
+                            border-color: #C8E9F1;
+                            color: #0791B2;
+                        }
+                        &.is-guide {
+                            background-color: transparent;
+                            border-color: #EFDAC0;
+                            color: #995C14;
+                        }
+                        &.is-defect {
+                            background-color: transparent;
+                            border-color: #F2CECC;
+                            color: #BF3434;
+                        }
+                        &.is-not-defect {
+                            background-color: transparent;
+                            border-color: #C8F0D4;
+                            color: #11A740;
+                        }
+                        &.is-suggest {
+                            background-color: transparent;
+                            border-color: #C8F0D4;
+                            color: #11A740;
+                        }
                     }
                 }
                 &-title {
@@ -387,13 +421,13 @@
                     position: relative;
                     p {
                         @include font(13px, 500, 1);
-                        color: $cl-black;
+                        color: $cl-gr-100;
                         margin-bottom: 3px;
                     }
                     .list-link {
                         span {
                             @include font(13px, 400, 1.23);
-                            color: $cl-black;
+                            color: $cl-gr-100;
                             @include ellipsis2(2, 100%, auto);
                         }
                     }
@@ -440,7 +474,7 @@
         @include flex(column, flex-start, flex-start, 0);
         .scroll-table {
             max-height: 254px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
             .common-table {
                 tbody {
                     tr {
@@ -492,7 +526,7 @@
                 h4 {
                     @include flex(row, center, flex-start, 4px);
                     @include font(14px, 700, 1.2);
-                    color: $cl-black;
+                    color: $cl-gr-80;
                     span {
                         @include font(12px, 500, 1.2);
                         color: $cl-sg-50;
@@ -512,7 +546,7 @@
                         width: 50px;
                         flex-shrink: 0;
                         @include font(13px, 500, 1.2);
-                        color: $cl-sg-60;
+                        color: $cl-sg-50;
                         position: relative;
                         padding-left: 14px;
                         &::before {
@@ -526,7 +560,7 @@
                     strong {
                         @include flex(row, center, flex-start, 0);
                         @include font(13px, 600, 1);
-                        color: $cl-black;
+                        color: $cl-gr-100;
                         span {
                             @include font(18px, 700, 1);
                         }
@@ -547,7 +581,8 @@
                         .percent {
                             @include ps-center;
                             @include flex(row, center, flex-start, 0);
-                            color: $cl-green-70;
+                            color: $cl-green-60;
+                            opacity: 0.8;
                             span {
                                 @include font(22px, 700, 1);
                             }
@@ -568,6 +603,17 @@
                         position: relative;
                         @include flex(row, center, space-between, 8px);
                         margin-bottom: 16px;
+                        .flex-row {
+                            h5 {
+                                @include font(14px, 600, 1);
+                                color: $cl-gr-100;
+                            }
+                            .label {
+                                border-radius: 50px;
+                                height: 18px;
+                                font-size: 12px;
+                            }
+                        }
                     }
                     &.goal {
                         background-color: $cl-blue-5;
@@ -600,10 +646,10 @@
                         flex-direction: column;
                         align-items: flex-start;
                         justify-content: flex-start;
-                        background-color: $cl-sg-5;
+                        background-color: #F2F7FB;
                         > p {
                             &::before {
-                                background-color: $cl-green-70;
+                                background-color: $cl-green-40;
                             }
                         }
                     }
@@ -611,12 +657,12 @@
                         background-color: $cl-purple-5;
                         > p {
                             &::before {
-                                background-color: $cl-purple-50;
+                                background-color: $cl-purple-60;
                             }
                         }
                     }
                     &.fc-manager {
-                        background-color: $cl-cyan-5;
+                        background-color: #EEF8F8;
                         @include flex(column, flex-start, flex-start, 0);
                         .state-bar {
                             .bar-wrap {
@@ -643,7 +689,7 @@
                     width: 100%;
                     position: relative;
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: #F2F7FB;
                     padding: 12px 16px;
                     strong {
                         @include font(14px, 600, 1.28);
@@ -660,7 +706,7 @@
                             span {
                                 display: block;
                                 @include font(13px, 500, 1.23);
-                                color: $cl-sg-60;
+                                color: $cl-sg-50;
                                 &.tit {
                                     padding-left: 14px;
                                     &::before {
@@ -712,7 +758,7 @@
                     width: 100%;
                     position: relative;
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: #F2F7FB;
                     padding: 16px;
                     @include flex(row, center, center, 4px);
                     p {
@@ -739,7 +785,7 @@
                     .title {
                         width: 60px;
                         @include font(13px, 500, 1.23);
-                        color: $cl-sg-60;
+                        color: $cl-sg-50;
                         span {
                             display: block;
                             font-size: 11px;
@@ -763,7 +809,7 @@
                                 background-color: $cl-sg-30;
                             }
                             &.purple {
-                                background-color: $cl-purple-50;
+                                background-color: $cl-purple-60;
                             }
                             &.cyan {
                                 background-color: $cl-cyan-40;
@@ -771,7 +817,7 @@
                         }
                         .num {
                             @include font(13px, 700, 1.23);
-                            color: $cl-sg-80;
+                            color: $cl-sg-60;
                             position: absolute;
                             top: 50%;
                             transform: translateY(-50%);
@@ -786,24 +832,21 @@
             }
             .scroll-table {
                 &.ga-branchmanager {
-                    height: 358px;
+                    height: 357px;
+                    border-bottom: 1px solid $cl-sg-30;
                     .common-table {
-                        th {
-                            height: 24px;
-                            position: relative;
+                        tr {
+                            th {
+                                height: 24px;
+                                position: relative;
+                            }
+                            td {
+                                border: none;
+                            }
+                            &:nth-child(n+11):last-child {
+                                border-bottom: none;
+                            }
                         }
-                        td {
-                            border: none;
-                        }
-                    }
-                    &::after {
-                        content: "";
-                        width: 100%;
-                        height: 1px;
-                        background-color: $cl-gr-40;
-                        position: absolute;
-                        bottom: 1px;
-                        left: 0;
                     }
                 }
                 .empty {
@@ -826,7 +869,7 @@
                     position: relative;
                     @include flex(row, center, flex-start, 0);
                     border-radius: 8px;
-                    background-color: $cl-gr-5;
+                    background-color: #F2F7FB;
                     margin-bottom: 20px;
                     .box {
                         width: 50%;
@@ -835,7 +878,7 @@
                         @include flex(row, center, center, 4px);
                         p {
                             @include font(13px, 600, 1.2);
-                            color: $cl-black;
+                            color: $cl-gr-100;
                         }
                         strong {
                             @include flex(row, center, flex-start, 0);
@@ -845,7 +888,7 @@
                                 @include font(18px, 700, 1.2);
                             }
                             &.purple {
-                                color: $cl-purple-50;
+                                color: $cl-purple-60;
                             }
                             &.magenta {
                                 color: $cl-magenta-50;
@@ -956,34 +999,19 @@
                     @include font(14px, 600, 1.28);
                     white-space: wrap;
                     flex-shrink: 0;
-                    &.dg-fill {
-                        background-color: $cl-sg-80;
-                        &:hover {
-                            background-color: $cl-gr-60;
-                        }
-                        &:active {
-                            background-color: $cl-gr-80;
-                        }
-                        &:disabled, &.disabled {
-                            background-color: $cl-gr-30;
-                        }
-                    }
                     &.cg-line {
-                        background-color: $cl-sg-5;
-                        border-color: $cl-sg-40;
-                        color: $cl-sg-80;
+                        background-color: #EEF2F7;
+                        border-color: $cl-sg-30;
+                        color: $cl-sg-50;
                         &:hover {
-                            border-color: $cl-sg-30;
-                            background-color: $cl-sg-20;
+                            background-color: $cl-sg-10;
                         }
                         &:active {
-                            border-color: $cl-sg-30;
                             background-color: $cl-sg-30;
                         }
                         &:disabled, &.disabled {
-                            border-color: $cl-sg-30;
-                            background-color: $cl-white;
-                            color: $cl-sg-40;
+                            background-color: #EEF2F7;
+                            color: $cl-gr-40;
                         }
                     }
                 }
@@ -1110,7 +1138,7 @@
                     text-align: center;
                     border-color: transparent;
                     @include font(13px, 700, 1);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                     .ui-datepicker-month {
                         margin-left: 4px;
                     }
@@ -1123,7 +1151,7 @@
                         background-color: transparent;
                         font-family: "Pretendard";
                         @include font(13px, 700, 1);
-                        color: $cl-black !important;
+                        color: $cl-gr-100 !important;
                         appearance: none;
                         -webkit-appearance: none;
                         -moz-appearance: none;
@@ -1149,25 +1177,23 @@
                     border-radius: 2px;
                     @include flex(row, center, center, 0);
                     @include font(12px, 500, 1);
-                    border: 1px solid $cl-gr-50;
+                    border: 1px solid $cl-sg-30;
                     background-color: $cl-white;
+                    color: $cl-gr-60;
                     font-family: "Pretendard";
-                    color: $cl-gr-80;
                     white-space: nowrap;
                     will-change: background-color, border-color, color;
                     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
                     &:hover {
-                        border-color: $cl-gr-50;
                         background-color: $cl-gr-20;
                     }
                     &:active {
-                        border-color: $cl-gr-50;
                         background-color: $cl-gr-40;
                     }
                     &:disabled, &.disabled {
-                        border-color: $cl-gr-30;
+                        border-color: $cl-sg-20;
                         background-color: $cl-white;
-                        color: $cl-gr-50;
+                        color: $cl-gr-40;
                     }
                 }
             }
@@ -1202,36 +1228,38 @@
                                 height: 24px;
                                 padding: 6px 4px !important;
                                 margin: 0 auto;
+                                @include flex(row, center, center, 0);
                                 @include font(12px, 400, 1);
-                                color: $cl-black;
+                                color: $cl-gr-100;
                                 text-align: center;
                                 border-radius: 6px;
                                 will-change: background-color;
                                 transition: background-color 0.2s;
                                 &.ui-priority-secondary {
                                     opacity: 1;
-                                    color: $cl-gr-50;
+                                    color: $cl-gr-40;
                                 }
                                 &.ui-state-active {
-                                    background-color: $cl-purple-80;
+                                    background-color: $cl-purple-90;
                                     color: $cl-white !important;
                                     &.ui-state-hover {
                                         background-color: $cl-purple-50;
                                     }
                                 }
                                 &.ui-state-highlight {
-                                    background-color: $cl-yellow-30;
-                                    color: $cl-black !important;
+                                    background-color: $cl-purple-20;
+                                    color: $cl-gr-100 !important;
                                     border: none;
                                     &.ui-state-active {
-                                        background-color: $cl-purple-80;
+                                        background-color: $cl-purple-90;
                                         color: $cl-white !important;
                                         &:hover {
                                             background-color: $cl-purple-50;
                                         }
                                     }
                                     &.ui-state-hover {
-                                        background-color: $cl-yellow-50;
+                                        background-color: $cl-purple-20;
+                                        color: $cl-white !important;
                                     }
                                 }
                                 &.ui-state-hover {
@@ -1295,7 +1323,7 @@
                 h4 {
                     flex: 1;
                     @include font(13px, 700, 1.2);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                 }
                 .btn-wrap {
                     width: fit-content;
@@ -1404,7 +1432,7 @@
                     position: relative;
                     @include ellipsis(100%);
                     @include font(12px, 400, 1);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                     will-change: color;
                     transition: color 0.2s;
                 }
@@ -1528,7 +1556,7 @@
             background-color: $cl-magenta-5;
             h4 {
                 @include font(13px, 500, 1.23);
-                color: $cl-black;
+                color: $cl-gr-100;
                 margin-bottom: 8px;
             }
             .price {
@@ -1560,7 +1588,7 @@
             position: relative;
             @include flex(row, center, flex-start, 0);
             border-radius: 2px;
-            border: 1px solid $cl-gr-50;
+            border: 1px solid $cl-sg-30;
             background-color: $cl-white;
             will-change: background-color;
             transition: background-color 0.2s;
@@ -1570,7 +1598,7 @@
                 padding-inline: 4px;
                 @include font(12px, 400, 18px);
                 @include ellipsis(100%);
-                border-right: 1px solid $cl-gr-50;
+                border-right: 1px solid $cl-sg-30;
             }
             .close {
                 background-color: $cl-gr-5;

@@ -1,26 +1,29 @@
 .common-table {
     width: 100%;
     position: relative;
-    border-top: 1px solid $cl-black;
+    border-top: 1px solid $cl-gr-50;
     table-layout: fixed;
     thead, tbody {
         tr {
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
+        }
+        td {
+            
         }
     }
     tbody {
         th {
-            border-right: 1px solid $cl-gr-40;
+            border-right: 1px solid $cl-sg-30;
         }
         tr {
             &:nth-child(even) {
                 td {
-                    background-color: rgba(200, 200, 200, 0.15);
+                    background-color: #F8F9FB;
                 }
             }
             &:hover {
                 td {
-                    background-color: rgba(119, 189, 250, 0.10);
+                    background-color: rgba(255, 227, 104, 0.20);
                 }
             }
         }
@@ -31,12 +34,12 @@
         vertical-align: middle;
     }
     th {
-        background-color: $cl-sg-20;
+        background-color: #EEF2F7;
         @include font(13px, 500, 1);
-        color: $cl-black;
+        color: $cl-gr-80;
         text-align: center;
         &.point-bg {
-            background-color: $cl-red-10;
+            background-color: $cl-magenta-5;
         }
         &.required {
             position: relative;
@@ -55,7 +58,7 @@
     td {
         background-color: $cl-white;
         @include font(13px, 400, 1);
-        color: $cl-black;
+        color: $cl-gr-100;
         text-align: center;
         will-change: background-color;
         transition: background-color 0.2s;
@@ -82,7 +85,7 @@
     &[data-table-border="true"] {
         tr {
             th, td {
-                border-right: 1px solid $cl-gr-40;
+                border-right: 1px solid $cl-sg-30;
                 &:last-child {
                     border-right: none;
                 }
@@ -94,7 +97,7 @@
 .scroll-table {
     width: 100%;
     position: relative;
-    border-top: 1px solid $cl-black;
+    border-top: 1px solid $cl-gr-50;
     overflow-y: auto;
     .common-table {
         border-top: none;
@@ -109,6 +112,10 @@
     }
     &::-webkit-scrollbar-track {
         background-color: $cl-gr-5;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $cl-sg-40;
+        border: 1px solid transparent;
     }
     &::-webkit-scrollbar-button {
         height: 12px;
@@ -134,7 +141,7 @@
     .btn-wrap {
         padding-top: 8px;
         margin-top: -2px;
-        border-top: 1px solid $cl-gr-40;
+        border-top: 1px solid $cl-sg-30;
         background-color: $cl-white;
     }
 }

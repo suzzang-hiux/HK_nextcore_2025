@@ -125,9 +125,9 @@ var gnbVm = $portalApp.vueServiceBean({
         // 즐겨찾기 설정
         ,myMenuSetting: function () {
             PencakeCustomCTRL.showModal("/menu/gnb/gnbSetting.html", {
-                width: 800,         // 넓이
-                height: 590,         // 높이
-                showTitle: true,         // 제목 숨김여부
+                width: 800,
+                height: 595, // 260203 수정 : height 변경
+                showTitle: true,
                 title: "메뉴관리",
             });
         }

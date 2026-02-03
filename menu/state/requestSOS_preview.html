@@ -71,7 +71,9 @@ var ePortalConfig = {
                 <div class="layer-cnt">
                     <div class="content-box">
                         <div class="board-detail-wrap">
-                            <h2 class="noti-tit"><span class="label" data-label-size="m">답변대기</span>[장기손사] 장기일반손사 → 사고처리 → 손해사정(장기인)</h2>
+                            <!-- 260203 답변대기 클래스 : orange / 답변완료 클래스 : gray -->
+                            <h2 class="noti-tit"><span class="label orange" data-label-size="m">답변대기</span>[장기손사] 장기일반손사 → 사고처리 → 손해사정(장기인)</h2>
+                            <!-- // 260203 답변대기 클래스 : orange / 답변완료 클래스 : gray -->
                             <div class="top-info">
                                 <ul>
                                     <li class="name">TM지원Part 장원영</li>
@@ -85,6 +87,27 @@ var ePortalConfig = {
                                     연락처 : 02-1234-5678 <br />
                                     본부/센터명 : 에이치앤티손해사정
                                 </div>
+                                <!-- 260203 파일목록 UI 변경으로 마크업 수정 -->
+                                <div class="filelist-box">
+                                    <ul class="file-list">
+                                        <li>
+                                            <a href="javascript:;" class="txt-btn blue">
+                                                <span class="name">등록한 파일_1.xlsx</span>
+                                                <span class="size">[153.54KB]</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="txt-btn blue">
+                                                <span class="name">등록한파일등록한파일등록한파일등록한파일등록한파일_1.xlsx</span>
+                                                <span class="size">[153.54KB]</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <button type="button" class="btn cg-line-2">전체다운로드</button>
+                                    </div>
+                                </div>
+                                <!-- // 260203 파일목록 UI 변경으로 마크업 수정 -->
                             </div>
                             <table class="common-table" data-table-bg="white">
                                 <colgroup>
@@ -93,16 +116,6 @@ var ePortalConfig = {
                                     <col style="width: 85px;">
                                 </colgroup>
                                 <tbody>
-                                    <tr>
-                                        <th>첨부파일</th>
-                                        <td>
-                                            <ul class="file-list">
-                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_1.xlsx[153.54KB]</a></li>
-                                                <li><a href="javascript:;" class="txt-btn blue">등록한 파일_2.xlsx[153.54KB]</a></li>
-                                            </ul>
-                                        </td>
-                                        <td><button type="button" class="btn wg-line" data-btn-size="s">전체다운로드</button></td>
-                                    </tr>
                                     <tr>
                                         <th>키워드(태그)</th>
                                         <td colspan="2">

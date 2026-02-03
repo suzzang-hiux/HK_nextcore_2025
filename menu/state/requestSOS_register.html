@@ -126,26 +126,28 @@ var ePortalConfig = {
                     <th>문의유형</th>
                     <td>
                         <div class="flex-row gap-4">
+                            <!-- 260203 span의 클래스 text_컬러 변경 -->
                             <label class="input-box" data-width="auto">
                                 <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_0" value="sos_type_0" checked />
-                                <span class="txt text_blue">사용문의</span>
+                                <span class="txt text_navy">사용문의</span>
                             </label>
                             <label class="input-box" data-width="auto">
                                 <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_1" value="sos_type_1" />
-                                <span class="txt text_purple">업무지원</span>
+                                <span class="txt text_cyan">업무지원</span>
                             </label>
                             <label class="input-box" data-width="auto">
                                 <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_2" value="sos_type_2" />
-                                <span class="txt text_orange">결함</span>
+                                <span class="txt text_red">결함</span>
                             </label>
                             <label class="input-box" data-width="auto">
                                 <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_3" value="sos_type_3" />
-                                <span class="txt text_green">결함아님</span>
+                                <span class="txt text_orange">결함아님</span>
                             </label>
                             <label class="input-box" data-width="auto">
                                 <input type="radio" class="common-radio" data-input-size="big" name="sos_type" id="sos_type_4" value="sos_type_4" />
                                 <span class="txt text_gray-80">제안</span>
                             </label>
+                            <!-- // 260203 span의 클래스 text_컬러 변경 -->
                         </div>
                     </td>
                 </tr>
@@ -199,31 +201,30 @@ var ePortalConfig = {
                     <td>
                         <div class="input-box">
                             <input type="file" class="hidden common-file-input" id="addRequestFile" />
-                            <label class="btn cg-fill" data-btn-size="s" for="addRequestFile">파일추가</label>
+                            <!-- 260203 라벨 클래스 변경 -->
+                            <label class="btn cg-line-2" data-btn-size="s" for="addRequestFile">파일추가</label>
+                            <!-- // 260203 라벨 클래스 변경 -->
                         </div>
-                        <ul class="file-list mt-4 grid-2">
-                            <li>
-                                <div class="file-name">
-                                    <p>파일명파일명파일명파일명파일명파일명파일명파일명.xlsx</p>
-                                    <span class="capacity">[153.54 KB]</span>
-                                </div>
-                                <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
-                            </li>
-                            <li>
-                                <div class="file-name">
-                                    <p>파일명.xlsx</p>
-                                    <span class="capacity">[153.54 KB]</span>
-                                </div>
-                                <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
-                            </li>
-                            <li>
-                                <div class="file-name">
-                                    <p>파일명.xlsx</p>
-                                    <span class="capacity">[153.54 KB]</span>
-                                </div>
-                                <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
-                            </li>
-                        </ul>
+                        <!-- 260203 파일목록 UI 변경으로 마크업 수정 -->
+                        <div class="filelist-box mt-4">
+                            <ul class="file-list">
+                                <li>
+                                    <a href="javascript:;" class="txt-btn blue">
+                                        <span class="name">등록한 파일_1.xlsx</span>
+                                        <span class="size">[153.54KB]</span>
+                                    </a>
+                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="txt-btn blue">
+                                        <span class="name">등록한 파일_1.xlsx</span>
+                                        <span class="size">[153.54KB]</span>
+                                    </a>
+                                    <button type="button" class="del-btn" title="삭제" aria-label="삭제"></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // 260203 파일목록 UI 변경으로 마크업 수정 -->
                     </td>
                 </tr>
                 <tr>
@@ -254,9 +255,11 @@ var ePortalConfig = {
     </div>
     <div class="popup-bottom">
         <div class="btn-wrap">
-            <button type="button" class="btn cg-line" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button>
+            <!-- 260203 버튼 클래스 변경 -->
+            <button type="button" class="btn cg-fill-1" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button>
             <button type="button" class="btn" data-btn-size="m">저장</button>
-            <button type="button" class="btn black" data-btn-size="m">닫기</button>
+            <button type="button" class="btn dg-line" data-btn-size="m">닫기</button>
+            <!-- // 260203 버튼 클래스 변경 -->
         </div>
     </div>
 </body>

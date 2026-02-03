@@ -7,8 +7,8 @@ $(function () {
                 PencakeCustomCTRL.showModal("/menu/home/myInfo.html", {
                     targetId: 'myDetailInfo',
                     width: 400,
-                    // 260109 수정사항 : height 수정
-                    height: 260,
+                    // 260203 수정사항 : height 수정
+                    height: 245,
                     showTitle: true,
                     title: "내 정보 조회",
                     dialogClass: 'type-border'

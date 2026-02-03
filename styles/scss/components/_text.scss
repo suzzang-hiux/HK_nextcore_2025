@@ -4,7 +4,7 @@
     position: relative;
     padding-left: 12px;
     @include font(12px, 400, 1.16);
-    color: $cl-orange;
+    color: $cl-magenta-60;
     &::before {
         content: "※";
         position: absolute;
@@ -125,6 +125,15 @@ ul.dot-noti {
 
 .text_gray-80 {
     color: $cl-gr-80 !important;
+}
+.text_navy {
+    color: $cl-navy-60 !important;
+}
+.text_cyan {
+    color: $cl-cyan-50 !important;
+}
+.text_red {
+    color: #F04452 !important;
 }
 
 // FONT SIZE

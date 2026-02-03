@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta charset="UTF-8">
+    <meta env="SOP-YTKIM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Components</title>
+
+    <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
+    <link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
+    <link href="/wsrv/app/js/plugins/owl/assets/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/wsrv/app/css/plugin/jstree/default/style.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/styles/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/wsrv/app/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/moment/moment.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/owl/owl.carousel.min.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/wsrv/app/js/iframeResizer.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/fuse/fuse.min.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/plugins/handlebars/handlebars-v4.7.6.js"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.js?version=30207.9915487681"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pub.ep.ui.js"></script>
+
+    <script src="/wsrv/app/js/plugins/vue/vue.min.js"></script>
+    <script src="/wsrv/app/js/plugins/vue/vue.portal.js?version=20201207" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/wsrv/app/js/pencake.js?version=51862.79271819944"></script>
+    <script type="text/javascript" src="/wsrv/app/js/pencake.custom.js?version=33210.91559244459"></script>
+    <style>
+        .components {
+            width: 100%;
+            position: relative;
+        }
+        .components .page-tit {
+            width: 100%;
+            position: relative;
+            padding: 80px 100px;
+            border-top: 6px solid #EC008C;
+            background-color: #F7F6FC;
+        }
+        .components .page-tit span {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1;
+            color: #4b4b4b;
+        }
+        .components .page-tit h1 {
+            font-size: 90px;
+            font-weight: 600;
+            line-height: 1;
+            color: #151515;
+        }
+        .components .cp-wrap {
+            width: 100%;
+            position: relative;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        .components .cp-wrap .cp-box {
+            width: 100%;
+            position: relative;
+        }
+        .components .cp-wrap .cp-box .cp-tit {
+            width: fit-content;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px 6px 38px;
+            border-radius: 99px;
+            border: 1px solid #DDD6FE;
+            background-color: #F5F3FF;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            color: #EC008C;
+            margin-bottom: 20px;
+        }
+        .components .cp-wrap .cp-box .cp-tit::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 12px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10.0003 1.6665L6.35449 5.31234L10.0003 8.95817L13.6462 5.31234L10.0003 1.6665Z' fill='%23EC008C'/%3E%3Cpath d='M10.0003 11.0415L6.35449 14.6873L10.0003 18.3332L13.6462 14.6873L10.0003 11.0415Z' fill='%23EC008C'/%3E%3Cpath d='M1.66699 9.99984L5.31283 6.354L8.95866 9.99984L5.31283 13.6457L1.66699 9.99984Z' fill='%23EC008C'/%3E%3Cpath d='M14.6878 6.354L11.042 9.99984L14.6878 13.6457L18.3337 9.99984L14.6878 6.354Z' fill='%23EC008C'/%3E%3C/svg%3E");
+        }
+        .components .cp-wrap .cp-box .cp-inner {
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 4px;
+            padding: 40px;
+            border: 1px dashed #D0C3FF;
+            border-radius: 8px;
+        }
+        .components .cp-wrap .cp-box .cp-inner .flex-row {
+            align-items: flex-start;
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body data-ep-view-mode="default" class="subContents">
+    <div class="components">
+        <div class="page-tit">
+            <span>
+                <b>Heungkuk Fire & Marine Insurance</b> Design System Guide
+            </span>
+            <h1>Components</h1>
+        </div>
+        <div class="cp-wrap">
+            <div class="cp-box">
+                <h2 class="cp-tit">Buttons</h2>
+                <div class="cp-inner">
+                    <div class="flex-row">
+                        <button type="button" class="btn" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn" data-btn-size="m">Button</button>
+                        <button type="button" class="btn" data-btn-size="l">Button</button>
+                        <button type="button" class="btn" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn magenta-light" data-btn-size="s">Button</button>
+                        <button type="button" class="btn magenta-light" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn magenta-light" data-btn-size="m">Button</button>
+                        <button type="button" class="btn magenta-light" data-btn-size="l">Button</button>
+                        <button type="button" class="btn magenta-light" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn purple" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn purple" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn purple" data-btn-size="m">Button</button>
+                        <button type="button" class="btn purple" data-btn-size="l">Button</button>
+                        <button type="button" class="btn purple" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn purple-light" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn purple-light" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn purple-light" data-btn-size="m">Button</button>
+                        <button type="button" class="btn purple-light" data-btn-size="l">Button</button>
+                        <button type="button" class="btn purple-light" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn dg-fill" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn dg-fill" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn dg-fill" data-btn-size="m">Button</button>
+                        <button type="button" class="btn dg-fill" data-btn-size="l">Button</button>
+                        <button type="button" class="btn dg-fill" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn dg-line" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn dg-line" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn dg-line" data-btn-size="m">Button</button>
+                        <button type="button" class="btn dg-line" data-btn-size="l">Button</button>
+                        <button type="button" class="btn dg-line" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn cg-fill-1" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn cg-fill-1" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn cg-fill-1" data-btn-size="m">Button</button>
+                        <button type="button" class="btn cg-fill-1" data-btn-size="l">Button</button>
+                        <button type="button" class="btn cg-fill-1" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn cg-fill-2" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn cg-fill-2" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn cg-fill-2" data-btn-size="m">Button</button>
+                        <button type="button" class="btn cg-fill-2" data-btn-size="l">Button</button>
+                        <button type="button" class="btn cg-fill-2" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn cg-line-1" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn cg-line-1" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn cg-line-1" data-btn-size="m">Button</button>
+                        <button type="button" class="btn cg-line-1" data-btn-size="l">Button</button>
+                        <button type="button" class="btn cg-line-1" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn cg-line-2" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn cg-line-2" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn cg-line-2" data-btn-size="m">Button</button>
+                        <button type="button" class="btn cg-line-2" data-btn-size="l">Button</button>
+                        <button type="button" class="btn cg-line-2" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn wg-fill" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn wg-fill" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn wg-fill" data-btn-size="m">Button</button>
+                        <button type="button" class="btn wg-fill" data-btn-size="l">Button</button>
+                        <button type="button" class="btn wg-fill" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn wg-line" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn wg-line" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn wg-line" data-btn-size="m">Button</button>
+                        <button type="button" class="btn wg-line" data-btn-size="l">Button</button>
+                        <button type="button" class="btn wg-line" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn blue-fill" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn blue-fill" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn blue-fill" data-btn-size="m">Button</button>
+                        <button type="button" class="btn blue-fill" data-btn-size="l">Button</button>
+                        <button type="button" class="btn blue-fill" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn blue-line" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn blue-line" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn blue-line" data-btn-size="m">Button</button>
+                        <button type="button" class="btn blue-line" data-btn-size="l">Button</button>
+                        <button type="button" class="btn blue-line" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn green-fill" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn green-fill" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn green-fill" data-btn-size="m">Button</button>
+                        <button type="button" class="btn green-fill" data-btn-size="l">Button</button>
+                        <button type="button" class="btn green-fill" data-btn-size="xl">Button</button>
+                    </div>
+                    <div class="flex-row">
+                        <button type="button" class="btn green-line" data-btn-size="s">Button</button> 
+                        <button type="button" class="btn green-line" data-btn-size="s" disabled>Disabled</button>
+                        <button type="button" class="btn green-line" data-btn-size="m">Button</button>
+                        <button type="button" class="btn green-line" data-btn-size="l">Button</button>
+                        <button type="button" class="btn green-line" data-btn-size="xl">Button</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Labels</h2>
+                <div class="cp-inner">
+                    <div class="flex-row">
+                        <span class="label magenta" data-label-size="s">Label</span>
+                        <span class="label magenta" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label magenta" data-label-size="m">Label</span>
+                        <span class="label magenta" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label magenta-line" data-label-size="s">Label</span>
+                        <span class="label magenta-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label magenta-line" data-label-size="m">Label</span>
+                        <span class="label magenta-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label purple" data-label-size="s">Label</span>
+                        <span class="label purple" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label purple" data-label-size="m">Label</span>
+                        <span class="label purple" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label purple-line" data-label-size="s">Label</span>
+                        <span class="label purple-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label purple-line" data-label-size="m">Label</span>
+                        <span class="label purple-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label blue" data-label-size="s">Label</span>
+                        <span class="label blue" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label blue" data-label-size="m">Label</span>
+                        <span class="label blue" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label blue-line" data-label-size="s">Label</span>
+                        <span class="label blue-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label blue-line" data-label-size="m">Label</span>
+                        <span class="label blue-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label green" data-label-size="s">Label</span>
+                        <span class="label green" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label green" data-label-size="m">Label</span>
+                        <span class="label green" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label green-line" data-label-size="s">Label</span>
+                        <span class="label green-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label green-line" data-label-size="m">Label</span>
+                        <span class="label green-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label yellow" data-label-size="s">Label</span>
+                        <span class="label yellow" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label yellow" data-label-size="m">Label</span>
+                        <span class="label yellow" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label yellow-line" data-label-size="s">Label</span>
+                        <span class="label yellow-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label yellow-line" data-label-size="m">Label</span>
+                        <span class="label yellow-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label red" data-label-size="s">Label</span>
+                        <span class="label red" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label red" data-label-size="m">Label</span>
+                        <span class="label red" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label red-line" data-label-size="s">Label</span>
+                        <span class="label red-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label red-line" data-label-size="m">Label</span>
+                        <span class="label red-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label orange" data-label-size="s">Label</span>
+                        <span class="label orange" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label orange" data-label-size="m">Label</span>
+                        <span class="label orange" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label orange-line" data-label-size="s">Label</span>
+                        <span class="label orange-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label orange-line" data-label-size="m">Label</span>
+                        <span class="label orange-line" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label gray" data-label-size="s">Label</span>
+                        <span class="label gray" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label gray" data-label-size="m">Label</span>
+                        <span class="label gray" data-label-size="l">Label</span>
+                    </div>
+                    <div class="flex-row">
+                        <span class="label gray-line" data-label-size="s">Label</span>
+                        <span class="label gray-line" data-label-size="s" data-label-radius="true">Label</span>
+                        <span class="label gray-line" data-label-size="m">Label</span>
+                        <span class="label gray-line" data-label-size="l">Label</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="/js/home.js"></script>

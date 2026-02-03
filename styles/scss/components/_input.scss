@@ -33,7 +33,7 @@
     position: relative;
     .input-label {
         @include font(13px, 500, 1.2);
-        color: $cl-black;
+        color: $cl-gr-100;
         position: relative;
         margin-bottom: 4px;
         &.required {
@@ -52,7 +52,7 @@
         @include flex(row, center, flex-start, 4px);
         .dash {
             @include font(13px, 400, 1);
-            color: $cl-black;
+            color: $cl-gr-100;
         }
     }
     & + .input-col-box {
@@ -92,12 +92,12 @@
     height: 24px;
     position: relative;
     border-radius: 3px;
-    border: 1px solid $cl-gr-50;
+    border: 1px solid $cl-sg-30;
     background-color: $cl-white;
     padding-inline: 4px;
     font-family: "Pretendard";
     @include font(13px, 400, 1);
-    color: $cl-black;
+    color: $cl-gr-100;
     &::placeholder {
         color: $cl-gr-60;
     }
@@ -105,14 +105,10 @@
         outline: none;
         border-color: $cl-purple-80;
     }
-    &:disabled, .disabled {
-        background-color: $cl-gr-5;
-        border-color: $cl-gr-30;
-        color: $cl-gr-50;
-    }
-    &:read-only {
-        background-color: $cl-gr-5;
-        border-color: $cl-gr-50;
+    &:disabled, .disabled, &:read-only {
+        background-color: #F6F8F9;
+        border-color: $cl-sg-30;
+        color: $cl-gr-60;
     }
     // &:required, .required {
     //     background-color: $cl-purple-5;
@@ -158,8 +154,9 @@
     height: 0;
     overflow: hidden;
     & + .txt {
-        @include font(12px, 400, 1);
-        color: $cl-black;
+        min-height: 16px;
+        @include font(12px, 400, 16px);
+        color: $cl-gr-100;
         position: relative;
         padding-left: 20px;
         cursor: pointer;
@@ -168,9 +165,9 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            border: 1px solid $cl-gr-50;
+            border: 1px solid $cl-sg-30;
             position: absolute;
-            top: -2px;
+            top: 0;
             left: 0;
         }
     }
@@ -183,12 +180,18 @@
     }
     &[data-input-size="big"] {
         & + .txt {
+            min-height: 20px;
+            line-height: 20px;
             padding-left: 24px;
             font-size: 13px;
             &::before {
                 width: 20px;
                 height: 20px;
-                top: -3px;
+            }
+        }
+        &:checked + .txt {
+            &::before {
+                border-width: 7px;
             }
         }
     }
@@ -208,7 +211,7 @@
         cursor: pointer;
         position: relative;
         border-radius: 2px;
-        border: 1px solid $cl-gr-50;
+        border: 1px solid $cl-sg-30;
         background-color: $cl-white;
         will-change: background-color, border-color;
         transition: background-color 0.2s, border-color 0.2s;
@@ -224,7 +227,7 @@
         }
         & + .txt {
             @include font(12px, 400, 1);
-            color: $cl-black;
+            color: $cl-gr-100;
             margin-left: 4px;
             cursor: pointer;
             -webkit-user-select: none;
@@ -281,13 +284,13 @@
     display: block;
     position: relative;
     border-radius: 3px;
-    border: 1px solid $cl-gr-50;
+    border: 1px solid $cl-sg-30;
     background-color: $cl-white;
     resize: none;
     padding: 4px;
     font-family: "Pretendard";
     @include font(13px, 400, 1.2);
-    color: $cl-black;
+    color: $cl-gr-100;
     outline: none;
     &::placeholder {
         color: $cl-gr-60;
@@ -350,7 +353,7 @@
             padding-right: 36px;
             white-space: nowrap;
             @include font(12px, 400, 1.16);
-            color: $cl-black;
+            color: $cl-gr-100;
         }
     }
     input:checked {
@@ -360,6 +363,21 @@
             }
             &::after {
                 left: 16px;
+            }
+        }
+    }
+}
+
+.common-table {
+    tr {
+        &:has(th.required) {
+            td {
+                .common-input {
+                    background-color: $cl-magenta-5;
+                }
+                .common-select[data-type="border"] select {
+                    background-color: $cl-magenta-5;
+                }
             }
         }
     }

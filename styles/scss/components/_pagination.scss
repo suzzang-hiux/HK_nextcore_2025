@@ -20,17 +20,17 @@
                 text-align: center;
                 color: $cl-black;
                 &:hover {
-                    background-color: $cl-gr-30;
+                    background-color: #E1EBF4;
                 }
                 &:focus, &:active {
                     background-color: $cl-purple-20;
                 }
                 &.active {
-                    background-color: $cl-purple-80;
+                    background-color: $cl-purple-90;
                     color: $cl-white;
                 }
                 &.disabled, &:disabled {
-                    color: $cl-gr-50;
+                    color: $cl-gr-40;
                     pointer-events: none;
                 }
                 &.first, &.prev, &.next, &.last {

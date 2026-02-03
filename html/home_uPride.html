@@ -128,8 +128,10 @@
                                 <div class="btn-wrap">
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 FAQ</a>
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 FAQ</a>
-                                    <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">화상회의</a>
-                                    <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">원격지원</a>
+                                    <!-- 260203 수정 : 버튼 클래스 변경 (cg-fill => cg-fill-1) -->
+                                    <a href="javascript:;" target="_blank" class="btn cg-fill-1" data-btn-size="l">화상회의</a>
+                                    <a href="javascript:;" target="_blank" class="btn cg-fill-1" data-btn-size="l">원격지원</a>
+                                    <!-- // 260203 수정 : 버튼 클래스 변경 (cg-fill => cg-fill-1) -->
                                 </div>
                             </div>
                         </div>
@@ -282,11 +284,15 @@
                             <h3 class="portlet_title">U-Pride SOS 접수현황</h3>
                             <div class="up-sos-top">
                                 <div class="label-box">
-                                    <span class="label" data-label-size="m">답변대기</span>
+                                    <!-- 260203 수정 : label 컬러값 클래스 추가 "orange" -->
+                                    <span class="label orange" data-label-size="m">답변대기</span>
+                                    <!-- // 260203 수정 : label 컬러값 클래스 추가 "orange" -->
                                     <p>42건</p>
                                 </div>
                                 <div class="label-box">
-                                    <span class="label purple" data-label-size="m">답변완료</span>
+                                    <!-- 260203 수정 : label 컬러값 클래스 변경 "purple => gray" -->
+                                    <span class="label gray" data-label-size="m">답변완료</span>
+                                    <!-- // 260203 수정 : label 컬러값 클래스 변경 "purple => gray" -->
                                     <p>1,648건</p>
                                 </div>
                                 <div class="btn-wrap">
@@ -299,22 +305,22 @@
                         </div>
                         <ul class="sos-list">
                             <!--
-                                Label status classes
+                                Label status classes (260203 수정 ver)
                                 ------------------------------------
-                                기본(클래스 없음) : 답변대기
-                                purple           : 답변완료
-                                blue-line        : 사용문의
-                                purple-line      : 업무지침
-                                orange-line      : 결함
-                                green-line       : 결함아님
-                                gray-line        : 제안
+                                is-waiting       : 답변대기
+                                is-done          : 답변완료
+                                is-question      : 사용문의
+                                is-guide         : 업무지침
+                                is-defect        : 결함
+                                is-not-defect    : 결함아님
+                                is-suggest       : 제안
                                 ------------------------------------
                             -->
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label blue-line">사용문의</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-question">사용문의</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[포털/권한/메뉴]</p>
@@ -331,8 +337,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label orange-line">결함</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-defect">결함</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[장기손사]</p>
@@ -349,8 +355,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label purple">답변완료</span>
-                                        <span class="label green-line">결함아님</span>
+                                        <span class="label is-done">답변완료</span>
+                                        <span class="label is-not-defect">결함아님</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[이미지시스템]</p>
@@ -367,8 +373,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label blue-line">사용문의</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-question">사용문의</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[포털/권한/메뉴]</p>
@@ -434,7 +440,7 @@
                                             <th>요청자</th>
                                         </tr>
                                     </thead>
-                                    <tbody style="display: none;">
+                                    <tbody>
                                         <tr>
                                             <td>요청</td>
                                             <td>현장 Q&A</td>
@@ -471,7 +477,7 @@
                                 </table>
                             </div>
                             <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
-                            <div class="empty" style="display: block;">
+                            <div class="empty" style="display: none;">
                                 <p class="mascot-empty blue">
                                     데이터가 없습니다.
                                 </p>

@@ -85,9 +85,9 @@
 
 @mixin border-box {
     border-radius: 8px;
-    border: 1px solid $cl-black;
+    border: 1px solid $cl-sg-40;
     background-color: $cl-white;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
     overflow: hidden;
 }
 

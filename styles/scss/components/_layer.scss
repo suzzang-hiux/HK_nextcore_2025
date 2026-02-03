@@ -1,14 +1,16 @@
 .ui-dialog {
-    @include border-box;
-    border: 1px solid $cl-black !important;
-    border-radius: 8px;
+    border: 1px solid $cl-sg-40 !important;
+    background-color: $cl-white !important;
+    border-radius: 8px !important;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
     padding: 0;
     position: fixed;
+    overflow: hidden;
     .ui-dialog-titlebar {
         width: 100%;
         position: relative;
         padding: 12px 16px;
-        background-color: $cl-purple-80;
+        background-color: #39537A;
         .ui-dialog-title {
             margin: 0;
             .tit {
@@ -45,7 +47,7 @@
     // WHITE LAYER
     &.type-white {
         border: none !important;
-        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.30);
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
         .ui-dialog-titlebar {
             background-color: $cl-white;
             padding: 16px;
@@ -88,8 +90,8 @@
                 border-radius: 3px;
                 @include flex(row, center, center, 0);
                 @include font(13px, 500, 1);
-                border: 1px solid $cl-p-magenta;
-                background-color: $cl-p-magenta;
+                border: 1px solid $cl-magenta-50;
+                background-color: $cl-magenta-50;
                 color: $cl-white;
                 white-space: nowrap;
                 will-change: background-color, border-color, color;
@@ -108,19 +110,18 @@
                     pointer-events: none;
                 }
                 &.black {
-                    border-color: $cl-black;
-                    background-color: $cl-black;
+                    border-color: $cl-sg-50;
+                    background-color: $cl-white;
+                    color: $cl-sg-70;
                     &:hover {
-                        border-color: $cl-gr-60;
-                        background-color: $cl-gr-60;
+                        background-color: $cl-gr-20;
                     }
                     &:active {
-                        border-color: $cl-gr-80;
-                        background-color: $cl-gr-80;
+                        background-color: $cl-gr-40;
                     }
                     &:disabled, &.disabled {
-                        border-color: $cl-gr-30;
-                        background-color: $cl-gr-30;
+                        border-color: $cl-sg-30;
+                        background-color: $cl-white;
                     }
                 }
             }
@@ -170,12 +171,34 @@ body.popup {
         .popup-bottom {
             width: 100%;
             height: 44px;
-            background-color: $cl-sg-5;
             @include flex(row, center, flex-start, 40px);
             padding-inline: 16px;
+            border-top: 1px solid $cl-sg-20;
+            &.has-bg {
+                border-top: none;
+                background-color: #F2F7FB;
+            }
             .btn-wrap {
                 width: fit-content;
                 margin-left: auto;
+                .btn.black {
+                    background-color: $cl-white;
+                    border-color: $cl-sg-50;
+                    color: $cl-sg-70;
+                    &:hover {
+                        border-color: $cl-sg-40;
+                        background-color: $cl-gr-20;
+                    }
+                    &:active {
+                        border-color: $cl-sg-40;
+                        background-color: $cl-gr-40;
+                    }
+                    &:disabled, &.disabled {
+                        border-color: $cl-sg-30;
+                        background-color: $cl-white;
+                        color: $cl-gr-40;
+                    }
+                }
                 &[data-align="between"] {
                     width: 100%;
                     justify-content: space-between;
@@ -345,7 +368,7 @@ body.popup {
                 flex-shrink: 0;
                 padding: 0;
                 background-color: $cl-white;
-                border-color: $cl-gr-50;
+                border-color: $cl-sg-30;
                 &::after {
                     content: "";
                     width: 12px;
@@ -355,11 +378,9 @@ body.popup {
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M5.125 1.125C7.33414 1.125 9.125 2.91586 9.125 5.125C9.125 6.0493 8.81016 6.89934 8.28369 7.57666L10.7285 10.0215C10.9237 10.2167 10.9238 10.5333 10.7285 10.7285C10.5333 10.9238 10.2167 10.9237 10.0215 10.7285L7.57666 8.28369C6.89934 8.81016 6.0493 9.125 5.125 9.125C2.91586 9.125 1.125 7.33414 1.125 5.125C1.125 2.91586 2.91586 1.125 5.125 1.125ZM5.125 2.125C3.46815 2.125 2.125 3.46815 2.125 5.125C2.125 6.78185 3.46815 8.125 5.125 8.125C6.78185 8.125 8.125 6.78185 8.125 5.125C8.125 3.46815 6.78185 2.125 5.125 2.125Z' fill='%23616161'/%3E%3C/svg%3E");
                 }
                 &:hover {
-                    border-color: $cl-gr-50;
                     background-color: $cl-gr-20;
                 }
                 &:active {
-                    border-color: $cl-gr-50;
                     background-color: $cl-gr-40;
                 }
             }
@@ -425,10 +446,35 @@ body.popup {
                     td {
                         @include ellipsis(100%);
                         .label {
-                            display: block;
                             min-width: 56px;
                             margin: 0 auto;
                             font-size: 12px;
+                            height: 18px;
+                            &.blue-line {
+                                background-color: $cl-white;
+                                border: 1px solid #C8E9F1;
+                                color: #0791B2;
+                            }
+                            &.purple-line {
+                                background-color: $cl-white;
+                                border: 1px solid #EFDAC0;
+                                color: #995C14;
+                            }
+                            &.gray-line {
+                                background-color: $cl-white;
+                                border: 1px solid #FBE3CA;
+                                color: #F68827;
+                            }
+                            &.orange-line {
+                                background-color: $cl-white;
+                                border: 1px solid #F2CECC;
+                                color: #BF3434;
+                            }
+                            &.green-line {
+                                background-color: $cl-white;
+                                border: 1px solid #C8F0D4;
+                                color: #11A740;
+                            }
                         }
                         &:nth-child(3) {
                             p {
@@ -437,7 +483,7 @@ body.popup {
                             }
                         }
                         .text_secondary {
-                            color: $cl-blue-80;
+                            color: $cl-navy-60;
                         }
                         .fw-bold {
                             font-weight: 500;
@@ -475,9 +521,9 @@ body.popup {
         background-color: $cl-white;
         .noti-tit {
             @include font(16px, 700, 1.25);
-            color: $cl-black;
+            color: $cl-gr-100;
             margin-bottom: 8px;
-            @include flex(row, flex-start, flex-start, 4px);
+            @include flex(row, baseline, flex-start, 4px);
             .label {
                 flex-shrink: 0;
             }
@@ -486,9 +532,9 @@ body.popup {
             width: 100%;
             height: 28px;
             position: relative;
-            background-color: $cl-sg-20;
-            border-top: 1px solid $cl-black;
-            border-bottom: 1px solid $cl-gr-40;
+            background-color: #EEF2F7;
+            border-top: 1px solid $cl-gr-50;
+            border-bottom: 1px solid $cl-sg-30;
             ul {
                 width: 100%;
                 height: 100%;
@@ -513,9 +559,9 @@ body.popup {
                         }
                     }
                     &.date {
+                        margin-left: auto;
                         &::before {
-                            background-image: url("/wsrv/app/img/new/common/ico_calendar.png");
-                            filter: contrast(10);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M11.333 1.33398C11.7012 1.33398 11.9997 1.63246 11.9997 2.00065V2.66732C13.4724 2.66732 14.6663 3.86122 14.6663 5.33398V12.0007C14.6663 13.4273 13.546 14.5926 12.137 14.6641L11.9997 14.6673H3.99967L3.8623 14.6641C2.49888 14.5949 1.40544 13.5014 1.33626 12.138L1.33301 12.0007V5.33398C1.33301 3.86122 2.52692 2.66732 3.99967 2.66732V2.00065C3.99967 1.63246 4.29815 1.33398 4.66634 1.33398C5.03453 1.33398 5.33301 1.63246 5.33301 2.00065V2.66732H10.6663V2.00065C10.6663 1.63246 10.9648 1.33398 11.333 1.33398ZM2.66634 12.0007C2.66634 12.737 3.26329 13.334 3.99967 13.334H11.9997C12.7361 13.334 13.333 12.737 13.333 12.0007V6.66732H2.66634V12.0007ZM9.99967 9.00065C10.3679 9.00065 10.6663 9.29913 10.6663 9.66732C10.6663 10.0355 10.3679 10.334 9.99967 10.334H5.99967C5.63148 10.334 5.33301 10.0355 5.33301 9.66732C5.33301 9.29913 5.63148 9.00065 5.99967 9.00065H9.99967ZM3.99967 4.00065C3.26329 4.00065 2.66634 4.5976 2.66634 5.33398H13.333C13.333 4.5976 12.7361 4.00065 11.9997 4.00065H3.99967Z' fill='%2360676F'/%3E%3C/svg%3E");
                         }
                     }
                     &.view {
@@ -534,7 +580,7 @@ body.popup {
                 width: 100%;
                 position: relative;
                 @include font(13px, 400, 1.23);
-                color: $cl-black;
+                color: $cl-gr-100;
                 img {
                     width: 100%;
                     height: auto;
@@ -548,7 +594,7 @@ body.popup {
             }
         }
         .common-table {
-            border-top: 1px solid $cl-gr-40;
+            border-top: 1px solid $cl-sg-30;
             tr {
                 th, td {
                     text-align: left;
@@ -578,7 +624,7 @@ body.popup {
                         padding: 2px 6px;
                         position: relative;
                         border-radius: 4px;
-                        background-color: $cl-gr-20;
+                        background-color: $cl-gr-10;
                         @include font(13px, 500, 1.2);
                         color: $cl-gr-80;
                     }
@@ -659,7 +705,7 @@ body.popup {
                 height: 20px;
                 position: relative;
                 border-radius: 4px;
-                background-color: $cl-gr-20;
+                background-color: $cl-gr-10;
                 @include flex(row, center, flex-start, 0);
                 padding-inline: 6px 22px;
                 p {
@@ -682,7 +728,7 @@ body.popup {
                         height: 12px;
                         @include ps-center;
                         @include bg-set;
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M9.39646 1.89645C9.59173 1.70118 9.90823 1.70118 10.1035 1.89645C10.2987 2.09171 10.2987 2.40823 10.1035 2.60348L6.70701 5.99997L10.1035 9.39646C10.2987 9.59173 10.2987 9.90826 10.1035 10.1035C9.90826 10.2987 9.59173 10.2987 9.39646 10.1035L5.99997 6.70701L2.60348 10.1035C2.40823 10.2987 2.0917 10.2987 1.89645 10.1035C1.7012 9.90825 1.70122 9.59173 1.89645 9.39646L5.29294 5.99997L1.89645 2.60348C1.70118 2.40822 1.70118 2.09171 1.89645 1.89645C2.09171 1.70118 2.40822 1.70118 2.60348 1.89645L5.99997 5.29294L9.39646 1.89645Z' fill='%23616161'/%3E%3C/svg%3E");
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M9.39646 1.89645C9.59173 1.70118 9.90823 1.70118 10.1035 1.89645C10.2987 2.09171 10.2987 2.40823 10.1035 2.60348L6.70701 5.99997L10.1035 9.39646C10.2987 9.59173 10.2987 9.90826 10.1035 10.1035C9.90826 10.2987 9.59173 10.2987 9.39646 10.1035L5.99997 6.70701L2.60348 10.1035C2.40823 10.2987 2.0917 10.2987 1.89645 10.1035C1.7012 9.90825 1.70122 9.59173 1.89645 9.39646L5.29294 5.99997L1.89645 2.60348C1.70118 2.40822 1.70118 2.09171 1.89645 1.89645C2.09171 1.70118 2.40822 1.70118 2.60348 1.89645L5.99997 5.29294L9.39646 1.89645Z' fill='%23151515'/%3E%3C/svg%3E");
                     }
                 }
             }
@@ -722,11 +768,11 @@ body.popup {
                 position: relative;
                 padding: 0 6px 0 28px;
                 border-radius: 3px;
-                border: 1px solid $cl-gr-50;
+                border: 1px solid $cl-sg-30;
                 background-color: $cl-white;
                 @include flex(row, center, flex-start, 0);
                 @include font(13px, 500, 1.2);
-                color: $cl-black;
+                color: $cl-gr-100;
                 &::before {
                     content: "";
                     width: 20px;
@@ -763,6 +809,71 @@ body.popup {
             }
         }
     }
+    .filelist-box {
+        width: 100%;
+        position: relative;
+        border: 1px solid $cl-sg-20;
+        background-color: $cl-white;
+        border-radius: 3px;
+        padding: 8px 12px;
+        margin-top: 12px;
+        @include flex(row, baseline, flex-start, 12px);
+        .file-list {
+            margin-top: 0;
+            @include flex(row, flex-start, flex-start, 12px);
+            flex-wrap: wrap;
+            li {
+                width: fit-content;
+                max-width: 100%;
+                height: fit-content;
+                border: none;
+                border-radius: 0;
+                padding-right: 0;
+                @include flex(row, center, flex-start, 4px);
+                a {
+                    display: flex;
+                    align-items: center;
+                    max-width: 100%;
+                    font-size: 13px;
+                    .name {
+                        flex: 1 1 auto;
+                        min-width: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .size {
+                        flex-shrink: 0;
+                        margin-left: 4px;
+                    }
+                }
+                .del-btn {
+                    width: 14px;
+                    height: 14px;
+                    @include bg-set;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 1C8.76142 1 11 3.23858 11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1ZM8.02832 3.97119C7.83306 3.77615 7.51649 3.77605 7.32129 3.97119L5.99951 5.29248L4.67822 3.97119C4.48294 3.77614 4.16638 3.776 3.97119 3.97119C3.776 4.16638 3.77614 4.48294 3.97119 4.67822L5.29248 5.99951L3.97119 7.32129C3.77605 7.51649 3.77615 7.83306 3.97119 8.02832C4.16644 8.22352 4.48297 8.22352 4.67822 8.02832L5.99951 6.70654L7.32129 8.02832C7.51656 8.22348 7.83309 8.22355 8.02832 8.02832C8.22355 7.83309 8.22348 7.51656 8.02832 7.32129L6.70654 5.99951L8.02832 4.67822C8.22352 4.48297 8.22352 4.16644 8.02832 3.97119Z' fill='%23A5A7AC'/%3E%3C/svg%3E");
+                    position: relative;
+                    top: auto;
+                    transform: none;
+                    right: auto;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .btn-box {
+            width: fit-content !important;
+            flex-shrink: 0;
+            margin-top: 0 !important;
+            margin-left: auto;
+        }
+        .input-box {
+            width: fit-content !important;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+    }
     .board-detail-comment {
         width: 100%;
         position: relative;
@@ -770,8 +881,8 @@ body.popup {
         .comment-input-box {
             width: 100%;
             position: relative;
-            border: 1px solid $cl-gr-40;
-            background-color: $cl-sg-10;
+            border: 1px solid $cl-sg-20;
+            background-color: #EEF2F7;
             margin-bottom: 12px;
             padding: 12px;
             .title-box {
@@ -781,12 +892,24 @@ body.popup {
                 margin-bottom: 10px;
                 h4 {
                     @include font(14px, 700, 1.2);
-                    color: $cl-black;
+                    color: $cl-gr-100;
+                }
+                .input-box {
+                    .common-checkbox {
+                        & + span {
+                            width: 12px;
+                            height: 12px;
+                            &::after {
+                                width: 10px;
+                                height: 10px;
+                            }
+                        }
+                    }
                 }
                 .user-info {
                     flex-shrink: 0;
                     @include font(13px, 700, 1.2);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                     padding-left: 24px;
                     position: relative;
                     &::before {
@@ -803,29 +926,32 @@ body.popup {
                 min-height: 56px;
                 margin-bottom: -2px;
             }
+            .filelist-box {
+                margin-top: 8px;
+            }
             .btn-box {
                 width: 100%;
                 position: relative;
                 margin-top: 8px;
-                @include flex(row, center, space-between, 12px);
+                @include flex(row, center, flex-end, 12px);
             }
         }
         .comment-list {
             width: 100%;
             position: relative;
-            border: 1px solid $cl-gr-40;
+            border: 1px solid $cl-sg-20;
             background-color: $cl-white;
             .list-top {
                 width: 100%;
                 position: relative;
                 padding: 12px;
-                border-bottom: 1px solid $cl-gr-40;
+                border-bottom: 1px solid $cl-sg-20;
                 strong {
                     @include flex(row, center, flex-start, 4px);
                     @include font(14px, 700, 1);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                     span {
-                        color: $cl-blue-70;
+                        color: $cl-magenta-60;
                     }
                 }
             }
@@ -842,7 +968,7 @@ body.popup {
                             .name {
                                 flex-shrink: 0;
                                 @include font(13px, 700, 1.2);
-                                color: $cl-black;
+                                color: $cl-gr-100;
                                 padding-left: 24px;
                                 position: relative;
                                 &::before {
@@ -855,9 +981,11 @@ body.popup {
                                 }
                             }
                             .label {
+                                height: 18px;
+                                font-size: 12px;
                                 border-radius: 3px;
-                                background-color: $cl-yellow-20;
-                                color: $cl-orange-60;
+                                background-color: $cl-gr-10;
+                                color: $cl-gr-80;
                             }
                         }
                         .date {
@@ -884,14 +1012,17 @@ body.popup {
                         bottom: 12px;
                         right: 12px;
                     }
+                    .recommand-flex {
+                        margin-top: 12px;
+                    }
                     & + li {
-                        border-top: 1px solid $cl-gr-40;
+                        border-top: 1px solid $cl-sg-20;
                     }
                     &.reply {
-                        background-color: $cl-sg-10;
+                        background-color: #EEF2F7;
                         .reply-tit {
                             @include font(14px, 700, 1.28);
-                            color: $cl-black;
+                            color: $cl-gr-100;
                             position: absolute;
                             top: 12px;
                             left: 12px;
@@ -899,12 +1030,14 @@ body.popup {
                         .comment-user-info {
                             justify-content: flex-end;
                         }
+                        .filelist-box {
+                            margin-top: 8px;
+                        }
                         .btn-box {
                             width: 100%;
                             position: relative;
                             margin-top: 8px;
-                            @include flex(row, center, flex-start);
-                            gap: 4px;
+                            @include flex(row, center, flex-end, 4px);
                             .input-box {
                                 width: fit-content;
                                 margin-right: auto;
@@ -976,6 +1109,121 @@ body.popup {
             }
         }
     }
+    .right-show {
+        width: 100%;
+        position: relative;
+        .board-intable {
+            width: 100%;
+            position: relative;
+            border: 1px solid $cl-sg-20;
+            margin-top: 6px;
+            thead {
+                tr {
+                    border-bottom: 1px solid $cl-sg-20;
+                    th {
+                        background-color: $cl-gr-5;
+                        text-align: center;
+                        @include font(13px, 500, 1.2);
+                        color: $cl-gr-80;
+                        border-right: 1px solid $cl-sg-20;
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+            tbody {
+                td {
+                    padding: 0;
+                    vertical-align: top;
+                }
+            }
+            .board-auth-tab {
+                width: 100%;
+                position: relative;
+                padding: 12px 12px 0;
+                .intable-tab {
+                    width: fit-content;
+                    position: relative;
+                    @include flex(row, center, flex-start, 0);
+                    li {
+                        a {
+                            width: fit-content;
+                            position: relative;
+                            @include flex(row, center, center, 0);
+                            padding: 0 4px 4px;
+                            @include font(13px, 500, 1.2);
+                            color: $cl-gr-80;
+                            border-bottom: 1px solid transparent;
+                        }
+                        &.on {
+                            a {
+                                font-weight: 700;
+                                color: $cl-gr-100;
+                                border-bottom-color: $cl-gr-100;
+                            }
+                        }
+                    }
+                }
+                .intable-search {
+                    width: 100%;
+                    position: relative;
+                    margin-block: 8px;
+                }
+            }
+            .intable-list {
+                position: relative;
+                margin: 0 auto;
+                > div {
+                    width: 100%;
+                    position: relative;
+                    padding-left: 8px;
+                    @include flex(row, baseline, space-between, 0);
+                    @include font(13px, 400, 1.2);
+                    color: $cl-gr-80;
+                    &::before {
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        background-color: $cl-gr-80;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                    }
+                    & + div {
+                        margin-top: 4px;
+                    }
+                    &.empty {
+                        width: 100%;
+                        height: 145px;
+                        padding: 0;
+                        .txt-empty {
+                            @include ps-center;
+                        }
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                &.leftbox-height {
+                    width: calc(100% - 24px);
+                    min-height: 148px;
+                    padding-bottom: 8px;
+                    border-bottom: 1px solid $cl-sg-20;
+                }
+                &.rightbox-height {
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;
+                    padding: 12px;
+                }
+            }
+            .common-pagination {
+                padding: 0 12px 12px;
+            }
+        }
+    }
     &.flex {
         @include flex(row, flex-start, flex-start, 0);
         .layer-cnt {
@@ -984,7 +1232,7 @@ body.popup {
                     content: "";
                     width: 1px;
                     height: 100%;
-                    background-color: $cl-black;
+                    background-color: $cl-sg-40;
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -1004,10 +1252,10 @@ body.popup {
         .popup-bottom {
             width: 100%;
             height: 44px;
-            background-color: $cl-sg-5;
             @include flex(row, center, flex-start, 40px);
             padding-inline: 16px;
             border-left: none;
+            border-top: 1px solid $cl-sg-20;
             .btn-wrap {
                 width: fit-content;
                 margin-left: auto;
@@ -1029,17 +1277,17 @@ body.popup {
     width: 100%;
     position: relative;
     @include font(13px, 400, 1.23);
-    color: $cl-black;
+    color: $cl-gr-100;
     .bold-txt {
         display: block;
         @include font(13px, 700, 1.23);
-        color: $cl-black;
+        color: $cl-gr-100;
         text-align: center;
     }
     .gray-bg {
         width: 100%;
         position: relative;
-        border: 1px solid $cl-gr-40;
+        border: 1px solid $cl-sg-20;
         background-color: $cl-gr-5;
         padding: 16px;
         text-align: left;
@@ -1048,19 +1296,19 @@ body.popup {
     .pledge-list {
         width: 100%;
         position: relative;
-        border: 1px solid $cl-gr-40;
         counter-reset: number 0;
         > li {
             width: 100%;
             position: relative;
             background-color: $cl-white;
+            border: 1px solid $cl-sg-20;
             .title {
                 display: block;
                 width: 100%;
                 position: relative;
                 padding: 12px;
-                background-color: $cl-sg-20;
-                border-bottom: 1px solid $cl-gr-40;
+                background-color: #EEF2F7;
+                border-bottom: 1px solid $cl-sg-20;
                 font-size: 14px;
                 span {
                     color: $cl-magenta-50;
@@ -1080,7 +1328,7 @@ body.popup {
                 p, .dot-noti, li, strong {
                     display: block;
                     @include font(12px, 400, 1.16);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                     & + p {
                         margin-top: 4px;
                     }
@@ -1107,7 +1355,7 @@ body.popup {
                 }
             }
             & + li {
-                border-top: 1px solid $cl-gr-40;
+                border-top: none;
             }
         }
     }
@@ -1131,7 +1379,7 @@ body.popup {
         }
         & + .sub-tit {
             @include font(14px, 500, 1.28);
-            color: $cl-black;
+            color: $cl-gr-100;
             text-align: center;
             margin-bottom: 12px;
         }
@@ -1180,6 +1428,9 @@ body.popup {
             right: 8px;
         }
     }
+    .text_orange {
+        color: $cl-magenta-60 !important;
+    }
     // 정보보호(보안) 서약서
     &.security-pledge {
         .gray-bg {
@@ -1205,7 +1456,7 @@ body.popup {
                 p {
                     flex: 1;
                     @include font(13px, 700, 1.23);
-                    color: $cl-black;
+                    color: $cl-gr-100;
                 }
             }
             .security-noti-box {
@@ -1219,7 +1470,7 @@ body.popup {
                 .tit-box {
                     width: 32px;
                     position: relative;
-                    background-color: $cl-purple-80;
+                    background-color: $cl-purple-90;
                     @include font(14px, 700, 1.28);
                     color: $cl-white;
                     padding: 12px 8px;
@@ -1308,7 +1559,7 @@ body.popup {
             .box {
                 width: 100%;
                 position: relative;
-                border: 1px solid $cl-gr-40;
+                border: 1px solid $cl-sg-20;
                 background-color: $cl-white;
                 padding: 12px;
                 .title {
@@ -1322,7 +1573,7 @@ body.popup {
                         width: 4px;
                         height: 4px;
                         border-radius: 50%;
-                        background-color: $cl-black;
+                        background-color: $cl-gr-100;
                         position: absolute;
                         top: 5px;
                         left: 0;
@@ -1332,7 +1583,7 @@ body.popup {
                     li {
                         width: 100%;
                         position: relative;
-                        background-color: $cl-sg-20;
+                        background-color: #EEF2F7;
                         padding: 12px;
                         @include flex(row, center, space-between, 24px);
                         margin-top: 8px;
@@ -1343,7 +1594,7 @@ body.popup {
                             @include flex(row, flex-start, flex-start, 4px);
                             text-align: left;
                             @include font(14px, 700, 1.28);
-                            color: $cl-black;
+                            color: $cl-gr-100;
                             span {
                                 color: $cl-magenta-50;
                             }
@@ -1361,14 +1612,14 @@ body.popup {
         .info-box {
             width: 100%;
             position: relative;
-            border: 1px solid $cl-gr-40;
+            border: 1px solid $cl-sg-20;
             background-color: $cl-white;
             padding: 20px;
             text-align: left;
             strong {
                 display: block;
                 @include font(13px, 700, 1.23);
-                color: $cl-black;
+                color: $cl-gr-100;
                 margin-bottom: 4px;
             }
             .num-list {
@@ -1390,9 +1641,12 @@ body.popup {
                     }
                 }
             }
+            .text_blue {
+                color: $cl-navy-60 !important;
+            }
             hr {
                 height: 1px;
-                background-color: $cl-gr-40;
+                background-color: $cl-sg-20;
                 color: transparent;
                 border: 0;
                 margin-block: 8px;
@@ -1404,7 +1658,7 @@ body.popup {
         .table-tit {
             display: block;
             @include font(14px, 700, 1.28);
-            color: $cl-black;
+            color: $cl-gr-100;
             text-align: left;
             margin-bottom: 4px;
         }
@@ -1438,7 +1692,7 @@ body.popup {
         }
         .scroll-table {
             height: 311px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
         }
     }
     // 불완전판매 모니터링
@@ -1450,7 +1704,7 @@ body.popup {
         }
         .scroll-table {
             height: 171px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
         }
     }
     // 보수교육 알림
@@ -1468,12 +1722,12 @@ body.popup {
         .gray-bg {
             border: none;
             border-radius: 4px;
-            background-color: $cl-sg-20;
+            background-color: #EEF2F7;
             padding: 16px;
             margin-top: 12px;
             p {
                 @include font(14px, 700, 1.28);
-                color: $cl-black;
+                color: $cl-gr-100;
                 text-align: center;
             }
         }
@@ -1484,7 +1738,7 @@ body.popup {
         .gray-bg {
             border: none;
             border-radius: 4px;
-            background-color: $cl-sg-20;
+            background-color: #EEF2F7;
             padding: 16px;
             margin-block: 12px;
             @include flex(row, center, center, 0);
@@ -1508,7 +1762,7 @@ body.popup {
     &.management-status {
         .scroll-table {
             height: 255px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
             .empty {
                 height: calc(100% - 60px);
             }
@@ -1535,7 +1789,7 @@ body.popup {
             }
         }
         .common-table.total {
-            border-top-color: $cl-gr-40;
+            border-top-color: $cl-sg-30;
             tbody {
                 th, td {
                     background-color: $cl-purple-5;
@@ -1562,7 +1816,7 @@ body.popup {
             border-bottom: none;
         }
         .common-table.total {
-            border-top-color: $cl-gr-40;
+            border-top-color: $cl-sg-30;
             tbody {
                 th, td {
                     background-color: $cl-purple-5;
@@ -1574,14 +1828,14 @@ body.popup {
     &.reduction-request {
         .scroll-table {
             height: 254px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
         }
     }
     // 군장병 실손중지 처리대상
     &.millitary-indemnity {
         .scroll-table {
             height: 254px;
-            border-bottom: 1px solid $cl-gr-40;
+            border-bottom: 1px solid $cl-sg-30;
         }
         .warning-txt {
             color: #616161;
@@ -1600,7 +1854,7 @@ body.popup {
             .noti-box {
                 p, li {
                     @include font(13px, 400, 1.23);
-                    color: $cl-orange-60;
+                    color: $cl-magenta-60;
                     &.bold-txt {
                         font-weight: 700;
                     }
@@ -1640,7 +1894,7 @@ body.popup {
                 }
                 .scroll-table {
                     height: 317px;
-                    border-bottom: 1px solid $cl-gr-40;
+                    border-bottom: 1px solid $cl-sg-30;
                     .empty {
                         height: calc(100% - 40px);
                     }

@@ -97,7 +97,9 @@
 									<a href="javascript:;" class="title" :title="item.MENU_NAME">{{item.MENU_KNM}}</a>
 									<div class="location" :title="item.namePath">{{item.namePath}}</div>
 								</div>
-								<button type="button" class="btn purple" @click="addItem(item)" data-btn-size="s">추가</button>
+								<!-- 260203 수정 : 버튼 클래스 변경 -->
+								<button type="button" class="btn wg-line" @click="addItem(item)" data-btn-size="s">추가</button>
+								<!-- // 260203 수정 : 버튼 클래스 변경 -->
 							</li>
 							<li v-if="searchData.length < 1" class="empty">
 								<span>{{$portalApp.message.empty}}</span>

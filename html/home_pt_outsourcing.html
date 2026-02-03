@@ -129,8 +129,10 @@
                                 <div class="btn-wrap">
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 FAQ</a>
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">현장 Q&A</a>
-                                    <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">화상회의</a>
-                                    <a href="javascript:;" target="_blank" class="btn cg-fill" data-btn-size="l">원격지원</a>
+                                    <!-- 260203 수정 : 버튼 클래스 변경 (cg-fill => cg-fill-1) -->
+                                    <a href="javascript:;" target="_blank" class="btn cg-fill-1" data-btn-size="l">화상회의</a>
+                                    <a href="javascript:;" target="_blank" class="btn cg-fill-1" data-btn-size="l">원격지원</a>
+                                    <!-- // 260203 수정 : 버튼 클래스 변경 (cg-fill => cg-fill-1) -->
                                 </div>
                             </div>
                         </div>
@@ -304,22 +306,22 @@
                         </div>
                         <ul class="sos-list">
                             <!--
-                                Label status classes
+                                Label status classes (260203 수정 ver)
                                 ------------------------------------
-                                기본(클래스 없음) : 답변대기
-                                purple           : 답변완료
-                                blue-line        : 사용문의
-                                purple-line      : 업무지침
-                                orange-line      : 결함
-                                green-line       : 결함아님
-                                gray-line        : 제안
+                                is-waiting       : 답변대기
+                                is-done          : 답변완료
+                                is-question      : 사용문의
+                                is-guide         : 업무지침
+                                is-defect        : 결함
+                                is-not-defect    : 결함아님
+                                is-suggest       : 제안
                                 ------------------------------------
                             -->
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label blue-line">사용문의</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-question">사용문의</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[포털/권한/메뉴]</p>
@@ -336,8 +338,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label orange-line">결함</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-defect">결함</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[장기손사]</p>
@@ -354,8 +356,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label purple">답변완료</span>
-                                        <span class="label green-line">결함아님</span>
+                                        <span class="label is-done">답변완료</span>
+                                        <span class="label is-not-defect">결함아님</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[이미지시스템]</p>
@@ -372,8 +374,8 @@
                             <li>
                                 <a href="javascript:;">
                                     <div class="sos-item-label">
-                                        <span class="label">답변대기</span>
-                                        <span class="label blue-line">사용문의</span>
+                                        <span class="label is-waiting">답변대기</span>
+                                        <span class="label is-question">사용문의</span>
                                     </div>
                                     <div class="sos-item-title">
                                         <p>[포털/권한/메뉴]</p>
@@ -404,7 +406,9 @@
                                 <a href="javascript:;" class="btn wg-line link" data-btn-size="s">
                                     <span>바로가기</span>
                                 </a>
-                                <a href="javascript:;" class="btn cg-fill" data-btn-size="s">조사진행등록</a>
+                                <!-- 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
+                                <a href="javascript:;" class="btn cg-fill-1" data-btn-size="s">조사진행등록</a>
+                                <!-- // 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
                             </div>
                         </div>
                         <div class="survey-state">

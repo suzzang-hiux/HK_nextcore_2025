@@ -214,7 +214,9 @@
 
 							<div class="menu-search-result" :class="searchView?'on':''">
 								<div class="result-txt">
-									<h2>검색결과 <em class="text_blue">{{searchData.length}}건</em></h2>
+									<!-- 260203 수정 : text_blue 클래스 제거 -->
+									<h2>검색결과 <em>{{searchData.length}}건</em></h2>
+									<!-- // 260203 수정 : text_blue 클래스 제거 -->
 									<a href="javascript:;" @click="closeSearchResult()" class="btn close">닫기</a>
 								</div>
 								<div id="mainMenuSearchResult" class="scrollable-container">
@@ -262,7 +264,9 @@
 								</li>
 							</ul>
 						</div>
-						<button type="button" class="btn purple-line add" @click="addGnbMenu(activeGnbItem)"><span>메뉴 추가</span></button>
+						<!-- 260203 수정 : 버튼 클래스 변경 -->
+						<button type="button" class="btn purple-light add" @click="addGnbMenu(activeGnbItem)"><span>메뉴 추가</span></button>
+						<!-- // 260203 수정 : 버튼 클래스 변경 -->
 					</div>
 					<!-- // 251216 추가 수정 : 투뎁스 메뉴 분리 -->				
 					<!-- 251216 메뉴 이동 버튼 추가 -->
@@ -286,7 +290,9 @@
 							</div>
 							<div class="menu-search-result" v-if="searchView">
 								<div class="result-txt">
-									<h2>검색결과 <em class="text_blue">{{searchData.length}}건</em></h2>
+									<!-- 260203 수정 : text_blue 클래스 제거 -->
+									<h2>검색결과 <em>{{searchData.length}}건</em></h2>
+									<!-- // 260203 수정 : text_blue 클래스 제거 -->
 									<a href="javascript:;" @click="closeSearchResult()" class="btn close">닫기</a>
 								</div>
 								<div id="gnbMenuSearchResult" class="scrollable-container">
@@ -340,10 +346,12 @@
 										</li>
 									</ul>
 									<div class="btn-wrap col">
-										<a href="javascript:;" class="btn purple-line" data-btn-size="m" @click="myMenuSetting(); showUserDropdown = false">MENU 관리</a>
+										<!-- 260203 수정 : 버튼 클래스, 텍스트 변경 -->
+										<a href="javascript:;" class="btn purple-light" data-btn-size="m" @click="myMenuSetting(); showUserDropdown = false">메뉴 관리</a>
+										<!-- // 260203 수정 : 버튼 클래스 변경 -->
 										<!-- <a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/appMgmt/page'});">APP 관리</a>
 										<a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/admin/mgmtMain'});">pencake 관리</a> -->
-									</div>
+									</div> 
 								</div>
 							</div>
 						</li>
