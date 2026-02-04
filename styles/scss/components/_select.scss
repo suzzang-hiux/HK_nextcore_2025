@@ -9,7 +9,7 @@
     &[data-type="simple"] {
         padding-right: 18px;
         @include font(14px, 700, 1.28);
-        color: $cl-black;
+        color: $cl-gr-100;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -37,19 +37,21 @@
             border: 1px solid $cl-sg-30;
             font-family: "Pretendard";
             @include font(12px, 400, 1);
-            color: $cl-black;
+            color: $cl-gr-100;
             -o-appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
             background: $cl-white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
             outline: none;
+            @include ellipsis(100%);
             &:active, &:focus {
                 border-color: $cl-purple-80;
             }
             &:disabled, &.disabled {
-                color: $cl-gr-50;
-                background: $cl-gr-5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='%23BDBDBD'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
+                color: $cl-gr-60;
+                background: #F6F8F9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M11.5283 5.52876C11.7886 5.26841 12.2106 5.26841 12.471 5.52876C12.7313 5.78911 12.7313 6.21112 12.471 6.47147L8.51785 10.4246C8.23153 10.7106 7.76771 10.7106 7.4814 10.4246L3.52827 6.47147C3.26792 6.21112 3.26792 5.78911 3.52827 5.52876C3.78862 5.26841 4.21063 5.26841 4.47098 5.52876L7.99962 9.0574L11.5283 5.52876Z' fill='%2360676F'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
+                pointer-events: none;
             }
             // &:read-only {
             //     background: $cl-gr-5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='black'/%3E%3C/svg%3E") calc(100% - 4px) center / 12px 12px no-repeat;
@@ -80,6 +82,16 @@
             //         }
             //     }
             // }
+        }
+    }
+}
+
+.input-box.invalid {
+    .common-select {
+        &[data-type="border"] {
+            select {
+                border-color: $cl-red-50;
+            }
         }
     }
 }

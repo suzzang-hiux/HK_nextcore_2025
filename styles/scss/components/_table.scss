@@ -72,6 +72,11 @@
                 td {
                     background-color: $cl-white;
                 }
+                &:hover {
+                    td {
+                        background-color: rgba(255, 227, 104, 0.20);
+                    }
+                }
             }
         }
     }

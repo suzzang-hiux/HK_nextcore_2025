@@ -29,6 +29,7 @@
             border-color: $cl-red-50;
         }
         .invalid-txt {
+            width: 100%;
             display: block;
             margin-top: 4px;
             @include font(12px, 400, 1.1);
@@ -348,12 +349,11 @@
     }
     &:disabled, .disabled {
         background-color: $cl-gr-5;
-        border-color: $cl-gr-30;
         color: $cl-gr-50;
+        pointer-events: none;
     }
     &:read-only {
         background-color: $cl-gr-5;
-        border-color: $cl-gr-50;
     }
     // &:required, .required {
     //     background-color: $cl-purple-5;

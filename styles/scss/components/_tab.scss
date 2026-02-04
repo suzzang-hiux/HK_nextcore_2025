@@ -46,7 +46,7 @@
     }
     &[data-tab-type="block"] {
         min-width: 100%;
-        border-bottom: 1px solid $cl-black;
+        border-bottom: 1px solid $cl-sg-40;
         ul {
             gap: 0;
             li {
@@ -57,9 +57,9 @@
                     padding: 0 8px;
                     justify-content: center;
                     border-radius: 4px 4px 0 0;
-                    border: 1px solid $cl-gr-40;
+                    border: 1px solid $cl-sg-20;
                     border-bottom: none;
-                    background-color: $cl-gr-5;
+                    background-color: $cl-sg-5;
                     @include font(13px, 500, 1);
                     color: $cl-gr-80;
                     will-change: background-color, color;
@@ -68,13 +68,13 @@
                         display: none;
                     }
                     &:hover {
-                        background-color: $cl-gr-20;
+                        background-color: $cl-sg-20;
                     }
                 }
                 &.active {
                     button, a {
-                        border-color: $cl-black;
-                        background-color: $cl-black;
+                        border-color: $cl-sg-60;
+                        background-color: $cl-sg-60;
                         font-weight: 700;
                         color: $cl-white;
                     }

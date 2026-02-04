@@ -6,6 +6,68 @@
     <meta env="SOP-YTKIM">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Components</title>
+    <script>
+        var global_page_context_path = "";
+        var ePortalConfig = {
+            "runtime": "local"
+            , "license": false
+            , "websocket": ""
+            , "mainPageId": ""
+            , "page_id": '7bd27055ad014707ba23bdcba63b01b5'
+            , "userInfo": {}
+            , "link": {
+                "portalMain": ""
+            }
+            , "domain": {
+                "webmail": ""
+                , "nas": ""
+                , "hompage": ""
+            }
+            , "context": {
+                "epplt": ("" || global_page_context_path)
+                , "noti": ("" || '/alarm')
+                , "board": ("" || '')
+            }
+            , "fileupload": {
+                "useFileExt": 'gif|png|jpg|jpeg|ppt|pptx|xls|xlsx|doc|docx|zip|hwp|pdf'
+                , "useMigFileExt": 'xls|xlsx'
+                , "pencakeAttach": '/staticimg'
+            }
+        };
+        ePortalConfig.userInfo['_ep_USR_PWD'] = '$2a$10$PnV738Vcdc5X9zBzbViWbOprzvNetMcbP4IuIth/0HKAviqtOAWPu';
+        ePortalConfig.userInfo['_ep_ORG_SP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTN_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_DTYCD'] = '';
+        ePortalConfig.userInfo['_ep_ORNNM'] = '포탈관리그룹';
+        ePortalConfig.userInfo['_ep_AMG_ORNCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_NM'] = '포탈관리자';
+        ePortalConfig.userInfo['_ep_STF_FLG_CDNM'] = '정상';
+        ePortalConfig.userInfo['_ep_ORG_FLGCD'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATRCD'] = '';
+        ePortalConfig.userInfo['_ep_id'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORG_FLG_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_STF_FLGCD'] = '1';
+        ePortalConfig.userInfo['_ep_CLPCD'] = '';
+        ePortalConfig.userInfo['_ep_BDT_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_PTNCD'] = '';
+        ePortalConfig.userInfo['_ep_ORG_SPCD'] = '';
+        ePortalConfig.userInfo['_ep_USR_ID'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_ORNCD'] = 'admin';
+        ePortalConfig.userInfo['_ep_DTY_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TP_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BZ_ATR_CDNM'] = '';
+        ePortalConfig.userInfo['_ep_BDTCD'] = '';
+        ePortalConfig.userInfo['_ep_EMPNO'] = 'Administrator';
+        ePortalConfig.userInfo['_ep_EMP_PART'] = '';
+        ePortalConfig.userInfo['_ep_ORG_TPCD'] = '';
+        ePortalConfig.userInfo['_ep_CLP_CDNM'] = '';
+
+        ePortalConfig.groupInfo = ['AUTHENTICATED_USERS', 'PORTAL_ADMINISTRATORS', 'PUBLIC', 'admin', 'default_page']
+        ePortalConfig.userId = ePortalConfig.userInfo[("" || '_ep_USR_ID')];
+        ePortalConfig.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.ornnm = ePortalConfig.userInfo[("" || '_ep_ORNNM')];
+        ePortalConfig.userInfo.nm = ePortalConfig.userInfo[("" || '_ep_USR_NM')];
+    </script>
 
     <link rel="stylesheet" href="/wsrv/app/css/plugin/jquery.toast.css">
     <link rel="stylesheet" href="/wsrv/app/css/jquery-ui.css">
@@ -955,50 +1017,50 @@
                         <strong class="inner-tit">Text Field</strong>
                         <div class="input-box">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" />
+                                <input type="text" class="common-input" data-input-size="s" placeholder="input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="text" />
+                                <input type="text" class="common-input" data-input-size="s" placeholder="input" value="input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="disabled" disabled />
+                                <input type="text" class="common-input" data-input-size="s" placeholder="input" value="disabled input" disabled />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box invalid mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" data-input-size="s" placeholder="placeholder" value="text" />
+                                <input type="text" class="common-input" data-input-size="s" placeholder="input" value="input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                             <span class="invalid-txt">메시지를 입력하세요.</span>
                         </div>
                         <div class="input-box mt-16">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" placeholder="placeholder" />
+                                <input type="text" class="common-input" placeholder="input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" placeholder="placeholder" value="text" />
+                                <input type="text" class="common-input" placeholder="input" value="input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" placeholder="placeholder" value="disabled" disabled />
+                                <input type="text" class="common-input" placeholder="placeholder" value="disabled input" disabled />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                         </div>
                         <div class="input-box invalid mt-8">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" placeholder="placeholder" value="text" />
+                                <input type="text" class="common-input" placeholder="input" value="invalid input" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                             <span class="invalid-txt">메시지를 입력하세요.</span>
@@ -1006,10 +1068,54 @@
                         <div class="input-box search mt-8">
                             <input type="hidden">
                             <div class="input-type-txt">
-                                <input type="text" class="common-input" placeholder="placeholder" autocomplete="false" />
+                                <input type="text" class="common-input" placeholder="search input" autocomplete="false" />
                                 <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
                             </div>
                             <button class="search-btn" @click="searchMenu()" aria-label="검색하기"></button>
+                        </div>
+                        <div class="input-box mt-8">
+                            <textarea placeholder="textarea" class="common-textarea" rows="3"></textarea>
+                        </div>
+                        <div class="input-box mt-8">
+                            <textarea placeholder="textarea" class="common-textarea" rows="3" disabled></textarea>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Select</strong>
+                        <div class="input-box">
+                            <select class="common-select" data-type="simple">
+                                <option selected>Simple Select option 1</option>
+                                <option>Simple Select option 2</option>
+                            </select>
+                        </div>
+                        <div class="input-box mt-16">
+                            <div class="common-select" data-type="border" data-select-size="m" style="--width: 170px;">
+                                <select>
+                                    <option selected>Border Select Option 1</option>
+                                    <option>Border Select Option 2</option>
+                                    <option>Border Select Option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-box mt-8">
+                            <div class="common-select" data-type="border" data-select-size="m" style="--width: 170px;">
+                                <select disabled>
+                                    <option selected>Border Select Disabled</option>
+                                    <option>Border Select Option 2</option>
+                                    <option>Border Select Option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-box invalid mt-8">
+                            <div class="common-select" data-type="border" data-select-size="m" style="--width: 170px;">
+                                <select>
+                                    <option disabled selected>Invalid Select</option>
+                                    <option>Border Select Option 1</option>
+                                    <option>Border Select Option 2</option>
+                                    <option>Border Select Option 3</option>
+                                </select>
+                            </div>
+                            <span class="invalid-txt">메시지를 입력하세요.</span>
                         </div>
                     </div>
                     <div class="flex-col mt-24">
@@ -1095,117 +1201,165 @@
             <div class="cp-box">
                 <h2 class="cp-tit">Buttons</h2>
                 <div class="cp-inner">
-                    <div class="flex-row">
-                        <button type="button" class="btn" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn" data-btn-size="m">Button</button>
-                        <button type="button" class="btn" data-btn-size="l">Button</button>
-                        <button type="button" class="btn" data-btn-size="xl">Button</button>
+                    <div class="flex-col">
+                        <strong class="inner-tit">Buttons</strong>
+                        <div class="flex-row">
+                            <button type="button" class="btn" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn" data-btn-size="m">Button</button>
+                            <button type="button" class="btn" data-btn-size="l">Button</button>
+                            <button type="button" class="btn" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn magenta-light" data-btn-size="s">Button</button>
+                            <button type="button" class="btn magenta-light" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn magenta-light" data-btn-size="m">Button</button>
+                            <button type="button" class="btn magenta-light" data-btn-size="l">Button</button>
+                            <button type="button" class="btn magenta-light" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn purple" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn purple" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn purple" data-btn-size="m">Button</button>
+                            <button type="button" class="btn purple" data-btn-size="l">Button</button>
+                            <button type="button" class="btn purple" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn purple-light" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn purple-light" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn purple-light" data-btn-size="m">Button</button>
+                            <button type="button" class="btn purple-light" data-btn-size="l">Button</button>
+                            <button type="button" class="btn purple-light" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn dg-fill" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn dg-fill" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn dg-fill" data-btn-size="m">Button</button>
+                            <button type="button" class="btn dg-fill" data-btn-size="l">Button</button>
+                            <button type="button" class="btn dg-fill" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn dg-line" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn dg-line" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn dg-line" data-btn-size="m">Button</button>
+                            <button type="button" class="btn dg-line" data-btn-size="l">Button</button>
+                            <button type="button" class="btn dg-line" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn cg-fill-1" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn cg-fill-1" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn cg-fill-1" data-btn-size="m">Button</button>
+                            <button type="button" class="btn cg-fill-1" data-btn-size="l">Button</button>
+                            <button type="button" class="btn cg-fill-1" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn cg-fill-2" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn cg-fill-2" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn cg-fill-2" data-btn-size="m">Button</button>
+                            <button type="button" class="btn cg-fill-2" data-btn-size="l">Button</button>
+                            <button type="button" class="btn cg-fill-2" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn cg-line-1" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn cg-line-1" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn cg-line-1" data-btn-size="m">Button</button>
+                            <button type="button" class="btn cg-line-1" data-btn-size="l">Button</button>
+                            <button type="button" class="btn cg-line-1" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn cg-line-2" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn cg-line-2" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn cg-line-2" data-btn-size="m">Button</button>
+                            <button type="button" class="btn cg-line-2" data-btn-size="l">Button</button>
+                            <button type="button" class="btn cg-line-2" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn wg-fill" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn wg-fill" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn wg-fill" data-btn-size="m">Button</button>
+                            <button type="button" class="btn wg-fill" data-btn-size="l">Button</button>
+                            <button type="button" class="btn wg-fill" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn wg-line" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn wg-line" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn wg-line" data-btn-size="m">Button</button>
+                            <button type="button" class="btn wg-line" data-btn-size="l">Button</button>
+                            <button type="button" class="btn wg-line" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn blue-fill" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn blue-fill" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn blue-fill" data-btn-size="m">Button</button>
+                            <button type="button" class="btn blue-fill" data-btn-size="l">Button</button>
+                            <button type="button" class="btn blue-fill" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn blue-line" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn blue-line" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn blue-line" data-btn-size="m">Button</button>
+                            <button type="button" class="btn blue-line" data-btn-size="l">Button</button>
+                            <button type="button" class="btn blue-line" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn green-fill" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn green-fill" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn green-fill" data-btn-size="m">Button</button>
+                            <button type="button" class="btn green-fill" data-btn-size="l">Button</button>
+                            <button type="button" class="btn green-fill" data-btn-size="xl">Button</button>
+                        </div>
+                        <div class="flex-row mt-8">
+                            <button type="button" class="btn green-line" data-btn-size="s">Button</button> 
+                            <button type="button" class="btn green-line" data-btn-size="s" disabled>Disabled</button>
+                            <button type="button" class="btn green-line" data-btn-size="m">Button</button>
+                            <button type="button" class="btn green-line" data-btn-size="l">Button</button>
+                            <button type="button" class="btn green-line" data-btn-size="xl">Button</button>
+                        </div>
                     </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn magenta-light" data-btn-size="s">Button</button>
-                        <button type="button" class="btn magenta-light" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn magenta-light" data-btn-size="m">Button</button>
-                        <button type="button" class="btn magenta-light" data-btn-size="l">Button</button>
-                        <button type="button" class="btn magenta-light" data-btn-size="xl">Button</button>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Text Buttons</strong>
+                        <div class="flex-row gap-16">
+                            <a href="javascript:;" class="txt-btn" data-btn-size="s">Text Button</a>
+                            <a href="javascript:;" class="txt-btn file" data-btn-size="s">Text Button</a>
+                            <a href="javascript:;" class="txt-btn link" data-btn-size="s">Text Button</a>
+                            <a href="javascript:;" class="txt-btn plus" data-btn-size="s">Text Button</a>
+                            <a href="javascript:;" class="txt-btn blue" data-btn-size="s">Text Button</a>
+                        </div>
+                        <div class="flex-row gap-16 mt-8">
+                            <a href="javascript:;" class="txt-btn" data-btn-size="m">Text Button</a>
+                            <a href="javascript:;" class="txt-btn file" data-btn-size="m">Text Button</a>
+                            <a href="javascript:;" class="txt-btn link" data-btn-size="m">Text Button</a>
+                            <a href="javascript:;" class="txt-btn plus" data-btn-size="m">Text Button</a>
+                            <a href="javascript:;" class="txt-btn blue" data-btn-size="m">Text Button</a>
+                        </div>
+                        <div class="flex-row gap-16 mt-8">
+                            <a href="javascript:;" class="txt-btn" data-btn-size="l">Text Button</a>
+                            <a href="javascript:;" class="txt-btn file" data-btn-size="l">Text Button</a>
+                            <a href="javascript:;" class="txt-btn link" data-btn-size="l">Text Button</a>
+                            <a href="javascript:;" class="txt-btn plus" data-btn-size="l">Text Button</a>
+                            <a href="javascript:;" class="txt-btn blue" data-btn-size="l">Text Button</a>
+                        </div>
+                        <div class="flex-row gap-16 mt-8">
+                            <a href="javascript:;" class="txt-btn" data-btn-size="xl">Text Button</a>
+                            <a href="javascript:;" class="txt-btn file" data-btn-size="xl">Text Button</a>
+                            <a href="javascript:;" class="txt-btn link" data-btn-size="xl">Text Button</a>
+                            <a href="javascript:;" class="txt-btn plus" data-btn-size="xl">Text Button</a>
+                            <a href="javascript:;" class="txt-btn blue" data-btn-size="xl">Text Button</a>
+                        </div>
                     </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn purple" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn purple" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn purple" data-btn-size="m">Button</button>
-                        <button type="button" class="btn purple" data-btn-size="l">Button</button>
-                        <button type="button" class="btn purple" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn purple-light" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn purple-light" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn purple-light" data-btn-size="m">Button</button>
-                        <button type="button" class="btn purple-light" data-btn-size="l">Button</button>
-                        <button type="button" class="btn purple-light" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn dg-fill" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn dg-fill" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn dg-fill" data-btn-size="m">Button</button>
-                        <button type="button" class="btn dg-fill" data-btn-size="l">Button</button>
-                        <button type="button" class="btn dg-fill" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn dg-line" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn dg-line" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn dg-line" data-btn-size="m">Button</button>
-                        <button type="button" class="btn dg-line" data-btn-size="l">Button</button>
-                        <button type="button" class="btn dg-line" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn cg-fill-1" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn cg-fill-1" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn cg-fill-1" data-btn-size="m">Button</button>
-                        <button type="button" class="btn cg-fill-1" data-btn-size="l">Button</button>
-                        <button type="button" class="btn cg-fill-1" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn cg-fill-2" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn cg-fill-2" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn cg-fill-2" data-btn-size="m">Button</button>
-                        <button type="button" class="btn cg-fill-2" data-btn-size="l">Button</button>
-                        <button type="button" class="btn cg-fill-2" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn cg-line-1" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn cg-line-1" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn cg-line-1" data-btn-size="m">Button</button>
-                        <button type="button" class="btn cg-line-1" data-btn-size="l">Button</button>
-                        <button type="button" class="btn cg-line-1" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn cg-line-2" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn cg-line-2" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn cg-line-2" data-btn-size="m">Button</button>
-                        <button type="button" class="btn cg-line-2" data-btn-size="l">Button</button>
-                        <button type="button" class="btn cg-line-2" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn wg-fill" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn wg-fill" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn wg-fill" data-btn-size="m">Button</button>
-                        <button type="button" class="btn wg-fill" data-btn-size="l">Button</button>
-                        <button type="button" class="btn wg-fill" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn wg-line" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn wg-line" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn wg-line" data-btn-size="m">Button</button>
-                        <button type="button" class="btn wg-line" data-btn-size="l">Button</button>
-                        <button type="button" class="btn wg-line" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn blue-fill" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn blue-fill" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn blue-fill" data-btn-size="m">Button</button>
-                        <button type="button" class="btn blue-fill" data-btn-size="l">Button</button>
-                        <button type="button" class="btn blue-fill" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn blue-line" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn blue-line" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn blue-line" data-btn-size="m">Button</button>
-                        <button type="button" class="btn blue-line" data-btn-size="l">Button</button>
-                        <button type="button" class="btn blue-line" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn green-fill" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn green-fill" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn green-fill" data-btn-size="m">Button</button>
-                        <button type="button" class="btn green-fill" data-btn-size="l">Button</button>
-                        <button type="button" class="btn green-fill" data-btn-size="xl">Button</button>
-                    </div>
-                    <div class="flex-row">
-                        <button type="button" class="btn green-line" data-btn-size="s">Button</button> 
-                        <button type="button" class="btn green-line" data-btn-size="s" disabled>Disabled</button>
-                        <button type="button" class="btn green-line" data-btn-size="m">Button</button>
-                        <button type="button" class="btn green-line" data-btn-size="l">Button</button>
-                        <button type="button" class="btn green-line" data-btn-size="xl">Button</button>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Button Groups</strong>
+                        <div class="btn-wrap" style="width: 400px;">
+                            <a href="javascript:;" target="_blank" data-btn-size="l" class="btn dg-line">Button</a>
+                        </div>
+                        <div class="btn-wrap mt-4" style="width: 400px;">
+                            <a href="javascript:;" target="_blank" data-btn-size="l" class="btn purple">Button</a>
+                            <a href="javascript:;" target="_blank" data-btn-size="l" class="btn purple">Button</a>
+                        </div>
+                        <div class="btn-wrap mt-4" style="width: 400px;">
+                            <a href="javascript:;" target="_blank" data-btn-size="l" class="btn purple-light">Button</a>
+                            <a href="javascript:;" target="_blank" data-btn-size="l" class="btn purple-light">Button</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1310,6 +1464,332 @@
                     </div>
                 </div>
             </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Tabs</h2>
+                <div class="cp-inner">
+                    <div class="flex-col">
+                        <strong class="inner-tit">Tab Style 1</strong>
+                        <div class="flex-row">
+                            <div data-event="tab" data-tab-name="">
+                                <div class="title-box">
+                                    <div class="common-tab">
+                                        <ul>
+                                            <li class="active">
+                                                <button type="button">Tab Button</button>
+                                            </li>
+                                            <li>
+                                                <button type="button">Tab Button</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="cnt-item">
+                                        Content 1
+                                    </div>
+                                    <div class="cnt-item">
+                                        Content 2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row mt-16">
+                            <div data-event="tab" data-tab-name="">
+                                <div class="title-box">
+                                    <div class="common-tab">
+                                        <ul>
+                                            <li class="active">
+                                                <button type="button">
+                                                    Tab Button
+                                                    <span class="state">14</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button">
+                                                    Tab Button
+                                                    <span class="state">2</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col mt-24">
+                        <strong class="inner-tit">Tab Style 2</strong>
+                        <div class="flex-row">
+                            <div data-event="tab" data-tab-name="">
+                                <div class="common-tab" data-tab-type="block">
+                                    <ul>
+                                        <li class="active">
+                                            <button type="button">Tab Button</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">Tab Button</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Pagination</h2>
+                <div class="cp-inner">
+                    <div class="common-pagination">
+                        <nav class="pagination">
+                            <ul>
+                                <li><a href="#none" title="맨처음" class="first"></a></li>
+                                <li><a href="#none" title="이전" class="prev">이전</a></li>
+                                <li><span class="page-numbers"><a href="#none" class="active">1</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">2</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">3</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">4</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">5</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">6</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">7</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">8</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">9</a></span></li>
+                                <li><span class="page-numbers"><a href="#none">10</a></span></li>
+                                <li><a href="#none" title="다음" class="next">다음</a></li>
+                                <li><a href="#none" title="맨마지막" class="last"></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Table</h2>
+                <div class="cp-inner">
+                    <div style="width: 600px;">
+                        <strong class="inner-tit">Default Table</strong>
+                        <table class="common-table">
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>th</th>
+                                    <th>th</th>
+                                    <th class="point-bg">th</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-24" style="width: 600px;">
+                        <strong class="inner-tit">White Background Table</strong>
+                        <table class="common-table" data-table-bg="white">
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>th</th>
+                                    <th>th</th>
+                                    <th>th</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-24" style="width: 600px;">
+                        <strong class="inner-tit">Border Table</strong>
+                        <table class="common-table" data-table-border="true">
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>th</th>
+                                    <th>th</th>
+                                    <th>th</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                                <tr>
+                                    <td>td</td>
+                                    <td>td</td>
+                                    <td>td</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-24" style="width: 600px;">
+                        <strong class="inner-tit">Text Align Example</strong>
+                        <table class="common-table" data-table-border="true">
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>th</th>
+                                    <th>th</th>
+                                    <th>th</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">td</td>
+                                    <td class="text-center">td</td>
+                                    <td class="text-right">td</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-24" style="width: 600px;">
+                        <strong class="inner-tit">Required Table</strong>
+                        <table class="common-table" data-table-border="true">
+                            <colgroup>
+                                <col style="width: 20%;">
+                                <col style="width: 40%;">
+                                <col style="width: 40%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th class="required">th</th>
+                                    <td>
+                                        <div class="input-box">
+                                            <div class="input-type-txt">
+                                                <input type="text" class="common-input" data-input-size="s" placeholder="input" />
+                                                <button type="button" class="delete-btn" title="내용 지우기" aria-label="내용 지우기"></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-box">
+                                            <div class="common-select" data-type="border" data-select-size="m" style="--width: 100%;">
+                                                <select>
+                                                    <option selected>Border Select Option 1</option>
+                                                    <option>Border Select Option 2</option>
+                                                    <option>Border Select Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-24" style="width: 600px;">
+                        <strong class="inner-tit">Scroll Table</strong>
+                        <div class="scroll-table" style="max-height: 113px;">
+                            <table class="common-table">
+                                <colgroup>
+                                    <col style="width: 50%;">
+                                    <col style="width: 25%;">
+                                    <col style="width: 25%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>th</th>
+                                        <th>th</th>
+                                        <th>th</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>td</td>
+                                        <td>td</td>
+                                        <td>td</td>
+                                    </tr>
+                                    <tr>
+                                        <td>td</td>
+                                        <td>td</td>
+                                        <td>td</td>
+                                    </tr>
+                                    <tr>
+                                        <td>td</td>
+                                        <td>td</td>
+                                        <td>td</td>
+                                    </tr>
+                                    <tr>
+                                        <td>td</td>
+                                        <td>td</td>
+                                        <td>td</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-box">
+                <h2 class="cp-tit">Modal</h2>
+                <div class="cp-inner" id="modalBtns">
+                    <button type="button" class="btn cg-fill-1" data-btn-size="l" @click="defaultView();">Default Modal</button>
+                    <button type="button" class="btn cg-fill-1" data-btn-size="l" @click="borderTypeView();">Border Type Modal</button>
+                    <button type="button" class="btn cg-fill-1" data-btn-size="l" @click="whiteTypeView();">White Type Modal</button>
+                    <button type="button" class="btn cg-fill-1" data-btn-size="l" @click="centerTitleView();">Center Title Modal</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -1317,6 +1797,47 @@
 
 <script>
     $(function() {
+        // 공통 탭
+        $(document)
+        .on(
+            'click', '[data-event] .common-tab li > button', function() {
+                const $btn = $(this);
+                const $li = $btn.closest('li');
+                const $tabWrap = $btn.closest('[data-event]');
+
+                // eventType "tab" : 콘텐츠 레이아웃이 바뀌는 tab. hide/show 제어함
+                // eventType "view-tab" : 콘텐츠 레이아웃 바뀌지 않고 데이터만 변경됨
+                const eventType = $tabWrap.data('event');
+                const tabName = $tabWrap.data('tab-name');
+                const tabIndex = $li.index();
+
+                $li.addClass('active').siblings().removeClass('active');
+
+                // tab 인 경우만 cnt-item 전환
+                if (eventType === 'tab') {
+                    const $contents = $tabWrap.find('.tab-content .cnt-item');
+
+                    $contents.hide().eq(tabIndex).show();
+                }
+
+                $(document).trigger('portal:tab-change', {
+                    name: tabName,
+                    index: tabIndex
+                });
+            }
+        );
+        // 탭 초기 상태
+        $('[data-event="tab"]').each(function() {
+            const $wrap = $(this);
+            const $activeLi = $wrap.find('.common-tab li.active');
+            const initIndex = $activeLi.length ? $activeLi.index() : 0;
+
+            $wrap.find('.tab-content .cnt-item').hide().eq(initIndex).show();
+        });
+
+        // TEXT/NUMBER INPUT 삭제버튼
+        // input에 포커스 되었고, 값이 있는 상태면 has-value 클래스 추가
+        // delete btn 클릭 시 input에 값 삭제 및 has-value 클래스 제거 후 다시 input focus
         $(document)
         .on('focus', '.input-type-txt .common-input', function () {
             const $input = $(this);
@@ -1355,6 +1876,74 @@
             setTimeout(function () {
                 $input.focus();
             }, 0);
+        });
+    })
+
+    $(function (){
+        $portalApp.vueServiceBean({
+            el: "#modalBtns",
+            methods: {
+                defaultView: function() {
+                    PencakeCustomCTRL.showModal("/menu/gnb/gnbSetting.html", {
+                        width: 800,
+                        height: 595,
+                        showTitle: true,
+                        title: "메뉴관리",
+                    });
+                },
+                borderTypeView: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/myInfo.html", {
+                        targetId: 'myDetailInfo',
+                        width: 400,
+                        height: 245,
+                        showTitle: true,
+                        title: "내 정보 조회",
+                        dialogClass: 'type-border'
+                    });
+                },
+                whiteTypeView: function (){
+                    PubEPUI.dialog.html("로그아웃 하시겠습니까?",{
+                        title:"알림", 
+                        width: '400',
+                        height:'auto',
+                        classes: {
+                            "ui-dialog": "type-white"
+                        },
+                        buttons:{
+                            '확인':function (){
+                                if(ePortalConfig.runtime =='local'){
+                                    location.href = PENCAKE_OBJ.getUrl('/logout');
+                                }else{
+                                    location.href = ePortalConfig.context.sso+'/raon/logoutAuto.jsp';
+                                }
+                            }, 
+                            '닫기':function(){
+                                PubEPUI.dialog.closeDialog();
+                            }
+                        }
+                    });
+                    setTimeout(function(){
+                        const $btns = $(".ui-dialog-buttonpane button");
+
+                        $btns.each(function(){
+                            const txt = $(this).text().trim();
+                            if(txt === "닫기"){
+                                $(this).addClass("black");
+                            }
+                        });
+                    }, 0);
+                },
+                centerTitleView: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/securityPledge.html", {
+                        targetId: 'securityPledge',
+                        width: 900,
+                        height: 700,
+                        showTitle: true,
+                        title: "정보보호(보안) 서약서",
+                        dialogClass: 'type-centerTit'
+                    });
+                }
+            }
         });
     })
 </script>

@@ -586,6 +586,7 @@
                             height: 20px !important;
                             line-height: 20px;
                             @include bg-set;
+                            margin-right: 4px;
                             &.jstree-ocl {
                                 display: none;
                             }
