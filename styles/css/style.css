@@ -4239,7 +4239,7 @@ main {
   border: 0 none;
 }
 .ui-datepicker .ui-datepicker-header .ui-datepicker-next span {
-  background-position: 26px 0;
+  background-position: -26px 0;
   left: auto;
   right: 0;
 }
@@ -6667,19 +6667,19 @@ body[data-theme=type3] .ep-lnb .logo .text {
   top: 29px;
   left: auto;
   right: 0;
-  width: 200px;
+  width: 224px;
 }
 .ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .radio-group {
   width: 100%;
   position: relative;
   border-radius: 4px;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   padding: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
   margin-bottom: 8px;
 }
 .ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .radio-group li input:checked + label::after {
@@ -6723,6 +6723,29 @@ body[data-theme=type3] .ep-lnb .logo .text {
 }
 .ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .radio-group li label span.type3 {
   background-color: #475569;
+}
+.ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .btn {
+  flex: none;
+  height: 32px;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .version-setting {
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.ep-gnb .gnb-right-area .menu-right-area > li div.dropdown-box .version-setting p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #60676F;
 }
 .ep-gnb .gnb-right-area .menu-right-area > li .gnb-search-box .delete-btn {
   width: 16px;
@@ -8019,18 +8042,18 @@ body.subContents {
   color: #1D4ED8;
   border-bottom: 1px solid #1D4ED8;
 }
-.txt-btn.blue[data-btn-size=s] {
+.txt-btn[data-btn-size=s] {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.1;
 }
-.txt-btn.blue[data-btn-size=m] {
+.txt-btn[data-btn-size=m] {
   font-size: 13px;
 }
-.txt-btn.blue[data-btn-size=l] {
+.txt-btn[data-btn-size=l] {
   font-size: 14px;
 }
-.txt-btn.blue[data-btn-size=xl] {
+.txt-btn[data-btn-size=xl] {
   font-size: 16px;
 }
 
@@ -8203,7 +8226,7 @@ body.subContents {
   cursor: pointer;
 }
 .common-input[type=date]:read-only, .common-input[type=date].disabled, .common-input[type=date]:disabled {
-  background: #F5F5F5 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center/12px 12px;
+  background: #F8F8F8 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center/12px 12px;
 }
 
 .common-radio {
@@ -8326,7 +8349,7 @@ body.subContents {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.96967 2.96973C9.26256 2.67684 9.73732 2.67684 10.0302 2.96973C10.3231 3.26262 10.3231 3.73738 10.0302 4.03028L5.03022 9.03028C4.73732 9.32317 4.26256 9.32317 3.96967 9.03028L1.96967 7.03028C1.67678 6.73738 1.67678 6.26262 1.96967 5.96973C2.26256 5.67684 2.73732 5.67684 3.03022 5.96973L4.49994 7.43946L8.96967 2.96973Z' fill='white'/%3E%3C/svg%3E");
 }
 .common-checkbox:disabled + span {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   border-color: #CACACA;
 }
 .common-checkbox:disabled + span::after {
@@ -8372,12 +8395,12 @@ body.subContents {
   border-color: #5B21B6;
 }
 .common-textarea:disabled, .common-textarea .disabled {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   border-color: #CACACA;
   color: #7F838B;
 }
 .common-textarea:read-only {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   border-color: #7F838B;
 }
 
@@ -9824,7 +9847,7 @@ body.popup button {
   border-bottom: 1px solid #DFE7F3;
 }
 .board-layer .right-show .board-intable thead tr th {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   text-align: center;
   font-size: 13px;
   font-weight: 500;
@@ -10013,7 +10036,7 @@ body.popup button {
   width: 100%;
   position: relative;
   border: 1px solid #DFE7F3;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   padding: 16px;
   text-align: left;
   overflow-y: auto;
@@ -10769,7 +10792,7 @@ body.popup button {
   z-index: 5;
 }
 .scroll-table::-webkit-scrollbar-track {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
 }
 .scroll-table::-webkit-scrollbar-thumb {
   background-color: #A8B3C1;
@@ -10777,17 +10800,17 @@ body.popup button {
 }
 .scroll-table::-webkit-scrollbar-button {
   height: 12px;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
 }
 .scroll-table::-webkit-scrollbar-button:vertical:start:decrement {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   background-image: url("/wsrv/app/img/new/common/ico_scroll_align_up.png");
   background-position: 50% 0 !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
 }
 .scroll-table::-webkit-scrollbar-button:vertical:end:increment {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   background-image: url("/wsrv/app/img/new/common/ico_scroll_align_down.png");
   background-position: 50% 0 !important;
   background-size: contain !important;
@@ -11023,7 +11046,7 @@ body.popup button {
   border-radius: 4px 4px 0 0;
   border: 1px solid #A5A7AC;
   border-bottom: none;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   font-size: 13px;
   font-weight: 500;
   line-height: 1;
@@ -11110,7 +11133,7 @@ body.popup button {
 }
 .common-select[data-type=border] select:disabled, .common-select[data-type=border] select.disabled {
   color: #7F838B;
-  background: #F5F5F5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='%23BDBDBD'/%3E%3C/svg%3E") calc(100% - 4px) center/12px 12px no-repeat;
+  background: #F8F8F8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.64645 4.14645C8.84171 3.95118 9.15822 3.95118 9.35348 4.14645C9.54874 4.34171 9.54874 4.65822 9.35348 4.85348L6.38863 7.81832C6.17389 8.03285 5.82603 8.03284 5.61129 7.81832L2.64645 4.85348C2.45118 4.65822 2.45118 4.34171 2.64645 4.14645C2.84171 3.95118 3.15822 3.95118 3.35348 4.14645L5.99996 6.79293L8.64645 4.14645Z' fill='%23BDBDBD'/%3E%3C/svg%3E") calc(100% - 4px) center/12px 12px no-repeat;
 }
 .common-select[data-type=border][data-select-size=m] {
   --height: 20px;
@@ -11679,7 +11702,7 @@ body.popup button {
   transition: background-color 0.2s;
 }
 .pencake-portlet-content .sos-list li > a:hover {
-  background-color: #f5f5f5;
+  background-color: #F8F8F8;
 }
 .pencake-portlet-content .sos-list li .sos-item-label {
   display: flex;
@@ -13031,7 +13054,7 @@ body.popup button {
   border-right: 1px solid #C9D2DE;
 }
 .pencake-portlet-content .memo-paging li .close {
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   border-color: transparent;
 }
 .pencake-portlet-content .memo-paging li + li {
@@ -13158,7 +13181,7 @@ body.popup button {
 .manager-grid .side-menu {
   width: 260px;
   position: relative;
-  background-color: #F5F5F5;
+  background-color: #F8F8F8;
   border-right: 1px solid #CACACA;
   padding: 12px;
 }

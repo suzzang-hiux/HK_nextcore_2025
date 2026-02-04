@@ -371,7 +371,7 @@
                 will-change: background-color;
                 transition: background-color 0.2s;
                 &:hover {
-                    background-color: #f5f5f5;
+                    background-color: $cl-gr-5;
                 }
             }
             .sos-item {

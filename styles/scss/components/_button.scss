@@ -641,17 +641,17 @@
         color: $cl-blue-70;
         border-bottom: 1px solid $cl-blue-70;
         // text-decoration: underline;
-        &[data-btn-size="s"] {
-            @include font(12px, 400, 1.1);
-        }
-        &[data-btn-size="m"] {
-            font-size: 13px;
-        }
-        &[data-btn-size="l"] {
-            font-size: 14px;
-        }
-        &[data-btn-size="xl"] {
-            font-size: 16px;
-        }
+    }
+    &[data-btn-size="s"] {
+        @include font(12px, 400, 1.1);
+    }
+    &[data-btn-size="m"] {
+        font-size: 13px;
+    }
+    &[data-btn-size="l"] {
+        font-size: 14px;
+    }
+    &[data-btn-size="xl"] {
+        font-size: 16px;
     }
 }

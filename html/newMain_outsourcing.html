@@ -346,12 +346,18 @@
 										</li>
 									</ul>
 									<div class="btn-wrap col">
-										<!-- 260203 수정 : 버튼 클래스, 텍스트 변경 -->
 										<a href="javascript:;" class="btn purple-light" data-btn-size="m" @click="myMenuSetting(); showUserDropdown = false">메뉴 관리</a>
-										<!-- // 260203 수정 : 버튼 클래스 변경 -->
-										<!-- <a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/appMgmt/page'});">APP 관리</a>
-										<a href="javascript:;" class="btn purple-line" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/admin/mgmtMain'});">pencake 관리</a> -->
-									</div> 
+										<!-- <a href="javascript:;" class="btn purple-light" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/appMgmt/page'});">APP 관리</a>
+										<a href="javascript:;" class="btn purple-light" data-btn-size="m" onclick="PencakeCustomCTRL.openBroswer({type:'edge',url:'/pencake/admin/mgmtMain'});">pencake 관리</a> -->
+									</div>
+									<!-- 260204 수정 : 시스템버전 정보 추가 -->
+									<div class="version-setting">
+										<!-- 현재 최신 버전일 경우 -->
+										<p>최신 버전 사용중 (v1.2.0.14N)</p>
+										<!-- 업데이트가 필요할 경우 -->
+										<a href="javascript:;" class="txt-btn blue" data-btn-size="m">버전 업데이트 하기 (v1.2.0.14N)</a>
+									</div>
+									<!-- // 260204 수정 : 시스템버전 정보 추가 -->
 								</div>
 							</div>
 						</li>

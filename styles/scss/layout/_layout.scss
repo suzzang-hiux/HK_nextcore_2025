@@ -1442,14 +1442,14 @@ body[data-theme="type3"] {
                     top: 29px;
                     left: auto;
                     right: 0;
-                    width: 200px;
+                    width: 224px;
                     .radio-group {
                         width: 100%;
                         position: relative;
                         border-radius: 4px;
                         background-color: $cl-gr-5;
                         padding: 12px;
-                        @include flex(row, center, center, 8px);
+                        @include flex(row, center, center, 16px);
                         margin-bottom: 8px;
                         li {
                             input:checked + label {
@@ -1492,6 +1492,23 @@ body[data-theme="type3"] {
                                     }
                                 }
                             }
+                        }
+                    }
+                    .btn {
+                        flex: none;
+                        height: 32px;
+                        border-radius: 4px;
+                        padding: 7px 12px;
+                        font-size: 14px;
+                    }
+                    .version-setting {
+                        width: 100%;
+                        position: relative;
+                        margin-top: 8px;
+                        @include flex(column, center, center, 8px);
+                        p {
+                            @include font(13px, 400, 1.2);
+                            color: $cl-gr-60;
                         }
                     }
                 }
