@@ -11648,6 +11648,33 @@ body.popup button {
   line-height: 1.16;
   color: #4B4B4B;
 }
+.pencake-portlet-content .my-owl .owl-carousel .item.empty {
+  background-color: #F3FAF7;
+}
+.pencake-portlet-content .my-owl .owl-carousel .item.empty p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #60887C;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 105px;
+}
+.pencake-portlet-content .my-owl .owl-carousel .item.empty p::before {
+  content: "";
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url("/wsrv/app/img/new/common/banner_empty.png");
+}
 .pencake-portlet-content .my-owl .owl-carousel .owl-nav {
   width: fit-content;
   position: absolute;
@@ -12503,6 +12530,38 @@ body.popup button {
 .pencake-portlet-content .recommand-goods .goods-box .item-btn .btn.cg-line:disabled, .pencake-portlet-content .recommand-goods .goods-box .item-btn .btn.cg-line.disabled {
   background-color: #EEF2F7;
   color: #A5A7AC;
+}
+.pencake-portlet-content .recommand-goods .empty {
+  flex: 1;
+  height: 229px;
+  position: relative;
+  border: 1px solid #DFE7F3;
+  background-color: #F2F7FB;
+  border-radius: 8px;
+}
+.pencake-portlet-content .recommand-goods .empty p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #60676F;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 125px;
+}
+.pencake-portlet-content .recommand-goods .empty p::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url("/wsrv/app/img/new/common/sales_empty.png");
 }
 .pencake-portlet-content .recommand-goods.type-1 .goods-box .item-info .sub-img {
   width: 150px;

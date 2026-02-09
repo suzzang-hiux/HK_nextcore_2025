@@ -282,6 +282,26 @@
                         }
                     }
                 }
+                &.empty {
+                    background-color: #F3FAF7;
+                    p {
+                        @include font(20px, 700, 1.2);
+                        color: #60887C;
+                        @include ps-center;
+                        padding-top: 105px;
+                        &::before {
+                            content: "";
+                            width: 120px;
+                            height: 100px;
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            @include bg-set;
+                            background-image: url("/wsrv/app/img/new/common/banner_empty.png");
+                        }
+                    }
+                }
             }
             .owl-nav {
                 width: fit-content;
@@ -1014,6 +1034,31 @@
                             color: $cl-gr-40;
                         }
                     }
+                }
+            }
+        }
+        .empty {
+            flex: 1;
+            height: 229px;
+            position: relative;
+            border: 1px solid $cl-sg-20;
+            background-color: $cl-sg-5;
+            border-radius: 8px;
+            p {
+                @include font(16px, 500, 1.25);
+                color: $cl-gr-60;
+                @include ps-center;
+                padding-top: 125px;
+                &::before {
+                    content: "";
+                    width: 120px;
+                    height: 120px;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include bg-set;
+                    background-image: url("/wsrv/app/img/new/common/sales_empty.png");
                 }
             }
         }
