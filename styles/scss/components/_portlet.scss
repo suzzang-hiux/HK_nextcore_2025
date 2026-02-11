@@ -286,7 +286,8 @@
                     background-color: #F3FAF7;
                     p {
                         @include font(20px, 700, 1.2);
-                        color: #60887C;
+                        letter-spacing: -0.4px;
+                        color: #878D95;
                         @include ps-center;
                         padding-top: 105px;
                         &::before {
@@ -1042,11 +1043,14 @@
             height: 229px;
             position: relative;
             border: 1px solid $cl-sg-20;
-            background-color: $cl-sg-5;
+            background-color: #F3FAF7;
             border-radius: 8px;
             p {
-                @include font(16px, 500, 1.25);
-                color: $cl-gr-60;
+                @include font(16px, 700, 1.25);
+                letter-spacing: -0.32px;
+                text-align: center;
+                color: #878D95;
+                white-space: nowrap;
                 @include ps-center;
                 padding-top: 125px;
                 &::before {

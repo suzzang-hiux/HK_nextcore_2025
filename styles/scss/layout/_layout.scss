@@ -57,6 +57,7 @@
             position: relative;
             padding-top: 24px;
             text-align: center;
+            @include font(12px, 400, 1);
             will-change: color;
             transition: color 0.2s;
             &:hover {
@@ -1319,7 +1320,7 @@ body[data-theme="type3"] {
                     align-items: center;
                     justify-content: center;
                     font-family: 'Heungkukseed';
-                    @include font(13px, 500, 1);
+                    @include font(14px, 600, 1);
                     letter-spacing: -0.24px;
                 }
                 & + li {
@@ -1380,6 +1381,7 @@ body[data-theme="type3"] {
         }
         .gnb-submenu {
             width: fit-content;
+            min-width: 160px;
             height: fit-content;
             position: fixed;
             padding: 8px;
@@ -1868,6 +1870,16 @@ body.subContents {
                 .txt-btn {
                     &.plus {
                         margin-top: 2px;
+                    }
+                }
+            }
+            .btn {
+                &[data-btn-size="s"] {
+                    height: 18px;
+                    font-size: 12px;
+                    border-radius: 2px;
+                    &.retry {
+                        padding: 2px;
                     }
                 }
             }

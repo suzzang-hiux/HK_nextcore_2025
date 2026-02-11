@@ -5233,6 +5233,9 @@ iframe {
   position: relative;
   padding-top: 24px;
   text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
   will-change: color;
   transition: color 0.2s;
 }
@@ -6555,8 +6558,8 @@ body[data-theme=type3] .ep-lnb .logo .text {
   align-items: center;
   justify-content: center;
   font-family: "Heungkukseed";
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.24px;
 }
@@ -6613,6 +6616,7 @@ body[data-theme=type3] .ep-lnb .logo .text {
 }
 .ep-gnb .gnb-left-area .gnb-submenu {
   width: fit-content;
+  min-width: 160px;
   height: fit-content;
   position: fixed;
   padding: 8px;
@@ -7176,6 +7180,14 @@ body.subContents {
 }
 .pencake-portlet-box .pencake-portlet-content .title-box.flex-start .txt-btn.plus {
   margin-top: 2px;
+}
+.pencake-portlet-box .pencake-portlet-content .title-box .btn[data-btn-size=s] {
+  height: 18px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+.pencake-portlet-box .pencake-portlet-content .title-box .btn[data-btn-size=s].retry {
+  padding: 2px;
 }
 .pencake-portlet-box .pencake-portlet-content.full-height {
   height: 100%;
@@ -11698,7 +11710,8 @@ body.popup button {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
-  color: #60887C;
+  letter-spacing: -0.4px;
+  color: #878D95;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12579,14 +12592,17 @@ body.popup button {
   height: 229px;
   position: relative;
   border: 1px solid #DFE7F3;
-  background-color: #F2F7FB;
+  background-color: #F3FAF7;
   border-radius: 8px;
 }
 .pencake-portlet-content .recommand-goods .empty p {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
-  color: #60676F;
+  letter-spacing: -0.32px;
+  text-align: center;
+  color: #878D95;
+  white-space: nowrap;
   position: absolute;
   top: 50%;
   left: 50%;
