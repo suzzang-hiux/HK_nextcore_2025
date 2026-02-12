@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        /* FONTS */
+        @font-face {font-family: "Heungkukseed"; src: url("/wsrv/app/fonts/HeungkukseedL.ttf"); font-weight: 400; font-display: swap;}
+        @font-face {font-family: "Heungkukseed"; src: url("/wsrv/app/fonts/HeungkukseedM.ttf"); font-weight: 500; font-display: swap;}
+        @font-face {font-family: "Heungkukseed"; src: url("/wsrv/app/fonts/HeungkukseedB.ttf"); font-weight: 700; font-display: swap;}
+        @font-face {font-family: "NanumGothic"; src: url("/wsrv/app/fonts/NanumGothicLight.woff2") format("woff2"), url("/wsrv/app/fonts/NanumGothicLight.woff") format("woff"), url("/wsrv/app/fonts/NanumGothicLight.otf") format("opentype"); font-weight: 300; font-display: swap;}
+        @font-face {font-family: "NanumGothic"; src: url("/wsrv/app/fonts/NanumGothic.woff2") format("woff2"), url("/wsrv/app/fonts/NanumGothic.woff") format("woff"), url("/wsrv/app/fonts/NanumGothic.otf") format("opentype"); font-weight: 400; font-display: swap;}
+        @font-face {font-family: "NanumGothic"; src: url("/wsrv/app/fonts/NanumGothicBold.woff2") format("woff2"), url("/wsrv/app/fonts/NanumGothicBold.woff") format("woff"), url("/wsrv/app/fonts/NanumGothicBold.otf") format("opentype"); font-weight: 700; font-display: swap;}
+        @font-face {font-family: "NanumGothic"; src: url("/wsrv/app/fonts/NanumGothicExtraBold.woff2") format("woff2"), url("/wsrv/app/fonts/NanumGothicExtraBold.woff") format("woff"), url("/wsrv/app/fonts/NanumGothicExtraBold.otf") format("opentype"); font-weight: 800; font-display: swap;}
+        .font-seed-l {font-family: 'Heungkukseed', sans-serif !important; font-weight: 400 !important;}
+        .font-seed-m {font-family: 'Heungkukseed', sans-serif !important; font-weight: 500 !important;}
+        .font-seed-b {font-family: 'Heungkukseed', sans-serif !important; font-weight: 700 !important;}
+        .font-nanum {font-family: 'NanumGothic', sans-serif !important; font-weight: 400;}
+        .font-malgun {font-family: 'Malgun Gothic', sans-serif !important;}
+        /* CONTENTS */
+        .recommand-goods {width: 100%; position: relative; display: flex; align-items: stretch; justify-content: flex-start; gap: 8px;}
+        .recommand-goods .goods-box {flex: 1; position: relative; border-radius: 8px; border: 1px solid #DFE7F3; background-color: #fff; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0; overflow: hidden;}
+        .recommand-goods .goods-box .item-info {flex: 1; width: 100%; min-height: 158px; position: relative; padding: 20px; background-size: cover !important; background-position: center right !important; background-repeat: no-repeat !important; word-break: break-all;}
+        .recommand-goods .goods-box .item-info .desc {display: block; font-family: "Heungkukseed"; font-size: 12px; font-weight: 500; line-height: 1.3; color: #334155; letter-spacing: -0.24px;}
+        .recommand-goods .goods-box .item-info .name {display: block; width: 60%; margin-top: 8px; font-family: "Heungkukseed"; font-size: 18px; font-weight: 700; line-height: 1.22; color: #0F172A !important; word-break: break-word;}
+        .recommand-goods .goods-box .item-info .sub-img {position: absolute; bottom: 0; right: 0; object-fit: contain; background-size: contain !important; background-position: bottom right !important; background-repeat: no-repeat !important;}
+        .recommand-goods .goods-box .item-btn {width: 100%; padding: 8px; border-top: 1px solid #DFE7F3; flex-shrink: 0; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 4px;}
+        .recommand-goods .goods-box .item-btn .btn {width: fit-content; position: relative; padding: 2px 6px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; line-height: 1; background-color: transparent; border: 1px solid transparent; text-align: center; text-decoration: none; white-space: nowrap; cursor: pointer; will-change: background-color, border-color, color; transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; flex: 1; width: calc(50% - 2px); height: 52px; border-radius: 4px; font-size: 14px; font-weight: 600; line-height: 1.28; white-space: wrap; flex-shrink: 0;}
+        .recommand-goods .goods-box .item-btn .btn.dg-fill {border-color: transparent; background-color: #334155; color: #fff;}
+        .recommand-goods .goods-box .item-btn .btn.dg-fill:hover {background-color: #7F838B;}
+        .recommand-goods .goods-box .item-btn .btn.dg-fill:active {background-color: #60676F;}
+        .recommand-goods .goods-box .item-btn .btn.cg-line {background-color: #EEF2F7; border-color: #C9D2DE; color: #768497;}
+        .recommand-goods .goods-box .item-btn .btn.cg-line:hover {background-color: #E1EBF4;}
+        .recommand-goods .goods-box .item-btn .btn.cg-line:active {background-color: #C9D2DE;}
+        .recommand-goods .empty {flex: 1; height: 229px; position: relative; border: 1px solid #DFE7F3; background-color: #F3FAF7; border-radius: 8px;}
+        .recommand-goods .empty p {font-size: 16px; font-weight: 700; line-height: 1.25; letter-spacing: -0.32px; text-align: center; color: #878D95; white-space: nowrap; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding-top: 125px;}
+        .recommand-goods .empty p::before {content: ""; width: 120px; height: 120px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; background-image: url("/wsrv/app/img/new/common/sales_empty.png");}
+        .recommand-goods.type-1 .goods-box .item-info .sub-img {width: 150px; height: 150px;}
+        .recommand-goods.type-2 .goods-box .item-info .sub-img {width: 143px; height: 143px;}
+        .recommand-goods.type-3 .goods-box .item-info .sub-img {width: 90px; height: 90px;}
+    </style>
+</head>
+<body>
+    <div class="recommand-goods type-3">
+        <div class="goods-box">
+            <div class="item-info" style="background-image: url('/wsrv/app/img/new/common/gredient_bg_1.jpg');">
+                <span class="desc">유병자・고령자 간편가입</span>
+                <strong class="name">흥Good 든든 3N5 간편종합보험</strong>
+                <div style="background-image: url('/wsrv/app/img/new/common/goods_mascot_1.png');" class="sub-img"></div>
+            </div>
+            <div class="item-btn">
+                <a href="javascript:;" class="btn dg-fill">특화플랜II</a>
+                <a href="javascript:;" class="btn cg-line">바로보장 <br />플랜III</a>
+            </div>
+        </div>
+        <div class="goods-box">
+            <div class="item-info" style="background-image: url('/wsrv/app/img/new/common/gredient_bg_2.jpg');">
+                <span class="desc">오! 건강 어른이 할인형 보험</span>
+                <strong class="name">흥Good The 건강한 0550 종합보험</strong>
+                <div style="background-image: url('/wsrv/app/img/new/common/goods_mascot_2.png');" class="sub-img"></div>
+            </div>
+            <div class="item-btn">
+                <a href="javascript:;" class="btn dg-fill">특화플랜II</a>
+                <a href="javascript:;" class="btn cg-line">바로보장 <br />플랜III</a>
+            </div>
+        </div>
+        <div class="empty">
+            <p>상품을 준비중입니다.</p>
+        </div>
+    </div>
+</body>
+</html>
