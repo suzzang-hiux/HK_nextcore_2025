@@ -13247,6 +13247,98 @@ body.popup button {
   transform: translate(-50%, -50%);
 }
 
+.goods-box {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #DFE7F3;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: hidden;
+}
+.goods-box .item-info {
+  flex: 1;
+  width: 100%;
+  min-height: 158px;
+  position: relative;
+  padding: 20px;
+  background-size: cover !important;
+  background-position: center right !important;
+  background-repeat: no-repeat !important;
+  word-break: break-all;
+}
+.goods-box .item-info .desc {
+  display: block;
+  font-family: "Heungkukseed";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #334155;
+  letter-spacing: -0.24px;
+}
+.goods-box .item-info .name {
+  display: block;
+  width: 60%;
+  margin-top: 8px;
+  font-family: "Heungkukseed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #0F172A !important;
+  word-break: break-word;
+}
+.goods-box .item-info .sub-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  object-fit: contain;
+  background-size: contain !important;
+  background-position: bottom right !important;
+  background-repeat: no-repeat !important;
+}
+.goods-box .item-btn {
+  width: 100%;
+  padding: 8px;
+  border-top: 1px solid #DFE7F3;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.goods-box .item-btn .btn {
+  flex: 1;
+  width: calc(50% - 2px);
+  height: 52px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.28;
+  white-space: wrap;
+  flex-shrink: 0;
+}
+.goods-box .item-btn .btn.cg-line {
+  background-color: #EEF2F7;
+  border-color: #C9D2DE;
+  color: #768497;
+}
+.goods-box .item-btn .btn.cg-line:hover {
+  background-color: #E1EBF4;
+}
+.goods-box .item-btn .btn.cg-line:active {
+  background-color: #C9D2DE;
+}
+.goods-box .item-btn .btn.cg-line:disabled, .goods-box .item-btn .btn.cg-line.disabled {
+  background-color: #EEF2F7;
+  color: #A5A7AC;
+}
+
 .service-wrap {
   width: 100%;
   height: 1000%;
