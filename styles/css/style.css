@@ -12523,6 +12523,7 @@ body.popup button {
 }
 .pencake-portlet-content .recommand-goods .goods-box .item-info .desc {
   display: block;
+  text-align: left;
   font-family: "Heungkukseed";
   font-size: 12px;
   font-weight: 500;
@@ -12534,6 +12535,7 @@ body.popup button {
   display: block;
   width: 60%;
   margin-top: 8px;
+  text-align: left;
   font-family: "Heungkukseed";
   font-size: 18px;
   font-weight: 700;
@@ -13274,6 +13276,7 @@ body.popup button {
 }
 .goods-box .item-info .desc {
   display: block;
+  text-align: left;
   font-family: "Heungkukseed";
   font-size: 12px;
   font-weight: 500;
@@ -13285,6 +13288,7 @@ body.popup button {
   display: block;
   width: 60%;
   margin-top: 8px;
+  text-align: left;
   font-family: "Heungkukseed";
   font-size: 18px;
   font-weight: 700;
