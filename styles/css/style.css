@@ -13293,6 +13293,8 @@ body.popup button {
   word-break: break-word;
 }
 .goods-box .item-info .sub-img {
+  width: 150px;
+  height: 150px;
   position: absolute;
   bottom: 0;
   right: 0;
