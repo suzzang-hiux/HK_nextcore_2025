@@ -1270,6 +1270,7 @@
                 }
                 tbody {
                     tr {
+                        height: 24px;
                         td {
                             @include font(12px, 400, 1);
                             padding: 0 !important;

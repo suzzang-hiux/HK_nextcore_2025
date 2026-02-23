@@ -304,7 +304,7 @@
             background-color: $cl-gr-20;
         }
         &:active {
-            background-color: $cl-gr-40;
+            background-color: $cl-gr-30;
         }
         &:disabled, &.disabled {
             background-color: $cl-white;
@@ -319,7 +319,7 @@
             background-color: $cl-gr-20;
         }
         &:active {
-            background-color: $cl-gr-40;
+            background-color: $cl-gr-30;
         }
         &:disabled, &.disabled {
             border-color: $cl-sg-20;
@@ -445,7 +445,7 @@
     //     }
     // }
     &.magenta-light {
-        border-color: $cl-magenta-10;
+        border-color: $cl-magenta-20;
         background-color: $cl-magenta-10;
         color: $cl-magenta-50;
         &:hover {
@@ -453,11 +453,11 @@
             background-color: $cl-magenta-20;
         }
         &:active {
-            border-color: $cl-magenta-30;
+            border-color: $cl-magenta-20;
             background-color: $cl-magenta-30;
         }
         &:disabled, &.disabled {
-            border-color: $cl-magenta-10;
+            border-color: $cl-magenta-20;
             background-color: $cl-magenta-10;
             color: $cl-sg-40;
         }
@@ -468,12 +468,12 @@
         background-color: $cl-purple-90;
         color: $cl-white;
         &:hover {
-            border-color: $cl-purple-40;
-            background-color: $cl-purple-40;
+            border-color: $cl-purple-60;
+            background-color: $cl-purple-60;
         }
         &:active {
-            border-color: $cl-purple-70;
-            background-color: $cl-purple-70;
+            border-color: $cl-purple-80;
+            background-color: $cl-purple-80;
         }
         &:disabled, &.disabled {
             border-color: $cl-purple-20;
@@ -514,19 +514,19 @@
     //     }
     // }
     &.purple-light {
-        border-color: $cl-purple-10;
+        border-color: $cl-purple-20;
         background-color: $cl-purple-10;
-        color: $cl-purple-90;
+        color: $cl-purple-80;
         &:hover {
             border-color: $cl-purple-20;
             background-color: $cl-purple-20;
         }
         &:active {
-            border-color: $cl-purple-30;
+            border-color: $cl-purple-20;
             background-color: $cl-purple-30;
         }
         &:disabled, &.disabled {
-            border-color: $cl-purple-10;
+            border-color: $cl-purple-20;
             background-color: $cl-purple-10;
             color: $cl-gr-40;
         }
@@ -544,7 +544,7 @@
         background-color: $cl-navy-60;
         color: $cl-white;
         &:hover {
-            background-color: $cl-navy-40;
+            background-color: $cl-navy-50;
         }
         &:active {
             background-color: $cl-navy-70;
@@ -579,7 +579,7 @@
             background-color: $cl-cyan-40;
         }
         &:active {
-            background-color: $cl-cyan-80;
+            background-color: $cl-cyan-60;
         }
         &:disabled, &.disabled {
             background-color: $cl-cyan-10;

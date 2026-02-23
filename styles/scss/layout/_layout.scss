@@ -9,7 +9,7 @@
         height: 100%;
         position: relative;
         padding-block: 16px;
-        @include flex(column, center, space-between, 100px);
+        @include flex(column, center, space-between, 40px);
         @include font($fs-11, 400, 1.1);
         color: $cl-white;
         max-height: 100%;
@@ -1778,6 +1778,9 @@ body[data-theme="type3"] {
 body.subContents {
     height: 100%;
     @include flex(column, flex-start, flex-start, 0);
+    &.minWidthFull {
+        min-width: 100% !important;
+    }
 }
 .ep-content {
     width: 100%;
@@ -1792,7 +1795,7 @@ body.subContents {
     @include flex(row, stretch, flex-start, 12px);
     padding: 16px;
     .col-xs-3 {
-        width: 20.5%;
+        width: 20.5% !important;
         height: fit-content;
         min-height: 100%;
         position: relative;
@@ -1808,6 +1811,15 @@ body.subContents {
                 margin-top: 20px;
                 padding-top: 20px;
                 border-top: 1px solid $cl-sg-10;
+            }
+            &:has(.my-profile-top) {
+                & + .pencake-portlet-box {
+                    &:has(.my-profile-bottom) {
+                        margin-top: 0;
+                        padding-top: 4px;
+                        border-top: none;
+                    }
+                }
             }
         }
     }
@@ -2224,9 +2236,6 @@ body.subContents {
                     }
                 }
             }
-        }
-        &-inner {
-            gap: 48px;
         }
         &-switch {
             label {
