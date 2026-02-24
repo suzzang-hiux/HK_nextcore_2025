@@ -10668,6 +10668,9 @@ body.popup button {
 .notice-layer-wrap.management-status .scroll-table .empty {
   height: calc(100% - 60px);
 }
+.notice-layer-wrap.management-status:has(.table-wrap) .scroll-table {
+  height: 198px;
+}
 .notice-layer-wrap.premium-inquiry .scroll-table {
   height: 254px;
 }

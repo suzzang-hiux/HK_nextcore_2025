@@ -1779,6 +1779,11 @@ body.popup {
                 height: calc(100% - 60px);
             }
         }
+        &:has(.table-wrap) {
+            .scroll-table {
+                height: 198px;
+            }
+        }
     }
     // 미청산 가수 보험료 현황
     &.premium-inquiry {
