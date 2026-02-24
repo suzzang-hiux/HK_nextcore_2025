@@ -103,7 +103,8 @@
         <!-- 홈 연관팝업 목록 -->
         <div class="flex-col gap-8">
             <button type="button" class="btn" data-btn-size="l" @click="showPop_1">정보보호(보안) 서약서</button>
-            <button type="button" class="btn" data-btn-size="l" @click="showPop_2">금융소비자보호 서약서</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_2_1">금융소비자보호 서약서_외주</button>
+            <button type="button" class="btn" data-btn-size="l" @click="showPop_2_2">금융소비자보호 서약서_임직원</button>
             <button type="button" class="btn" data-btn-size="l" @click="showPop_3">고객정보 모집경로 확인 (준법감시 팝업)</button>
             <button type="button" class="btn" data-btn-size="l" @click="showPop_4">Compliance Day 교육 확인 (컴플라이언스 교육 팝업)</button>
             <button type="button" class="btn" data-btn-size="l" @click="showPop_5">자금세탁방지 교육 확인</button>
@@ -142,11 +143,21 @@
                         dialogClass: 'type-centerTit'
                     });
                 },
-                showPop_2: function() {
+                showPop_2_1: function() {
                     PencakeCustomCTRL.showModal("/menu/home/notice/consumerPledge.html", {
-                        targetId: 'consumerPledge',
+                        targetId: 'consumerPledge_employee',
                         width: 900,
                         height: 700,
+                        showTitle: true,
+                        title: "금융소비자보호 서약서",
+                        dialogClass: 'type-centerTit'
+                    });
+                },
+                showPop_2_2: function() {
+                    PencakeCustomCTRL.showModal("/menu/home/notice/consumerPledge_employee.html", {
+                        targetId: 'consumerPledge',
+                        width: 1000,
+                        height: 730,
                         showTitle: true,
                         title: "금융소비자보호 서약서",
                         dialogClass: 'type-centerTit'

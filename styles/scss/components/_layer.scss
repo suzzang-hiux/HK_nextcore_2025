@@ -1510,6 +1510,17 @@ body.popup {
         .gray-bg {
             height: 496px;
         }
+        &.employee {
+            .gray-bg {
+                height: fit-content;
+                @include flex(row, stretch, flex-start, 16px);
+                .pledge-list {
+                    &:nth-child(2) {
+                        counter-reset: number 4;
+                    }
+                }
+            }
+        }
     }
     // 고객정보 모집경로 확인
     &.source-check {

@@ -10413,6 +10413,17 @@ body.popup button {
 .notice-layer-wrap.consumer-pledge .gray-bg {
   height: 496px;
 }
+.notice-layer-wrap.consumer-pledge.employee .gray-bg {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.notice-layer-wrap.consumer-pledge.employee .gray-bg .pledge-list:nth-child(2) {
+  counter-reset: number 4;
+}
 .notice-layer-wrap.source-check .scroll-table {
   max-height: 234px;
 }
