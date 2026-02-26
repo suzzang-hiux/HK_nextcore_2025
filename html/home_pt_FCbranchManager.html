@@ -406,82 +406,86 @@
                                 <div class="flex-col">
                                     <div class="record-box">
                                         <div class="box-tit">
-                                            <h4>지점 활동현황</h4>
-                                            <a href="javascript:;" class="txt-btn link">바로가기</a>
-                                        </div>
-                                        <div class="spot-state">
-                                            <div class="gray-bg-box">
-                                                <p>표준목표</p>
-                                                <strong>
-                                                    <span>{{ isRecordHidden ? '-' : 38 }}</span>건
-                                                </strong>
-                                            </div>
-                                            <div class="state-bar">
-                                                <div class="bar-wrap">
-                                                    <p class="title">유실적구간</p>
-                                                    <div class="bar-inner">
-                                                        <div class="bar magenta" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 100 }">
-                                                            <p class="num">{{ isRecordHidden ? '-' : 100 }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bar-wrap">
-                                                    <p class="title">가동구간</p>
-                                                    <div class="bar-inner">
-                                                        <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 45 }">
-                                                            <p class="num">{{ isRecordHidden ? '-' : 15 }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="record-box">
-                                        <div class="box-tit">
-                                            <h4>지점 수수료 실적조회</h4>
+                                            <h4>지점마감현황</h4>
                                             <a href="javascript:;" class="txt-btn link">바로가기</a>
                                         </div>
                                         <div class="box-cnt">
                                             <div class="total-box fc-branchmanager">
-                                                <p>표준</p>
+                                                <div class="flex-row between">
+                                                    <p class="type">표준</p>
+                                                    <p class="percent">달성률 <span>{{ isRecordHidden ? '-' : 32.4 }}%</span></p>
+                                                </div>
                                                 <div class="state-bar">
                                                     <div class="bar-wrap">
-                                                        <p class="title">인원</p>
+                                                        <p class="title">경영목표</p>
                                                         <div class="bar-inner">
-                                                            <div class="bar purple" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 70 }">
+                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 70 }">
                                                                 <p class="num">{{ isRecordHidden ? '-' : 23 }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="bar-wrap">
-                                                        <p class="title">달성율</p>
+                                                        <p class="title">현재실적</p>
                                                         <div class="bar-inner">
-                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 28.3 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 28.3 + '%' }}</p>
+                                                            <div class="bar purple" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 28.3 }">
+                                                                <p class="num">{{ isRecordHidden ? '-' : 8 }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="total-box fc-branchmanager">
-                                                <p>표준</p>
+                                                <div class="flex-row between">
+                                                    <p class="type">실동</p>
+                                                    <p class="percent">달성률 <span>{{ isRecordHidden ? '-' : 72.2 }}%</span></p>
+                                                </div>
                                                 <div class="state-bar">
                                                     <div class="bar-wrap">
-                                                        <p class="title">실동</p>
+                                                        <p class="title">경영목표</p>
                                                         <div class="bar-inner">
-                                                            <div class="bar purple" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 100 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 23 }}</p>
+                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 50 }">
+                                                                <p class="num">{{ isRecordHidden ? '-' : 18 }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="bar-wrap">
-                                                        <p class="title">정예</p>
+                                                        <p class="title">현재실적</p>
                                                         <div class="bar-inner">
-                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 100 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 100 + '%' }}</p>
+                                                            <div class="bar purple" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 60 }">
+                                                                <p class="num">{{ isRecordHidden ? '-' : 13 }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="total-box fc-branchmanager">
+                                                <div class="flex-row between">
+                                                    <p class="type">정예</p>
+                                                    <p class="percent">달성률 <span>{{ isRecordHidden ? '-' : 50 }}%</span></p>
+                                                </div>
+                                                <div class="state-bar">
+                                                    <div class="bar-wrap">
+                                                        <p class="title">경영목표</p>
+                                                        <div class="bar-inner">
+                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 50 }">
+                                                                <p class="num">{{ isRecordHidden ? '-' : 6 }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bar-wrap">
+                                                        <p class="title">현재실적</p>
+                                                        <div class="bar-inner">
+                                                            <div class="bar purple" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 20 }">
+                                                                <p class="num">{{ isRecordHidden ? '-' : 3 }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="total-box fc-branchmanager gray">
+                                                <div class="flex-row">
+                                                    <p class="type">당월위촉</p>
+                                                    <p class="month-now">{{ isRecordHidden ? '-' : 2 }}</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -12090,6 +12090,26 @@ body.popup button {
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt {
   width: 100%;
   position: relative;
+  flex: 1;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt [data-event=view-tab] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt [data-event=view-tab] .tab-content {
+  flex: 1;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt [data-event=view-tab] .tab-content .cnt-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box {
   width: 100%;
@@ -12141,7 +12161,7 @@ body.popup button {
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap {
   width: fit-content;
   position: relative;
-  margin: 0 auto;
+  margin: 10px auto 0;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap .donut-chart {
   width: 146px;
@@ -12222,19 +12242,65 @@ body.popup button {
   background-color: #C9D2DE;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.chart {
+  flex: 1;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   background-color: #F2F7FB;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.chart > p {
+  position: absolute;
+  top: 16px;
+  left: 16px;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.chart > p::before {
   background-color: #3BCF99;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager {
   background-color: #F9F5FF;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
-.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager > p::before {
-  background-color: #7C3AED;
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .flex-row {
+  width: 100%;
+  gap: 8px;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .flex-row .type {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: #151515;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .flex-row .percent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.23;
+  color: #4B4B4B;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .flex-row .percent span {
+  font-weight: 700;
+  color: #7C3AED;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .state-bar .bar-wrap .title {
+  width: 48px;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager .state-bar .bar-wrap .bar-inner {
+  max-width: calc(100% - 95px);
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager.gray {
+  background-color: #F2F7FB;
+}
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager.gray .month-now {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23;
+  color: #EC008C;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-manager {
   background-color: #EEF8F8;

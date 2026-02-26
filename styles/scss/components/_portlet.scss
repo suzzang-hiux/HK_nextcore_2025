@@ -557,6 +557,18 @@
             .box-cnt {
                 width: 100%;
                 position: relative;
+                flex: 1;
+                [data-event="view-tab"] {
+                    height: 100%;
+                    @include flex(column, flex-start, flex-start, 0);
+                    .tab-content {
+                        flex: 1;
+                        .cnt-item {
+                            height: 100%;
+                            @include flex(column, flex-start, flex-start, 0);
+                        }
+                    }
+                }
                 .total-box {
                     width: 100%;
                     position: relative;
@@ -589,7 +601,7 @@
                     .chart-wrap {
                         width: fit-content;
                         position: relative;
-                        margin: 0 auto;
+                        margin: 10px auto 0;
                         .donut-chart {
                             width: 146px;
                             height: 146px;
@@ -664,11 +676,15 @@
                         }
                     }
                     &.chart {
+                        flex: 1;
                         flex-direction: column;
-                        align-items: flex-start;
-                        justify-content: flex-start;
+                        align-items: center;
+                        justify-content: center;
                         background-color: #F2F7FB;
                         > p {
+                            position: absolute;
+                            top: 16px;
+                            left: 16px;
                             &::before {
                                 background-color: $cl-green-40;
                             }
@@ -676,9 +692,41 @@
                     }
                     &.fc-branchmanager {
                         background-color: $cl-purple-5;
-                        > p {
-                            &::before {
-                                background-color: $cl-purple-60;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+                        .flex-row {
+                            width: 100%;
+                            gap: 8px;
+                            .type {
+                                @include font(14px, 600, 1.28);
+                                color: $cl-gr-100;
+                            }
+                            .percent {
+                                @include flex(row, center, flex-start, 4px);
+                                @include font(13px, 500, 1.23);
+                                color: $cl-gr-80;
+                                span {
+                                    font-weight: 700;
+                                    color: $cl-purple-60;
+                                }
+                            }
+                        }
+                        .state-bar {
+                            .bar-wrap {
+                                .title {
+                                    width: 48px;
+                                }
+                                .bar-inner {
+                                    max-width: calc(100% - 95px);
+                                }
+                            }
+                        }
+                        &.gray {
+                            background-color: $cl-sg-5;
+                            .month-now {
+                                @include font(13px, 700, 1.23);
+                                color: $cl-magenta-50;
                             }
                         }
                     }
