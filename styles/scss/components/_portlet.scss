@@ -715,15 +715,73 @@
                         .state-bar {
                             .bar-wrap {
                                 .title {
-                                    width: 48px;
+                                    width: fit-content;
+                                    padding-left: 12px;
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        width: 8px;
+                                        height: 8px;
+                                        border-radius: 50%;
+                                        @include ps-icon;
+                                        background-color: $cl-sg-30;
+                                    }
                                 }
                                 .bar-inner {
                                     max-width: calc(100% - 95px);
+                                }
+                                & + .bar-wrap {
+                                    margin-top: 6px;
+                                }
+                                &:nth-child(2) {
+                                    .title {
+                                        &::before {
+                                            background-color: $cl-purple-60;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.green {
+                            background-color: #EEF8F8;
+                            .flex-row {
+                                .percent {
+                                    span {
+                                        color: $cl-cyan-40;
+                                    }
+                                }
+                            }
+                            .state-bar {
+                                .bar-wrap {
+                                    &:nth-child(2) {
+                                        .title {
+                                            &::before {
+                                                background-color: $cl-cyan-40;
+                                            }
+                                        }
+                                    }
+                                    .bar-inner {
+                                        .bar.purple {
+                                            background-color: $cl-cyan-40;
+                                        }
+                                    }
                                 }
                             }
                         }
                         &.gray {
                             background-color: $cl-sg-5;
+                            .type {
+                                position: relative;
+                                padding-left: 20px;
+                                &::before {
+                                    content: "";
+                                    width: 16px;
+                                    height: 16px;
+                                    @include ps-icon;
+                                    @include bg-set;
+                                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99967 8.00016C12.573 8.00016 14.6663 10.0935 14.6663 12.6668C14.6663 13.7735 13.773 14.6668 12.6663 14.6668H3.33301C2.22634 14.6668 1.33301 13.7735 1.33301 12.6668C1.33301 10.0935 3.42634 8.00016 5.99967 8.00016H9.99967ZM7.99967 1.3335C9.47243 1.3335 10.6663 2.5274 10.6663 4.00016C10.6663 5.47292 9.47243 6.66683 7.99967 6.66683C6.52691 6.66683 5.33301 5.47292 5.33301 4.00016C5.33301 2.5274 6.52691 1.3335 7.99967 1.3335Z' fill='%23151515'/%3E%3C/svg%3E%0A");
+                                }
+                            }
                             .month-now {
                                 @include font(13px, 700, 1.23);
                                 color: $cl-magenta-50;
