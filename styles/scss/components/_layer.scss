@@ -576,12 +576,13 @@ body.popup {
         .detail-content {
             width: 100%;
             position: relative;
-            padding: 12px;;
+            padding: 12px;
             .inner-txt {
                 width: 100%;
                 position: relative;
                 @include font(13px, 400, 1.23);
                 color: $cl-gr-100;
+                word-break: break-all;
                 img {
                     width: 100%;
                     height: auto;
@@ -1012,6 +1013,14 @@ body.popup {
                         position: absolute;
                         bottom: 12px;
                         right: 12px;
+                    }
+                    .comment-content {
+                        font-family: 'Pretendard';
+                        @include font(14px, 400, 1.2);
+                        color: $cl-gr-100;
+                        text-align: left;
+                        white-space: pre-wrap;
+                        word-break: break-all;
                     }
                     .recommand-flex {
                         margin-top: 12px;
