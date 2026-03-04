@@ -93,7 +93,7 @@
         background-image: url("/wsrv/app/img/new/common/ico_setting.png");
     }
     .favorite-area {
-        height: 208px;
+        max-height: 208px;
         overflow-y: auto;
         .favorite-item {
             width: 100%;
@@ -497,10 +497,20 @@
             max-height: 254px;
             border-bottom: 1px solid $cl-sg-30;
             .common-table {
+                thead {
+                    tr {
+                        border-bottom: none;
+                    }
+                }
                 tbody {
                     tr {
-                        td:nth-child(3) {
-                            @include ellipsis(100%);
+                        td {
+                            &:nth-child(3) {
+                                @include ellipsis(100%);
+                            }
+                        }
+                        &:first-child {
+                            border-top: 1px solid $cl-sg-30;
                         }
                         &:last-child {
                             border-bottom: none;
@@ -971,6 +981,24 @@
                                 border: none;
                             }
                             &:nth-child(n+11):last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+                &.ga-eduManager {
+                    height: 133px;
+                    border-bottom: 1px solid $cl-sg-30;
+                    .common-table {
+                        tr {
+                            th {
+                                height: 24px;
+                                position: relative;
+                            }
+                            td {
+                                border: none;
+                            }
+                            &:nth-child(n+3):last-child {
                                 border-bottom: none;
                             }
                         }

@@ -446,49 +446,64 @@
                                     </div>
                                     <div class="record-box">
                                         <div class="box-tit">
-                                            <h4>
-                                                당월 교육활동
-                                                <span>설계 및 체결현황</span>
-                                            </h4>
+                                            <h4>설계매니저 설계현황</h4>
                                             <a href="javascript:;" class="txt-btn link">바로가기</a>
                                         </div>
                                         <div class="box-cnt">
-                                            <div class="edu-manager-act">
-                                                <div class="gray-box">
-                                                    <div class="box">
-                                                        <p>체결건</p>
-                                                        <strong class="magenta"><span>{{ isRecordHidden ? '-' : 168 }}</span>회</strong>
-                                                    </div>
-                                                    <div class="box">
-                                                        <p>체결율</p>
-                                                        <strong><span>{{ isRecordHidden ? '-' : 8.5 }}</span>%</strong>
-                                                    </div>
-                                                </div>
-                                                <div class="state-bar">
-                                                    <div class="bar-wrap">
-                                                        <p class="title">체결</p>
-                                                        <div class="bar-inner">
-                                                            <div class="bar magenta" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 40 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 168 }}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bar-wrap">
-                                                        <p class="title">진설계</p>
-                                                        <div class="bar-inner">
-                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 55 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 267 }}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bar-wrap">
-                                                        <p class="title">가설계</p>
-                                                        <div class="bar-inner">
-                                                            <div class="bar gray" :style="{ '--rate': isRecordHidden || !isBarReady ? 0 : 70 }">
-                                                                <p class="num">{{ isRecordHidden ? '-' : 452 }}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div class="scroll-table ga-eduManager">
+                                                <!-- 260115 수정사항 : 설계매니저 현황 테이블 th 내용 변경, data-table-border="true" 추가 -->
+                                                <table class="common-table" data-table-border="true">
+                                                    <colgroup>
+                                                        <col style="width: 16%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: auto;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2">성명</th>
+                                                            <th rowspan="2">가설</th>
+                                                            <th rowspan="2">진설</th>
+                                                            <th colspan="2">체결</th>
+                                                            <th colspan="2">계약(만원)</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>건</th>
+                                                            <th>%</th>
+                                                            <th>건</th>
+                                                            <th>보험P</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '10' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '5' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '4' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '65' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '3' }}</td>
+                                                            <td class="text-right">{{ isRecordHidden ? '-' : '5,502' }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>{{ isRecordHidden ? '-' : '장원영' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '24' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '3' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '3' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '100' }}</td>
+                                                            <td>{{ isRecordHidden ? '-' : '4' }}</td>
+                                                            <td class="text-right">{{ isRecordHidden ? '-' : '23,978' }}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- // 260115 수정사항 : 설계매니저 현황 테이블 th 내용 변경, data-table-border="true" 추가 -->
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>

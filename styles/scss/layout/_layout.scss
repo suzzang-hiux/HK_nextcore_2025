@@ -1821,11 +1821,12 @@ body.subContents {
                     }
                 }
             }
-            &:has(.favorite-area) {
-                &:last-child {
+            &:last-child {
+                &:has(.favorite-area) {
                     .favorite-area {
                         height: calc(100vh - 565px);
                         min-height: 240px;
+                        max-height: fit-content;
                     }
                 }
             }
@@ -1851,6 +1852,9 @@ body.subContents {
                     height: 100%;
                     border-bottom: 1px solid $cl-sg-30;
                     &:has(.table-with-btn), &:has(.recommand-goods) {
+                        border-bottom: none;
+                    }
+                    & + .pencake-portlet-content {
                         border-bottom: none;
                     }
                 }

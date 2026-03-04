@@ -7133,9 +7133,10 @@ body.subContents.minWidthFull {
   padding-top: 4px;
   border-top: none;
 }
-.contents-grid .col-xs-3 .pencake-portlet-box:has(.favorite-area):last-child .favorite-area {
+.contents-grid .col-xs-3 .pencake-portlet-box:last-child:has(.favorite-area) .favorite-area {
   height: calc(100vh - 565px);
   min-height: 240px;
+  max-height: fit-content;
 }
 .contents-grid .col-xs-5 {
   flex: 1;
@@ -7165,6 +7166,9 @@ body.subContents.minWidthFull {
   border-bottom: 1px solid #C9D2DE;
 }
 .contents-grid .col-xs-5 .pencake-portlet-box:last-child .pencake-portlet-content:has(.table-with-btn), .contents-grid .col-xs-5 .pencake-portlet-box:last-child .pencake-portlet-content:has(.recommand-goods) {
+  border-bottom: none;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:last-child .pencake-portlet-content + .pencake-portlet-content {
   border-bottom: none;
 }
 
@@ -11535,7 +11539,7 @@ body.popup button {
   background-image: url("/wsrv/app/img/new/common/ico_setting.png");
 }
 .pencake-portlet-content .favorite-area {
-  height: 208px;
+  max-height: 208px;
   overflow-y: auto;
 }
 .pencake-portlet-content .favorite-area .favorite-item {
@@ -12022,11 +12026,17 @@ body.popup button {
   max-height: 254px;
   border-bottom: 1px solid #C9D2DE;
 }
+.pencake-portlet-content .work-request-table .scroll-table .common-table thead tr {
+  border-bottom: none;
+}
 .pencake-portlet-content .work-request-table .scroll-table .common-table tbody tr td:nth-child(3) {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.pencake-portlet-content .work-request-table .scroll-table .common-table tbody tr:first-child {
+  border-top: 1px solid #C9D2DE;
 }
 .pencake-portlet-content .work-request-table .scroll-table .common-table tbody tr:last-child {
   border-bottom: none;
@@ -12567,6 +12577,20 @@ body.popup button {
   border: none;
 }
 .pencake-portlet-content .month-record-wrap .record-box .scroll-table.ga-branchmanager .common-table tr:nth-child(n+11):last-child {
+  border-bottom: none;
+}
+.pencake-portlet-content .month-record-wrap .record-box .scroll-table.ga-eduManager {
+  height: 133px;
+  border-bottom: 1px solid #C9D2DE;
+}
+.pencake-portlet-content .month-record-wrap .record-box .scroll-table.ga-eduManager .common-table tr th {
+  height: 24px;
+  position: relative;
+}
+.pencake-portlet-content .month-record-wrap .record-box .scroll-table.ga-eduManager .common-table tr td {
+  border: none;
+}
+.pencake-portlet-content .month-record-wrap .record-box .scroll-table.ga-eduManager .common-table tr:nth-child(n+3):last-child {
   border-bottom: none;
 }
 .pencake-portlet-content .month-record-wrap .record-box .scroll-table .empty {
