@@ -7133,11 +7133,6 @@ body.subContents.minWidthFull {
   padding-top: 4px;
   border-top: none;
 }
-.contents-grid .col-xs-3 .pencake-portlet-box:last-child:has(.favorite-area) .favorite-area {
-  height: calc(100vh - 565px);
-  min-height: 240px;
-  max-height: fit-content;
-}
 .contents-grid .col-xs-5 {
   flex: 1;
 }
@@ -7170,6 +7165,64 @@ body.subContents.minWidthFull {
 }
 .contents-grid .col-xs-5 .pencake-portlet-box:last-child .pencake-portlet-content + .pencake-portlet-content {
   border-bottom: none;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab {
+  width: 100%;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li button, .contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  white-space: nowrap;
+  outline: none;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li button .state, .contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li a .state {
+  font-size: 12px;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li button .state::before, .contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li a .state::before {
+  content: "(";
+  display: inline-block;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li button .state::after, .contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li a .state::after {
+  content: ")";
+  display: inline-block;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li button::after, .contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li a::after {
+  display: none;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #151515;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.contents-grid .col-xs-5 .pencake-portlet-box:has(.today-work) .common-tab ul li.active::after {
+  display: block;
 }
 
 .pencake-portlet-box .pencake-portlet-content {
@@ -8350,39 +8403,36 @@ body.subContents.minWidthFull {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  color: #151515;
+  color: #60676F;
   position: relative;
-  padding-left: 20px;
+  padding-left: 15px;
   cursor: pointer;
+  transition: color 0.2s;
 }
 .common-radio + .txt::before {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 1px solid #C9D2DE;
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
 }
+.common-radio:checked + .txt {
+  color: #151515;
+}
 .common-radio:checked + .txt::before {
-  border: 5px solid #5B21B6;
+  border: 4px solid #5B21B6;
+}
+.common-radio:disabled + .txt, .common-radio.disabled + .txt {
+  color: #60676F !important;
 }
 .common-radio:disabled + .txt::before, .common-radio.disabled + .txt::before {
   background-color: #F6F8F9;
 }
 .common-radio:disabled:checked + .txt::before, .common-radio.disabled:checked + .txt::before {
-  border: 1px solid #C9D2DE !important;
-}
-.common-radio:disabled:checked + .txt::after, .common-radio.disabled:checked + .txt::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background-color: #C9D2DE;
-  border-radius: 50%;
-  position: absolute;
-  top: 5px;
-  left: 5px;
+  border: 4px solid #A8B3C1 !important;
 }
 .common-radio[data-input-size=big] + .txt {
   min-height: 20px;
@@ -8393,15 +8443,13 @@ body.subContents.minWidthFull {
 .common-radio[data-input-size=big] + .txt::before {
   width: 20px;
   height: 20px;
+  top: -1px;
 }
 .common-radio[data-input-size=big]:checked + .txt::before {
   border-width: 7px;
 }
-.common-radio[data-input-size=big]:disabled:checked + .txt::after, .common-radio[data-input-size=big].disabled:checked + .txt::after {
-  width: 6px;
-  height: 6px;
-  top: 7px;
-  left: 7px;
+.common-radio[data-input-size=big]:disabled:checked + .txt::before, .common-radio[data-input-size=big].disabled:checked + .txt::before {
+  border: 7px solid #A8B3C1 !important;
 }
 
 .common-checkbox {
@@ -8412,21 +8460,21 @@ body.subContents.minWidthFull {
   overflow: hidden;
 }
 .common-checkbox + span {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   display: block;
   cursor: pointer;
   position: relative;
   border-radius: 2px;
-  border: 1px solid #C9D2DE;
+  border: 1px solid #A8B3C1;
   background-color: #fff;
   will-change: background-color, border-color;
   transition: background-color 0.2s, border-color 0.2s;
 }
 .common-checkbox + span::after {
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -8434,7 +8482,7 @@ body.subContents.minWidthFull {
   background-size: contain !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.96967 2.96973C9.26256 2.67684 9.73732 2.67684 10.0302 2.96973C10.3231 3.26262 10.3231 3.73738 10.0302 4.03028L5.03022 9.03028C4.73732 9.32317 4.26256 9.32317 3.96967 9.03028L1.96967 7.03028C1.67678 6.73738 1.67678 6.26262 1.96967 5.96973C2.26256 5.67684 2.73732 5.67684 3.03022 5.96973L4.49994 7.43946L8.96967 2.96973Z' fill='%23E0E0E0'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M7.47538 2.47456C7.71945 2.23048 8.11509 2.23048 8.35917 2.47456C8.60324 2.71864 8.60324 3.11427 8.35917 3.35835L4.1925 7.52502C3.94842 7.7691 3.55279 7.7691 3.30871 7.52502L1.64204 5.85835C1.39796 5.61427 1.39796 5.21864 1.64204 4.97456C1.88612 4.73048 2.28175 4.73048 2.52583 4.97456L3.7506 6.19933L7.47538 2.47456Z' fill='%23A8B3C1'/%3E%3C/svg%3E");
   will-change: background-image;
   transition: background-image 0.2s;
 }
@@ -8442,13 +8490,14 @@ body.subContents.minWidthFull {
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
-  color: #151515;
+  color: #60676F;
   margin-left: 4px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: color 0.2s;
 }
 .common-checkbox:checked + span {
   background-color: #5B21B6;
@@ -8457,15 +8506,21 @@ body.subContents.minWidthFull {
 .common-checkbox:checked + span::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.96967 2.96973C9.26256 2.67684 9.73732 2.67684 10.0302 2.96973C10.3231 3.26262 10.3231 3.73738 10.0302 4.03028L5.03022 9.03028C4.73732 9.32317 4.26256 9.32317 3.96967 9.03028L1.96967 7.03028C1.67678 6.73738 1.67678 6.26262 1.96967 5.96973C2.26256 5.67684 2.73732 5.67684 3.03022 5.96973L4.49994 7.43946L8.96967 2.96973Z' fill='white'/%3E%3C/svg%3E");
 }
+.common-checkbox:checked + span + .txt {
+  color: #151515;
+}
 .common-checkbox:disabled + span {
-  background-color: #F8F8F8;
+  background-color: #F6F8F9;
   border-color: #CACACA;
 }
 .common-checkbox:disabled + span::after {
   background-image: none;
 }
+.common-checkbox:disabled:checked + span {
+  background-color: #EEEEEE;
+}
 .common-checkbox:disabled:checked + span::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.96967 2.96973C9.26256 2.67684 9.73732 2.67684 10.0302 2.96973C10.3231 3.26262 10.3231 3.73738 10.0302 4.03028L5.03022 9.03028C4.73732 9.32317 4.26256 9.32317 3.96967 9.03028L1.96967 7.03028C1.67678 6.73738 1.67678 6.26262 1.96967 5.96973C2.26256 5.67684 2.73732 5.67684 3.03022 5.96973L4.49994 7.43946L8.96967 2.96973Z' fill='%23CECECE'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M7.47538 2.47456C7.71945 2.23048 8.11509 2.23048 8.35917 2.47456C8.60324 2.71864 8.60324 3.11427 8.35917 3.35835L4.1925 7.52502C3.94842 7.7691 3.55279 7.7691 3.30871 7.52502L1.64204 5.85835C1.39796 5.61427 1.39796 5.21864 1.64204 4.97456C1.88612 4.73048 2.28175 4.73048 2.52583 4.97456L3.7506 6.19933L7.47538 2.47456Z' fill='%23A8B3C1'/%3E%3C/svg%3E");
 }
 .common-checkbox[data-input-size=big] + span {
   width: 20px;
@@ -13306,10 +13361,10 @@ body.popup button {
   margin-bottom: 8px;
 }
 .pencake-portlet-content .today-work .scroll-table {
-  height: 366px;
+  height: 367px;
 }
 .pencake-portlet-content .today-work .empty {
-  height: 330px;
+  height: 315px;
   position: relative;
 }
 .pencake-portlet-content .today-work .empty .mascot-empty {

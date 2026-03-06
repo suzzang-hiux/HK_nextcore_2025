@@ -1821,15 +1821,15 @@ body.subContents {
                     }
                 }
             }
-            &:last-child {
-                &:has(.favorite-area) {
-                    .favorite-area {
-                        height: calc(100vh - 565px);
-                        min-height: 240px;
-                        max-height: fit-content;
-                    }
-                }
-            }
+            // &:last-child {
+            //     &:has(.favorite-area) {
+            //         .favorite-area {
+            //             height: calc(100vh - 565px);
+            //             min-height: 240px;
+            //             max-height: fit-content;
+            //         }
+            //     }
+            // }
         }
     }
     .col-xs-5 {
@@ -1856,6 +1856,57 @@ body.subContents {
                     }
                     & + .pencake-portlet-content {
                         border-bottom: none;
+                    }
+                }
+            }
+            &:has(.today-work) {
+                .common-tab {
+                    width: 100%;
+                    ul {
+                        width: 100%;
+                        @include flex(row, stretch, center, 20px);
+                        // padding-inline: 12px;
+                        li {
+                            position: relative;
+                            flex: 1;
+                            text-align: center;
+                            @include flex(column, center, center, 0);
+                            button, a {
+                                flex: 1;
+                                @include flex(column, center, center, 0);
+                                white-space: nowrap;
+                                outline: none;
+                                .state {
+                                    font-size: 12px;
+                                    &::before {
+                                        content: "(";
+                                        display: inline-block;
+                                    }
+                                    &::after {
+                                        content: ")";
+                                        display: inline-block;
+                                    }
+                                }
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                width: 100%;
+                                height: 2px;
+                                background-color: #151515;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                display: none;
+                            }
+                            &.active {
+                                &::after {
+                                    display: block;
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -403,12 +403,12 @@
                                         </li>
                                         <li>
                                             <button type="button">
-                                                미결현황<span class="state">3</span>
+                                                미결현황<span class="state">+@</span> <!-- 260306 수정 : 미결현황은 +@ 로 표시 -->
                                             </button>
                                         </li>
                                         <li>
                                             <button type="button">
-                                                동의만료<span class="state">10</span>
+                                                동의만료<span class="state">-</span> <!-- 260306 수정 : 값이 없을 시에 -로 표시 -->
                                             </button>
                                         </li>
                                         <li>
@@ -416,6 +416,13 @@
                                                 상령일<span class="state">3</span>
                                             </button>
                                         </li>
+                                        <!-- 260306 수정 : '계약전환' 신규 추가 -->
+                                        <li>
+                                            <button type="button">
+                                                계약전환<span class="state">84</span>
+                                            </button>
+                                        </li>
+                                        <!-- // 260306 수정 : '계약전환' 신규 추가 -->
                                     </ul>
                                 </div>
                             </div>
@@ -1231,6 +1238,81 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- 260306 수정 : '계약전환' 신규 탭 추가 -->
+                                <div class="cnt-item">
+                                    <div class="today-work">
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table"> 
+                                                <table class="common-table">
+                                                    <colgroup>
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 15%">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 10%;">
+                                                        <col style="width: 15%;">
+                                                        <col style="width: 12%;">
+                                                        <col style="width: 10%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>대상년월</th>
+                                                            <th>계약번호</th>
+                                                            <th>상품명</th>
+                                                            <th>계약자명</th>
+                                                            <th>피보험자명</th>
+                                                            <th>전환가능일</th>
+                                                            <th>전환가능유형</th>
+                                                            <th>전환여부</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2025-09</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">942204660272</a></td>
+                                                            <td class="text-left ellipsis">무배당 흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>안유진</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>2025-09-03</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2025-09</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">942204660272</a></td>
+                                                            <td class="text-left ellipsis">무배당 흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>안유진</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>2025-09-03</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2025-09</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">942204660272</a></td>
+                                                            <td class="text-left ellipsis">무배당 흥Good 모두 담은 암보험 PLUS</td>
+                                                            <td>안유진</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>2025-09-03</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 260306 수정 : '계약전환' 신규 탭 추가 -->
                             </div>
                         </div>
                     </div> 
