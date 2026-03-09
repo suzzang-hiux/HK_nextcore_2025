@@ -1803,14 +1803,23 @@ body.subContents {
         background-color: $cl-white;
         border-radius: 8px;
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.10);
+        .pencake-page-container {
+            @include flex(column, flex-start, stretch, 40px);
+        }
         .pencake-portlet-box {
             width: 100%;
             position: relative;
             padding: 0;
             & + .pencake-portlet-box {
-                margin-top: 20px;
-                padding-top: 20px;
-                border-top: 1px solid $cl-sg-10;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    background-color: $cl-sg-10;
+                }
             }
             &:has(.my-profile-top) {
                 & + .pencake-portlet-box {
@@ -1821,15 +1830,22 @@ body.subContents {
                     }
                 }
             }
-            // &:last-child {
-            //     &:has(.favorite-area) {
-            //         .favorite-area {
-            //             height: calc(100vh - 565px);
-            //             min-height: 240px;
-            //             max-height: fit-content;
-            //         }
-            //     }
-            // }
+            &:last-child {
+                &:has(.favorite-area) {
+                    flex: 1;
+                    min-height: 0;
+                    @include flex(column, flex-start, stretch, 0);
+                    .pencake-portlet-content {
+                        flex: 1;
+                        min-height: 0;
+                        @include flex(column, flex-start, stretch, 0);
+                        .favorite-area {
+                            flex: 1;
+                            min-height: 0;
+                        }
+                    }
+                }
+            }
         }
     }
     .col-xs-5 {

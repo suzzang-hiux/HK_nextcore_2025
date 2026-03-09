@@ -7118,20 +7118,53 @@ body.subContents.minWidthFull {
   border-radius: 8px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
 }
+.contents-grid .col-xs-3 .pencake-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  gap: 40px;
+}
 .contents-grid .col-xs-3 .pencake-portlet-box {
   width: 100%;
   position: relative;
   padding: 0;
 }
-.contents-grid .col-xs-3 .pencake-portlet-box + .pencake-portlet-box {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #E1EBF4;
+.contents-grid .col-xs-3 .pencake-portlet-box + .pencake-portlet-box::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: #E1EBF4;
 }
 .contents-grid .col-xs-3 .pencake-portlet-box:has(.my-profile-top) + .pencake-portlet-box:has(.my-profile-bottom) {
   margin-top: 0;
   padding-top: 4px;
   border-top: none;
+}
+.contents-grid .col-xs-3 .pencake-portlet-box:last-child:has(.favorite-area) {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  gap: 0;
+}
+.contents-grid .col-xs-3 .pencake-portlet-box:last-child:has(.favorite-area) .pencake-portlet-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  gap: 0;
+}
+.contents-grid .col-xs-3 .pencake-portlet-box:last-child:has(.favorite-area) .pencake-portlet-content .favorite-area {
+  flex: 1;
+  min-height: 0;
 }
 .contents-grid .col-xs-5 {
   flex: 1;
@@ -11594,7 +11627,6 @@ body.popup button {
   background-image: url("/wsrv/app/img/new/common/ico_setting.png");
 }
 .pencake-portlet-content .favorite-area {
-  max-height: 216px;
   overflow-y: auto;
 }
 .pencake-portlet-content .favorite-area .favorite-item {
