@@ -93,7 +93,7 @@
         background-image: url("/wsrv/app/img/new/common/ico_setting.png");
     }
     .favorite-area {
-        // max-height: 216px;
+        max-height: 216px;
         overflow-y: auto;
         .favorite-item {
             width: 100%;
@@ -245,13 +245,10 @@
                 height: 254px;
                 position: relative;
                 img {
-                    width: 100%;
-                    height: fit-content;
-                    object-fit: contain;
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    bottom: 0;
+                    width: fit-content;
+                    height: 100%;
+                    object-fit: cover;
+                    @include ps-center;                    
                 }
                 .txt-posi {
                     width: 668px;
@@ -588,7 +585,8 @@
                     padding: 16px;
                     border-radius: 8px;
                     > p {
-                        width: 50px;
+                        // width: 50px;
+                        width: fit-content;
                         flex-shrink: 0;
                         @include font(13px, 500, 1.2);
                         color: $cl-sg-50;
@@ -608,6 +606,9 @@
                         color: $cl-gr-100;
                         span {
                             @include font(18px, 700, 1);
+                        }
+                        a {
+                            text-decoration: underline;
                         }
                     }
                     .chart-wrap {
@@ -665,6 +666,22 @@
                         > p {
                             &::before {
                                 background-color: $cl-blue-70;
+                            }
+                        }
+                    }
+                    &.blue {
+                        background-color: $cl-blue-10;
+                        > p {
+                            &::before {
+                                background-color: $cl-blue-70;
+                            }
+                        }
+                    }
+                    &.gray {
+                        border: 1px solid $cl-sg-30;
+                        > p {
+                            &::before {
+                                background-color: $cl-gr-50;
                             }
                         }
                     }

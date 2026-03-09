@@ -351,34 +351,19 @@
                                     </div>
                                     <div class="box-cnt">
                                         <div data-event="view-tab" data-tab-name="recordAllTab">
-                                            <div class="common-tab">
-                                                <ul>
-                                                    <li class="active">
-                                                        <button type="button">신계약</button>
-                                                    </li>
-                                                    <li>
-                                                        <button type="button">장기(人)</button>
-                                                    </li>
-                                                    <li>
-                                                        <button type="button">자동차</button>
-                                                    </li>
-                                                    <li>
-                                                        <button type="button">일반</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <!-- 260309 수정 : 탭 삭제 !! -->
                                             <div class="tab-content">
                                                 <div class="cnt-item">
-                                                    <div class="total-box goal">
-                                                        <p>목표</p>
+                                                    <div class="total-box blue"> <!-- 260309 수정 : 클래스 변경 (goal => blue) -->
+                                                        <p>지점 매출</p> <!-- 260309 수정 : 데이터 타이틀 변경 (목표 => 지점매출) -->
                                                         <strong>
                                                             <span>{{ isRecordHidden ? '-' : Number(currentRecord.goal).toLocaleString() }}</span>원
                                                         </strong>
                                                     </div>
-                                                    <div class="total-box record">
-                                                        <p>실적</p>
+                                                    <div class="total-box gray"> <!-- 260309 수정 : 클래스 변경 (record => gray) -->
+                                                        <p>가동 사용인</p> <!-- 260309 수정 : 데이터 타이틀 변경 (실적 => 가동 사용인) -->
                                                         <strong>
-                                                            <span>{{ isRecordHidden ? '-' : Number(currentRecord.result).toLocaleString() }}</span>원
+                                                            <a href="javascript:;" class="txt-btn line"><span>{{ isRecordHidden ? '-' : 71 }}</span></a>명 <!-- 260309 수정 (실적 데이터 '원' => 가동 사용인 데이터 '명') -->
                                                         </strong>
                                                     </div>
                                                     <div class="total-box chart">
