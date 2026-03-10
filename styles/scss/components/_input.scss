@@ -157,6 +157,12 @@
             background: $cl-gr-5 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center / 12px 12px;
         }
     }
+    &.datepicker {
+        background: $cl-white url("/wsrv/app/img/new/common/ico_calendar.png") no-repeat right 4px center / 12px 12px !important;
+        &:read-only, &.disabled, &:disabled {
+            background: $cl-gr-5 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center / 12px 12px !important;
+        }
+    }
 }
 
 // RADIO

@@ -82,6 +82,7 @@
                 @include flex(row, center, flex-end, 4px);
             }
             button {
+                font-family: 'Pretendard';
                 width: fit-content;
                 height: 24px;
                 position: relative;
@@ -370,6 +371,7 @@ body.popup {
                 padding: 0;
                 background-color: $cl-white;
                 border-color: $cl-sg-30;
+                font-size: 0;
                 &::after {
                     content: "";
                     width: 12px;

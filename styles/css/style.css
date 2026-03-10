@@ -8427,6 +8427,12 @@ body.subContents.minWidthFull {
 .common-input[type=date]:read-only, .common-input[type=date].disabled, .common-input[type=date]:disabled {
   background: #F8F8F8 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center/12px 12px;
 }
+.common-input.datepicker {
+  background: #fff url("/wsrv/app/img/new/common/ico_calendar.png") no-repeat right 4px center/12px 12px !important;
+}
+.common-input.datepicker:read-only, .common-input.datepicker.disabled, .common-input.datepicker:disabled {
+  background: #F8F8F8 url("/wsrv/app/img/new/common/ico_calendar_disabled.png") no-repeat right 4px center/12px 12px !important;
+}
 
 .common-radio {
   display: none;
@@ -8928,6 +8934,7 @@ ul.dot-noti li + li {
   gap: 4px;
 }
 .ui-dialog.type-white .ui-dialog-buttonpane button {
+  font-family: "Pretendard";
   width: fit-content;
   height: 24px;
   position: relative;
@@ -9196,6 +9203,7 @@ body.popup button {
   padding: 0;
   background-color: #fff;
   border-color: #C9D2DE;
+  font-size: 0;
 }
 .board-layer .table-top .right-box .btn::after {
   content: "";
@@ -11484,6 +11492,9 @@ body.popup button {
   left: 0;
   left: 6px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M7.84379 3.35343C8.03905 3.15817 8.03905 2.84166 7.84379 2.6464C7.64853 2.45114 7.33202 2.45114 7.13676 2.6464L4.17191 5.61124C3.95739 5.82598 3.95739 6.17385 4.17191 6.38859L7.13676 9.35343C7.33202 9.54869 7.64853 9.54869 7.84379 9.35343C8.03905 9.15817 8.03905 8.84166 7.84379 8.6464L5.1973 5.99992L7.84379 3.35343Z' fill='black'/%3E%3C/svg%3E");
+}
+.common-pagination .pagination > ul li a.last {
+  width: 18px;
 }
 .common-pagination .pagination > ul li a.last::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6.86455 2.64669C6.66929 2.45143 6.35279 2.45143 6.15753 2.64669C5.96228 2.84195 5.96227 3.15846 6.15753 3.35371L8.80399 6.00017L6.15753 8.64663C5.96228 8.84189 5.96227 9.15839 6.15753 9.35365C6.35279 9.54886 6.66931 9.54888 6.86455 9.35365L9.82937 6.38884C10.0439 6.17412 10.0438 5.82624 9.82937 5.6115L6.86455 2.64669ZM2.86459 2.64669C2.66933 2.45143 2.35282 2.45143 2.15756 2.64669C1.96231 2.84195 1.96231 3.15846 2.15756 3.35371L4.80402 6.00017L2.15756 8.64663C1.96231 8.84189 1.96231 9.15839 2.15756 9.35365C2.35282 9.54886 2.66934 9.54888 2.86459 9.35365L5.82941 6.38884C6.04391 6.17412 6.04388 5.82624 5.82941 5.6115L2.86459 2.64669Z' fill='black'/%3E%3C/svg%3E");

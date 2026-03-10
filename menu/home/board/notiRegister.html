@@ -94,11 +94,11 @@ var ePortalConfig = {
                                     <td colspan="3">
                                         <div class="input-box gap-4">
                                             <div class="inner">
-                                                <input type="date" class="common-input" data-input-size="s" style="--width: 120px;" />
+                                                <input type="text" class="common-input datepicker" data-input-size="s" style="--width: 120px;" />
                                             </div>
                                             <span>~</span>
                                             <div class="inner">
-                                                <input type="date" class="common-input" data-input-size="s" style="--width: 120px;" disabled />
+                                                <input type="text" class="common-input datepicker" data-input-size="s" style="--width: 120px;" />
                                             </div>
                                             <label class="input-box">
                                                 <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" checked />
@@ -113,11 +113,11 @@ var ePortalConfig = {
                                     <td colspan="3">
                                         <div class="input-box gap-4">
                                             <div class="inner">
-                                                <input type="date" class="common-input" data-input-size="s" style="--width: 120px;" />
+                                                <input type="text" class="common-input datepicker" data-input-size="s" style="--width: 120px;" />
                                             </div>
                                             <span>~</span>
                                             <div class="inner">
-                                                <input type="date" class="common-input" data-input-size="s" style="--width: 120px;" />
+                                                <input type="text" class="common-input datepicker" data-input-size="s" style="--width: 120px;" />
                                             </div>
                                             <label class="input-box">
                                                 <input type="checkbox" class="common-checkbox" data-input-size="big" name="" id="" />
@@ -129,7 +129,7 @@ var ePortalConfig = {
                                 </tr>
                                 <tr>
                                     <th>팝업옵션</th>
-                                    <td colspan="3">
+                                    <td colspan="3"> <!-- ★ 팝업옵션 td는 colspan="3" 추가 -->
                                         <div class="input-box">
                                             <div class="input-type-txt">
                                                 <input type="text" class="common-input" data-input-size="s" placeholder="ex&#41; width=700, height=750, resize=1, scrollbars=1" autocomplete="false" />
@@ -348,11 +348,10 @@ var ePortalConfig = {
                     </div>
                     <div class="popup-bottom">
                         <div class="btn-wrap">
-                            <!-- 260203 버튼 클래스 변경 -->
-                            <button type="button" class="btn cg-fill-1" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button>
+                            <button type="button" class="btn cg-fill-1" data-btn-size="m" id="previewBtn" @click="contentPreview">미리보기</button> <!-- ★ 버튼 클래스 변경 "cg-line => cg-fill-1" -->
                             <button type="button" class="btn" data-btn-size="m">저장</button>
-                            <button type="button" class="btn dg-line" data-btn-size="m">닫기</button>
-                            <!-- // 260203 버튼 클래스 변경 -->
+                            <button type="button" class="btn dg-line" data-btn-size="m">리스트</button> <!-- ★ 버튼 클래스 변경 "wg-line => dg-line" -->
+                            <button type="button" class="btn dg-line" data-btn-size="m">닫기</button> <!-- ★ 버튼 클래스 변경 "black => dg-line" -->
                         </div>
                     </div>
                 </div>
