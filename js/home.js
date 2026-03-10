@@ -153,9 +153,9 @@ $(function () {
                 ],
             ],
             // 이 달의 실적 값 숨김 체크박스
-            isRecordHidden: false,
+            isRecordHidden: true,
             // 이 달의 실적 바 차트 애니메이션 준비
-            isBarReady: false,
+            isBarReady: true,
         },
         computed: {
             // 이 달의 실적 - 전체 실적 데이터 변경
@@ -173,7 +173,10 @@ $(function () {
         mounted() {
             this.$nextTick(() => {
                 // 도넛 차트 애니메이션
-                if (!this.isRecordHidden) {
+                // 260310 수정 : '숨김' 디폴트
+                if (this.isRecordHidden) {
+                    this.animateDonut(0);
+                } else {
                     this.animateDonut(this.currentRecord.rate);
                 }
             });

@@ -12292,6 +12292,10 @@ body.popup button {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap .donut-chart .progressCircle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap .percent {
   position: absolute;
   top: 50%;
@@ -12457,6 +12461,7 @@ body.popup button {
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager.gray {
   background-color: #F2F7FB;
+  border: none;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box.fc-branchmanager.gray .type {
   position: relative;

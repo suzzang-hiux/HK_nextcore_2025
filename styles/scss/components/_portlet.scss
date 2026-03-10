@@ -623,6 +623,10 @@
                                 @include ps-center;
                                 // transform: translate(-50%, -50%) rotate(-90deg);
                             }
+                            .progressCircle {
+                                transform: rotate(-90deg);
+                                transform-origin: 50% 50%;
+                            }
                         }
                         .percent {
                             @include ps-center;
@@ -799,6 +803,7 @@
                         }
                         &.gray {
                             background-color: $cl-sg-5;
+                            border: none;
                             .type {
                                 position: relative;
                                 padding-left: 20px;
