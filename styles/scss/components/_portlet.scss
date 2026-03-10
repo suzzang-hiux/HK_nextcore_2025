@@ -626,6 +626,8 @@
                             .progressCircle {
                                 transform: rotate(-90deg);
                                 transform-origin: 50% 50%;
+                                stroke-dasharray: 395.841;
+                                stroke-dashoffset: 395.841;
                             }
                         }
                         .percent {

@@ -12295,6 +12295,8 @@ body.popup button {
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap .donut-chart .progressCircle {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
+  stroke-dasharray: 395.841;
+  stroke-dashoffset: 395.841;
 }
 .pencake-portlet-content .month-record-wrap .record-box .box-cnt .total-box .chart-wrap .percent {
   position: absolute;

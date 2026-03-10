@@ -155,7 +155,7 @@ $(function () {
             // 이 달의 실적 값 숨김 체크박스
             isRecordHidden: true,
             // 이 달의 실적 바 차트 애니메이션 준비
-            isBarReady: true,
+            isBarReady: false,
         },
         computed: {
             // 이 달의 실적 - 전체 실적 데이터 변경
