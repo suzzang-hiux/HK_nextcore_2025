@@ -1827,23 +1827,23 @@ body.subContents {
                     }
                 }
             }
-            &:last-child {
-                &:has(.favorite-area) {
-                    flex: 1;
-                    min-height: 0;
-                    @include flex(column, flex-start, flex-start, 0);
-                    .pencake-portlet-content {
-                        flex: 1;
-                        min-height: 0;
-                        @include flex(column, flex-start, flex-start, 0);
-                        .favorite-area {
-                            flex: 1;
-                            min-height: 0;
-                            max-height: 100%;
-                        }
-                    }
-                }
-            }
+            // &:last-child {
+            //     &:has(.favorite-area) {
+            //         flex: 1;
+            //         min-height: 0;
+            //         @include flex(column, flex-start, flex-start, 0);
+            //         .pencake-portlet-content {
+            //             flex: 1;
+            //             min-height: 0;
+            //             @include flex(column, flex-start, flex-start, 0);
+            //             .favorite-area {
+            //                 flex: 1;
+            //                 min-height: 0;
+            //                 max-height: 100%;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     .col-xs-5 {
@@ -1865,10 +1865,10 @@ body.subContents {
                 .pencake-portlet-content {
                     height: 100%;
                     border-bottom: 1px solid $cl-sg-30;
-                    &:has(.table-with-btn), &:has(.recommand-goods) {
+                    &:has(.table-with-btn), &:has(.recommand-goods), &:has(.favorite-area) {
                         border-bottom: none;
                     }
-                    & + .pencake-portlet-content {
+                    .pencake-portlet-content {
                         border-bottom: none;
                     }
                 }

@@ -110,7 +110,7 @@
                     background-color: $cl-magenta-30;
                     pointer-events: none;
                 }
-                &.black {
+                &:last-child, &.black {
                     border-color: $cl-sg-50;
                     background-color: $cl-white;
                     color: $cl-sg-70;

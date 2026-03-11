@@ -495,4 +495,31 @@ $(function () {
             $input.focus();
         }, 0);
     });
+
+    // 즐겨찾기 가변높이 스크롤
+    const setFavoriteHeight =()=> {
+        $('.pencake-page-container').each(function(){
+            const $container = $(this);
+            const $favorite = $container.find('.favorite-area');
+
+            if(!$favorite.length) return;
+
+            const $favoriteBox = $favorite.closest('.pencake-portlet-box');
+
+            if(!$favoriteBox.is($container.children('.pencake-portlet-box').last())){
+                $favorite.css({'max-height':'216px'});
+                return;
+            }
+
+            const containerBottom = $container.offset().top + $container.outerHeight();
+            const favoriteTop = $favorite.offset().top;
+
+            const remain = containerBottom - favoriteTop;
+
+            $favorite.css({'max-height': remain});
+        });
+    }
+
+    setFavoriteHeight();
+    $(window).on('resize', setFavoriteHeight);
 })
