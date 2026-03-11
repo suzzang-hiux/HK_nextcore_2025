@@ -163,6 +163,11 @@
                     color: $cl-black;
                     text-align: right;
                     @include ellipsis(100%);
+                    .dday {
+                        display: inline-block;
+                        margin-right: 2px;
+                        color: $cl-magenta-50;
+                    }
                 }
                 & + li {
                     &::before {

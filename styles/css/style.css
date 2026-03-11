@@ -11668,6 +11668,11 @@ body.popup button {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.pencake-portlet-content .blue-bg-box .info-flex li .info .dday {
+  display: inline-block;
+  margin-right: 2px;
+  color: #EC008C;
+}
 .pencake-portlet-content .blue-bg-box .info-flex li + li::before {
   content: "";
   width: 1px;
