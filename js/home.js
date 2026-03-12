@@ -505,17 +505,21 @@ $(function () {
             if(!$favorite.length) return;
 
             const $favoriteBox = $favorite.closest('.pencake-portlet-box');
+            const $favoriteContainer = $favoriteBox.closest('.pencake-page-container');
 
-            if(!$favoriteBox.is($container.children('.pencake-portlet-box').last())){
-                $favorite.css({'max-height':'216px'});
-                return;
-            }
-
-            const containerBottom = $container.offset().top + $container.outerHeight();
-            const favoriteTop = $favorite.offset().top;
-
-            const remain = containerBottom - favoriteTop;
-
+            const $boxes = $favoriteContainer.find('.pencake-portlet-box').not($favoriteBox);
+            
+            let totalHeight = 0;
+            $boxes.each(function (){
+                if (!$favoriteBox.is($container.children('.pencake-portlet-box').last())) {
+                    totalHeight += $(this).outerHeight(true) + 18;
+                } else {
+                    totalHeight += $(this).outerHeight(true) + 24;
+                }
+            })
+            
+            const containerHeight = $favoriteContainer.height();
+            const remain = containerHeight - totalHeight;
             $favorite.css({'max-height': remain});
         });
     }

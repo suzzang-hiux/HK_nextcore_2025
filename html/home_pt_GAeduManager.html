@@ -122,6 +122,9 @@
                                     </h2>
                                 </div>
                             </div>
+                            <div class="my-profile-bottom">
+                                <a href="javascript:;" class="btn dg-line" data-btn-size="l" @click="myInfoView">내 정보 조회</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,7 +132,6 @@
                     <div class="pencake-portlet-content">
                         <div class="my-profile" id="myProfileWrap">
                             <div class="my-profile-bottom">
-                                <a href="javascript:;" class="btn dg-line" data-btn-size="l" @click="myInfoView">내 정보 조회</a>
                                 <a href="javascript:;" target="_blank" class="btn magenta" data-btn-size="l">고객등록</a>
                                 <div class="btn-wrap">
                                     <a href="javascript:;" target="_blank" class="btn purple" data-btn-size="l">장기가입설계</a>
@@ -259,6 +261,161 @@
                         </div>
                     </div>
                 </div>
+                <div class="pencake-portlet-box" data-pencake-portlet-id="">
+                    <div class="pencake-portlet-content">
+                        <div data-event="tab" data-tab-name="recentPlanTab">
+                            <div class="title-box">
+                                <div class="common-tab">
+                                    <ul>
+                                        <li class="active">
+                                            <button type="button">최근가입설계찾기</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">사용인조회</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="cnt-item">
+                                    <div class="recent-plan">
+                                        <div class="input-col-box">
+                                            <div class="inner">
+                                                <input type="text" class="common-input" id="recentPlanSearch" placeholder="설계번호 또는 고객명 입력" />
+                                                <!-- 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
+                                                <button type="button" class="btn cg-fill-1" data-btn-size="m">조회</button>
+                                                <!-- // 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
+                                            </div>
+                                        </div>
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table recent">
+                                                <table class="common-table" data-table-bg="white">
+                                                    <colgroup>
+                                                        <col style="width: 25%;">
+                                                        <col style="width: auto;">
+                                                        <col style="width: 30%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>피<br />보험자</th>
+                                                            <th>설계번호</th>
+                                                            <th>설계상태</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue" data-btn-size="m">123456789012</a></td>
+                                                            <td title="가입설계중">가입설계중</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue" data-btn-size="m">123456789012</a></td>
+                                                            <td title="보험료계산완료">보험료계산완료</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue" data-btn-size="m">123456789012</a></td>
+                                                            <td title="심사중">심사중</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue" data-btn-size="m">123456789012</a></td>
+                                                            <td title="인수금지">인수금지</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>장원영</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue" data-btn-size="m">123456789012</a></td>
+                                                            <td title="심사중">심사중</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-wrap txt-center">
+                                                <a href="javascript:;" class="txt-btn plus">전체보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cnt-item">
+                                    <div class="recent-plan">
+                                        <div class="input-box">
+                                            <div class="flex-col gap-4">
+                                                <div class="flex-row gap-4">
+                                                    <input type="text" class="common-input" id="userSearch_name" placeholder="성명" />
+                                                    <input type="number" class="common-input" id="userSearch_num" placeholder="사번" />
+                                                </div>
+                                                <div class="inner">
+                                                    <input type="number" class="common-input" id="userSearch_phone" placeholder="전화번호" />
+                                                </div>
+                                            </div>
+                                            <!-- 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
+                                            <button type="button" class="btn cg-fill-1" data-btn-size="m">조회</button>
+                                            <!-- // 260203 버튼 클래스 변경 "cg-fill => cg-fill-1" -->
+                                        </div>
+                                        <div class="table-with-btn">
+                                            <div class="scroll-table user">
+                                                <table class="common-table" data-table-bg="white">
+                                                    <colgroup>
+                                                        <col style="width: 33%;">
+                                                        <col style="width: 22%;">
+                                                        <col style="width: 45%;">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>사번</th>
+                                                            <th>성명</th>
+                                                            <th>대리점</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>77001234</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>12345678<br />(주)보험대리점</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>77001234</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>12345678<br />(주)보험대리점</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>77001234</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>12345678<br />(주)보험대리점</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>77001234</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>12345678<br />(주)보험대리점</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>77001234</td>
+                                                            <td><a href="javascript:;" class="txt-btn blue">장원영</a></td>
+                                                            <td>12345678<br />(주)보험대리점</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- 데이터 없을 시 thead만 보이는 상태로 아래 div block -->
+                                                <div class="empty" style="display: none;">
+                                                    <p class="mascot-empty blue">
+                                                        데이터가 없습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- // 설계동의/연령계산기/직업조회 탭 -->
                 <!-- 즐겨찾기 -->
                 <div class="pencake-portlet-box" data-pencake-portlet-id="">
@@ -270,6 +427,46 @@
                         <ul id="favoriteList" class="favorite-area">
                             <li data-key="MD102001" class="favorite-item">
                                 <a href="javascript:;" title="가입설계">가입설계</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="일반보험 계약조회">일반보험 계약조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="심사대상일괄조회">심사대상일괄조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="설계출재등록">설계출재등록</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="자동차사고처리(통합)">자동차사고처리(통합)</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="자동차보험 관심고객 정보조회 및 관리">자동차보험 관심고객 정보조회 및 관리</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="일반보험 계약조회">일반보험 계약조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="심사대상일괄조회">심사대상일괄조회</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="설계출재등록">설계출재등록</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="자동차사고처리(통합)">자동차사고처리(통합)</a>
+                                <button type="button" class="remove-btn">삭제</button>
+                            </li>
+                            <li data-key="MD102001" class="favorite-item">
+                                <a href="javascript:;" title="자동차보험 관심고객 정보조회 및 관리">자동차보험 관심고객 정보조회 및 관리</a>
                                 <button type="button" class="remove-btn">삭제</button>
                             </li>
                             <li data-key="MD102001" class="favorite-item">
